@@ -65,20 +65,27 @@ function init(){
         onAfterCompute: function(){
             Log.write("done");
         },
-        
         //This method is called on DOM label creation.
         //Use this method to add event handlers and styles to
         //your node.
         onCreateLabel: function(label, node){
             label.id = node.id;            
             label.innerHTML = node.name;
-            label.onclick = function(){st.onClick(node.id);};
-            	//if(normal.checked) {
-            	//  st.onClick(node.id);
-            	//} else {
-               //st.setRoot(node.id, 'animate');
-            	//}
-            //};
+            label.onclick = function(){
+            	if(normal.checked) {
+            	  st.onClick(node.id);
+            	} else {
+                  Log.write("removing subtree...");  
+                  //remove the subtree
+                  st.removeSubtree(label.id, true, 'animate', {
+                    hideLabels: false,
+                    onComplete: function() {
+                       Log.write("subtree removed");   
+					}
+                  });
+                }
+            };
+
             //set label styles
             var style = label.style;
             style.width = 60 + 'px';
