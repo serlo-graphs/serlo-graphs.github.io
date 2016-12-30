@@ -1,3 +1,6 @@
+	var title = {
+		TITLE: 'Vorschau'
+	};
     var json = {
         id: "node02",
         name: "0.2",
