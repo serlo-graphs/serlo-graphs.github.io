@@ -26,53 +26,9 @@ var Log = {
 };
 
 function init(){
-	
-	//substitute title, taken from http://stackoverflow.com/questions/11954931/loading-variables-from-external-file-on-server-into-html-doc
-	
-
-	var tags = document.getElementsByClassName('templated');
-	for (var i=0; i<tags.length; ++i) {
-		applyTemplate(tags[i]);
-	}
-	
-	function applyTemplate (tag) {
-		for (var key in title) {
-			var regexp = new RegExp('%'+key, 'g');
-			tag.innerHTML = tag.innerHTML.replace(regexp, title[key]);
-		}
-	}
-	
     //init Spacetree
     //Create a new ST instance
     var st = new $jit.ST({
-		
-		// Add events (added by myself)
-		
-		Events: {  
-			enable: true,
-			// This is done in onCreateLabel, otherwise there is an exception...
-			/*onClick: function(node, eventInfo, e) {  
-				st.onClick(node.id);
-			},*/
-			onRightClick: function(node, eventInfo, e) {
-				if (node != undefined) {
-					st.removeSubtree(node.id, true, 'animate', {
-						hideLabels: false,
-						/*onComplete: function() {
-							Log.write("subtree removed");  
-						} */
-					});
-				}
-			}/*,  
-			onMouseEnter: function(node, eventInfo, e) {  
-				Log.write("BLAA!!!"); 
-			},  
-			onMouseLeave: function(node, eventInfo, e) {  
-				Log.write("BLAA!!!");  
-			} */ 
-		},
-		
-		
         //id of viz container element
         injectInto: 'infovis',
         //set duration for the animation
@@ -103,11 +59,11 @@ function init(){
         },
         
         onBeforeCompute: function(node){
-            Log.write("Lade " + node.name + ".");
+            Log.write("loading " + node.name);
         },
         
         onAfterCompute: function(){
-            Log.write("Fertig.");
+            Log.write("done");
         },
         //This method is called on DOM label creation.
         //Use this method to add event handlers and styles to
@@ -115,10 +71,19 @@ function init(){
         onCreateLabel: function(label, node){
             label.id = node.id;            
             label.innerHTML = node.name;
-            
-            // The following needs to be done here and not in the Event section to prevent errors...
             label.onclick = function(){
-				st.onClick(node.id);
+            	if(normal.checked) {
+            	  st.onClick(node.id);
+            	} else {
+                  Log.write("removing subtree...");  
+                  //remove the subtree
+                  st.removeSubtree(label.id, true, 'animate', {
+                    hideLabels: false,
+                    onComplete: function() {
+                       Log.write("subtree removed");   
+					}
+                  });
+                }
             };
 
             //set label styles
@@ -186,8 +151,8 @@ function init(){
     var top = $jit.id('r-top'), 
         left = $jit.id('r-left'), 
         bottom = $jit.id('r-bottom'), 
-        right = $jit.id('r-right')
-        // normal = $jit.id('s-normal'); Not needed any more, the switch is gone
+        right = $jit.id('r-right'),
+        normal = $jit.id('s-normal');
         
     
     function changeHandler() {
