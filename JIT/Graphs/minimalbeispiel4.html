@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Graph tree data -->
+<script language="javascript" type="text/javascript" src="minimalbeispiel.json"></script>
+
+<!-- Example File -->
+<script language="javascript" type="text/javascript" src="../includes/graph2.js"></script>
+
+</head>
+
+<body onload="init();">
+    <!-- Content, inclusion from http://stackoverflow.com/questions/35249827/can-you-link-to-an-html-file -->
+    <div w3-include-html="../includes/minimalbeispiel.html"></div> 
+    <script>
+(function () {
+  myHTMLInclude();
+  function myHTMLInclude() {
+    var z, i, a, file, xhttp;
+    z = document.getElementsByTagName("*");
+    for (i = 0; i < z.length; i++) {
+      if (z[i].getAttribute("w3-include-html")) {
+        a = z[i].cloneNode(false);
+        file = z[i].getAttribute("w3-include-html");
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (xhttp.readyState == 4 && xhttp.status == 200) {
+            a.removeAttribute("w3-include-html");
+            a.innerHTML = xhttp.responseText;
+            z[i].parentNode.replaceChild(a, z[i]);
+            myHTMLInclude();
+          }
+        }      
+        xhttp.open("GET", file, true);
+        xhttp.send();
+        return;
+      }
+    }
+  }
+})();
+</script>
+</body>
+</html>
