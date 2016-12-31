@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script language="javascript" type="text/javascript" src="minimalbeispiel.json"></script>
+<script language="javascript" type="text/javascript" src="../includes/minimalbeispiel.js"></script>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+	<div class="include" data-include="../includes/minimalbeispiel.html"></div>
+</body>
+<script>
+Array.from(document.querySelectorAll('.include')).forEach(item => {
+	fetch(item.getAttribute('data-include')).then(response => {
+		return response.text()
+	}).then(html => {
+		item.innerHTML = html
+	})
+})
+</script>
+</html>
