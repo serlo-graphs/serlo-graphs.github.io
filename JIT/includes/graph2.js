@@ -9,9 +9,7 @@ function init(){
 	}
 	
 	function applyTemplate (tag) {
-		for (var key in title) {
-			var regexp = new RegExp('%'+key, 'g');
-			tag.innerHTML = tag.innerHTML.replace(regexp, title[key]);
-		}
+		var regexp = new RegExp('%'+key, 'g');
+		tag.innerHTML = tag.innerHTML.replace(regexp, "42");
 	}
 }
