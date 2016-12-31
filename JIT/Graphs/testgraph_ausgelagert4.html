@@ -1,0 +1,33 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<!-- CSS Files -->
+	<link type="text/css" href="../css/base.css" rel="stylesheet" />
+	<link type="text/css" href="../css/Spacetree.css" rel="stylesheet" />
+
+	<!--[if IE]><script language="javascript" type="text/javascript" src="../../Extras/excanvas.js"></script><![endif]-->
+
+	<!-- JIT Library File -->
+	<script language="javascript" type="text/javascript" src="../includes/jit.js"></script>
+
+	<!-- Graph tree data -->
+	<script language="javascript" type="text/javascript" src="testgraph.json"></script>
+
+	<!-- Example File -->
+	<script language="javascript" type="text/javascript" src="../includes/graph.js"></script>
+
+</head>
+<body>
+	<div class="include" data-include="../includes/body.html"></div>
+</body>
+<script>
+Array.from(document.querySelectorAll('.include')).forEach(item => {
+	fetch(item.getAttribute('data-include')).then(response => {
+		return response.text()
+	}).then(html => {
+		item.innerHTML = html
+	})
+})
+</script>
+</html>
