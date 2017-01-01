@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script>
+		document.addEventListener("DOMContentLoaded", function(e) {
+			Array.from(document.querySelectorAll(".include")).forEach(item => {
+			fetch(item.getAttribute("data-include")).then(response => {
+				return response.text();
+			}).then(html => {
+				item.innerHTML = html;
+ 
+				// load minimal.js
+				var js = document.createElement("script");
+				js.src = "minimal.js";
+				document.body.appendChild(js);
+				init();
+			});
+		});
+	});
+	</script>
+</head>
+<body>
+	<div class="include" data-include="body_minimal.html"></div>
+</body>
+</html>
