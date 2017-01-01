@@ -25,7 +25,7 @@ var Log = {
   }
 };
 
-
+function init(){
 	
 	//substitute title, taken from http://stackoverflow.com/questions/11954931/loading-variables-from-external-file-on-server-into-html-doc
 	
@@ -204,4 +204,4 @@ var Log = {
     top.onchange = left.onchange = bottom.onchange = right.onchange = changeHandler;
     //end
 
-
+}
