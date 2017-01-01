@@ -22,17 +22,9 @@
             }).then(html => {
                 item.innerHTML = html;
  
-//                var js1 = document.createElement("script");
-//                js1.src = "../Graphs/testgraph.json";
-//                document.body.appendChild(js1);
-
-//                var js2 = document.createElement("script");
-//                js2.src = "../includes/jit.js";
-//                document.body.appendChild(js2);
-
-                var js3 = document.createElement("script");
-                js3.src = "../includes/graph.js";
-                document.body.appendChild(js3);                            
+                var js = document.createElement("script");
+                js.src = "../includes/graph.js";
+                document.body.appendChild(js);                            
             });
         });
     });
