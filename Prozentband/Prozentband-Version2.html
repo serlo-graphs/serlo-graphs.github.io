@@ -1,10 +1,59 @@
-﻿
+﻿<!DOCTYPE html>
 <html>
-<head>
-    <title> Prozentband </title
-
+    <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf8" />
+    <title> Prozentband </title>
         <script type="text/javascript" src="jquery.js"></script><!-- Please Download the jquery library -->
         <script type="text/javascript" src="touchmouse.js"></script>
+        <script type="text/javascript">
+        $(function(){
+			
+
+			
+			var startdraglineal= false;
+             $("#Lineal-Hidden").on(TouchMouseEvent.DOWN, function(e){
+				currentX=e.pageX;
+				startdraglineal= true;
+                movelineal(e);                
+             });
+				function movelineal(e){
+                  $("#Lineal-Hidden").on(TouchMouseEvent.MOVE, function(e){
+                    if(startdraglineal){
+                      moveElement(e, false);
+                     }
+                   });
+
+                }
+
+             $("#Lineal-Hidden").on(TouchMouseEvent.UP, function(e){
+                startdraglineal= false;
+             });	
+			
+			
+			
+			
+			var startdragprozentband= false;
+             $("#Prozentband-Hidden").on(TouchMouseEvent.DOWN, function(e){
+				currentX=e.pageX;
+				startdragprozentband= true;
+                moveprozentband(e);                
+             });
+				function moveprozentband(e){
+                  $("#Prozentband-Hidden").on(TouchMouseEvent.MOVE, function(e){
+                    if(startdragprozentband){
+                      moveElement(e, true);
+                     }
+                   });
+
+                }
+
+             $("#Prozentband-Hidden").on(TouchMouseEvent.UP, function(e){
+                startdragprozentband= false;
+             });
+});
+        </script>
+
+
 </head>
 
 <body>
@@ -2400,7 +2449,6 @@
             width="1030"                height="80"
             fill="blue"                 style="pointer-events:all; cursor: move;"
             visibility="hidden"
-            onmousedown="selectElement(evt)"
             ondblclick="createHelpline(evt, true)" />
 
     <rect   id="Lineal"
@@ -4781,85 +4829,14 @@
                     400  </text>
 
             
-            
-            
-            
-            
-            
-            
-            
-            
-            <script type="text/javascript">
-        $(function(){
-                var startdrag= false;
-             $("#Lineal-Hidden").on(TouchMouseEvent.DOWN, function(){
-                startdrag= true;
-                move();
-
-             });
-             function move(){
-
-                 $("#Lineal-Hidden").on(TouchMouseEvent.MOVE, function(e){
-                    if(startdrag){
-                    $(this).css('left',(e.pageX-50)) ;
-                    $(this).css('top',(e.pageY-50));
-                 }
-                 });
-
-            }
-             $("#Lineal-Hidden").on(TouchMouseEvent.UP, function(e){
-                startdrag= false;
-
-             });
-
-        });
-        </script>
-            
-            
-            
-            
-           <script type="text/javascript">
-        $(function(){
-                var startdrag= false;
-             $("#a").on(TouchMouseEvent.DOWN, function(){
-                startdrag= true;
-                move();
-
-             });
-             function move(){
-
-                 $("#a").on(TouchMouseEvent.MOVE, function(e){
-                    if(startdrag){
-                    $(this).css('left',(e.pageX-50)) ;
-                    $(this).css('top',(e.pageY-50));
-                 }
-                 });
-
-            }
-             $("#Lineal-Hidden").on(TouchMouseEvent.UP, function(e){
-                startdrag= false;
-
-             });
-
-        });
-        </script>            
-            
-            
-            
-                <div id ="a" style="display:block;position:absolute;width:100px;height:100px;background:red;" ></div>
-    
-            
-            
-            
 
     <!-- Es wird ein unsichtbarer Bereich über das Lineal+Skala gelegt, damit das Mausevent nicht durch die gezeichneten Linien gestört wird -->
     <rect   id="Lineal-Hidden"
             x="80"    y="375"
             width="1030"                height="80"
-            fill="blue"                 <!--style="pointer-events:all; cursor: move;"-->
-            <!--visibility="hidden"-->
-            <!--onmousedown="selectElement(evt)"-->
-            <!--ondblclick="createHelpline(evt, false)"--> />
+            fill="blue"                 style="pointer-events:all; cursor: move;"
+            visibility="hidden"
+            ondblclick="createHelpline(evt, false)" />
 
     <!-- In diesem Bereich kann durch das Mausevent 'Doppelklick' ein neuer Reiter erzeugt werden -->
     <rect   id="Reiter-Area"
@@ -4996,7 +4973,7 @@
     // hier touchs abfangen... 
     function selectElement(evt){
         selectedElement = evt.target;
-        currentX = evt.clientX;
+        currentX = evt.pageX;
 
 
         // hier: PB: true, Lineal: false
@@ -5018,8 +4995,8 @@
         var startT = 0;
         var secondStartL;
         var secondStartT;
-        // evt.clientX: Wo wurde gecklickt? currentX: Wo ist man jetzt mit der Maus?
-        var dx = evt.clientX - currentX;
+        // evt.pageX: Wo wurde gecklickt? currentX: Wo ist man jetzt mit der Maus?
+        var dx = evt.pageX - currentX;
         var neededline;
         var clickedLine;
         var distance;
@@ -5077,7 +5054,7 @@
 
       //  }
 
-        currentX = evt.clientX;
+        currentX = evt.pageX;
     }
 
     /* Ist das mouseevent auf dem Prozentband bzw. dem Lineal beendet, wird deselctElement aufgerufen. */
@@ -5189,7 +5166,7 @@ function checkFreeReiter(evt){
 
 function createReiter(evt, ReiterId){
    
-        var x_pos = event.clientX;
+        var x_pos = event.pageX;
         var distanceP = distanceProzent();
         var distanceL = distanceLineal();
         var value_oben = Math.round((x_pos-lineX)/distanceP);
@@ -5690,9 +5667,9 @@ function createReiter(evt, ReiterId){
         var x;
         var helpline;
 
-        neededlineP = Math.round((evt.clientX-lineX)/distanceP)-1;
+        neededlineP = Math.round((evt.pageX-lineX)/distanceP)-1;
         lineP = document.getElementById(neededlineP);
-        neededlineL = Math.round((evt.clientX -lineX)/distanceL)-1+numberOfLines;
+        neededlineL = Math.round((evt.pageX -lineX)/distanceL)-1+numberOfLines;
         lineL = document.getElementById(neededlineL);
 
         if (prozentband == true){
