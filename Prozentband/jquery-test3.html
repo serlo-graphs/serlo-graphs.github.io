@@ -15,24 +15,22 @@
 
 			
 			var startdraglineal= false;
-             $("#Lineal-Hidden").on(TouchMouseEvent.DOWN, function(evt){
-				currentX=evt.pageX;
+             $("#Lineal-Hidden").on(TouchMouseEvent.DOWN, function(e){
+				currentX=e.pageX;
 				startdraglineal= true;
-				window.alert("x="+currentX);
-                move(evt);                
+                move(e);                
              });
-				function move(evt){
-                  $("#Lineal-Hidden").on(TouchMouseEvent.MOVE, function(evt){
+				function move(e){
+                  $("#Lineal-Hidden").on(TouchMouseEvent.MOVE, function(e){
                     if(startdraglineal){
-                      moveElement(evt, false);
+                      moveElement(e, false);
                      }
                    });
 
                 }
 
-             $("#Lineal-Hidden").on(TouchMouseEvent.UP, function(evt){
+             $("#Lineal-Hidden").on(TouchMouseEvent.UP, function(e){
                 startdraglineal= false;
-
              });	
 			
 			
@@ -40,7 +38,7 @@
 			
 			/*var startdragprozentband= false;
              $("#Prozentband-Hidden").on(TouchMouseEvent.DOWN, function(e){
-				currentX=e.clientX;
+				currentX=e.pageX;
 				startdragprozentband= true;
 				function move(){
                   $("#Prozentband-Hidden").on(TouchMouseEvent.MOVE, function(e){
@@ -60,14 +58,14 @@
              
              
              
-             			                var startdrag= false;
-             $("#a").on(TouchMouseEvent.DOWN, function(){
+             var startdrag= false;
+             $("#a").on(TouchMouseEvent.DOWN, function(e){
                 startdrag= true;
-                move();
+                move2(e);
 
              });
-             function move(){
-
+             function move2(e){
+				  window.alert("x=" + e.pageX);
                  $("#a").on(TouchMouseEvent.MOVE, function(e){
                     if(startdrag){
                     $(this).css('left',(e.pageX-50)) ;
@@ -5004,7 +5002,7 @@
     // hier touchs abfangen... 
     function selectElement(evt){
         selectedElement = evt.target;
-        currentX = evt.clientX;
+        currentX = evt.pageX;
 
 
         // hier: PB: true, Lineal: false
@@ -5026,8 +5024,8 @@
         var startT = 0;
         var secondStartL;
         var secondStartT;
-        // evt.clientX: Wo wurde gecklickt? currentX: Wo ist man jetzt mit der Maus?
-        var dx = evt.clientX - currentX;
+        // evt.pageX: Wo wurde gecklickt? currentX: Wo ist man jetzt mit der Maus?
+        var dx = evt.pageX - currentX;
         var neededline;
         var clickedLine;
         var distance;
@@ -5085,7 +5083,7 @@
 
       //  }
 
-        currentX = evt.clientX;
+        currentX = evt.pageX;
     }
 
     /* Ist das mouseevent auf dem Prozentband bzw. dem Lineal beendet, wird deselctElement aufgerufen. */
@@ -5197,7 +5195,7 @@ function checkFreeReiter(evt){
 
 function createReiter(evt, ReiterId){
    
-        var x_pos = event.clientX;
+        var x_pos = event.pageX;
         var distanceP = distanceProzent();
         var distanceL = distanceLineal();
         var value_oben = Math.round((x_pos-lineX)/distanceP);
@@ -5698,9 +5696,9 @@ function createReiter(evt, ReiterId){
         var x;
         var helpline;
 
-        neededlineP = Math.round((evt.clientX-lineX)/distanceP)-1;
+        neededlineP = Math.round((evt.pageX-lineX)/distanceP)-1;
         lineP = document.getElementById(neededlineP);
-        neededlineL = Math.round((evt.clientX -lineX)/distanceL)-1+numberOfLines;
+        neededlineL = Math.round((evt.pageX -lineX)/distanceL)-1+numberOfLines;
         lineL = document.getElementById(neededlineL);
 
         if (prozentband == true){
