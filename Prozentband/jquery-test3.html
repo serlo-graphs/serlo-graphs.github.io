@@ -16,7 +16,7 @@
 			
 			var startdraglineal= false;
              $("#Lineal-Hidden").on(TouchMouseEvent.DOWN, function(evt){
-				currentX=evt.clientX;
+				currentX=evt.x;
 				startdraglineal= true;
 				window.alert("x="+currentX);
                 move(evt);                
