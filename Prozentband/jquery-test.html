@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>touch</title>
+
+        <meta http-equiv="Content-Type" content="text/html;charset=utf8" />
+        <meta name="author" content="AUTHOR" />
+        <meta name="keyword" content="KEYWORD" />
+        <meta name="description" content="DESCRIPTION" />
+        <script type="text/javascript" src="jquery.js"></script><!-- Please Download the jquery library -->
+        <script type="text/javascript" src="touchmouse.js"></script>
+        <script type="text/javascript">
+        $(function(){
+                var startdrag= false;
+             $("#a").on(TouchMouseEvent.DOWN, function(){
+                startdrag= true;
+                move();
+
+             });
+             function move(){
+
+                 $("#a").on(TouchMouseEvent.MOVE, function(e){
+                    if(startdrag){
+                    $(this).css('left',(e.pageX-50)) ;
+                    $(this).css('top',(e.pageY-50));
+                 }
+                 });
+
+            }
+             $("#a").on(TouchMouseEvent.UP, function(e){
+                startdrag= false;
+
+             });
+
+        });
+        </script>
+
+    </head>
+    <body>
+        <div id ="a" style="display:block;position:absolute;width:100px;height:100px;background:red;" ></div>
+    </body>
+</html>
