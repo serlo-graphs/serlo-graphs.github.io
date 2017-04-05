@@ -18,9 +18,9 @@
              $("#Lineal-Hidden").on(TouchMouseEvent.DOWN, function(e){
 				currentX=e.pageX;
 				startdraglineal= true;
-                move(e);                
+                movelineal(e);                
              });
-				function move(e){
+				function movelineal(e){
                   $("#Lineal-Hidden").on(TouchMouseEvent.MOVE, function(e){
                     if(startdraglineal){
                       moveElement(e, false);
@@ -36,11 +36,13 @@
 			
 			
 			
-			/*var startdragprozentband= false;
+			var startdragprozentband= false;
              $("#Prozentband-Hidden").on(TouchMouseEvent.DOWN, function(e){
 				currentX=e.pageX;
 				startdragprozentband= true;
-				function move(){
+                moveprozentband(e);                
+             });
+				function moveprozentband(e){
                   $("#Prozentband-Hidden").on(TouchMouseEvent.MOVE, function(e){
                     if(startdragprozentband){
                       moveElement(e, true);
@@ -48,43 +50,11 @@
                    });
 
                 }
-             })
 
              $("#Prozentband-Hidden").on(TouchMouseEvent.UP, function(e){
                 startdragprozentband= false;
-
-             });*/
-             
-             
-             
-             
-             var startdrag= false;
-             $("#a").on(TouchMouseEvent.DOWN, function(e){
-                startdrag= true;
-                move2(e);
-
              });
-             function move2(e){
-				  window.alert("x=" + e.pageX);
-                 $("#a").on(TouchMouseEvent.MOVE, function(e){
-                    if(startdrag){
-                    $(this).css('left',(e.pageX-50)) ;
-                    $(this).css('top',(e.pageY-50));
-                 }
-                 });
-
-            }
-             $("#a").on(TouchMouseEvent.UP, function(e){
-                startdrag= false;
-
-             });
-             
-             
-             
-             
-             
-
-        });
+});
         </script>
 
     </head>
@@ -2477,7 +2447,6 @@
             width="1030"                height="80"
             fill="blue"                 style="pointer-events:all; cursor: move;"
             visibility="hidden"
-            onmousedown="selectElement(evt)"
             ondblclick="createHelpline(evt, true)" />
 
     <rect   id="Lineal"
@@ -5780,6 +5749,5 @@ function createReiter(evt, ReiterId){
 
 </script>
 </svg>
-        <div id ="a" style="display:block;position:absolute;width:100px;height:100px;background:red;" ></div>
     </body>
 </html>
