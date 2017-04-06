@@ -4971,6 +4971,8 @@
        Die Methode ruft moveElement(event) auf.*/
        
     // hier touchs abfangen... 
+    // Nicht mehr nötig durch die Umstellung auf Touch-Abfragen mittels jQuery.
+    /*
     function selectElement(evt){
         selectedElement = evt.target;
         currentX = evt.pageX;
@@ -4988,6 +4990,7 @@
         selectedElement.setAttribute("onmouseout", "deselectElement(evt)");
 
     }
+    */
 
     function moveElement(evt, prozentband){
 
@@ -5058,12 +5061,15 @@
     }
 
     /* Ist das mouseevent auf dem Prozentband bzw. dem Lineal beendet, wird deselctElement aufgerufen. */
+    /*Nicht mehr nötig durch die Umstellung auf Touch-Abfragen mittels jQuery.*/
+    /*
     function deselectElement(evt){
         if(selectedElement != 0){
             selectedElement.removeAttribute("onmousemove");
             selectedElement = 0;
         }
     }
+    */
 
     /* Linien werden bewegt */
     function moveLines(startL, newDistance){
