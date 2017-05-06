@@ -1,5 +1,6 @@
-<html><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<!-- saved from url=(0060)http://localhost/git/Prozentband/Prozentband-ohne-Reiter.php -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title> Prozentband </title>
         <script type="text/javascript" src="jquery.js"></script>
         <script type="text/javascript" src="touchmouse.js"></script>
@@ -648,42 +649,33 @@
     var percentLineNumber = 40;
     var percentRange = 400;
     var lineX = 85;
-    var coupled = false;
+    var coupled = true;
 
    
     var lineList = document.getElementsByTagName("line");   
     var textList = document.getElementsByTagName("text");
     
     
-    /*Hier schöne neue Arrays mit Linien und Labels für Lineal und 
-Prozentband getrennt*/
+    /*Hier schöne neue Arrays mit Linien und Labels für Lineal und Prozentband getrennt*/
     var rulerLineList = document.getElementsByClassName("rulerLine");
     var rulerTextList = document.getElementsByClassName("rulerText");
-    var percentLineList = 
-document.getElementsByClassName("percentLine");
-    var percentTextList = 
-document.getElementsByClassName("percentText");
+    var percentLineList = document.getElementsByClassName("percentLine");
+    var percentTextList = document.getElementsByClassName("percentText");
     
     
-    // setzt alle Linien, die über das Prozentband bzw. Lineal 
-hinausgehen auf hidden
+    // setzt alle Linien, die über das Prozentband bzw. Lineal hinausgehen auf hidden
     for(var i=0; i&lt;lineList.length; i++){ 
         var line = lineList.item(i);
         var pos = line.getAttribute("x1");
-		if(pos &gt;= 
-(80+parseInt(document.getElementById("Prozentband").getAttribute("width")))){
-
+		if(pos &gt;= (80+parseInt(document.getElementById("Prozentband").getAttribute("width")))){
             line.setAttribute("visibility", "hidden");
         }
     }
-    // setzt alle Texte, die über das Prozentband bzw. Lineal 
-hinausgehen auf hidden
+    // setzt alle Texte, die über das Prozentband bzw. Lineal hinausgehen auf hidden
     for (var i=0; i&lt;textList.length; i++){
         var text = textList.item(i);
         var pos = text.getAttribute("x");
-		if(pos &gt;= 
-(80+parseInt(document.getElementById("Prozentband").getAttribute("width")))){
-
+		if(pos &gt;= (80+parseInt(document.getElementById("Prozentband").getAttribute("width")))){
             text.setAttribute("visibility", "hidden");
         }
     }
@@ -732,42 +724,30 @@ hinausgehen auf hidden
 		 });
 });
 
-    /* Berechnet die aktuelle Distanz zwischen zwei tatsächlich 
-gezeichneten Linien auf dem Prozentband */
+    /* Berechnet die aktuelle Distanz zwischen zwei tatsächlich gezeichneten Linien auf dem Prozentband */
     function distanceLineProzent (){
-        var intervallP = 
-lineList.item(percentLineNumber).getAttribute("x1")-lineList.item(0).getAttribute("x1");
-
+        var intervallP = lineList.item(percentLineNumber).getAttribute("x1")-lineList.item(0).getAttribute("x1");
         var distanceP = intervallP/percentLineNumber;
         return distanceP;
     }
 
-    /* Berechnet die aktuelle Distanz zwischen zwei tatsächlich 
-gezeichneten Linien auf dem Lineal */
+    /* Berechnet die aktuelle Distanz zwischen zwei tatsächlich gezeichneten Linien auf dem Lineal */
     function distanceLineLineal (){
-        var intervallL = 
-lineList.item(percentLineNumber+rulerLineNumber+1).getAttribute("x1")-lineList.item(percentLineNumber+1).getAttribute("x1");
-
+        var intervallL = lineList.item(percentLineNumber+rulerLineNumber+1).getAttribute("x1")-lineList.item(percentLineNumber+1).getAttribute("x1");
         var distanceL = intervallL/rulerLineNumber;
         return distanceL;
     }
     
-    /* Berechnet die aktuelle Distanz zwischen zwei Beschriftungen auf 
-dem Prozentband */
+    /* Berechnet die aktuelle Distanz zwischen zwei Beschriftungen auf dem Prozentband */
     function distanceTextProzent (){
-        var intervallP = 
-lineList.item(percentLineNumber).getAttribute("x1")-lineList.item(0).getAttribute("x1");
-
+        var intervallP = lineList.item(percentLineNumber).getAttribute("x1")-lineList.item(0).getAttribute("x1");
         var distanceP = intervallP/percentRange;
         return distanceP;
     }
 
-    /* Berechnet die aktuelle Distanz zwischen zwei Beschriftungen auf 
-dem Lineal */
+    /* Berechnet die aktuelle Distanz zwischen zwei Beschriftungen auf dem Lineal */
     function distanceTextLineal (){
-        var intervallL = 
-lineList.item(percentLineNumber+rulerLineNumber+1).getAttribute("x1")-lineList.item(percentLineNumber+1).getAttribute("x1");
-
+        var intervallL = lineList.item(percentLineNumber+rulerLineNumber+1).getAttribute("x1")-lineList.item(percentLineNumber+1).getAttribute("x1");
         var distanceL = intervallL/rulerRange;
         return distanceL;
     }
@@ -778,11 +758,9 @@ lineList.item(percentLineNumber+rulerLineNumber+1).getAttribute("x1")-lineList.i
         var oldIntervall = currentX - lineX;
 		var scalefactor = newIntervall / oldIntervall;
 		var newLineDistanceProzent = scalefactor * distanceLineProzent();
-        var newTextDistanceProzent = scalefactor * 
-distanceTextProzent();
+        var newTextDistanceProzent = scalefactor * distanceTextProzent();
 		var newLineDistanceLineal = scalefactor * distanceLineLineal();
-        var newTextDistanceLineal = scalefactor * distanceTextLineal(); 
-        
+        var newTextDistanceLineal = scalefactor * distanceTextLineal();         
 
 		if (coupled == true) {
                 moveLines(newLineDistanceProzent, percentLineList);
@@ -810,23 +788,17 @@ distanceTextProzent();
             line.setAttribute("x1", pos);
             line.setAttribute("x2", pos);
 
-        // Setzt Linien sichtbar/nicht sichtbar, abhängig davon ob sie 
-doch auf dem Prozentband/Lineal liegen oder nicht
-            if(pos &gt;= 
-(80+parseInt(document.getElementById("Prozentband").getAttribute("width")))){
-
+        // Setzt Linien sichtbar/nicht sichtbar, abhängig davon ob sie doch auf dem Prozentband/Lineal liegen oder nicht
+            if(pos &gt;= (80+parseInt(document.getElementById("Prozentband").getAttribute("width")))){
                line.setAttribute("visibility", "hidden");
                 }
                 else {
                     line.setAttribute("visibility", "visible");
                 }
 
-          // stehen die Linien zu dicht aneinander werdem alle 
-'small'-Linien nicht sichtbar
+          // stehen die Linien zu dicht aneinander werdem alle 'small'-Linien nicht sichtbar
           if (newLineDistance &lt; 4){
-              
-if(Math.abs(line.getAttribute("y1")-line.getAttribute("y2")) == 
-Math.abs(-25)){
+              if(Math.abs(line.getAttribute("y1")-line.getAttribute("y2")) == Math.abs(-25)){
                   line.setAttribute("visibility", "hidden");
               }
           }   
@@ -845,19 +817,15 @@ Math.abs(-25)){
             text.setAttribute("x", pos);
             l+=10;
         
-            // Setzt Text sichtbar/nicht sichtbar, abhängig davon, ob 
-sie noch auf dem Prozentband/Lineal liegen oder nicht
-            if(pos &gt;= 
-(80+parseInt(document.getElementById("Prozentband").getAttribute("width")))-20){
-
+            // Setzt Text sichtbar/nicht sichtbar, abhängig davon, ob sie noch auf dem Prozentband/Lineal liegen oder nicht
+            if(pos &gt;= (80+parseInt(document.getElementById("Prozentband").getAttribute("width")))-20){
                 text.setAttribute("visibility", "hidden");
                 }
                 else {
                     text.setAttribute("visibility", "visible");
                 }
 
-            // stehen die Texte zu dicht aneinander wird jeder 2. nicht 
-sichtbar
+            // stehen die Texte zu dicht aneinander wird jeder 2. nicht sichtbar
             if(newTextDistance &lt; 4){
                 if ((l/10)%2 == 0){
                     text.setAttribute("visibility", "hidden");
