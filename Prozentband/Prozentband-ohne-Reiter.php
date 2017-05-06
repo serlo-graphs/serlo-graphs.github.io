@@ -15,8 +15,8 @@
     
     $rulerRange=200; // gibt an wieviele Linien pro skala verwendet werden
     $percentRange=400; // gibt an wieviele Linien pro skala verwendet werden
-    $rulerHalfs=false;
-    $rulerTenths=false;
+    $rulerHalfs=true;
+    $rulerTenths=true;
     $percentHalfs=false;
     $percentTenths=false;
     
@@ -40,6 +40,7 @@
     
     function drawLines ($Ystart, $Ruler){
         global $PBx, $percentRange, $percentHalfs, $percentTenths, $rulerRange, $rulerHalfs, $rulerTenths, $PBline_y1, $lineDistance, $lineX, $small, $medium, $large, $rulerLineNumber, $percentLineNumber;
+		$skippedLines=0;
         $percent = "%";
         $textGap = -($large+5);
 		$IDstart = 0;
@@ -47,6 +48,7 @@
 		$lineRange = $percentRange;
 		$Halfs = $percentHalfs;
 		$Tenths = $percentTenths;
+		$Class = "Percent";
         if($Ruler == true){
 			$IDstart = $percentRange+1;
 			$IDend = $rulerRange + $percentRange;
@@ -58,19 +60,18 @@
             $large = 0-$large;
             $percent =" ";
             $textGap=0-$textGap+7;
+            $Class = "Ruler";
         }
-        $actualLineNumber=0;
-		$skippedLines=0;
         for($i=0; $i <= $lineRange; $i++){
             if($i==0 || $i%10 == 0){
 ?>
-            <line   id="<?php echo($IDstart); ?>"
+            <line   id="<?php echo($IDstart); ?>" class="<?php echo($Class); ?>Line"
                     x1="<?php echo($i*$lineDistance+$lineX); ?>" y1="<?php echo($Ystart); ?>"
                     x2="<?php echo($i*$lineDistance+$lineX); ?>" y2="<?php echo($Ystart-$large); ?>"
                     style="stroke:black; stroke-width:2;"
                     visibility="visible" />
 
-            <text   id="<?php echo($IDstart); ?>"
+            <text   id="<?php echo($IDstart); ?>" class="<?php echo($Class); ?>Text"
                     x="<?php echo($i*$lineDistance+$lineX-4); ?>" y="<?php echo($Ystart+$textGap); ?>"
                     style="font-size: 12.8px;"                    visibility="visible">
                     <?php echo($i.$percent); ?> </text>
@@ -80,7 +81,7 @@
             }
             else if ($i%5==0 && $Halfs==true){ 
 ?>             
-            <line   id="<?php echo($IDstart); ?>"
+            <line   id="<?php echo($IDstart); ?>" class="<?php echo($Class); ?>Line"
                     x1="<?php echo($i*$lineDistance+$lineX); ?>" y1="<?php echo($Ystart); ?>"
                     x2="<?php echo($i*$lineDistance+$lineX); ?>" y2="<?php echo($Ystart-$medium); ?>"
                     style="stroke:black; stroke-width:2;"
@@ -90,7 +91,7 @@
             }
             else if ($Tenths == true){
 ?>
-            <line   id="<?php echo($IDstart); ?>"
+            <line   id="<?php echo($IDstart); ?>" class="<?php echo($Class); ?>Line"
                     x1="<?php echo($i*$lineDistance+$lineX); ?>" y1="<?php echo($Ystart); ?>"
                     x2="<?php echo($i*$lineDistance+$lineX); ?>" y2="<?php echo($Ystart-$small); ?>"
                     style="stroke:black; stroke-width:2;"
@@ -223,6 +224,14 @@
     var lineList = document.getElementsByTagName("line");   
     var textList = document.getElementsByTagName("text");
     
+    
+    /*Hier schöne neue Arrays mit Linien und Labels für Lineal und Prozentband getrennt*/
+    var rulerLineList = document.getElementsByClassName("rulerLine");
+    var rulerTextList = document.getElementsByClassName("rulerText");
+    var percentLineList = document.getElementsByClassName("percentLine");
+    var percentTextList = document.getElementsByClassName("percentText");
+    
+    
     // setzt alle Linien, die über das Prozentband bzw. Lineal hinausgehen auf hidden
     for(var i=0; i<lineList.length; i++){ 
         var line = lineList.item(i);
@@ -284,7 +293,7 @@
 		 });
 });
 
-    /* Berechnet die aktuelle Distanz zwischen zwei tatsächlich gezeichneten Linien auf dem Prozentban */
+    /* Berechnet die aktuelle Distanz zwischen zwei tatsächlich gezeichneten Linien auf dem Prozentband */
     function distanceLineProzent (){
         var intervallP = lineList.item(percentLineNumber).getAttribute("x1")-lineList.item(0).getAttribute("x1");
         var distanceP = intervallP/percentLineNumber;
@@ -298,7 +307,7 @@
         return distanceL;
     }
     
-    /* Berechnet die aktuelle Distanz zwischen zwei Beschriftungen auf dem Prozentban */
+    /* Berechnet die aktuelle Distanz zwischen zwei Beschriftungen auf dem Prozentband */
     function distanceTextProzent (){
         var intervallP = lineList.item(percentLineNumber).getAttribute("x1")-lineList.item(0).getAttribute("x1");
         var distanceP = intervallP/percentRange;
@@ -314,59 +323,36 @@
 
     function moveElement(evt, prozentband){
 
-        var startL = 0;
-        var startT = 0;
-        var stopL = 0;
-        var stopT = 0;
-        var secondStartL;
-        var secondStartT;
-        // evt.pageX: Wo wurde geklickt? currentX: Wo ist man jetzt mit der Maus?
-        var distanceLine;
-        var distanceText;
-        var warning;
-
-        if (prozentband == true){
-                // Linien
-                startL = 0;
-                stopL = percentLineNumber;
-                // Texte
-                startT = 0;
-                stopT = percentRange/10;
-				// Abstände
-                distanceLine=distanceLineProzent();
-				distanceText=distanceTextProzent();
-                // Für Textausgabe
-                warning = "Prozentband";
-        } else {
-                startL = percentLineNumber+1;
-                stopL = percentLineNumber+rulerLineNumber+1;
-                startT = percentRange/10 + 1;
-                stopT= (rulerRange + percentRange)/10 + 1;
-                distanceLine=distanceLineLineal();
-                distanceText=distanceTextLineal();
-                warning = "Lineal";
-        }
-
         var newIntervall = evt.pageX - lineX;
         var oldIntervall = currentX - lineX;
 		var scalefactor = newIntervall / oldIntervall;
-		var newLineDistance = scalefactor * distanceLine;
-        var newTextDistance = scalefactor * distanceText;
-        
-		moveLines(startL, stopL, newLineDistance);
-		moveText(startT, stopT, newTextDistance);
+		var newLineDistanceProzent = scalefactor * distanceLineProzent();
+        var newTextDistanceProzent = scalefactor * distanceTextProzent();
+		var newLineDistanceLineal = scalefactor * distanceLineLineal();
+        var newTextDistanceLineal = scalefactor * distanceTextLineal();         
+
+		if (coupled == true) {
+                moveLines(newLineDistanceProzent, percentLineList);
+				moveText(newTextDistanceProzent, percentTextList);
+				moveLines(newLineDistanceLineal, rulerLineList);
+				moveText(newTextDistanceLineal, rulerTextList);
+		} else if (prozentband == true) {
+                moveLines(newLineDistanceProzent, percentLineList);
+				moveText(newTextDistanceProzent, percentTextList);
+		} else {
+				moveLines(newLineDistanceLineal, rulerLineList);
+				moveText(newTextDistanceLineal, rulerTextList);
+        }
 
         currentX = evt.pageX;
     }
 
-    /* Linien werden bewegt */
-    function moveLines(startL, stopL, newDistance){
-
+	function moveLines(newLineDistance, arrayLines){
         var j=0;
 
-        for (var i=startL; i<=stopL; i++){
-            var line = lineList.item(i);
-            var pos = j*newDistance+lineX;
+        for (var i=0; i<arrayLines.length; i++){
+            var line = arrayLines.item(i);
+            var pos = j*newLineDistance+lineX;
             
             line.setAttribute("x1", pos);
             line.setAttribute("x2", pos);
@@ -380,7 +366,7 @@
                 }
 
           // stehen die Linien zu dicht aneinander werdem alle 'small'-Linien nicht sichtbar
-          if (newDistance < 4){
+          if (newLineDistance < 4){
               if(Math.abs(line.getAttribute("y1")-line.getAttribute("y2")) == Math.abs(<?php echo($small); ?>)){
                   line.setAttribute("visibility", "hidden");
               }
@@ -389,15 +375,14 @@
         }
     }
 
-    /* Texte werden bewegt*/
-    function moveText(startT, stopT, newDistance){
+    function moveText(newTextDistance, arrayText){
 
     // jeder 10. Strich hat einen Text
         var l = 0;
 
-        for (var i=startT; i<=stopT; i++){
-            var text = textList.item(i);
-            var pos = l*newDistance+lineX-1;
+        for (var i=0; i<arrayText.length; i++){
+            var text = arrayText.item(i);
+            var pos = l*newTextDistance+lineX-1;
             text.setAttribute("x", pos);
             l+=10;
         
@@ -410,13 +395,14 @@
                 }
 
             // stehen die Texte zu dicht aneinander wird jeder 2. nicht sichtbar
-            if(newDistance < 4){
+            if(newTextDistance < 4){
                 if ((l/10)%2 == 0){
                     text.setAttribute("visibility", "hidden");
                 }
             }
         }
     }
+
 
      /* Setzt alle Einstellungen wieder zurück auf Anfang */
     function reset(){
