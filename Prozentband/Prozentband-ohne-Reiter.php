@@ -4,6 +4,16 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf8" />
         <script type="text/javascript" src="jquery.js"></script>
         <script type="text/javascript" src="touchmouse.js"></script>
+        
+        <style type="text/css">
+			svg * {
+				user-select: none;
+				-o-user-select: none;
+				-ms-user-select: none;
+				-moz-user-select: none;
+				-webkit-user-select: none;
+			}
+</style>
 </head>
 <body>
 
@@ -20,7 +30,7 @@
     $percentHalfs=false;
     $percentTenths=false;
     
-    $coupled=false;
+    $coupled=true;
     
     $PBline_y1=$PBy+$height; // Linien des Prozentbandes schließen mit unterem Rand des Prozentbandes ab 
     $Lline_y1=$PBy+$distanceScale; // Linien des Lineals schließen mit oberen Rand des Lineals ab.
@@ -118,7 +128,7 @@
 
 
 
-<svg   width="1200" height="850" >
+<svg   width="1200" height="850" style="-moz-user-selection: none">
 
     
 
@@ -255,18 +265,10 @@
 		 $("#Lineal-Hidden").on(TouchMouseEvent.DOWN, function(e){
 			currentX=e.pageX;
 			startdraglineal= true;
-			movelineal(e);                
+			//movelineal(e);                
 		 });
-			function movelineal(e){
-			  $("#Lineal-Hidden").on(TouchMouseEvent.MOVE, function(e){
-				if(startdraglineal){
-				  moveElement(e, false);
-				 }
-			   });
 
-			}
-
-		 $("#Lineal-Hidden").on(TouchMouseEvent.UP, function(e){
+		 $("svg").on(TouchMouseEvent.UP, function(e){
 			startdraglineal= false;
 		 });	
 		
@@ -277,20 +279,23 @@
 		 $("#Prozentband-Hidden").on(TouchMouseEvent.DOWN, function(e){
 			currentX=e.pageX;
 			startdragprozentband= true;
-			moveprozentband(e);                
+			//moveprozentband(e);                
 		 });
-			function moveprozentband(e){
-			  $("#Prozentband-Hidden").on(TouchMouseEvent.MOVE, function(e){
-				if(startdragprozentband){
-				  moveElement(e, true);
-				 }
-			   });
 
-			}
-
-		 $("#Prozentband-Hidden").on(TouchMouseEvent.UP, function(e){
+		 $("svg").on(TouchMouseEvent.UP, function(e){
 			startdragprozentband= false;
 		 });
+		 
+		 
+		  $("svg").on(TouchMouseEvent.MOVE, function(e){
+			if(startdraglineal){
+			  moveElement(e, false);
+			 }
+			 if(startdragprozentband){
+			  moveElement(e, true);
+			}
+		   });
+
 });
 
     /* Berechnet die aktuelle Distanz zwischen zwei tatsächlich gezeichneten Linien auf dem Prozentband */
