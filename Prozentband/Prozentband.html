@@ -3,17 +3,19 @@
     <title> Prozentband </title
     <meta http-equiv="Content-Type" content="text/html;charset=utf8" />
     
-    <!-- Seite als App laden - ohne Browsersteuerung-->
+    <!-- Seite als App laden - ohne Browsersteuerung, keine Ahnung ob es funktioniert -->
     <!-- android -->
 	<meta name="mobile-web-app-capable" content="yes">
 	<!-- iOS -->
-	<meta name="apple-mobile-web-app-capable" content="yes">
+	<!--<meta name="apple-mobile-web-app-capable" content="yes">-->
 	<meta name="apple-mobile-web-app-status-bar-style" content="translucent-black">
 	<meta name="apple-mobile-web-app-title" content="My App">
     
+    <!-- Bindet Bibliotheken zum Abfangen von Touch-Events ein -->
 	<script type="text/javascript" src="jquery.js"></script>
 	<script type="text/javascript" src="touchmouse.js"></script>
 	
+	<!--Unterbindet das Markieren von Text und hoffentlich das Scrollen, keine Ahnung ob Letzteres funktioniert... -->
 	<style type="text/css">
 		svg * {
 			user-select: none;
@@ -1833,8 +1835,9 @@
             text.setAttribute("visibility", "hidden");
         }
     }
-    
-    document.ontouchmove = function(e){ e.preventDefault(); }
+		
+		// Unterbindet hoffentlich das Scrollen der Webseite, keine Ahnung, ob es funktioniert...
+		document.ontouchmove = function(e){ e.preventDefault(); }
     
 		$(function(){
 					
