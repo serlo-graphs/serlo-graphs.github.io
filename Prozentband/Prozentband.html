@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title> Prozentband </title
+    <title> Prozentband </title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf8" />
     
     <!-- Seite als App laden - ohne Browsersteuerung, keine Ahnung ob es funktioniert -->
@@ -34,15 +34,13 @@
 <body>
 
 
-
-
 <svg   width="1200" height="850" style="-moz-user-selection: none">
 
     
 
     <rect   id="Prozentband"
-            x="80"    y="90"
-            width="1030"                height="90"
+            x="80"    		y="90"
+            width="1030"		height="90"
             fill="#FF4040" />
     
             <line   id="0" class="PercentLine"
@@ -540,17 +538,22 @@
 
     <!-- Es wird ein unsichtbarer Bereich über das Prozentband+Skala gelegt, damit das Mausevent nicht durch die gezeichneten Linien gestört wird -->
     <rect   id="Prozentband-Hidden"
-            x="80"    y="90"
-            width="1030"                height="90"
-            fill="blue"                 style="pointer-events:all; cursor: move;"
-            visibility="hidden"
-            ondblclick="createHelpline(evt, true)" />
+            x="80"    		y="90"
+            width="1030"		height="90"
+            fill="blue"                 		style="pointer-events:all; cursor: move;"
+            visibility="hidden"/>
+    
+    <rect   id="Above-Prozentband-Hidden"
+            x="80"    		y="0"
+            width="1030"      height="90"
+            fill="blue"                 		style="pointer-events:all; cursor: move;"
+            visibility="visible"/>
 
-    <rect   id="Lineal"
-            x="80"    y="285"
-            width="1030"                height="90"
+    <rect   id="Ruler"
+            x="80"    		y="285"
+            width="1030"		height="90"
             fill="#FFFFFF"
-            stroke="black"              stroke-width="2" />
+            stroke="black"              		stroke-width="2" />
 
             <line   id="401" class="RulerLine"
                     x1="85" y1="285"
@@ -1745,21 +1748,25 @@
 
             
 
-    <!-- Es wird ein unsichtbarer Bereich über das Lineal+Skala gelegt, damit das Mausevent nicht durch die gezeichneten Linien gestört wird -->
-    <rect   id="Lineal-Hidden"
-            x="80"    y="285"
-            width="1030"                height="90"
-            fill="blue"                 style="pointer-events:all; cursor: move;"
-            visibility="hidden"
-            ondblclick="createHelpline(evt, false)" />
+    <!-- Es wird ein unsichtbarer Bereich über das Ruler+Skala gelegt, damit das Mausevent nicht durch die gezeichneten Linien gestört wird -->
+    <rect   id="Ruler-Hidden"
+            x="80"    		y="285"
+            width="1030"		height="90"
+            fill="blue"                 		style="pointer-events:all; cursor: move;"
+            visibility="hidden"/>
+
+    <rect   id="Below-Ruler-Hidden"
+            x="80"    		y="375"
+            width="1030"      height="90"
+            fill="blue"                 		style="pointer-events:all; cursor: move;"
+            visibility="visible"				onclick="hideRulerArea()"/>
 
     <!-- In diesem Bereich kann durch das Mausevent 'Doppelklick' ein neuer Reiter erzeugt werden -->
-    <rect   id="Reiter-Area"
-            x="80"    y="180"
-            width="1030"                height="105"
-            fill="red"                  style="pointer-events:all;"
-            visibility="hidden"
-            ondblclick="checkFreeReiter(evt)"  />
+    <rect   id="Between-Prozentband-Ruler"
+            x="80"    		y="180"
+            width="1030"		height="105"
+            fill="red"                  		style="pointer-events:all;"
+            visibility="visible"/>
 
     
     
@@ -1816,14 +1823,14 @@
     var textList = document.getElementsByTagName("text");
     
     
-    /*Hier schöne neue Arrays mit Linien und Labels für Lineal und Prozentband getrennt*/
+    /*Hier schöne neue Arrays mit Linien und Labels für Ruler und Prozentband getrennt*/
     var rulerLineList = document.getElementsByClassName("rulerLine");
     var rulerTextList = document.getElementsByClassName("rulerText");
     var percentLineList = document.getElementsByClassName("percentLine");
     var percentTextList = document.getElementsByClassName("percentText");
     
     
-    // setzt alle Linien, die über das Prozentband bzw. Lineal hinausgehen auf hidden
+    // setzt alle Linien, die über das Prozentband bzw. Ruler hinausgehen auf hidden
     for(var i=0; i<lineList.length; i++){ 
         var line = lineList.item(i);
         var pos = line.getAttribute("x1");
@@ -1831,7 +1838,7 @@
             line.setAttribute("visibility", "hidden");
         }
     }
-    // setzt alle Texte, die über das Prozentband bzw. Lineal hinausgehen auf hidden
+    // setzt alle Texte, die über das Prozentband bzw. Ruler hinausgehen auf hidden
     for (var i=0; i<textList.length; i++){
         var text = textList.item(i);
         var pos = text.getAttribute("x");
@@ -1845,15 +1852,15 @@
     
 		$(function(){
 					
-		var startdraglineal= false;
-		 $("#Lineal-Hidden").on(TouchMouseEvent.DOWN, function(e){
+		var startdragruler= false;
+		 $("#Ruler-Hidden").on(TouchMouseEvent.DOWN, function(e){
 			currentX=e.pageX;
-			startdraglineal= true;
-			//movelineal(e);                
+			startdragruler= true;
+			//moveruler(e);                
 		 });
 
 		 $("svg").on(TouchMouseEvent.UP, function(e){
-			startdraglineal= false;
+			startdragruler= false;
 		 });	
 		
 		
@@ -1872,7 +1879,7 @@
 		 
 		 
 		  $("svg").on(TouchMouseEvent.MOVE, function(e){
-			if(startdraglineal){
+			if(startdragruler){
 			  moveElement(e, false);
 			 }
 			 if(startdragprozentband){
@@ -1882,6 +1889,17 @@
 
 });
 
+	
+	function hideRulerArea () {
+		document.getElementById("Below-Ruler-Hidden").setAttribute("visibility", "hidden");
+	}
+	
+	
+	
+	
+	
+	
+
     /* Berechnet die aktuelle Distanz zwischen zwei tatsächlich gezeichneten Linien auf dem Prozentband */
     function distanceLineProzent (){
         var intervallP = lineList.item(percentLineNumber).getAttribute("x1")-lineList.item(0).getAttribute("x1");
@@ -1890,7 +1908,7 @@
     }
 
     /* Berechnet die aktuelle Distanz zwischen zwei tatsächlich gezeichneten Linien auf dem Lineal */
-    function distanceLineLineal (){
+    function distanceLineRuler (){
         var intervallL = lineList.item(percentLineNumber+rulerLineNumber+1).getAttribute("x1")-lineList.item(percentLineNumber+1).getAttribute("x1");
         var distanceL = intervallL/rulerLineNumber;
         return distanceL;
@@ -1904,7 +1922,7 @@
     }
 
     /* Berechnet die aktuelle Distanz zwischen zwei Beschriftungen auf dem Lineal */
-    function distanceTextLineal (){
+    function distanceTextRuler (){
         var intervallL = lineList.item(percentLineNumber+rulerLineNumber+1).getAttribute("x1")-lineList.item(percentLineNumber+1).getAttribute("x1");
         var distanceL = intervallL/rulerRange;
         return distanceL;
@@ -1922,22 +1940,22 @@
 		}	
 		var newLineDistanceProzent = scalefactor * distanceLineProzent();
         var newTextDistanceProzent = scalefactor * distanceTextProzent();
-		var newLineDistanceLineal = scalefactor * distanceLineLineal();
-        var newTextDistanceLineal = scalefactor * distanceTextLineal();         
+		var newLineDistanceRuler = scalefactor * distanceLineRuler();
+        var newTextDistanceRuler = scalefactor * distanceTextRuler();         
 		
 		
-		if (newLineDistanceProzent >= 4 && newLineDistanceProzent <= (parseInt(document.getElementById("Prozentband").getAttribute("width")) - 30) && newLineDistanceLineal >= 4 && newLineDistanceLineal <= (parseInt(document.getElementById("Lineal").getAttribute("width")) - 30) && newIntervall>0) {
+		if (newLineDistanceProzent >= 4 && newLineDistanceProzent <= (parseInt(document.getElementById("Prozentband").getAttribute("width")) - 30) && newLineDistanceRuler >= 4 && newLineDistanceRuler <= (parseInt(document.getElementById("Ruler").getAttribute("width")) - 30) && newIntervall>0) {
 			if (coupled == true) {
 					moveLines(newLineDistanceProzent, percentLineList);
 					moveText(newTextDistanceProzent, percentTextList);
-					moveLines(newLineDistanceLineal, rulerLineList);
-					moveText(newTextDistanceLineal, rulerTextList);
+					moveLines(newLineDistanceRuler, rulerLineList);
+					moveText(newTextDistanceRuler, rulerTextList);
 			} else if (prozentband == true) {
 					moveLines(newLineDistanceProzent, percentLineList);
 					moveText(newTextDistanceProzent, percentTextList);
 			} else {
-					moveLines(newLineDistanceLineal, rulerLineList);
-					moveText(newTextDistanceLineal, rulerTextList);
+					moveLines(newLineDistanceRuler, rulerLineList);
+					moveText(newTextDistanceRuler, rulerTextList);
 			}
 		}
 		//console.log("scalefactor=" + scalefactor);
