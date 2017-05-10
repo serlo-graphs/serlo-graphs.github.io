@@ -515,7 +515,7 @@
 					moveLines(newLineDistanceProzent, percentLineList);
 					moveText(newTextDistanceProzent, percentTextList);
 					moveAuxLines(scalefactor, percentAuxLineList);
-			} else if (coupled == false && newLineDistanceRuler >= 4 && newLineDistanceRuler <= (parseInt(document.getElementById("Ruler").getAttribute("width")) - 30)) {
+			} else if (coupled == false && prozentband == false && newLineDistanceRuler >= 4 && newLineDistanceRuler <= (parseInt(document.getElementById("Ruler").getAttribute("width")) - 30)) {
 					moveLines(newLineDistanceRuler, rulerLineList);
 					moveText(newTextDistanceRuler, rulerTextList);
 					moveAuxLines(scalefactor, rulerAuxLineList);
