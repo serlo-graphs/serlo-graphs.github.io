@@ -2,18 +2,27 @@
 <head>
     <title> Prozentband </title
     <meta http-equiv="Content-Type" content="text/html;charset=utf8" />
-        <script type="text/javascript" src="jquery.js"></script>
-        <script type="text/javascript" src="touchmouse.js"></script>
-        
-        <style type="text/css">
-			svg * {
-				user-select: none;
-				-o-user-select: none;
-				-ms-user-select: none;
-				-moz-user-select: none;
-				-webkit-user-select: none;
-			}
-</style>
+    
+    <!-- Seite als App laden - ohne Browsersteuerung-->
+    <!-- android -->
+	<meta name="mobile-web-app-capable" content="yes">
+	<!-- iOS -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="translucent-black">
+	<meta name="apple-mobile-web-app-title" content="My App">
+    
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="touchmouse.js"></script>
+	
+	<style type="text/css">
+		svg * {
+			user-select: none;
+			-o-user-select: none;
+			-ms-user-select: none;
+			-moz-user-select: none;
+			-webkit-user-select: none;
+		}
+	</style>
 </head>
 <body>
 
@@ -1823,10 +1832,6 @@
             text.setAttribute("visibility", "hidden");
         }
     }
-    
-		document.ontouchmove = function(event){
-			event.preventDefault();
-		}
     
     
 		$(function(){
