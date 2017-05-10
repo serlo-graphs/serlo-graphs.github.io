@@ -3332,14 +3332,17 @@
 					moveText(newTextDistanceProzent, percentTextList);
 					moveLines(newLineDistanceRuler, rulerLineList);
 					moveText(newTextDistanceRuler, rulerTextList);
+					console.log("case 1");
 			} else if (coupled == false && prozentband == true && newLineDistanceProzent >= 4 && newLineDistanceProzent <= (parseInt(document.getElementById("Prozentband").getAttribute("width")) - 30)) {
 					moveLines(newLineDistanceProzent, percentLineList);
 					moveText(newTextDistanceProzent, percentTextList);
 					moveAuxLines(scalefactor, percentAuxLineList);
-			} else if (coupled == false && newLineDistanceRuler >= 4 && newLineDistanceRuler <= (parseInt(document.getElementById("Ruler").getAttribute("width")) - 30)) {
+					console.log("case 2");
+			} else if (coupled == false && prozentband == false && newLineDistanceRuler >= 4 && newLineDistanceRuler <= (parseInt(document.getElementById("Ruler").getAttribute("width")) - 30)) {
 					moveLines(newLineDistanceRuler, rulerLineList);
 					moveText(newTextDistanceRuler, rulerTextList);
 					moveAuxLines(scalefactor, rulerAuxLineList);
+					console.log("case 3");
 			}
 		}
 		//console.log("scalefactor=" + scalefactor);
