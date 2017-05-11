@@ -2972,7 +2972,7 @@
 						/>
 						
 			<polygon 	points="
-							0,232.5							40,232.5							20,275						" 
+							10,232.5							30,232.5							20,275						" 
 						fill="aquamarine"
 						/>
 			
@@ -3016,7 +3016,7 @@
 						/>
 						
 			<polygon 	points="
-							0,232.5							40,232.5							20,275						" 
+							10,232.5							30,232.5							20,275						" 
 						fill="aquamarine"
 						/>
 			
@@ -3060,7 +3060,7 @@
 						/>
 						
 			<polygon 	points="
-							0,232.5							40,232.5							20,275						" 
+							10,232.5							30,232.5							20,275						" 
 						fill="aquamarine"
 						/>
 			
@@ -3359,6 +3359,7 @@
 				var newPosition = lineX + (correctedOldPosition-lineX)*scalefactor;
 				// correctedNewPosition ist die neue Position des linken Rands des Zeigerbereichs
 				var correctedNewPosition = +newPosition - +pointerHiddenHalfWidth;
+				// Übrigens: Die zusätzlichen Pluszeichen vor den Variablen konvertieren sie zu Integern, sodass die Adition entsprechend ausgeführt wird
 				auxline.setAttribute("x", correctedNewPosition);
 			}
 		}
