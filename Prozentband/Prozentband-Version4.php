@@ -530,10 +530,15 @@
 		for (var i=0; i<auxLineList.length; i++) {
 			var auxline = auxLineList[i];
 			if (auxline.getAttribute("visibility")=="visible") {
+				// oldPosition ist die Position des linken Rands des Zeigerbereichs
 				var oldPosition = auxline.getAttribute("x");
-				console.log(oldPosition);
-				var newPosition = lineX + (oldPosition-lineX)*scalefactor;
-				auxline.setAttribute("x", newPosition);
+				// correctedOldPosition ist die Position der Mitte des Zeigerbereichs (=Position der Hilfslinie)
+				var correctedOldPosition = +oldPosition + +pointerHiddenHalfWidth;
+				// newPosition ist die neue Position der Hilfslinie
+				var newPosition = lineX + (correctedOldPosition-lineX)*scalefactor;
+				// correctedNewPosition ist die neue Position des linken Rands des Zeigerbereichs
+				var correctedNewPosition = +newPosition - +pointerHiddenHalfWidth;
+				auxline.setAttribute("x", correctedNewPosition);
 			}
 		}
 	}
