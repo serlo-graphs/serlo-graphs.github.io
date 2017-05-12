@@ -410,27 +410,6 @@
     var numberOfCoupledAuxLines = <?php echo($numberOfCoupledAuxLines); ?>; 
     var pointerHiddenHalfWidth = <?php echo($pointerHiddenHalfWidth); ?>;
     
-
-	/* Arrays, die Status (versteckt oder sichtbar) und Position (x-Position entlang der Skalen) der Hilfslinen speichern.
-	Zugriff auf den Sichtbarkeitsstatus der k-ten Hilfslinie mit blaAuxLinesStatus[k][0] (mögliche Werte: "hidden" oder "visible")
-	Zugriff auf die x-Position der k-ten Hilfslinie mit blaAuxLinesStatus[k][1]
-	
-	// Hilfslinien für das Lineal
-	var rulerAuxLinesStatus = [];
-	for (var i=0; i<numberOfAuxLines; i++) {
-		rulerAuxLinesStatus[i] = ["hidden", "0"];
-	}
-	// Hilfslinien für das Prozentband
-	var percentAuxLinesStatus = [];
-	for (var i=0; i<numberOfAuxLines; i++) {
-		percentAuxLinesStatus[i] = ["hidden", "0"];
-	}
-	// Gekoppelte Hilfslinien
-	var coupledAuxLinesStatus = [];
-	for (var i=0; i<numberOfCoupledAuxLines; i++) {
-		coupledAuxLinesStatus[i] = ["hidden", "0"];
-	}
-	*/
     var lineList = document.getElementsByTagName("line");   
     var textList = document.getElementsByTagName("text");
     
@@ -504,18 +483,22 @@
 	});
 
 	
-	
+	/* Diese Funktion fügt eine Hilfslinie hinzu (macht eine der unsichtbaren Hilfslinien sichtbar und setzt sie auf Mausposition) */
 	function addAuxLine(evt, auxLineList) {
+		/* Gehe durch alle Hilfslinien, bis eine versteckte gefunden wird, setze diese auf die Mausposition und mache sie sichtbar */
 		for (var i=0; i<auxLineList.length; i++) {
 			var auxline = auxLineList[i];
 			if (auxline.getAttribute("visibility")=="hidden") {
 				auxline.setAttribute("x", evt.pageX-pointerHiddenHalfWidth);
 				auxline.setAttribute("visibility", "visible");
+				/* Falls eine beidseitige Hilfslinie hinzugefügt wird, sollen die Skalen gekoppelt skalieren */
 				if (auxLineList == coupledAuxLineList){
 					coupled = true;
 				}
+				/* Ist eine Hilfslinie erschaffen, suche nicht weiter */
 				break;
-			} else if (i==auxLineList.length-1 ) {
+			/* Wurde keine versteckte Hilfslinie gefunden, dann sind alle Hilfslinien sichtbar und somit die maximale Anzahl erreicht currently */
+			} else if ( i==auxLineList.length-1 ) {
 				console.log("Maximum number of AuxLines reached!") // Das muss noch für den Nutzer sichtbar gemacht werden!
 			}
 		}
@@ -537,20 +520,6 @@
         var distanceL = intervallL/rulerLineNumber;
         return distanceL;
     }
-    
-    /* Berechnet die aktuelle Distanz zwischen zwei Beschriftungen auf dem Prozentband */
-    function distanceTextProzent (){
-        var intervallP = lineList.item(percentLineNumber).getAttribute("x1")-lineList.item(0).getAttribute("x1");
-        var distanceP = intervallP/percentRange;
-        return distanceP;
-    }
-
-    /* Berechnet die aktuelle Distanz zwischen zwei Beschriftungen auf dem Lineal */
-    function distanceTextRuler (){
-        var intervallL = lineList.item(percentLineNumber+rulerLineNumber+1).getAttribute("x1")-lineList.item(percentLineNumber+1).getAttribute("x1");
-        var distanceL = intervallL/rulerRange;
-        return distanceL;
-    }
 
     function moveElement(evt, prozentband){
 
@@ -563,10 +532,7 @@
 			scalefactor = 0.8;
 		}	
 		var newLineDistanceProzent = scalefactor * distanceLineProzent();
-        var newTextDistanceProzent = scalefactor * distanceTextProzent();
-		var newLineDistanceRuler = scalefactor * distanceLineRuler();
-        var newTextDistanceRuler = scalefactor * distanceTextRuler();         
-		
+		var newLineDistanceRuler = scalefactor * distanceLineRuler();		
 		
 		if (newIntervall>0) {
 			if (coupled == true && newLineDistanceProzent >= 4 && newLineDistanceProzent <= (parseInt(document.getElementById("Prozentband").getAttribute("width")) - 30) && newLineDistanceRuler >= 4 && newLineDistanceRuler <= (parseInt(document.getElementById("Ruler").getAttribute("width")) - 30) ) {
