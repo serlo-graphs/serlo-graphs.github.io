@@ -45,21 +45,22 @@
     $numberOfAuxLines=3; // gibt maximale Anzahl einseitiger Hilfslinien an
     $numberOfCoupledAuxLines=3; // gibt maximale Anzahl beidseitiger Hilfslinien an
     
-    $pointerRadius=20;
+    $pointerRadius=10;
     $pointerHiddenHalfWidth=20;
-    $pointerArrowHalfWidth=20;
-    $pointerRulerArrowColor="aquamarine";
-    $pointerPercentArrowColor="aquamarine";
+    $pointerArrowHalfWidth=10;
+    $pointerArrowHeight=15;
+    $pointerRulerArrowColor="green";
+    $pointerPercentArrowColor="blue";
     $pointerCoupledArrowColor="red";
-    
+    $auxLineColor="#AAAAAA";
+    $pointerStrokeColor="black";
+    $pointerStrokeWidth="2";
     
     $rulerRange=400; // gibt an wieviele Linien pro skala verwendet werden
     $percentRange=400; // gibt an wieviele Linien pro skala verwendet werden
     
-    $rulerHalfs=true;
-    $rulerTenths=true;
-    $percentHalfs=false;
-    $percentTenths=false;
+    $rulerDensityCondition = 1;
+    $percentDensityCondition = 50;
     
     $coupled=true;
     
@@ -80,22 +81,20 @@
     
     
     function drawLines ($Ystart, $Ruler){
-        global $PBx, $percentRange, $percentHalfs, $percentTenths, $rulerRange, $rulerHalfs, $rulerTenths, $PBline_y1, $lineDistance, $lineX, $small, $medium, $large, $rulerLineNumber, $percentLineNumber;
+        global $PBx, $percentRange, $rulerRange, $percentDensityCondition, $rulerDensityCondition, $PBline_y1, $lineDistance, $lineX, $small, $medium, $large, $rulerLineNumber, $percentLineNumber;
 		$skippedLines=0;
         $percent = "%";
         $textGap = -($large+5);
 		$IDstart = 0;
 		$IDend = $percentRange;
 		$lineRange = $percentRange;
-		$Halfs = $percentHalfs;
-		$Tenths = $percentTenths;
+		$densityCondition = $percentDensityCondition;
 		$Class = "Percent";
         if($Ruler == true){
 			$IDstart = $percentRange+1;
 			$IDend = $rulerRange + $percentRange;
 			$lineRange = $rulerRange;
-			$Halfs = $rulerHalfs;
-			$Tenths = $rulerTenths;
+			$densityCondition = $rulerDensityCondition;
             $small = 0-$small;
             $medium = 0-$medium; 
             $large = 0-$large;
@@ -104,46 +103,48 @@
             $Class = "Ruler";
         }
         for($i=0; $i <= $lineRange; $i++){
-            if($i==0 || $i%10 == 0){
-?>
-            <line   id="<?php echo($IDstart); ?>" class="<?php echo($Class); ?>Line"
-                    x1="<?php echo($i*$lineDistance+$lineX); ?>" y1="<?php echo($Ystart); ?>"
-                    x2="<?php echo($i*$lineDistance+$lineX); ?>" y2="<?php echo($Ystart-$large); ?>"
-                    style="stroke:black; stroke-width:2;"
-                    visibility="visible" />
+			if ($i%$densityCondition==0) {
+				if($i==0 || $i%10 == 0){
+	?>
+				<line   id="<?php echo($IDstart); ?>" class="<?php echo($Class); ?>Line"
+						x1="<?php echo($i*$lineDistance+$lineX); ?>" y1="<?php echo($Ystart); ?>"
+						x2="<?php echo($i*$lineDistance+$lineX); ?>" y2="<?php echo($Ystart-$large); ?>"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 
-            <text   id="<?php echo($IDstart); ?>" class="<?php echo($Class); ?>Text"
-                    x="<?php echo($i*$lineDistance+$lineX-4); ?>" y="<?php echo($Ystart+$textGap); ?>"
-                    style="font-size: 12.8px;"                    visibility="visible">
-                    <?php echo($i.$percent); ?> </text>
+				<text   id="<?php echo($IDstart); ?>" class="<?php echo($Class); ?>Text"
+						x="<?php echo($i*$lineDistance+$lineX-4); ?>" y="<?php echo($Ystart+$textGap); ?>"
+						style="font-size: 12.8px;"                    visibility="visible">
+						<?php echo($i.$percent); ?> </text>
 
-            
-<?php
-            }
-            else if ($i%5==0 && $Halfs==true){ 
-?>             
-            <line   id="<?php echo($IDstart); ?>" class="<?php echo($Class); ?>Line"
-                    x1="<?php echo($i*$lineDistance+$lineX); ?>" y1="<?php echo($Ystart); ?>"
-                    x2="<?php echo($i*$lineDistance+$lineX); ?>" y2="<?php echo($Ystart-$medium); ?>"
-                    style="stroke:black; stroke-width:2;"
-                    visibility="visible" />
+				
+	<?php
+				}
+				else if ($i%5==0){ 
+	?>             
+				<line   id="<?php echo($IDstart); ?>" class="<?php echo($Class); ?>Line"
+						x1="<?php echo($i*$lineDistance+$lineX); ?>" y1="<?php echo($Ystart); ?>"
+						x2="<?php echo($i*$lineDistance+$lineX); ?>" y2="<?php echo($Ystart-$medium); ?>"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 
-<?php
-            }
-            else if ($Tenths == true){
-?>
-            <line   id="<?php echo($IDstart); ?>" class="<?php echo($Class); ?>Line"
-                    x1="<?php echo($i*$lineDistance+$lineX); ?>" y1="<?php echo($Ystart); ?>"
-                    x2="<?php echo($i*$lineDistance+$lineX); ?>" y2="<?php echo($Ystart-$small); ?>"
-                    style="stroke:black; stroke-width:2;"
-                    visibility="visible" />
-<?php                   
-            }
-            else{
-				$skippedLines++;
+	<?php
+				}
+				else {
+	?>
+				<line   id="<?php echo($IDstart); ?>" class="<?php echo($Class); ?>Line"
+						x1="<?php echo($i*$lineDistance+$lineX); ?>" y1="<?php echo($Ystart); ?>"
+						x2="<?php echo($i*$lineDistance+$lineX); ?>" y2="<?php echo($Ystart-$small); ?>"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+	<?php                   
+				}
+			} else {
+					$skippedLines++;
 			}
-            $IDstart++;
-        }
+			$IDstart++;
+			
+		}
         $actualLineNumber=$lineRange - $skippedLines;
         if($Ruler == true){
 			$rulerLineNumber = $actualLineNumber; // Anzahl der Striche auf dem Lineal
@@ -155,17 +156,20 @@
 
 
     function drawAuxLines(){
-        global	$numberOfAuxLines, $numberOfCoupledAuxLines, $PBx, $PBy,
+        global	$numberOfAuxLines, $numberOfCoupledAuxLines, $auxLineColor, $PBx, $PBy,
 				$height, $auxHiddenHeight, $distanceScale, $distanceAuxLines, 
-				$pointerArrowHalfWidth, $pointerHiddenHalfWidth, $pointerRadius, 
-				$pointerPercentArrowColor, $pointerRulerArrowColor, $pointerCoupledArrowColor;
+				$pointerArrowHalfWidth, $pointerArrowHeight, $pointerHiddenHalfWidth, $pointerRadius, 
+				$pointerPercentArrowColor, $pointerRulerArrowColor, $pointerCoupledArrowColor,
+				$pointerStrokeColor, $pointerStrokeWidth;
         
-		$visibility = "hidden";
+		$visibility = "hidden"; // Debug: Auf "visible" setzen, um alle Hilfslinien anzuzeigen
+		
         for ($i=1; $i<=$numberOfAuxLines; $i++){
 ?>
+		<!-- Hilfslinien für das Prozentband -->
 
          <svg  id="percentAuxLineGroup_<?php echo($i); ?>" class="percentAuxLine"
-			x="<?php echo($PBx+5*$i); ?>" y="<?php echo($PBy-$auxHiddenHeight); ?>"
+			x="<?php echo($PBx); ?>" y="<?php echo($PBy-$auxHiddenHeight); ?>"
             visibility="<?php echo($visibility); ?>" >
 
 			<rect		id = "percentAuxHiddenArea_<?php echo($i); ?>"
@@ -174,39 +178,74 @@
 						height = "<?php echo($auxHiddenHeight); ?>"
 						visibility = "hidden"
 						/>
+						
+			<rect		id = "percentAuxHiddenAreaCoupling_<?php echo($i); ?>"
+						x = "0" y="<?php echo($auxHiddenHeight+$height); ?>"
+						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
+						height = "<?php echo($distanceScale-$height); ?>"
+						visibility = "hidden"
+						/>						
 
 			<line 		id = "percentAuxLine_<?php echo($i); ?>"
-			            stroke="black" stroke-width="2" stroke-dasharray="5, 5"
+			            stroke="<?php echo($auxLineColor); ?>" stroke-width="2" stroke-dasharray="5, 5"
 						x1="<?php echo($pointerHiddenHalfWidth); ?>" y1="0" 
-						x2="<?php echo($pointerHiddenHalfWidth); ?>" y2="<?php echo($auxHiddenHeight+$height+ ($distanceScale-$height)/2); ?>"
+						x2="<?php echo($pointerHiddenHalfWidth); ?>" y2="<?php echo($auxHiddenHeight+$distanceScale-$distanceAuxLines-$pointerArrowHeight); ?>"
 						/>
 						
 			<circle		id = "percentAuxCircle_<?php echo($i); ?>"
 						cx = "<?php echo($pointerHiddenHalfWidth); ?>" cy = "<?php echo($auxHiddenHeight+$height+ ($distanceScale-$height)/2); ?>" r = "<?php echo($pointerRadius); ?>"
-						fill = "<?php echo($pointerPercentArrowColor); ?>"
+						fill = "<?php echo($pointerPercentArrowColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
 						/>
 						
-			<polygon 	points="
-							<?php echo($pointerHiddenHalfWidth-$pointerRadius); ?>,<?php echo($auxHiddenHeight+$height+ ($distanceScale-$height)/2); ?>
-							<?php echo($pointerHiddenHalfWidth+$pointerRadius); ?>,<?php echo($auxHiddenHeight+$height+ ($distanceScale-$height)/2); ?>
+			<polygon 	id = "percentAuxTriangle_<?php echo($i); ?>"
+						points="
+							<?php echo($pointerHiddenHalfWidth-$pointerArrowHalfWidth); ?>,<?php echo($auxHiddenHeight+$distanceScale-$distanceAuxLines-$pointerArrowHeight); ?>
+							<?php echo($pointerHiddenHalfWidth+$pointerArrowHalfWidth); ?>,<?php echo($auxHiddenHeight+$distanceScale-$distanceAuxLines-$pointerArrowHeight); ?>
 							<?php echo($pointerHiddenHalfWidth); ?>,<?php echo($auxHiddenHeight+$distanceScale-$distanceAuxLines); ?>
 						" 
-						fill="<?php echo($pointerPercentArrowColor); ?>"
+						fill="<?php echo($pointerPercentArrowColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
 						/>
 			
         </svg>  
 
+		<!-- Hilfslinien für das Lineal -->
          <svg  id="rulerAuxLineGroup_<?php echo($i); ?>" class="rulerAuxLine"
-			x="<?php echo($PBx+10*$i); ?>" y="<?php echo($PBy+$height+$distanceAuxLines); ?>"
+			x="<?php echo($PBx); ?>" y="<?php echo($PBy+$height); ?>"
             visibility="<?php echo($visibility); ?>" >
 
-
+			<rect		id = "rulerAuxHiddenArea_<?php echo($i); ?>"
+						x = "0" y="<?php echo($distanceScale); ?>"
+						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
+						height = "<?php echo($auxHiddenHeight); ?>"
+						visibility = "hidden"
+						/>
+						
+			<rect		id = "rulerAuxHiddenAreaCoupling_<?php echo($i); ?>"
+						x = "0" y="0"
+						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
+						height = "<?php echo($distanceScale-$height); ?>"
+						visibility = "hidden"
+						/>	
 
 			<line 		id = "rulerAuxLine_<?php echo($i); ?>"
-			            stroke="black" stroke-width="2" stroke-dasharray="5, 5"
-						x1="3" y1="0" 
-						x2="3" y2="<?php echo($distanceScale+$auxHiddenHeight-$distanceAuxLines); ?>"
+			            stroke="<?php echo($auxLineColor); ?>" stroke-width="2" stroke-dasharray="5, 5"
+						x1="<?php echo($pointerHiddenHalfWidth); ?>" y1="<?php echo($distanceAuxLines+$pointerArrowHeight); ?>" 
+						x2="<?php echo($pointerHiddenHalfWidth); ?>" y2="<?php echo($distanceScale+$auxHiddenHeight); ?>"
 						/>
+						
+			<circle		id = "rulerAuxCircle_<?php echo($i); ?>"
+						cx = "<?php echo($pointerHiddenHalfWidth); ?>" cy = "<?php echo(($distanceScale-$height)/2); ?>" r = "<?php echo($pointerRadius); ?>"
+						fill = "<?php echo($pointerRulerArrowColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
+						/>
+						
+			<polygon 	id = "rulerAuxTriangle_<?php echo($i); ?>"
+						points="
+							<?php echo($pointerHiddenHalfWidth-$pointerArrowHalfWidth); ?>,<?php echo($distanceAuxLines+$pointerArrowHeight); ?>
+							<?php echo($pointerHiddenHalfWidth+$pointerArrowHalfWidth); ?>,<?php echo($distanceAuxLines+$pointerArrowHeight); ?>
+							<?php echo($pointerHiddenHalfWidth); ?>,<?php echo($distanceAuxLines); ?>
+						" 
+						fill="<?php echo($pointerRulerArrowColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
+						/>						
         </svg>
 
  
@@ -214,17 +253,41 @@
         }
         for ($i=1; $i<=$numberOfCoupledAuxLines; $i++){
  ?>
+		<!-- Hilfslinien für beide Skalen (gekoppelt) -->
          <svg  id="coupledAuxLineGroup_<?php echo($i); ?>" class="coupledAuxLine"
-			x="<?php echo($PBx+7*$i); ?>" y="<?php echo($PBy-$auxHiddenHeight); ?>"
+			x="<?php echo($PBx); ?>" y="<?php echo($PBy-$auxHiddenHeight); ?>"
 			visibility="<?php echo($visibility); ?>" >
 
 
 
 			<line 		id = "coupledAuxLine_<?php echo($i); ?>"
-			            stroke="black" stroke-width="2" stroke-dasharray="5, 5"
-						x1="3" y1="0" 
-						x2="3" y2="<?php echo($height+$distanceScale+$auxHiddenHeight+$auxHiddenHeight); ?>"
+			            stroke="<?php echo($auxLineColor); ?>" stroke-width="2" stroke-dasharray="5, 5"
+						x1="<?php echo($pointerHiddenHalfWidth); ?>" y1="0" 
+						x2="<?php echo($pointerHiddenHalfWidth); ?>" y2="<?php echo($height+$distanceScale+$auxHiddenHeight+$auxHiddenHeight); ?>"
 						/>
+						
+			<circle		id = "coupledAuxCircle_<?php echo($i); ?>"
+						cx = "<?php echo($pointerHiddenHalfWidth); ?>" cy = "<?php echo($auxHiddenHeight+$height+ ($distanceScale-$height)/2); ?>" r = "<?php echo($pointerRadius); ?>"
+						fill = "<?php echo($pointerCoupledArrowColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
+						/>
+						
+			<polygon 	id = "coupledAuxQuadrangle_<?php echo($i); ?>"
+						points="
+							<?php echo($pointerHiddenHalfWidth-$pointerArrowHalfWidth); ?>,<?php echo($auxHiddenHeight+$height+	$distanceAuxLines+$pointerArrowHeight); ?>
+							<?php echo($pointerHiddenHalfWidth); ?>,<?php echo($auxHiddenHeight+$distanceAuxLines+$height); ?>
+							<?php echo($pointerHiddenHalfWidth+$pointerArrowHalfWidth); ?>,<?php echo($auxHiddenHeight+$height+ $distanceAuxLines+$pointerArrowHeight); ?>
+						" 
+						fill="<?php echo($pointerCoupledArrowColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
+						/>	
+						
+			<polygon 	id = "coupledAuxQuadrangle_<?php echo($i); ?>"
+						points="
+							<?php echo($pointerHiddenHalfWidth-$pointerArrowHalfWidth); ?>,<?php echo($auxHiddenHeight+$distanceScale-$distanceAuxLines-$pointerArrowHeight); ?>
+							<?php echo($pointerHiddenHalfWidth+$pointerArrowHalfWidth); ?>,<?php echo($auxHiddenHeight+$distanceScale-$distanceAuxLines-$pointerArrowHeight); ?>
+							<?php echo($pointerHiddenHalfWidth); ?>,<?php echo($auxHiddenHeight+$distanceScale-$distanceAuxLines); ?>						
+						" 
+						fill="<?php echo($pointerCoupledArrowColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
+						/>													
         </svg>
  <?php
 		}
@@ -508,16 +571,19 @@
 		if (newIntervall>0) {
 			if (coupled == true && newLineDistanceProzent >= 4 && newLineDistanceProzent <= (parseInt(document.getElementById("Prozentband").getAttribute("width")) - 30) && newLineDistanceRuler >= 4 && newLineDistanceRuler <= (parseInt(document.getElementById("Ruler").getAttribute("width")) - 30) ) {
 					moveLines(newLineDistanceProzent, percentLineList);
-					moveText(newTextDistanceProzent, percentTextList);
+					moveText(scalefactor, percentTextList);
 					moveLines(newLineDistanceRuler, rulerLineList);
-					moveText(newTextDistanceRuler, rulerTextList);
+					moveText(scalefactor, rulerTextList);
+					moveAuxLines(scalefactor, percentAuxLineList);
+					moveAuxLines(scalefactor, rulerAuxLineList);
+					moveAuxLines(scalefactor, coupledAuxLineList);
 			} else if (coupled == false && prozentband == true && newLineDistanceProzent >= 4 && newLineDistanceProzent <= (parseInt(document.getElementById("Prozentband").getAttribute("width")) - 30)) {
 					moveLines(newLineDistanceProzent, percentLineList);
-					moveText(newTextDistanceProzent, percentTextList);
+					moveText(scalefactor, percentTextList);
 					moveAuxLines(scalefactor, percentAuxLineList);
 			} else if (coupled == false && prozentband == false && newLineDistanceRuler >= 4 && newLineDistanceRuler <= (parseInt(document.getElementById("Ruler").getAttribute("width")) - 30)) {
 					moveLines(newLineDistanceRuler, rulerLineList);
-					moveText(newTextDistanceRuler, rulerTextList);
+					moveText(scalefactor, rulerTextList);
 					moveAuxLines(scalefactor, rulerAuxLineList);
 			}
 		}
@@ -538,6 +604,7 @@
 				var newPosition = lineX + (correctedOldPosition-lineX)*scalefactor;
 				// correctedNewPosition ist die neue Position des linken Rands des Zeigerbereichs
 				var correctedNewPosition = +newPosition - +pointerHiddenHalfWidth;
+				// Übrigens: Die zusätzlichen Pluszeichen vor den Variablen konvertieren sie zu Integern, sodass die Adition entsprechend ausgeführt wird
 				auxline.setAttribute("x", correctedNewPosition);
 			}
 		}
@@ -571,28 +638,28 @@
         }
     }
 
-    function moveText(newTextDistance, arrayText){
-
-    // jeder 10. Strich hat einen Text
-        var l = 0;
+    function moveText(scalefactor, arrayText){
+		
+		// Berechne Abstand zwischen benachbarten Textlabels
+		var newTextDistance = ( arrayText.item(arrayText.length-1).getAttribute("x")-arrayText.item(0).getAttribute("x") )/arrayText.length;
 
         for (var i=0; i<arrayText.length; i++){
             var text = arrayText.item(i);
-            var pos = l*newTextDistance+lineX-1;
-            text.setAttribute("x", pos);
-            l+=10;
+            var oldPosition = text.getAttribute("x");
+			var newPosition = lineX + (oldPosition-lineX)*scalefactor;
+            text.setAttribute("x", newPosition);
         
             // Setzt Text sichtbar/nicht sichtbar, abhängig davon, ob sie noch auf dem Prozentband/Lineal liegen oder nicht
-            if(pos >= (<?php echo($PBx); ?>+parseInt(document.getElementById("Prozentband").getAttribute("width")))-20){
+            if(newPosition >= (<?php echo($PBx); ?>+parseInt(document.getElementById("Prozentband").getAttribute("width")))-20){
                 text.setAttribute("visibility", "hidden");
-                }
-                else {
-                    text.setAttribute("visibility", "visible");
-                }
+			} else {
+                text.setAttribute("visibility", "visible");
+            }
 
             // stehen die Texte zu dicht aneinander wird jeder 2. nicht sichtbar
-            if(newTextDistance < 4){
-                if ((l/10)%2 == 0){
+
+            if(newTextDistance < 30){
+                if (i%2 != 0){
                     text.setAttribute("visibility", "hidden");
                 }
             }
