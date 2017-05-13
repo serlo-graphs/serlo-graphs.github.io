@@ -171,20 +171,7 @@
          <svg  id="percentAuxLineGroup_<?php echo($i); ?>" class="percentAuxLine"
 			x="<?php echo($PBx); ?>" y="<?php echo($PBy-$auxHiddenHeight); ?>"
             visibility="<?php echo($visibility); ?>" >
-
-			<rect		id = "percentAuxHiddenArea_<?php echo($i); ?>"
-						x = "0" y="0"
-						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
-						height = "<?php echo($auxHiddenHeight); ?>"
-						fill = "white" onclick="removeAuxLine(this)"
-						/>
-						
-			<rect		id = "percentAuxHiddenAreaCoupling_<?php echo($i); ?>"
-						x = "0" y="<?php echo($auxHiddenHeight+$height); ?>"
-						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
-						height = "<?php echo($distanceScale-$height-1); ?>"
-						fill = "white" onclick="coupleAuxLine(this)"
-						/>						
+					
 
 			<line 		id = "percentAuxLine_<?php echo($i); ?>"
 			            stroke="<?php echo($auxLineColor); ?>" stroke-width="2" stroke-dasharray="5, 5"
@@ -195,7 +182,6 @@
 			<circle		id = "percentAuxCircle_<?php echo($i); ?>"
 						cx = "<?php echo($pointerHiddenHalfWidth); ?>" cy = "<?php echo($auxHiddenHeight+$height+ ($distanceScale-$height)/2); ?>" r = "<?php echo($pointerRadius); ?>"
 						fill = "<?php echo($pointerPercentArrowColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
-						onclick="coupleAuxLine(this)"
 						/>
 						
 			<polygon 	id = "percentAuxTriangle_<?php echo($i); ?>"
@@ -205,29 +191,27 @@
 							<?php echo($pointerHiddenHalfWidth); ?>,<?php echo($auxHiddenHeight+$distanceScale-$distanceAuxLines); ?>
 						" 
 						fill="<?php echo($pointerPercentArrowColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
-						onclick="coupleAuxLine(this)"
 						/>
-			
+
+			<rect		id = "percentAuxHiddenArea_<?php echo($i); ?>"
+						x = "0" y="0"
+						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
+						height = "<?php echo($auxHiddenHeight); ?>"
+						fill = "white" fill-opacity="0.0" onclick="removeAuxLine(this)"
+						/>
+						
+			<rect		id = "percentAuxHiddenAreaCoupling_<?php echo($i); ?>"
+						x = "0" y="<?php echo($auxHiddenHeight+$height); ?>"
+						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
+						height = "<?php echo($distanceScale-$height-1); ?>"
+						fill = "white" fill-opacity="0.0" onclick="coupleAuxLine(this)"
+						/>				
         </svg>  
 
 		<!-- Hilfslinien für das Lineal -->
          <svg  id="rulerAuxLineGroup_<?php echo($i); ?>" class="rulerAuxLine"
 			x="<?php echo($PBx); ?>" y="<?php echo($PBy+$height); ?>"
             visibility="<?php echo($visibility); ?>" >
-
-			<rect		id = "rulerAuxHiddenArea_<?php echo($i); ?>"
-						x = "0" y="<?php echo($distanceScale+1); ?>"
-						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
-						height = "<?php echo($auxHiddenHeight-1); ?>"
-						fill="white" onclick="removeAuxLine(this)"
-						/>
-						
-			<rect		id = "rulerAuxHiddenAreaCoupling_<?php echo($i); ?>"
-						x = "0" y="0"
-						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
-						height = "<?php echo($distanceScale-$height-1); ?>"
-						fill="white" onclick="coupleAuxLine(this)"
-						/>	
 
 			<line 		id = "rulerAuxLine_<?php echo($i); ?>"
 			            stroke="<?php echo($auxLineColor); ?>" stroke-width="2" stroke-dasharray="5, 5"
@@ -238,7 +222,6 @@
 			<circle		id = "rulerAuxCircle_<?php echo($i); ?>"
 						cx = "<?php echo($pointerHiddenHalfWidth); ?>" cy = "<?php echo(($distanceScale-$height)/2); ?>" r = "<?php echo($pointerRadius); ?>"
 						fill = "<?php echo($pointerRulerArrowColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
-						onclick="coupleAuxLine(this)"
 						/>
 						
 			<polygon 	id = "rulerAuxTriangle_<?php echo($i); ?>"
@@ -248,35 +231,27 @@
 							<?php echo($pointerHiddenHalfWidth); ?>,<?php echo($distanceAuxLines); ?>
 						" 
 						fill="<?php echo($pointerRulerArrowColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
-						onclick="coupleAuxLine(this)"
-						/>						
+						/>		
+							
+			<rect		id = "rulerAuxHiddenArea_<?php echo($i); ?>"
+						x = "0" y="<?php echo($distanceScale+1); ?>"
+						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
+						height = "<?php echo($auxHiddenHeight-1); ?>"
+						fill="white" fill-opacity="0.0" onclick="removeAuxLine(this)"
+						/>
+						
+			<rect		id = "rulerAuxHiddenAreaCoupling_<?php echo($i); ?>"
+						x = "0" y="0"
+						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
+						height = "<?php echo($distanceScale-$height-1); ?>"
+						fill="white" fill-opacity="0.0" onclick="coupleAuxLine(this)"
+						/>				
         </svg>
 
 		<!-- Hilfslinien für beide Skalen (gekoppelt) -->
          <svg  id="coupledAuxLineGroup_<?php echo($i); ?>" class="coupledAuxLine"
 			x="<?php echo($PBx); ?>" y="<?php echo($PBy-$auxHiddenHeight); ?>"
 			visibility="<?php echo($visibility); ?>" >
-
-			<rect		id = "coupledAuxHiddenArea_<?php echo($i); ?>"
-						x = "0" y="0"
-						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
-						height = "<?php echo($auxHiddenHeight); ?>"
-						fill = "white" onclick="decoupleAuxLine(this, 'percent')"
-						/>
-						
-			<rect		id = "coupledAuxHiddenAreaCoupling_<?php echo($i); ?>"
-						x = "0" y="<?php echo($auxHiddenHeight+$height); ?>"
-						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
-						height = "<?php echo($distanceScale-$height-1); ?>"
-						fill = "white" onclick="removeAuxLine(this)"
-						/>		
-
-			<rect		id = "coupledAuxHiddenArea_<?php echo($i); ?>"
-						x = "0" y="<?php echo($auxHiddenHeight+$height+$distanceScale+1); ?>"
-						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
-						height = "<?php echo($auxHiddenHeight-1); ?>"
-						fill="white" onclick="decoupleAuxLine(this, 'ruler')"
-						/>
 
 			<line 		id = "coupledAuxLine_<?php echo($i); ?>"
 			            stroke="<?php echo($auxLineColor); ?>" stroke-width="2" stroke-dasharray="5, 5"
@@ -287,7 +262,6 @@
 			<circle		id = "coupledAuxCircle_<?php echo($i); ?>"
 						cx = "<?php echo($pointerHiddenHalfWidth); ?>" cy = "<?php echo($auxHiddenHeight+$height+ ($distanceScale-$height)/2); ?>" r = "<?php echo($pointerRadius); ?>"
 						fill = "<?php echo($pointerCoupledArrowColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
-						onclick="removeAuxLine(this)"
 						/>
 						
 			<polygon 	id = "coupledAuxQuadrangle_<?php echo($i); ?>"
@@ -297,7 +271,6 @@
 							<?php echo($pointerHiddenHalfWidth+$pointerArrowHalfWidth); ?>,<?php echo($auxHiddenHeight+$height+ $distanceAuxLines+$pointerArrowHeight); ?>
 						" 
 						fill="<?php echo($pointerCoupledArrowColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
-						onclick="removeAuxLine(this)"
 						/>	
 						
 			<polygon 	id = "coupledAuxQuadrangle_<?php echo($i); ?>"
@@ -307,8 +280,28 @@
 							<?php echo($pointerHiddenHalfWidth); ?>,<?php echo($auxHiddenHeight+$distanceScale-$distanceAuxLines); ?>						
 						" 
 						fill="<?php echo($pointerCoupledArrowColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
-						onclick="removeAuxLine(this)"
-						/>													
+						/>
+			<rect		id = "coupledAuxHiddenArea_<?php echo($i); ?>"
+						x = "0" y="0"
+						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
+						height = "<?php echo($auxHiddenHeight); ?>"
+						fill = "white" fill-opacity="0.0" onclick="decoupleAuxLine(this, 'percent')"
+						/>
+						
+			<rect		id = "coupledAuxHiddenAreaCoupling_<?php echo($i); ?>"
+						x = "0" y="<?php echo($auxHiddenHeight+$height); ?>"
+						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
+						height = "<?php echo($distanceScale-$height-1); ?>"
+						fill = "white" fill-opacity="0.0" onclick="removeAuxLine(this)"
+						/>		
+
+			<rect		id = "coupledAuxHiddenArea_<?php echo($i); ?>"
+						x = "0" y="<?php echo($auxHiddenHeight+$height+$distanceScale+1); ?>"
+						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
+						height = "<?php echo($auxHiddenHeight-1); ?>"
+						fill="white" fill-opacity="0.0" onclick="decoupleAuxLine(this, 'ruler')"
+						/>
+											
         </svg>
  <?php
 		}

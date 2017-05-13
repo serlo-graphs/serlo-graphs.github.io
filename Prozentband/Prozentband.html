@@ -2619,20 +2619,7 @@
          <svg  id="percentAuxLineGroup_1" class="percentAuxLine"
 			x="75" y="200"
             visibility="hidden" >
-
-			<rect		id = "percentAuxHiddenArea_1"
-						x = "0" y="0"
-						width = "40"
-						height = "90"
-						fill = "white" onclick="removeAuxLine(this)"
-						/>
-						
-			<rect		id = "percentAuxHiddenAreaCoupling_1"
-						x = "0" y="180"
-						width = "40"
-						height = "104"
-						fill = "white" onclick="coupleAuxLine(this)"
-						/>						
+					
 
 			<line 		id = "percentAuxLine_1"
 			            stroke="#AAAAAA" stroke-width="2" stroke-dasharray="5, 5"
@@ -2643,36 +2630,33 @@
 			<circle		id = "percentAuxCircle_1"
 						cx = "20" cy = "232.5" r = "10"
 						fill = "blue" stroke="black" stroke-width="2"
-						onclick="coupleAuxLine(this)"
 						/>
 						
 			<polygon 	id = "percentAuxTriangle_1"
 						points="
 							10,260							30,260							20,275						" 
 						fill="blue" stroke="black" stroke-width="2"
-						onclick="coupleAuxLine(this)"
 						/>
-			
+
+			<rect		id = "percentAuxHiddenArea_1"
+						x = "0" y="0"
+						width = "40"
+						height = "90"
+						fill = "white" fill-opacity="0.0" onclick="removeAuxLine(this)"
+						/>
+						
+			<rect		id = "percentAuxHiddenAreaCoupling_1"
+						x = "0" y="180"
+						width = "40"
+						height = "104"
+						fill = "white" fill-opacity="0.0" onclick="coupleAuxLine(this)"
+						/>				
         </svg>  
 
 		<!-- Hilfslinien für das Lineal -->
          <svg  id="rulerAuxLineGroup_1" class="rulerAuxLine"
 			x="75" y="380"
             visibility="hidden" >
-
-			<rect		id = "rulerAuxHiddenArea_1"
-						x = "0" y="196"
-						width = "40"
-						height = "89"
-						fill="white" onclick="removeAuxLine(this)"
-						/>
-						
-			<rect		id = "rulerAuxHiddenAreaCoupling_1"
-						x = "0" y="0"
-						width = "40"
-						height = "104"
-						fill="white" onclick="coupleAuxLine(this)"
-						/>	
 
 			<line 		id = "rulerAuxLine_1"
 			            stroke="#AAAAAA" stroke-width="2" stroke-dasharray="5, 5"
@@ -2683,42 +2667,33 @@
 			<circle		id = "rulerAuxCircle_1"
 						cx = "20" cy = "52.5" r = "10"
 						fill = "green" stroke="black" stroke-width="2"
-						onclick="coupleAuxLine(this)"
 						/>
 						
 			<polygon 	id = "rulerAuxTriangle_1"
 						points="
 							10,25							30,25							20,10						" 
 						fill="green" stroke="black" stroke-width="2"
-						onclick="coupleAuxLine(this)"
-						/>						
+						/>		
+							
+			<rect		id = "rulerAuxHiddenArea_1"
+						x = "0" y="196"
+						width = "40"
+						height = "89"
+						fill="white" fill-opacity="0.0" onclick="removeAuxLine(this)"
+						/>
+						
+			<rect		id = "rulerAuxHiddenAreaCoupling_1"
+						x = "0" y="0"
+						width = "40"
+						height = "104"
+						fill="white" fill-opacity="0.0" onclick="coupleAuxLine(this)"
+						/>				
         </svg>
 
 		<!-- Hilfslinien für beide Skalen (gekoppelt) -->
          <svg  id="coupledAuxLineGroup_1" class="coupledAuxLine"
 			x="75" y="200"
 			visibility="hidden" >
-
-			<rect		id = "coupledAuxHiddenArea_1"
-						x = "0" y="0"
-						width = "40"
-						height = "90"
-						fill = "white" onclick="decoupleAuxLine(this, 'percent')"
-						/>
-						
-			<rect		id = "coupledAuxHiddenAreaCoupling_1"
-						x = "0" y="180"
-						width = "40"
-						height = "104"
-						fill = "white" onclick="removeAuxLine(this)"
-						/>		
-
-			<rect		id = "coupledAuxHiddenArea_1"
-						x = "0" y="376"
-						width = "40"
-						height = "89"
-						fill="white" onclick="decoupleAuxLine(this, 'ruler')"
-						/>
 
 			<line 		id = "coupledAuxLine_1"
 			            stroke="#AAAAAA" stroke-width="2" stroke-dasharray="5, 5"
@@ -2729,14 +2704,12 @@
 			<circle		id = "coupledAuxCircle_1"
 						cx = "20" cy = "232.5" r = "10"
 						fill = "red" stroke="black" stroke-width="2"
-						onclick="removeAuxLine(this)"
 						/>
 						
 			<polygon 	id = "coupledAuxQuadrangle_1"
 						points="
 							10,205							20,190							30,205						" 
 						fill="red" stroke="black" stroke-width="2"
-						onclick="removeAuxLine(this)"
 						/>	
 						
 			<polygon 	id = "coupledAuxQuadrangle_1"
@@ -2744,28 +2717,35 @@
 							10,260							30,260							20,275						
 						" 
 						fill="red" stroke="black" stroke-width="2"
-						onclick="removeAuxLine(this)"
-						/>													
+						/>
+			<rect		id = "coupledAuxHiddenArea_1"
+						x = "0" y="0"
+						width = "40"
+						height = "90"
+						fill = "white" fill-opacity="0.0" onclick="decoupleAuxLine(this, 'percent')"
+						/>
+						
+			<rect		id = "coupledAuxHiddenAreaCoupling_1"
+						x = "0" y="180"
+						width = "40"
+						height = "104"
+						fill = "white" fill-opacity="0.0" onclick="removeAuxLine(this)"
+						/>		
+
+			<rect		id = "coupledAuxHiddenArea_1"
+						x = "0" y="376"
+						width = "40"
+						height = "89"
+						fill="white" fill-opacity="0.0" onclick="decoupleAuxLine(this, 'ruler')"
+						/>
+											
         </svg>
  		<!-- Hilfslinien für das Prozentband -->
 
          <svg  id="percentAuxLineGroup_2" class="percentAuxLine"
 			x="75" y="200"
             visibility="hidden" >
-
-			<rect		id = "percentAuxHiddenArea_2"
-						x = "0" y="0"
-						width = "40"
-						height = "90"
-						fill = "white" onclick="removeAuxLine(this)"
-						/>
-						
-			<rect		id = "percentAuxHiddenAreaCoupling_2"
-						x = "0" y="180"
-						width = "40"
-						height = "104"
-						fill = "white" onclick="coupleAuxLine(this)"
-						/>						
+					
 
 			<line 		id = "percentAuxLine_2"
 			            stroke="#AAAAAA" stroke-width="2" stroke-dasharray="5, 5"
@@ -2776,36 +2756,33 @@
 			<circle		id = "percentAuxCircle_2"
 						cx = "20" cy = "232.5" r = "10"
 						fill = "blue" stroke="black" stroke-width="2"
-						onclick="coupleAuxLine(this)"
 						/>
 						
 			<polygon 	id = "percentAuxTriangle_2"
 						points="
 							10,260							30,260							20,275						" 
 						fill="blue" stroke="black" stroke-width="2"
-						onclick="coupleAuxLine(this)"
 						/>
-			
+
+			<rect		id = "percentAuxHiddenArea_2"
+						x = "0" y="0"
+						width = "40"
+						height = "90"
+						fill = "white" fill-opacity="0.0" onclick="removeAuxLine(this)"
+						/>
+						
+			<rect		id = "percentAuxHiddenAreaCoupling_2"
+						x = "0" y="180"
+						width = "40"
+						height = "104"
+						fill = "white" fill-opacity="0.0" onclick="coupleAuxLine(this)"
+						/>				
         </svg>  
 
 		<!-- Hilfslinien für das Lineal -->
          <svg  id="rulerAuxLineGroup_2" class="rulerAuxLine"
 			x="75" y="380"
             visibility="hidden" >
-
-			<rect		id = "rulerAuxHiddenArea_2"
-						x = "0" y="196"
-						width = "40"
-						height = "89"
-						fill="white" onclick="removeAuxLine(this)"
-						/>
-						
-			<rect		id = "rulerAuxHiddenAreaCoupling_2"
-						x = "0" y="0"
-						width = "40"
-						height = "104"
-						fill="white" onclick="coupleAuxLine(this)"
-						/>	
 
 			<line 		id = "rulerAuxLine_2"
 			            stroke="#AAAAAA" stroke-width="2" stroke-dasharray="5, 5"
@@ -2816,42 +2793,33 @@
 			<circle		id = "rulerAuxCircle_2"
 						cx = "20" cy = "52.5" r = "10"
 						fill = "green" stroke="black" stroke-width="2"
-						onclick="coupleAuxLine(this)"
 						/>
 						
 			<polygon 	id = "rulerAuxTriangle_2"
 						points="
 							10,25							30,25							20,10						" 
 						fill="green" stroke="black" stroke-width="2"
-						onclick="coupleAuxLine(this)"
-						/>						
+						/>		
+							
+			<rect		id = "rulerAuxHiddenArea_2"
+						x = "0" y="196"
+						width = "40"
+						height = "89"
+						fill="white" fill-opacity="0.0" onclick="removeAuxLine(this)"
+						/>
+						
+			<rect		id = "rulerAuxHiddenAreaCoupling_2"
+						x = "0" y="0"
+						width = "40"
+						height = "104"
+						fill="white" fill-opacity="0.0" onclick="coupleAuxLine(this)"
+						/>				
         </svg>
 
 		<!-- Hilfslinien für beide Skalen (gekoppelt) -->
          <svg  id="coupledAuxLineGroup_2" class="coupledAuxLine"
 			x="75" y="200"
 			visibility="hidden" >
-
-			<rect		id = "coupledAuxHiddenArea_2"
-						x = "0" y="0"
-						width = "40"
-						height = "90"
-						fill = "white" onclick="decoupleAuxLine(this, 'percent')"
-						/>
-						
-			<rect		id = "coupledAuxHiddenAreaCoupling_2"
-						x = "0" y="180"
-						width = "40"
-						height = "104"
-						fill = "white" onclick="removeAuxLine(this)"
-						/>		
-
-			<rect		id = "coupledAuxHiddenArea_2"
-						x = "0" y="376"
-						width = "40"
-						height = "89"
-						fill="white" onclick="decoupleAuxLine(this, 'ruler')"
-						/>
 
 			<line 		id = "coupledAuxLine_2"
 			            stroke="#AAAAAA" stroke-width="2" stroke-dasharray="5, 5"
@@ -2862,14 +2830,12 @@
 			<circle		id = "coupledAuxCircle_2"
 						cx = "20" cy = "232.5" r = "10"
 						fill = "red" stroke="black" stroke-width="2"
-						onclick="removeAuxLine(this)"
 						/>
 						
 			<polygon 	id = "coupledAuxQuadrangle_2"
 						points="
 							10,205							20,190							30,205						" 
 						fill="red" stroke="black" stroke-width="2"
-						onclick="removeAuxLine(this)"
 						/>	
 						
 			<polygon 	id = "coupledAuxQuadrangle_2"
@@ -2877,28 +2843,35 @@
 							10,260							30,260							20,275						
 						" 
 						fill="red" stroke="black" stroke-width="2"
-						onclick="removeAuxLine(this)"
-						/>													
+						/>
+			<rect		id = "coupledAuxHiddenArea_2"
+						x = "0" y="0"
+						width = "40"
+						height = "90"
+						fill = "white" fill-opacity="0.0" onclick="decoupleAuxLine(this, 'percent')"
+						/>
+						
+			<rect		id = "coupledAuxHiddenAreaCoupling_2"
+						x = "0" y="180"
+						width = "40"
+						height = "104"
+						fill = "white" fill-opacity="0.0" onclick="removeAuxLine(this)"
+						/>		
+
+			<rect		id = "coupledAuxHiddenArea_2"
+						x = "0" y="376"
+						width = "40"
+						height = "89"
+						fill="white" fill-opacity="0.0" onclick="decoupleAuxLine(this, 'ruler')"
+						/>
+											
         </svg>
  		<!-- Hilfslinien für das Prozentband -->
 
          <svg  id="percentAuxLineGroup_3" class="percentAuxLine"
 			x="75" y="200"
             visibility="hidden" >
-
-			<rect		id = "percentAuxHiddenArea_3"
-						x = "0" y="0"
-						width = "40"
-						height = "90"
-						fill = "white" onclick="removeAuxLine(this)"
-						/>
-						
-			<rect		id = "percentAuxHiddenAreaCoupling_3"
-						x = "0" y="180"
-						width = "40"
-						height = "104"
-						fill = "white" onclick="coupleAuxLine(this)"
-						/>						
+					
 
 			<line 		id = "percentAuxLine_3"
 			            stroke="#AAAAAA" stroke-width="2" stroke-dasharray="5, 5"
@@ -2909,36 +2882,33 @@
 			<circle		id = "percentAuxCircle_3"
 						cx = "20" cy = "232.5" r = "10"
 						fill = "blue" stroke="black" stroke-width="2"
-						onclick="coupleAuxLine(this)"
 						/>
 						
 			<polygon 	id = "percentAuxTriangle_3"
 						points="
 							10,260							30,260							20,275						" 
 						fill="blue" stroke="black" stroke-width="2"
-						onclick="coupleAuxLine(this)"
 						/>
-			
+
+			<rect		id = "percentAuxHiddenArea_3"
+						x = "0" y="0"
+						width = "40"
+						height = "90"
+						fill = "white" fill-opacity="0.0" onclick="removeAuxLine(this)"
+						/>
+						
+			<rect		id = "percentAuxHiddenAreaCoupling_3"
+						x = "0" y="180"
+						width = "40"
+						height = "104"
+						fill = "white" fill-opacity="0.0" onclick="coupleAuxLine(this)"
+						/>				
         </svg>  
 
 		<!-- Hilfslinien für das Lineal -->
          <svg  id="rulerAuxLineGroup_3" class="rulerAuxLine"
 			x="75" y="380"
             visibility="hidden" >
-
-			<rect		id = "rulerAuxHiddenArea_3"
-						x = "0" y="196"
-						width = "40"
-						height = "89"
-						fill="white" onclick="removeAuxLine(this)"
-						/>
-						
-			<rect		id = "rulerAuxHiddenAreaCoupling_3"
-						x = "0" y="0"
-						width = "40"
-						height = "104"
-						fill="white" onclick="coupleAuxLine(this)"
-						/>	
 
 			<line 		id = "rulerAuxLine_3"
 			            stroke="#AAAAAA" stroke-width="2" stroke-dasharray="5, 5"
@@ -2949,42 +2919,33 @@
 			<circle		id = "rulerAuxCircle_3"
 						cx = "20" cy = "52.5" r = "10"
 						fill = "green" stroke="black" stroke-width="2"
-						onclick="coupleAuxLine(this)"
 						/>
 						
 			<polygon 	id = "rulerAuxTriangle_3"
 						points="
 							10,25							30,25							20,10						" 
 						fill="green" stroke="black" stroke-width="2"
-						onclick="coupleAuxLine(this)"
-						/>						
+						/>		
+							
+			<rect		id = "rulerAuxHiddenArea_3"
+						x = "0" y="196"
+						width = "40"
+						height = "89"
+						fill="white" fill-opacity="0.0" onclick="removeAuxLine(this)"
+						/>
+						
+			<rect		id = "rulerAuxHiddenAreaCoupling_3"
+						x = "0" y="0"
+						width = "40"
+						height = "104"
+						fill="white" fill-opacity="0.0" onclick="coupleAuxLine(this)"
+						/>				
         </svg>
 
 		<!-- Hilfslinien für beide Skalen (gekoppelt) -->
          <svg  id="coupledAuxLineGroup_3" class="coupledAuxLine"
 			x="75" y="200"
 			visibility="hidden" >
-
-			<rect		id = "coupledAuxHiddenArea_3"
-						x = "0" y="0"
-						width = "40"
-						height = "90"
-						fill = "white" onclick="decoupleAuxLine(this, 'percent')"
-						/>
-						
-			<rect		id = "coupledAuxHiddenAreaCoupling_3"
-						x = "0" y="180"
-						width = "40"
-						height = "104"
-						fill = "white" onclick="removeAuxLine(this)"
-						/>		
-
-			<rect		id = "coupledAuxHiddenArea_3"
-						x = "0" y="376"
-						width = "40"
-						height = "89"
-						fill="white" onclick="decoupleAuxLine(this, 'ruler')"
-						/>
 
 			<line 		id = "coupledAuxLine_3"
 			            stroke="#AAAAAA" stroke-width="2" stroke-dasharray="5, 5"
@@ -2995,14 +2956,12 @@
 			<circle		id = "coupledAuxCircle_3"
 						cx = "20" cy = "232.5" r = "10"
 						fill = "red" stroke="black" stroke-width="2"
-						onclick="removeAuxLine(this)"
 						/>
 						
 			<polygon 	id = "coupledAuxQuadrangle_3"
 						points="
 							10,205							20,190							30,205						" 
 						fill="red" stroke="black" stroke-width="2"
-						onclick="removeAuxLine(this)"
 						/>	
 						
 			<polygon 	id = "coupledAuxQuadrangle_3"
@@ -3010,8 +2969,28 @@
 							10,260							30,260							20,275						
 						" 
 						fill="red" stroke="black" stroke-width="2"
-						onclick="removeAuxLine(this)"
-						/>													
+						/>
+			<rect		id = "coupledAuxHiddenArea_3"
+						x = "0" y="0"
+						width = "40"
+						height = "90"
+						fill = "white" fill-opacity="0.0" onclick="decoupleAuxLine(this, 'percent')"
+						/>
+						
+			<rect		id = "coupledAuxHiddenAreaCoupling_3"
+						x = "0" y="180"
+						width = "40"
+						height = "104"
+						fill = "white" fill-opacity="0.0" onclick="removeAuxLine(this)"
+						/>		
+
+			<rect		id = "coupledAuxHiddenArea_3"
+						x = "0" y="376"
+						width = "40"
+						height = "89"
+						fill="white" fill-opacity="0.0" onclick="decoupleAuxLine(this, 'ruler')"
+						/>
+											
         </svg>
      
 
