@@ -39,114 +39,123 @@
     
 
     <rect   id="Prozentband"
-            x="80"    		y="290"
-            width="1030"		height="90"
+            x="75"    		y="290"
+            width="1040"		height="90"
             fill="#FF4040" />
     
 				<line   id="0" class="PercentLine"
-						x1="85" y1="380"
-						x2="85" y2="340"
+						x1="90" y1="380"
+						x2="90" y2="340"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="0" class="PercentText"
-						x="81" y="335"
+				<text   id="0" class="PercentText" 
+						text-anchor="middle"
+						x="90" y="335"
 						style="font-size: 12.8px;"                    visibility="visible">
 						0% </text>
 
 				
 					<line   id="50" class="PercentLine"
-						x1="335" y1="380"
-						x2="335" y2="340"
+						x1="340" y1="380"
+						x2="340" y2="340"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="50" class="PercentText"
-						x="331" y="335"
+				<text   id="50" class="PercentText" 
+						text-anchor="middle"
+						x="340" y="335"
 						style="font-size: 12.8px;"                    visibility="visible">
 						50% </text>
 
 				
 					<line   id="100" class="PercentLine"
-						x1="585" y1="380"
-						x2="585" y2="340"
+						x1="590" y1="380"
+						x2="590" y2="340"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="100" class="PercentText"
-						x="581" y="335"
+				<text   id="100" class="PercentText" 
+						text-anchor="middle"
+						x="590" y="335"
 						style="font-size: 12.8px;"                    visibility="visible">
 						100% </text>
 
 				
 					<line   id="150" class="PercentLine"
-						x1="835" y1="380"
-						x2="835" y2="340"
+						x1="840" y1="380"
+						x2="840" y2="340"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="150" class="PercentText"
-						x="831" y="335"
+				<text   id="150" class="PercentText" 
+						text-anchor="middle"
+						x="840" y="335"
 						style="font-size: 12.8px;"                    visibility="visible">
 						150% </text>
 
 				
 					<line   id="200" class="PercentLine"
-						x1="1085" y1="380"
-						x2="1085" y2="340"
+						x1="1090" y1="380"
+						x2="1090" y2="340"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="200" class="PercentText"
-						x="1081" y="335"
+				<text   id="200" class="PercentText" 
+						text-anchor="middle"
+						x="1090" y="335"
 						style="font-size: 12.8px;"                    visibility="visible">
 						200% </text>
 
 				
 					<line   id="250" class="PercentLine"
-						x1="1335" y1="380"
-						x2="1335" y2="340"
+						x1="1340" y1="380"
+						x2="1340" y2="340"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="250" class="PercentText"
-						x="1331" y="335"
+				<text   id="250" class="PercentText" 
+						text-anchor="middle"
+						x="1340" y="335"
 						style="font-size: 12.8px;"                    visibility="visible">
 						250% </text>
 
 				
 					<line   id="300" class="PercentLine"
-						x1="1585" y1="380"
-						x2="1585" y2="340"
+						x1="1590" y1="380"
+						x2="1590" y2="340"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="300" class="PercentText"
-						x="1581" y="335"
+				<text   id="300" class="PercentText" 
+						text-anchor="middle"
+						x="1590" y="335"
 						style="font-size: 12.8px;"                    visibility="visible">
 						300% </text>
 
 				
 					<line   id="350" class="PercentLine"
-						x1="1835" y1="380"
-						x2="1835" y2="340"
+						x1="1840" y1="380"
+						x2="1840" y2="340"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="350" class="PercentText"
-						x="1831" y="335"
+				<text   id="350" class="PercentText" 
+						text-anchor="middle"
+						x="1840" y="335"
 						style="font-size: 12.8px;"                    visibility="visible">
 						350% </text>
 
 				
 					<line   id="400" class="PercentLine"
-						x1="2085" y1="380"
-						x2="2085" y2="340"
+						x1="2090" y1="380"
+						x2="2090" y2="340"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="400" class="PercentText"
-						x="2081" y="335"
+				<text   id="400" class="PercentText" 
+						text-anchor="middle"
+						x="2090" y="335"
 						style="font-size: 12.8px;"                    visibility="visible">
 						400% </text>
 
@@ -154,2391 +163,2432 @@
 	
     <!-- Es wird ein unsichtbarer Bereich über das Prozentband+Skala gelegt, damit das Mausevent nicht durch die gezeichneten Linien gestört wird -->
     <rect   id="Prozentband-Hidden"
-            x="80"    		y="290"
-            width="1030"		height="90"
+            x="75"    		y="290"
+            width="1040"		height="90"
             fill="blue"                 		style="pointer-events:all; cursor: move;"
             visibility="hidden"/>
     
     <rect   id="Above-Prozentband-Hidden"
-            x="80"    		y="200"
-            width="1030"      height="90"
+            x="75"    		y="200"
+            width="1040"      height="90"
             fill="blue"                 		style="pointer-events:all;"
             visibility="hidden"					onclick="addAuxLine(evt, percentAuxLineList)"/>
 
     <rect   id="Ruler"
-            x="80"    		y="485"
-            width="1030"		height="90"
+            x="75"    		y="485"
+            width="1040"		height="90"
             fill="#FFFFFF"
             stroke="black"              		stroke-width="2" />
 
 				<line   id="401" class="RulerLine"
-						x1="85" y1="485"
-						x2="85" y2="525"
+						x1="90" y1="485"
+						x2="90" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="401" class="RulerText"
-						x="81" y="537"
+				<text   id="401" class="RulerText" 
+						text-anchor="middle"
+						x="90" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						0  </text>
 
 				
 					<line   id="402" class="RulerLine"
-						x1="90" y1="485"
-						x2="90" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="403" class="RulerLine"
 						x1="95" y1="485"
 						x2="95" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="404" class="RulerLine"
+					<line   id="403" class="RulerLine"
 						x1="100" y1="485"
 						x2="100" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="405" class="RulerLine"
+					<line   id="404" class="RulerLine"
 						x1="105" y1="485"
 						x2="105" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="405" class="RulerLine"
+						x1="110" y1="485"
+						x2="110" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="406" class="RulerLine"
-						x1="110" y1="485"
-						x2="110" y2="515"
+						x1="115" y1="485"
+						x2="115" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="407" class="RulerLine"
-						x1="115" y1="485"
-						x2="115" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="408" class="RulerLine"
 						x1="120" y1="485"
 						x2="120" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="409" class="RulerLine"
+					<line   id="408" class="RulerLine"
 						x1="125" y1="485"
 						x2="125" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="410" class="RulerLine"
+					<line   id="409" class="RulerLine"
 						x1="130" y1="485"
 						x2="130" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="411" class="RulerLine"
+					<line   id="410" class="RulerLine"
 						x1="135" y1="485"
-						x2="135" y2="525"
+						x2="135" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="411" class="RulerLine"
+						x1="140" y1="485"
+						x2="140" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="411" class="RulerText"
-						x="131" y="537"
+				<text   id="411" class="RulerText" 
+						text-anchor="middle"
+						x="140" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						10  </text>
 
 				
 					<line   id="412" class="RulerLine"
-						x1="140" y1="485"
-						x2="140" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="413" class="RulerLine"
 						x1="145" y1="485"
 						x2="145" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="414" class="RulerLine"
+					<line   id="413" class="RulerLine"
 						x1="150" y1="485"
 						x2="150" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="415" class="RulerLine"
+					<line   id="414" class="RulerLine"
 						x1="155" y1="485"
 						x2="155" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="415" class="RulerLine"
+						x1="160" y1="485"
+						x2="160" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="416" class="RulerLine"
-						x1="160" y1="485"
-						x2="160" y2="515"
+						x1="165" y1="485"
+						x2="165" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="417" class="RulerLine"
-						x1="165" y1="485"
-						x2="165" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="418" class="RulerLine"
 						x1="170" y1="485"
 						x2="170" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="419" class="RulerLine"
+					<line   id="418" class="RulerLine"
 						x1="175" y1="485"
 						x2="175" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="420" class="RulerLine"
+					<line   id="419" class="RulerLine"
 						x1="180" y1="485"
 						x2="180" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="421" class="RulerLine"
+					<line   id="420" class="RulerLine"
 						x1="185" y1="485"
-						x2="185" y2="525"
+						x2="185" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="421" class="RulerLine"
+						x1="190" y1="485"
+						x2="190" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="421" class="RulerText"
-						x="181" y="537"
+				<text   id="421" class="RulerText" 
+						text-anchor="middle"
+						x="190" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						20  </text>
 
 				
 					<line   id="422" class="RulerLine"
-						x1="190" y1="485"
-						x2="190" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="423" class="RulerLine"
 						x1="195" y1="485"
 						x2="195" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="424" class="RulerLine"
+					<line   id="423" class="RulerLine"
 						x1="200" y1="485"
 						x2="200" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="425" class="RulerLine"
+					<line   id="424" class="RulerLine"
 						x1="205" y1="485"
 						x2="205" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="425" class="RulerLine"
+						x1="210" y1="485"
+						x2="210" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="426" class="RulerLine"
-						x1="210" y1="485"
-						x2="210" y2="515"
+						x1="215" y1="485"
+						x2="215" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="427" class="RulerLine"
-						x1="215" y1="485"
-						x2="215" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="428" class="RulerLine"
 						x1="220" y1="485"
 						x2="220" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="429" class="RulerLine"
+					<line   id="428" class="RulerLine"
 						x1="225" y1="485"
 						x2="225" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="430" class="RulerLine"
+					<line   id="429" class="RulerLine"
 						x1="230" y1="485"
 						x2="230" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="431" class="RulerLine"
+					<line   id="430" class="RulerLine"
 						x1="235" y1="485"
-						x2="235" y2="525"
+						x2="235" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="431" class="RulerLine"
+						x1="240" y1="485"
+						x2="240" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="431" class="RulerText"
-						x="231" y="537"
+				<text   id="431" class="RulerText" 
+						text-anchor="middle"
+						x="240" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						30  </text>
 
 				
 					<line   id="432" class="RulerLine"
-						x1="240" y1="485"
-						x2="240" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="433" class="RulerLine"
 						x1="245" y1="485"
 						x2="245" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="434" class="RulerLine"
+					<line   id="433" class="RulerLine"
 						x1="250" y1="485"
 						x2="250" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="435" class="RulerLine"
+					<line   id="434" class="RulerLine"
 						x1="255" y1="485"
 						x2="255" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="435" class="RulerLine"
+						x1="260" y1="485"
+						x2="260" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="436" class="RulerLine"
-						x1="260" y1="485"
-						x2="260" y2="515"
+						x1="265" y1="485"
+						x2="265" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="437" class="RulerLine"
-						x1="265" y1="485"
-						x2="265" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="438" class="RulerLine"
 						x1="270" y1="485"
 						x2="270" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="439" class="RulerLine"
+					<line   id="438" class="RulerLine"
 						x1="275" y1="485"
 						x2="275" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="440" class="RulerLine"
+					<line   id="439" class="RulerLine"
 						x1="280" y1="485"
 						x2="280" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="441" class="RulerLine"
+					<line   id="440" class="RulerLine"
 						x1="285" y1="485"
-						x2="285" y2="525"
+						x2="285" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="441" class="RulerLine"
+						x1="290" y1="485"
+						x2="290" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="441" class="RulerText"
-						x="281" y="537"
+				<text   id="441" class="RulerText" 
+						text-anchor="middle"
+						x="290" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						40  </text>
 
 				
 					<line   id="442" class="RulerLine"
-						x1="290" y1="485"
-						x2="290" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="443" class="RulerLine"
 						x1="295" y1="485"
 						x2="295" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="444" class="RulerLine"
+					<line   id="443" class="RulerLine"
 						x1="300" y1="485"
 						x2="300" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="445" class="RulerLine"
+					<line   id="444" class="RulerLine"
 						x1="305" y1="485"
 						x2="305" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="445" class="RulerLine"
+						x1="310" y1="485"
+						x2="310" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="446" class="RulerLine"
-						x1="310" y1="485"
-						x2="310" y2="515"
+						x1="315" y1="485"
+						x2="315" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="447" class="RulerLine"
-						x1="315" y1="485"
-						x2="315" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="448" class="RulerLine"
 						x1="320" y1="485"
 						x2="320" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="449" class="RulerLine"
+					<line   id="448" class="RulerLine"
 						x1="325" y1="485"
 						x2="325" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="450" class="RulerLine"
+					<line   id="449" class="RulerLine"
 						x1="330" y1="485"
 						x2="330" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="451" class="RulerLine"
+					<line   id="450" class="RulerLine"
 						x1="335" y1="485"
-						x2="335" y2="525"
+						x2="335" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="451" class="RulerLine"
+						x1="340" y1="485"
+						x2="340" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="451" class="RulerText"
-						x="331" y="537"
+				<text   id="451" class="RulerText" 
+						text-anchor="middle"
+						x="340" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						50  </text>
 
 				
 					<line   id="452" class="RulerLine"
-						x1="340" y1="485"
-						x2="340" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="453" class="RulerLine"
 						x1="345" y1="485"
 						x2="345" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="454" class="RulerLine"
+					<line   id="453" class="RulerLine"
 						x1="350" y1="485"
 						x2="350" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="455" class="RulerLine"
+					<line   id="454" class="RulerLine"
 						x1="355" y1="485"
 						x2="355" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="455" class="RulerLine"
+						x1="360" y1="485"
+						x2="360" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="456" class="RulerLine"
-						x1="360" y1="485"
-						x2="360" y2="515"
+						x1="365" y1="485"
+						x2="365" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="457" class="RulerLine"
-						x1="365" y1="485"
-						x2="365" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="458" class="RulerLine"
 						x1="370" y1="485"
 						x2="370" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="459" class="RulerLine"
+					<line   id="458" class="RulerLine"
 						x1="375" y1="485"
 						x2="375" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="460" class="RulerLine"
+					<line   id="459" class="RulerLine"
 						x1="380" y1="485"
 						x2="380" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="461" class="RulerLine"
+					<line   id="460" class="RulerLine"
 						x1="385" y1="485"
-						x2="385" y2="525"
+						x2="385" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="461" class="RulerLine"
+						x1="390" y1="485"
+						x2="390" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="461" class="RulerText"
-						x="381" y="537"
+				<text   id="461" class="RulerText" 
+						text-anchor="middle"
+						x="390" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						60  </text>
 
 				
 					<line   id="462" class="RulerLine"
-						x1="390" y1="485"
-						x2="390" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="463" class="RulerLine"
 						x1="395" y1="485"
 						x2="395" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="464" class="RulerLine"
+					<line   id="463" class="RulerLine"
 						x1="400" y1="485"
 						x2="400" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="465" class="RulerLine"
+					<line   id="464" class="RulerLine"
 						x1="405" y1="485"
 						x2="405" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="465" class="RulerLine"
+						x1="410" y1="485"
+						x2="410" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="466" class="RulerLine"
-						x1="410" y1="485"
-						x2="410" y2="515"
+						x1="415" y1="485"
+						x2="415" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="467" class="RulerLine"
-						x1="415" y1="485"
-						x2="415" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="468" class="RulerLine"
 						x1="420" y1="485"
 						x2="420" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="469" class="RulerLine"
+					<line   id="468" class="RulerLine"
 						x1="425" y1="485"
 						x2="425" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="470" class="RulerLine"
+					<line   id="469" class="RulerLine"
 						x1="430" y1="485"
 						x2="430" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="471" class="RulerLine"
+					<line   id="470" class="RulerLine"
 						x1="435" y1="485"
-						x2="435" y2="525"
+						x2="435" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="471" class="RulerLine"
+						x1="440" y1="485"
+						x2="440" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="471" class="RulerText"
-						x="431" y="537"
+				<text   id="471" class="RulerText" 
+						text-anchor="middle"
+						x="440" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						70  </text>
 
 				
 					<line   id="472" class="RulerLine"
-						x1="440" y1="485"
-						x2="440" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="473" class="RulerLine"
 						x1="445" y1="485"
 						x2="445" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="474" class="RulerLine"
+					<line   id="473" class="RulerLine"
 						x1="450" y1="485"
 						x2="450" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="475" class="RulerLine"
+					<line   id="474" class="RulerLine"
 						x1="455" y1="485"
 						x2="455" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="475" class="RulerLine"
+						x1="460" y1="485"
+						x2="460" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="476" class="RulerLine"
-						x1="460" y1="485"
-						x2="460" y2="515"
+						x1="465" y1="485"
+						x2="465" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="477" class="RulerLine"
-						x1="465" y1="485"
-						x2="465" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="478" class="RulerLine"
 						x1="470" y1="485"
 						x2="470" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="479" class="RulerLine"
+					<line   id="478" class="RulerLine"
 						x1="475" y1="485"
 						x2="475" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="480" class="RulerLine"
+					<line   id="479" class="RulerLine"
 						x1="480" y1="485"
 						x2="480" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="481" class="RulerLine"
+					<line   id="480" class="RulerLine"
 						x1="485" y1="485"
-						x2="485" y2="525"
+						x2="485" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="481" class="RulerLine"
+						x1="490" y1="485"
+						x2="490" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="481" class="RulerText"
-						x="481" y="537"
+				<text   id="481" class="RulerText" 
+						text-anchor="middle"
+						x="490" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						80  </text>
 
 				
 					<line   id="482" class="RulerLine"
-						x1="490" y1="485"
-						x2="490" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="483" class="RulerLine"
 						x1="495" y1="485"
 						x2="495" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="484" class="RulerLine"
+					<line   id="483" class="RulerLine"
 						x1="500" y1="485"
 						x2="500" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="485" class="RulerLine"
+					<line   id="484" class="RulerLine"
 						x1="505" y1="485"
 						x2="505" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="485" class="RulerLine"
+						x1="510" y1="485"
+						x2="510" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="486" class="RulerLine"
-						x1="510" y1="485"
-						x2="510" y2="515"
+						x1="515" y1="485"
+						x2="515" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="487" class="RulerLine"
-						x1="515" y1="485"
-						x2="515" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="488" class="RulerLine"
 						x1="520" y1="485"
 						x2="520" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="489" class="RulerLine"
+					<line   id="488" class="RulerLine"
 						x1="525" y1="485"
 						x2="525" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="490" class="RulerLine"
+					<line   id="489" class="RulerLine"
 						x1="530" y1="485"
 						x2="530" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="491" class="RulerLine"
+					<line   id="490" class="RulerLine"
 						x1="535" y1="485"
-						x2="535" y2="525"
+						x2="535" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="491" class="RulerLine"
+						x1="540" y1="485"
+						x2="540" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="491" class="RulerText"
-						x="531" y="537"
+				<text   id="491" class="RulerText" 
+						text-anchor="middle"
+						x="540" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						90  </text>
 
 				
 					<line   id="492" class="RulerLine"
-						x1="540" y1="485"
-						x2="540" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="493" class="RulerLine"
 						x1="545" y1="485"
 						x2="545" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="494" class="RulerLine"
+					<line   id="493" class="RulerLine"
 						x1="550" y1="485"
 						x2="550" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="495" class="RulerLine"
+					<line   id="494" class="RulerLine"
 						x1="555" y1="485"
 						x2="555" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="495" class="RulerLine"
+						x1="560" y1="485"
+						x2="560" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="496" class="RulerLine"
-						x1="560" y1="485"
-						x2="560" y2="515"
+						x1="565" y1="485"
+						x2="565" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="497" class="RulerLine"
-						x1="565" y1="485"
-						x2="565" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="498" class="RulerLine"
 						x1="570" y1="485"
 						x2="570" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="499" class="RulerLine"
+					<line   id="498" class="RulerLine"
 						x1="575" y1="485"
 						x2="575" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="500" class="RulerLine"
+					<line   id="499" class="RulerLine"
 						x1="580" y1="485"
 						x2="580" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="501" class="RulerLine"
+					<line   id="500" class="RulerLine"
 						x1="585" y1="485"
-						x2="585" y2="525"
+						x2="585" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="501" class="RulerLine"
+						x1="590" y1="485"
+						x2="590" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="501" class="RulerText"
-						x="581" y="537"
+				<text   id="501" class="RulerText" 
+						text-anchor="middle"
+						x="590" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						100  </text>
 
 				
 					<line   id="502" class="RulerLine"
-						x1="590" y1="485"
-						x2="590" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="503" class="RulerLine"
 						x1="595" y1="485"
 						x2="595" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="504" class="RulerLine"
+					<line   id="503" class="RulerLine"
 						x1="600" y1="485"
 						x2="600" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="505" class="RulerLine"
+					<line   id="504" class="RulerLine"
 						x1="605" y1="485"
 						x2="605" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="505" class="RulerLine"
+						x1="610" y1="485"
+						x2="610" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="506" class="RulerLine"
-						x1="610" y1="485"
-						x2="610" y2="515"
+						x1="615" y1="485"
+						x2="615" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="507" class="RulerLine"
-						x1="615" y1="485"
-						x2="615" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="508" class="RulerLine"
 						x1="620" y1="485"
 						x2="620" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="509" class="RulerLine"
+					<line   id="508" class="RulerLine"
 						x1="625" y1="485"
 						x2="625" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="510" class="RulerLine"
+					<line   id="509" class="RulerLine"
 						x1="630" y1="485"
 						x2="630" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="511" class="RulerLine"
+					<line   id="510" class="RulerLine"
 						x1="635" y1="485"
-						x2="635" y2="525"
+						x2="635" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="511" class="RulerLine"
+						x1="640" y1="485"
+						x2="640" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="511" class="RulerText"
-						x="631" y="537"
+				<text   id="511" class="RulerText" 
+						text-anchor="middle"
+						x="640" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						110  </text>
 
 				
 					<line   id="512" class="RulerLine"
-						x1="640" y1="485"
-						x2="640" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="513" class="RulerLine"
 						x1="645" y1="485"
 						x2="645" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="514" class="RulerLine"
+					<line   id="513" class="RulerLine"
 						x1="650" y1="485"
 						x2="650" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="515" class="RulerLine"
+					<line   id="514" class="RulerLine"
 						x1="655" y1="485"
 						x2="655" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="515" class="RulerLine"
+						x1="660" y1="485"
+						x2="660" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="516" class="RulerLine"
-						x1="660" y1="485"
-						x2="660" y2="515"
+						x1="665" y1="485"
+						x2="665" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="517" class="RulerLine"
-						x1="665" y1="485"
-						x2="665" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="518" class="RulerLine"
 						x1="670" y1="485"
 						x2="670" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="519" class="RulerLine"
+					<line   id="518" class="RulerLine"
 						x1="675" y1="485"
 						x2="675" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="520" class="RulerLine"
+					<line   id="519" class="RulerLine"
 						x1="680" y1="485"
 						x2="680" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="521" class="RulerLine"
+					<line   id="520" class="RulerLine"
 						x1="685" y1="485"
-						x2="685" y2="525"
+						x2="685" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="521" class="RulerLine"
+						x1="690" y1="485"
+						x2="690" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="521" class="RulerText"
-						x="681" y="537"
+				<text   id="521" class="RulerText" 
+						text-anchor="middle"
+						x="690" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						120  </text>
 
 				
 					<line   id="522" class="RulerLine"
-						x1="690" y1="485"
-						x2="690" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="523" class="RulerLine"
 						x1="695" y1="485"
 						x2="695" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="524" class="RulerLine"
+					<line   id="523" class="RulerLine"
 						x1="700" y1="485"
 						x2="700" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="525" class="RulerLine"
+					<line   id="524" class="RulerLine"
 						x1="705" y1="485"
 						x2="705" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="525" class="RulerLine"
+						x1="710" y1="485"
+						x2="710" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="526" class="RulerLine"
-						x1="710" y1="485"
-						x2="710" y2="515"
+						x1="715" y1="485"
+						x2="715" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="527" class="RulerLine"
-						x1="715" y1="485"
-						x2="715" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="528" class="RulerLine"
 						x1="720" y1="485"
 						x2="720" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="529" class="RulerLine"
+					<line   id="528" class="RulerLine"
 						x1="725" y1="485"
 						x2="725" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="530" class="RulerLine"
+					<line   id="529" class="RulerLine"
 						x1="730" y1="485"
 						x2="730" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="531" class="RulerLine"
+					<line   id="530" class="RulerLine"
 						x1="735" y1="485"
-						x2="735" y2="525"
+						x2="735" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="531" class="RulerLine"
+						x1="740" y1="485"
+						x2="740" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="531" class="RulerText"
-						x="731" y="537"
+				<text   id="531" class="RulerText" 
+						text-anchor="middle"
+						x="740" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						130  </text>
 
 				
 					<line   id="532" class="RulerLine"
-						x1="740" y1="485"
-						x2="740" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="533" class="RulerLine"
 						x1="745" y1="485"
 						x2="745" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="534" class="RulerLine"
+					<line   id="533" class="RulerLine"
 						x1="750" y1="485"
 						x2="750" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="535" class="RulerLine"
+					<line   id="534" class="RulerLine"
 						x1="755" y1="485"
 						x2="755" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="535" class="RulerLine"
+						x1="760" y1="485"
+						x2="760" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="536" class="RulerLine"
-						x1="760" y1="485"
-						x2="760" y2="515"
+						x1="765" y1="485"
+						x2="765" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="537" class="RulerLine"
-						x1="765" y1="485"
-						x2="765" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="538" class="RulerLine"
 						x1="770" y1="485"
 						x2="770" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="539" class="RulerLine"
+					<line   id="538" class="RulerLine"
 						x1="775" y1="485"
 						x2="775" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="540" class="RulerLine"
+					<line   id="539" class="RulerLine"
 						x1="780" y1="485"
 						x2="780" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="541" class="RulerLine"
+					<line   id="540" class="RulerLine"
 						x1="785" y1="485"
-						x2="785" y2="525"
+						x2="785" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="541" class="RulerLine"
+						x1="790" y1="485"
+						x2="790" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="541" class="RulerText"
-						x="781" y="537"
+				<text   id="541" class="RulerText" 
+						text-anchor="middle"
+						x="790" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						140  </text>
 
 				
 					<line   id="542" class="RulerLine"
-						x1="790" y1="485"
-						x2="790" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="543" class="RulerLine"
 						x1="795" y1="485"
 						x2="795" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="544" class="RulerLine"
+					<line   id="543" class="RulerLine"
 						x1="800" y1="485"
 						x2="800" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="545" class="RulerLine"
+					<line   id="544" class="RulerLine"
 						x1="805" y1="485"
 						x2="805" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="545" class="RulerLine"
+						x1="810" y1="485"
+						x2="810" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="546" class="RulerLine"
-						x1="810" y1="485"
-						x2="810" y2="515"
+						x1="815" y1="485"
+						x2="815" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="547" class="RulerLine"
-						x1="815" y1="485"
-						x2="815" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="548" class="RulerLine"
 						x1="820" y1="485"
 						x2="820" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="549" class="RulerLine"
+					<line   id="548" class="RulerLine"
 						x1="825" y1="485"
 						x2="825" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="550" class="RulerLine"
+					<line   id="549" class="RulerLine"
 						x1="830" y1="485"
 						x2="830" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="551" class="RulerLine"
+					<line   id="550" class="RulerLine"
 						x1="835" y1="485"
-						x2="835" y2="525"
+						x2="835" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="551" class="RulerLine"
+						x1="840" y1="485"
+						x2="840" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="551" class="RulerText"
-						x="831" y="537"
+				<text   id="551" class="RulerText" 
+						text-anchor="middle"
+						x="840" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						150  </text>
 
 				
 					<line   id="552" class="RulerLine"
-						x1="840" y1="485"
-						x2="840" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="553" class="RulerLine"
 						x1="845" y1="485"
 						x2="845" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="554" class="RulerLine"
+					<line   id="553" class="RulerLine"
 						x1="850" y1="485"
 						x2="850" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="555" class="RulerLine"
+					<line   id="554" class="RulerLine"
 						x1="855" y1="485"
 						x2="855" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="555" class="RulerLine"
+						x1="860" y1="485"
+						x2="860" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="556" class="RulerLine"
-						x1="860" y1="485"
-						x2="860" y2="515"
+						x1="865" y1="485"
+						x2="865" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="557" class="RulerLine"
-						x1="865" y1="485"
-						x2="865" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="558" class="RulerLine"
 						x1="870" y1="485"
 						x2="870" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="559" class="RulerLine"
+					<line   id="558" class="RulerLine"
 						x1="875" y1="485"
 						x2="875" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="560" class="RulerLine"
+					<line   id="559" class="RulerLine"
 						x1="880" y1="485"
 						x2="880" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="561" class="RulerLine"
+					<line   id="560" class="RulerLine"
 						x1="885" y1="485"
-						x2="885" y2="525"
+						x2="885" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="561" class="RulerLine"
+						x1="890" y1="485"
+						x2="890" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="561" class="RulerText"
-						x="881" y="537"
+				<text   id="561" class="RulerText" 
+						text-anchor="middle"
+						x="890" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						160  </text>
 
 				
 					<line   id="562" class="RulerLine"
-						x1="890" y1="485"
-						x2="890" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="563" class="RulerLine"
 						x1="895" y1="485"
 						x2="895" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="564" class="RulerLine"
+					<line   id="563" class="RulerLine"
 						x1="900" y1="485"
 						x2="900" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="565" class="RulerLine"
+					<line   id="564" class="RulerLine"
 						x1="905" y1="485"
 						x2="905" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="565" class="RulerLine"
+						x1="910" y1="485"
+						x2="910" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="566" class="RulerLine"
-						x1="910" y1="485"
-						x2="910" y2="515"
+						x1="915" y1="485"
+						x2="915" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="567" class="RulerLine"
-						x1="915" y1="485"
-						x2="915" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="568" class="RulerLine"
 						x1="920" y1="485"
 						x2="920" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="569" class="RulerLine"
+					<line   id="568" class="RulerLine"
 						x1="925" y1="485"
 						x2="925" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="570" class="RulerLine"
+					<line   id="569" class="RulerLine"
 						x1="930" y1="485"
 						x2="930" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="571" class="RulerLine"
+					<line   id="570" class="RulerLine"
 						x1="935" y1="485"
-						x2="935" y2="525"
+						x2="935" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="571" class="RulerLine"
+						x1="940" y1="485"
+						x2="940" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="571" class="RulerText"
-						x="931" y="537"
+				<text   id="571" class="RulerText" 
+						text-anchor="middle"
+						x="940" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						170  </text>
 
 				
 					<line   id="572" class="RulerLine"
-						x1="940" y1="485"
-						x2="940" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="573" class="RulerLine"
 						x1="945" y1="485"
 						x2="945" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="574" class="RulerLine"
+					<line   id="573" class="RulerLine"
 						x1="950" y1="485"
 						x2="950" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="575" class="RulerLine"
+					<line   id="574" class="RulerLine"
 						x1="955" y1="485"
 						x2="955" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="575" class="RulerLine"
+						x1="960" y1="485"
+						x2="960" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="576" class="RulerLine"
-						x1="960" y1="485"
-						x2="960" y2="515"
+						x1="965" y1="485"
+						x2="965" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="577" class="RulerLine"
-						x1="965" y1="485"
-						x2="965" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="578" class="RulerLine"
 						x1="970" y1="485"
 						x2="970" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="579" class="RulerLine"
+					<line   id="578" class="RulerLine"
 						x1="975" y1="485"
 						x2="975" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="580" class="RulerLine"
+					<line   id="579" class="RulerLine"
 						x1="980" y1="485"
 						x2="980" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="581" class="RulerLine"
+					<line   id="580" class="RulerLine"
 						x1="985" y1="485"
-						x2="985" y2="525"
+						x2="985" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="581" class="RulerLine"
+						x1="990" y1="485"
+						x2="990" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="581" class="RulerText"
-						x="981" y="537"
+				<text   id="581" class="RulerText" 
+						text-anchor="middle"
+						x="990" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						180  </text>
 
 				
 					<line   id="582" class="RulerLine"
-						x1="990" y1="485"
-						x2="990" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="583" class="RulerLine"
 						x1="995" y1="485"
 						x2="995" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="584" class="RulerLine"
+					<line   id="583" class="RulerLine"
 						x1="1000" y1="485"
 						x2="1000" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="585" class="RulerLine"
+					<line   id="584" class="RulerLine"
 						x1="1005" y1="485"
 						x2="1005" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="585" class="RulerLine"
+						x1="1010" y1="485"
+						x2="1010" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="586" class="RulerLine"
-						x1="1010" y1="485"
-						x2="1010" y2="515"
+						x1="1015" y1="485"
+						x2="1015" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="587" class="RulerLine"
-						x1="1015" y1="485"
-						x2="1015" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="588" class="RulerLine"
 						x1="1020" y1="485"
 						x2="1020" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="589" class="RulerLine"
+					<line   id="588" class="RulerLine"
 						x1="1025" y1="485"
 						x2="1025" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="590" class="RulerLine"
+					<line   id="589" class="RulerLine"
 						x1="1030" y1="485"
 						x2="1030" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="591" class="RulerLine"
+					<line   id="590" class="RulerLine"
 						x1="1035" y1="485"
-						x2="1035" y2="525"
+						x2="1035" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="591" class="RulerLine"
+						x1="1040" y1="485"
+						x2="1040" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="591" class="RulerText"
-						x="1031" y="537"
+				<text   id="591" class="RulerText" 
+						text-anchor="middle"
+						x="1040" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						190  </text>
 
 				
 					<line   id="592" class="RulerLine"
-						x1="1040" y1="485"
-						x2="1040" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="593" class="RulerLine"
 						x1="1045" y1="485"
 						x2="1045" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="594" class="RulerLine"
+					<line   id="593" class="RulerLine"
 						x1="1050" y1="485"
 						x2="1050" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="595" class="RulerLine"
+					<line   id="594" class="RulerLine"
 						x1="1055" y1="485"
 						x2="1055" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="595" class="RulerLine"
+						x1="1060" y1="485"
+						x2="1060" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="596" class="RulerLine"
-						x1="1060" y1="485"
-						x2="1060" y2="515"
+						x1="1065" y1="485"
+						x2="1065" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="597" class="RulerLine"
-						x1="1065" y1="485"
-						x2="1065" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="598" class="RulerLine"
 						x1="1070" y1="485"
 						x2="1070" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="599" class="RulerLine"
+					<line   id="598" class="RulerLine"
 						x1="1075" y1="485"
 						x2="1075" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="600" class="RulerLine"
+					<line   id="599" class="RulerLine"
 						x1="1080" y1="485"
 						x2="1080" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="601" class="RulerLine"
+					<line   id="600" class="RulerLine"
 						x1="1085" y1="485"
-						x2="1085" y2="525"
+						x2="1085" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="601" class="RulerLine"
+						x1="1090" y1="485"
+						x2="1090" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="601" class="RulerText"
-						x="1081" y="537"
+				<text   id="601" class="RulerText" 
+						text-anchor="middle"
+						x="1090" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						200  </text>
 
 				
 					<line   id="602" class="RulerLine"
-						x1="1090" y1="485"
-						x2="1090" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="603" class="RulerLine"
 						x1="1095" y1="485"
 						x2="1095" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="604" class="RulerLine"
+					<line   id="603" class="RulerLine"
 						x1="1100" y1="485"
 						x2="1100" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="605" class="RulerLine"
+					<line   id="604" class="RulerLine"
 						x1="1105" y1="485"
 						x2="1105" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="605" class="RulerLine"
+						x1="1110" y1="485"
+						x2="1110" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="606" class="RulerLine"
-						x1="1110" y1="485"
-						x2="1110" y2="515"
+						x1="1115" y1="485"
+						x2="1115" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="607" class="RulerLine"
-						x1="1115" y1="485"
-						x2="1115" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="608" class="RulerLine"
 						x1="1120" y1="485"
 						x2="1120" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="609" class="RulerLine"
+					<line   id="608" class="RulerLine"
 						x1="1125" y1="485"
 						x2="1125" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="610" class="RulerLine"
+					<line   id="609" class="RulerLine"
 						x1="1130" y1="485"
 						x2="1130" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="611" class="RulerLine"
+					<line   id="610" class="RulerLine"
 						x1="1135" y1="485"
-						x2="1135" y2="525"
+						x2="1135" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="611" class="RulerLine"
+						x1="1140" y1="485"
+						x2="1140" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="611" class="RulerText"
-						x="1131" y="537"
+				<text   id="611" class="RulerText" 
+						text-anchor="middle"
+						x="1140" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						210  </text>
 
 				
 					<line   id="612" class="RulerLine"
-						x1="1140" y1="485"
-						x2="1140" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="613" class="RulerLine"
 						x1="1145" y1="485"
 						x2="1145" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="614" class="RulerLine"
+					<line   id="613" class="RulerLine"
 						x1="1150" y1="485"
 						x2="1150" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="615" class="RulerLine"
+					<line   id="614" class="RulerLine"
 						x1="1155" y1="485"
 						x2="1155" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="615" class="RulerLine"
+						x1="1160" y1="485"
+						x2="1160" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="616" class="RulerLine"
-						x1="1160" y1="485"
-						x2="1160" y2="515"
+						x1="1165" y1="485"
+						x2="1165" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="617" class="RulerLine"
-						x1="1165" y1="485"
-						x2="1165" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="618" class="RulerLine"
 						x1="1170" y1="485"
 						x2="1170" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="619" class="RulerLine"
+					<line   id="618" class="RulerLine"
 						x1="1175" y1="485"
 						x2="1175" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="620" class="RulerLine"
+					<line   id="619" class="RulerLine"
 						x1="1180" y1="485"
 						x2="1180" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="621" class="RulerLine"
+					<line   id="620" class="RulerLine"
 						x1="1185" y1="485"
-						x2="1185" y2="525"
+						x2="1185" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="621" class="RulerLine"
+						x1="1190" y1="485"
+						x2="1190" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="621" class="RulerText"
-						x="1181" y="537"
+				<text   id="621" class="RulerText" 
+						text-anchor="middle"
+						x="1190" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						220  </text>
 
 				
 					<line   id="622" class="RulerLine"
-						x1="1190" y1="485"
-						x2="1190" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="623" class="RulerLine"
 						x1="1195" y1="485"
 						x2="1195" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="624" class="RulerLine"
+					<line   id="623" class="RulerLine"
 						x1="1200" y1="485"
 						x2="1200" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="625" class="RulerLine"
+					<line   id="624" class="RulerLine"
 						x1="1205" y1="485"
 						x2="1205" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="625" class="RulerLine"
+						x1="1210" y1="485"
+						x2="1210" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="626" class="RulerLine"
-						x1="1210" y1="485"
-						x2="1210" y2="515"
+						x1="1215" y1="485"
+						x2="1215" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="627" class="RulerLine"
-						x1="1215" y1="485"
-						x2="1215" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="628" class="RulerLine"
 						x1="1220" y1="485"
 						x2="1220" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="629" class="RulerLine"
+					<line   id="628" class="RulerLine"
 						x1="1225" y1="485"
 						x2="1225" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="630" class="RulerLine"
+					<line   id="629" class="RulerLine"
 						x1="1230" y1="485"
 						x2="1230" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="631" class="RulerLine"
+					<line   id="630" class="RulerLine"
 						x1="1235" y1="485"
-						x2="1235" y2="525"
+						x2="1235" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="631" class="RulerLine"
+						x1="1240" y1="485"
+						x2="1240" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="631" class="RulerText"
-						x="1231" y="537"
+				<text   id="631" class="RulerText" 
+						text-anchor="middle"
+						x="1240" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						230  </text>
 
 				
 					<line   id="632" class="RulerLine"
-						x1="1240" y1="485"
-						x2="1240" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="633" class="RulerLine"
 						x1="1245" y1="485"
 						x2="1245" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="634" class="RulerLine"
+					<line   id="633" class="RulerLine"
 						x1="1250" y1="485"
 						x2="1250" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="635" class="RulerLine"
+					<line   id="634" class="RulerLine"
 						x1="1255" y1="485"
 						x2="1255" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="635" class="RulerLine"
+						x1="1260" y1="485"
+						x2="1260" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="636" class="RulerLine"
-						x1="1260" y1="485"
-						x2="1260" y2="515"
+						x1="1265" y1="485"
+						x2="1265" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="637" class="RulerLine"
-						x1="1265" y1="485"
-						x2="1265" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="638" class="RulerLine"
 						x1="1270" y1="485"
 						x2="1270" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="639" class="RulerLine"
+					<line   id="638" class="RulerLine"
 						x1="1275" y1="485"
 						x2="1275" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="640" class="RulerLine"
+					<line   id="639" class="RulerLine"
 						x1="1280" y1="485"
 						x2="1280" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="641" class="RulerLine"
+					<line   id="640" class="RulerLine"
 						x1="1285" y1="485"
-						x2="1285" y2="525"
+						x2="1285" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="641" class="RulerLine"
+						x1="1290" y1="485"
+						x2="1290" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="641" class="RulerText"
-						x="1281" y="537"
+				<text   id="641" class="RulerText" 
+						text-anchor="middle"
+						x="1290" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						240  </text>
 
 				
 					<line   id="642" class="RulerLine"
-						x1="1290" y1="485"
-						x2="1290" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="643" class="RulerLine"
 						x1="1295" y1="485"
 						x2="1295" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="644" class="RulerLine"
+					<line   id="643" class="RulerLine"
 						x1="1300" y1="485"
 						x2="1300" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="645" class="RulerLine"
+					<line   id="644" class="RulerLine"
 						x1="1305" y1="485"
 						x2="1305" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="645" class="RulerLine"
+						x1="1310" y1="485"
+						x2="1310" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="646" class="RulerLine"
-						x1="1310" y1="485"
-						x2="1310" y2="515"
+						x1="1315" y1="485"
+						x2="1315" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="647" class="RulerLine"
-						x1="1315" y1="485"
-						x2="1315" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="648" class="RulerLine"
 						x1="1320" y1="485"
 						x2="1320" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="649" class="RulerLine"
+					<line   id="648" class="RulerLine"
 						x1="1325" y1="485"
 						x2="1325" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="650" class="RulerLine"
+					<line   id="649" class="RulerLine"
 						x1="1330" y1="485"
 						x2="1330" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="651" class="RulerLine"
+					<line   id="650" class="RulerLine"
 						x1="1335" y1="485"
-						x2="1335" y2="525"
+						x2="1335" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="651" class="RulerLine"
+						x1="1340" y1="485"
+						x2="1340" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="651" class="RulerText"
-						x="1331" y="537"
+				<text   id="651" class="RulerText" 
+						text-anchor="middle"
+						x="1340" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						250  </text>
 
 				
 					<line   id="652" class="RulerLine"
-						x1="1340" y1="485"
-						x2="1340" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="653" class="RulerLine"
 						x1="1345" y1="485"
 						x2="1345" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="654" class="RulerLine"
+					<line   id="653" class="RulerLine"
 						x1="1350" y1="485"
 						x2="1350" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="655" class="RulerLine"
+					<line   id="654" class="RulerLine"
 						x1="1355" y1="485"
 						x2="1355" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="655" class="RulerLine"
+						x1="1360" y1="485"
+						x2="1360" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="656" class="RulerLine"
-						x1="1360" y1="485"
-						x2="1360" y2="515"
+						x1="1365" y1="485"
+						x2="1365" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="657" class="RulerLine"
-						x1="1365" y1="485"
-						x2="1365" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="658" class="RulerLine"
 						x1="1370" y1="485"
 						x2="1370" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="659" class="RulerLine"
+					<line   id="658" class="RulerLine"
 						x1="1375" y1="485"
 						x2="1375" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="660" class="RulerLine"
+					<line   id="659" class="RulerLine"
 						x1="1380" y1="485"
 						x2="1380" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="661" class="RulerLine"
+					<line   id="660" class="RulerLine"
 						x1="1385" y1="485"
-						x2="1385" y2="525"
+						x2="1385" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="661" class="RulerLine"
+						x1="1390" y1="485"
+						x2="1390" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="661" class="RulerText"
-						x="1381" y="537"
+				<text   id="661" class="RulerText" 
+						text-anchor="middle"
+						x="1390" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						260  </text>
 
 				
 					<line   id="662" class="RulerLine"
-						x1="1390" y1="485"
-						x2="1390" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="663" class="RulerLine"
 						x1="1395" y1="485"
 						x2="1395" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="664" class="RulerLine"
+					<line   id="663" class="RulerLine"
 						x1="1400" y1="485"
 						x2="1400" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="665" class="RulerLine"
+					<line   id="664" class="RulerLine"
 						x1="1405" y1="485"
 						x2="1405" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="665" class="RulerLine"
+						x1="1410" y1="485"
+						x2="1410" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="666" class="RulerLine"
-						x1="1410" y1="485"
-						x2="1410" y2="515"
+						x1="1415" y1="485"
+						x2="1415" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="667" class="RulerLine"
-						x1="1415" y1="485"
-						x2="1415" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="668" class="RulerLine"
 						x1="1420" y1="485"
 						x2="1420" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="669" class="RulerLine"
+					<line   id="668" class="RulerLine"
 						x1="1425" y1="485"
 						x2="1425" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="670" class="RulerLine"
+					<line   id="669" class="RulerLine"
 						x1="1430" y1="485"
 						x2="1430" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="671" class="RulerLine"
+					<line   id="670" class="RulerLine"
 						x1="1435" y1="485"
-						x2="1435" y2="525"
+						x2="1435" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="671" class="RulerLine"
+						x1="1440" y1="485"
+						x2="1440" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="671" class="RulerText"
-						x="1431" y="537"
+				<text   id="671" class="RulerText" 
+						text-anchor="middle"
+						x="1440" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						270  </text>
 
 				
 					<line   id="672" class="RulerLine"
-						x1="1440" y1="485"
-						x2="1440" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="673" class="RulerLine"
 						x1="1445" y1="485"
 						x2="1445" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="674" class="RulerLine"
+					<line   id="673" class="RulerLine"
 						x1="1450" y1="485"
 						x2="1450" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="675" class="RulerLine"
+					<line   id="674" class="RulerLine"
 						x1="1455" y1="485"
 						x2="1455" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="675" class="RulerLine"
+						x1="1460" y1="485"
+						x2="1460" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="676" class="RulerLine"
-						x1="1460" y1="485"
-						x2="1460" y2="515"
+						x1="1465" y1="485"
+						x2="1465" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="677" class="RulerLine"
-						x1="1465" y1="485"
-						x2="1465" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="678" class="RulerLine"
 						x1="1470" y1="485"
 						x2="1470" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="679" class="RulerLine"
+					<line   id="678" class="RulerLine"
 						x1="1475" y1="485"
 						x2="1475" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="680" class="RulerLine"
+					<line   id="679" class="RulerLine"
 						x1="1480" y1="485"
 						x2="1480" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="681" class="RulerLine"
+					<line   id="680" class="RulerLine"
 						x1="1485" y1="485"
-						x2="1485" y2="525"
+						x2="1485" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="681" class="RulerLine"
+						x1="1490" y1="485"
+						x2="1490" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="681" class="RulerText"
-						x="1481" y="537"
+				<text   id="681" class="RulerText" 
+						text-anchor="middle"
+						x="1490" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						280  </text>
 
 				
 					<line   id="682" class="RulerLine"
-						x1="1490" y1="485"
-						x2="1490" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="683" class="RulerLine"
 						x1="1495" y1="485"
 						x2="1495" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="684" class="RulerLine"
+					<line   id="683" class="RulerLine"
 						x1="1500" y1="485"
 						x2="1500" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="685" class="RulerLine"
+					<line   id="684" class="RulerLine"
 						x1="1505" y1="485"
 						x2="1505" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="685" class="RulerLine"
+						x1="1510" y1="485"
+						x2="1510" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="686" class="RulerLine"
-						x1="1510" y1="485"
-						x2="1510" y2="515"
+						x1="1515" y1="485"
+						x2="1515" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="687" class="RulerLine"
-						x1="1515" y1="485"
-						x2="1515" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="688" class="RulerLine"
 						x1="1520" y1="485"
 						x2="1520" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="689" class="RulerLine"
+					<line   id="688" class="RulerLine"
 						x1="1525" y1="485"
 						x2="1525" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="690" class="RulerLine"
+					<line   id="689" class="RulerLine"
 						x1="1530" y1="485"
 						x2="1530" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="691" class="RulerLine"
+					<line   id="690" class="RulerLine"
 						x1="1535" y1="485"
-						x2="1535" y2="525"
+						x2="1535" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="691" class="RulerLine"
+						x1="1540" y1="485"
+						x2="1540" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="691" class="RulerText"
-						x="1531" y="537"
+				<text   id="691" class="RulerText" 
+						text-anchor="middle"
+						x="1540" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						290  </text>
 
 				
 					<line   id="692" class="RulerLine"
-						x1="1540" y1="485"
-						x2="1540" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="693" class="RulerLine"
 						x1="1545" y1="485"
 						x2="1545" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="694" class="RulerLine"
+					<line   id="693" class="RulerLine"
 						x1="1550" y1="485"
 						x2="1550" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="695" class="RulerLine"
+					<line   id="694" class="RulerLine"
 						x1="1555" y1="485"
 						x2="1555" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="695" class="RulerLine"
+						x1="1560" y1="485"
+						x2="1560" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="696" class="RulerLine"
-						x1="1560" y1="485"
-						x2="1560" y2="515"
+						x1="1565" y1="485"
+						x2="1565" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="697" class="RulerLine"
-						x1="1565" y1="485"
-						x2="1565" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="698" class="RulerLine"
 						x1="1570" y1="485"
 						x2="1570" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="699" class="RulerLine"
+					<line   id="698" class="RulerLine"
 						x1="1575" y1="485"
 						x2="1575" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="700" class="RulerLine"
+					<line   id="699" class="RulerLine"
 						x1="1580" y1="485"
 						x2="1580" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="701" class="RulerLine"
+					<line   id="700" class="RulerLine"
 						x1="1585" y1="485"
-						x2="1585" y2="525"
+						x2="1585" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="701" class="RulerLine"
+						x1="1590" y1="485"
+						x2="1590" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="701" class="RulerText"
-						x="1581" y="537"
+				<text   id="701" class="RulerText" 
+						text-anchor="middle"
+						x="1590" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						300  </text>
 
 				
 					<line   id="702" class="RulerLine"
-						x1="1590" y1="485"
-						x2="1590" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="703" class="RulerLine"
 						x1="1595" y1="485"
 						x2="1595" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="704" class="RulerLine"
+					<line   id="703" class="RulerLine"
 						x1="1600" y1="485"
 						x2="1600" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="705" class="RulerLine"
+					<line   id="704" class="RulerLine"
 						x1="1605" y1="485"
 						x2="1605" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="705" class="RulerLine"
+						x1="1610" y1="485"
+						x2="1610" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="706" class="RulerLine"
-						x1="1610" y1="485"
-						x2="1610" y2="515"
+						x1="1615" y1="485"
+						x2="1615" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="707" class="RulerLine"
-						x1="1615" y1="485"
-						x2="1615" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="708" class="RulerLine"
 						x1="1620" y1="485"
 						x2="1620" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="709" class="RulerLine"
+					<line   id="708" class="RulerLine"
 						x1="1625" y1="485"
 						x2="1625" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="710" class="RulerLine"
+					<line   id="709" class="RulerLine"
 						x1="1630" y1="485"
 						x2="1630" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="711" class="RulerLine"
+					<line   id="710" class="RulerLine"
 						x1="1635" y1="485"
-						x2="1635" y2="525"
+						x2="1635" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="711" class="RulerLine"
+						x1="1640" y1="485"
+						x2="1640" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="711" class="RulerText"
-						x="1631" y="537"
+				<text   id="711" class="RulerText" 
+						text-anchor="middle"
+						x="1640" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						310  </text>
 
 				
 					<line   id="712" class="RulerLine"
-						x1="1640" y1="485"
-						x2="1640" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="713" class="RulerLine"
 						x1="1645" y1="485"
 						x2="1645" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="714" class="RulerLine"
+					<line   id="713" class="RulerLine"
 						x1="1650" y1="485"
 						x2="1650" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="715" class="RulerLine"
+					<line   id="714" class="RulerLine"
 						x1="1655" y1="485"
 						x2="1655" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="715" class="RulerLine"
+						x1="1660" y1="485"
+						x2="1660" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="716" class="RulerLine"
-						x1="1660" y1="485"
-						x2="1660" y2="515"
+						x1="1665" y1="485"
+						x2="1665" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="717" class="RulerLine"
-						x1="1665" y1="485"
-						x2="1665" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="718" class="RulerLine"
 						x1="1670" y1="485"
 						x2="1670" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="719" class="RulerLine"
+					<line   id="718" class="RulerLine"
 						x1="1675" y1="485"
 						x2="1675" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="720" class="RulerLine"
+					<line   id="719" class="RulerLine"
 						x1="1680" y1="485"
 						x2="1680" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="721" class="RulerLine"
+					<line   id="720" class="RulerLine"
 						x1="1685" y1="485"
-						x2="1685" y2="525"
+						x2="1685" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="721" class="RulerLine"
+						x1="1690" y1="485"
+						x2="1690" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="721" class="RulerText"
-						x="1681" y="537"
+				<text   id="721" class="RulerText" 
+						text-anchor="middle"
+						x="1690" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						320  </text>
 
 				
 					<line   id="722" class="RulerLine"
-						x1="1690" y1="485"
-						x2="1690" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="723" class="RulerLine"
 						x1="1695" y1="485"
 						x2="1695" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="724" class="RulerLine"
+					<line   id="723" class="RulerLine"
 						x1="1700" y1="485"
 						x2="1700" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="725" class="RulerLine"
+					<line   id="724" class="RulerLine"
 						x1="1705" y1="485"
 						x2="1705" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="725" class="RulerLine"
+						x1="1710" y1="485"
+						x2="1710" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="726" class="RulerLine"
-						x1="1710" y1="485"
-						x2="1710" y2="515"
+						x1="1715" y1="485"
+						x2="1715" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="727" class="RulerLine"
-						x1="1715" y1="485"
-						x2="1715" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="728" class="RulerLine"
 						x1="1720" y1="485"
 						x2="1720" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="729" class="RulerLine"
+					<line   id="728" class="RulerLine"
 						x1="1725" y1="485"
 						x2="1725" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="730" class="RulerLine"
+					<line   id="729" class="RulerLine"
 						x1="1730" y1="485"
 						x2="1730" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="731" class="RulerLine"
+					<line   id="730" class="RulerLine"
 						x1="1735" y1="485"
-						x2="1735" y2="525"
+						x2="1735" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="731" class="RulerLine"
+						x1="1740" y1="485"
+						x2="1740" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="731" class="RulerText"
-						x="1731" y="537"
+				<text   id="731" class="RulerText" 
+						text-anchor="middle"
+						x="1740" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						330  </text>
 
 				
 					<line   id="732" class="RulerLine"
-						x1="1740" y1="485"
-						x2="1740" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="733" class="RulerLine"
 						x1="1745" y1="485"
 						x2="1745" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="734" class="RulerLine"
+					<line   id="733" class="RulerLine"
 						x1="1750" y1="485"
 						x2="1750" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="735" class="RulerLine"
+					<line   id="734" class="RulerLine"
 						x1="1755" y1="485"
 						x2="1755" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="735" class="RulerLine"
+						x1="1760" y1="485"
+						x2="1760" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="736" class="RulerLine"
-						x1="1760" y1="485"
-						x2="1760" y2="515"
+						x1="1765" y1="485"
+						x2="1765" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="737" class="RulerLine"
-						x1="1765" y1="485"
-						x2="1765" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="738" class="RulerLine"
 						x1="1770" y1="485"
 						x2="1770" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="739" class="RulerLine"
+					<line   id="738" class="RulerLine"
 						x1="1775" y1="485"
 						x2="1775" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="740" class="RulerLine"
+					<line   id="739" class="RulerLine"
 						x1="1780" y1="485"
 						x2="1780" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="741" class="RulerLine"
+					<line   id="740" class="RulerLine"
 						x1="1785" y1="485"
-						x2="1785" y2="525"
+						x2="1785" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="741" class="RulerLine"
+						x1="1790" y1="485"
+						x2="1790" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="741" class="RulerText"
-						x="1781" y="537"
+				<text   id="741" class="RulerText" 
+						text-anchor="middle"
+						x="1790" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						340  </text>
 
 				
 					<line   id="742" class="RulerLine"
-						x1="1790" y1="485"
-						x2="1790" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="743" class="RulerLine"
 						x1="1795" y1="485"
 						x2="1795" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="744" class="RulerLine"
+					<line   id="743" class="RulerLine"
 						x1="1800" y1="485"
 						x2="1800" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="745" class="RulerLine"
+					<line   id="744" class="RulerLine"
 						x1="1805" y1="485"
 						x2="1805" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="745" class="RulerLine"
+						x1="1810" y1="485"
+						x2="1810" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="746" class="RulerLine"
-						x1="1810" y1="485"
-						x2="1810" y2="515"
+						x1="1815" y1="485"
+						x2="1815" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="747" class="RulerLine"
-						x1="1815" y1="485"
-						x2="1815" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="748" class="RulerLine"
 						x1="1820" y1="485"
 						x2="1820" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="749" class="RulerLine"
+					<line   id="748" class="RulerLine"
 						x1="1825" y1="485"
 						x2="1825" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="750" class="RulerLine"
+					<line   id="749" class="RulerLine"
 						x1="1830" y1="485"
 						x2="1830" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="751" class="RulerLine"
+					<line   id="750" class="RulerLine"
 						x1="1835" y1="485"
-						x2="1835" y2="525"
+						x2="1835" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="751" class="RulerLine"
+						x1="1840" y1="485"
+						x2="1840" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="751" class="RulerText"
-						x="1831" y="537"
+				<text   id="751" class="RulerText" 
+						text-anchor="middle"
+						x="1840" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						350  </text>
 
 				
 					<line   id="752" class="RulerLine"
-						x1="1840" y1="485"
-						x2="1840" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="753" class="RulerLine"
 						x1="1845" y1="485"
 						x2="1845" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="754" class="RulerLine"
+					<line   id="753" class="RulerLine"
 						x1="1850" y1="485"
 						x2="1850" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="755" class="RulerLine"
+					<line   id="754" class="RulerLine"
 						x1="1855" y1="485"
 						x2="1855" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="755" class="RulerLine"
+						x1="1860" y1="485"
+						x2="1860" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="756" class="RulerLine"
-						x1="1860" y1="485"
-						x2="1860" y2="515"
+						x1="1865" y1="485"
+						x2="1865" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="757" class="RulerLine"
-						x1="1865" y1="485"
-						x2="1865" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="758" class="RulerLine"
 						x1="1870" y1="485"
 						x2="1870" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="759" class="RulerLine"
+					<line   id="758" class="RulerLine"
 						x1="1875" y1="485"
 						x2="1875" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="760" class="RulerLine"
+					<line   id="759" class="RulerLine"
 						x1="1880" y1="485"
 						x2="1880" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="761" class="RulerLine"
+					<line   id="760" class="RulerLine"
 						x1="1885" y1="485"
-						x2="1885" y2="525"
+						x2="1885" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="761" class="RulerLine"
+						x1="1890" y1="485"
+						x2="1890" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="761" class="RulerText"
-						x="1881" y="537"
+				<text   id="761" class="RulerText" 
+						text-anchor="middle"
+						x="1890" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						360  </text>
 
 				
 					<line   id="762" class="RulerLine"
-						x1="1890" y1="485"
-						x2="1890" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="763" class="RulerLine"
 						x1="1895" y1="485"
 						x2="1895" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="764" class="RulerLine"
+					<line   id="763" class="RulerLine"
 						x1="1900" y1="485"
 						x2="1900" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="765" class="RulerLine"
+					<line   id="764" class="RulerLine"
 						x1="1905" y1="485"
 						x2="1905" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="765" class="RulerLine"
+						x1="1910" y1="485"
+						x2="1910" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="766" class="RulerLine"
-						x1="1910" y1="485"
-						x2="1910" y2="515"
+						x1="1915" y1="485"
+						x2="1915" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="767" class="RulerLine"
-						x1="1915" y1="485"
-						x2="1915" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="768" class="RulerLine"
 						x1="1920" y1="485"
 						x2="1920" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="769" class="RulerLine"
+					<line   id="768" class="RulerLine"
 						x1="1925" y1="485"
 						x2="1925" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="770" class="RulerLine"
+					<line   id="769" class="RulerLine"
 						x1="1930" y1="485"
 						x2="1930" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="771" class="RulerLine"
+					<line   id="770" class="RulerLine"
 						x1="1935" y1="485"
-						x2="1935" y2="525"
+						x2="1935" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="771" class="RulerLine"
+						x1="1940" y1="485"
+						x2="1940" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="771" class="RulerText"
-						x="1931" y="537"
+				<text   id="771" class="RulerText" 
+						text-anchor="middle"
+						x="1940" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						370  </text>
 
 				
 					<line   id="772" class="RulerLine"
-						x1="1940" y1="485"
-						x2="1940" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="773" class="RulerLine"
 						x1="1945" y1="485"
 						x2="1945" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="774" class="RulerLine"
+					<line   id="773" class="RulerLine"
 						x1="1950" y1="485"
 						x2="1950" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="775" class="RulerLine"
+					<line   id="774" class="RulerLine"
 						x1="1955" y1="485"
 						x2="1955" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="775" class="RulerLine"
+						x1="1960" y1="485"
+						x2="1960" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="776" class="RulerLine"
-						x1="1960" y1="485"
-						x2="1960" y2="515"
+						x1="1965" y1="485"
+						x2="1965" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="777" class="RulerLine"
-						x1="1965" y1="485"
-						x2="1965" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="778" class="RulerLine"
 						x1="1970" y1="485"
 						x2="1970" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="779" class="RulerLine"
+					<line   id="778" class="RulerLine"
 						x1="1975" y1="485"
 						x2="1975" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="780" class="RulerLine"
+					<line   id="779" class="RulerLine"
 						x1="1980" y1="485"
 						x2="1980" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="781" class="RulerLine"
+					<line   id="780" class="RulerLine"
 						x1="1985" y1="485"
-						x2="1985" y2="525"
+						x2="1985" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="781" class="RulerLine"
+						x1="1990" y1="485"
+						x2="1990" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="781" class="RulerText"
-						x="1981" y="537"
+				<text   id="781" class="RulerText" 
+						text-anchor="middle"
+						x="1990" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						380  </text>
 
 				
 					<line   id="782" class="RulerLine"
-						x1="1990" y1="485"
-						x2="1990" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="783" class="RulerLine"
 						x1="1995" y1="485"
 						x2="1995" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="784" class="RulerLine"
+					<line   id="783" class="RulerLine"
 						x1="2000" y1="485"
 						x2="2000" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="785" class="RulerLine"
+					<line   id="784" class="RulerLine"
 						x1="2005" y1="485"
 						x2="2005" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="785" class="RulerLine"
+						x1="2010" y1="485"
+						x2="2010" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="786" class="RulerLine"
-						x1="2010" y1="485"
-						x2="2010" y2="515"
+						x1="2015" y1="485"
+						x2="2015" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="787" class="RulerLine"
-						x1="2015" y1="485"
-						x2="2015" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="788" class="RulerLine"
 						x1="2020" y1="485"
 						x2="2020" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="789" class="RulerLine"
+					<line   id="788" class="RulerLine"
 						x1="2025" y1="485"
 						x2="2025" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="790" class="RulerLine"
+					<line   id="789" class="RulerLine"
 						x1="2030" y1="485"
 						x2="2030" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="791" class="RulerLine"
+					<line   id="790" class="RulerLine"
 						x1="2035" y1="485"
-						x2="2035" y2="525"
+						x2="2035" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="791" class="RulerLine"
+						x1="2040" y1="485"
+						x2="2040" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="791" class="RulerText"
-						x="2031" y="537"
+				<text   id="791" class="RulerText" 
+						text-anchor="middle"
+						x="2040" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						390  </text>
 
 				
 					<line   id="792" class="RulerLine"
-						x1="2040" y1="485"
-						x2="2040" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="793" class="RulerLine"
 						x1="2045" y1="485"
 						x2="2045" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="794" class="RulerLine"
+					<line   id="793" class="RulerLine"
 						x1="2050" y1="485"
 						x2="2050" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="795" class="RulerLine"
+					<line   id="794" class="RulerLine"
 						x1="2055" y1="485"
 						x2="2055" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
+					<line   id="795" class="RulerLine"
+						x1="2060" y1="485"
+						x2="2060" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
 	             
 				<line   id="796" class="RulerLine"
-						x1="2060" y1="485"
-						x2="2060" y2="515"
+						x1="2065" y1="485"
+						x2="2065" y2="515"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
 					<line   id="797" class="RulerLine"
-						x1="2065" y1="485"
-						x2="2065" y2="510"
-						style="stroke:black; stroke-width:2;"
-						visibility="visible" />
-					<line   id="798" class="RulerLine"
 						x1="2070" y1="485"
 						x2="2070" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="799" class="RulerLine"
+					<line   id="798" class="RulerLine"
 						x1="2075" y1="485"
 						x2="2075" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="800" class="RulerLine"
+					<line   id="799" class="RulerLine"
 						x1="2080" y1="485"
 						x2="2080" y2="510"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
-					<line   id="801" class="RulerLine"
+					<line   id="800" class="RulerLine"
 						x1="2085" y1="485"
-						x2="2085" y2="525"
+						x2="2085" y2="510"
+						style="stroke:black; stroke-width:2;"
+						visibility="visible" />
+					<line   id="801" class="RulerLine"
+						x1="2090" y1="485"
+						x2="2090" y2="525"
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="801" class="RulerText"
-						x="2081" y="537"
+				<text   id="801" class="RulerText" 
+						text-anchor="middle"
+						x="2090" y="537"
 						style="font-size: 12.8px;"                    visibility="visible">
 						400  </text>
 
@@ -2546,42 +2596,42 @@
 	
     <!-- Es wird ein unsichtbarer Bereich über das Ruler+Skala gelegt, damit das Mausevent nicht durch die gezeichneten Linien gestört wird -->
     <rect   id="Ruler-Hidden"
-            x="80"    		y="485"
-            width="1030"		height="90"
+            x="75"    		y="485"
+            width="1040"		height="90"
             fill="blue"                 		style="pointer-events:all; cursor: move;"
             visibility="hidden"/>
 
     <rect   id="Below-Ruler-Hidden"
-            x="80"    		y="575"
-            width="1030"      height="90"
+            x="75"    		y="575"
+            width="1040"      height="90"
             fill="blue"                 		style="pointer-events:all;"
             visibility="hidden"					onclick="addAuxLine(evt, rulerAuxLineList)"/>
 
     <!-- In diesem Bereich kann durch das Mausevent 'Doppelklick' ein neuer Reiter erzeugt werden -->
     <rect   id="Between-Prozentband-Ruler"
-            x="80"    		y="380"
-            width="1030"		height="105"
+            x="75"    		y="380"
+            width="1040"		height="105"
             fill="red"                  		style="pointer-events:all;"
             visibility="hidden"					onclick="addAuxLine(evt, coupledAuxLineList)"/>
 
 		<!-- Hilfslinien für das Prozentband -->
 
          <svg  id="percentAuxLineGroup_1" class="percentAuxLine"
-			x="80" y="200"
+			x="75" y="200"
             visibility="hidden" >
 
 			<rect		id = "percentAuxHiddenArea_1"
 						x = "0" y="0"
 						width = "40"
 						height = "90"
-						visibility = "hidden"
+						fill = "white" onclick="removeAuxLine(this)"
 						/>
 						
 			<rect		id = "percentAuxHiddenAreaCoupling_1"
 						x = "0" y="180"
 						width = "40"
-						height = "105"
-						visibility = "hidden"
+						height = "104"
+						fill = "white" onclick="coupleAuxLine(this)"
 						/>						
 
 			<line 		id = "percentAuxLine_1"
@@ -2593,33 +2643,35 @@
 			<circle		id = "percentAuxCircle_1"
 						cx = "20" cy = "232.5" r = "10"
 						fill = "blue" stroke="black" stroke-width="2"
+						onclick="coupleAuxLine(this)"
 						/>
 						
 			<polygon 	id = "percentAuxTriangle_1"
 						points="
 							10,260							30,260							20,275						" 
 						fill="blue" stroke="black" stroke-width="2"
+						onclick="coupleAuxLine(this)"
 						/>
 			
         </svg>  
 
 		<!-- Hilfslinien für das Lineal -->
          <svg  id="rulerAuxLineGroup_1" class="rulerAuxLine"
-			x="80" y="380"
+			x="75" y="380"
             visibility="hidden" >
 
 			<rect		id = "rulerAuxHiddenArea_1"
-						x = "0" y="195"
+						x = "0" y="196"
 						width = "40"
-						height = "90"
-						visibility = "hidden"
+						height = "89"
+						fill="white" onclick="removeAuxLine(this)"
 						/>
 						
 			<rect		id = "rulerAuxHiddenAreaCoupling_1"
 						x = "0" y="0"
 						width = "40"
-						height = "105"
-						visibility = "hidden"
+						height = "104"
+						fill="white" onclick="coupleAuxLine(this)"
 						/>	
 
 			<line 		id = "rulerAuxLine_1"
@@ -2631,34 +2683,88 @@
 			<circle		id = "rulerAuxCircle_1"
 						cx = "20" cy = "52.5" r = "10"
 						fill = "green" stroke="black" stroke-width="2"
+						onclick="coupleAuxLine(this)"
 						/>
 						
 			<polygon 	id = "rulerAuxTriangle_1"
 						points="
 							10,25							30,25							20,10						" 
 						fill="green" stroke="black" stroke-width="2"
+						onclick="coupleAuxLine(this)"
 						/>						
         </svg>
 
- 
+		<!-- Hilfslinien für beide Skalen (gekoppelt) -->
+         <svg  id="coupledAuxLineGroup_1" class="coupledAuxLine"
+			x="75" y="200"
+			visibility="hidden" >
+
+			<rect		id = "coupledAuxHiddenArea_1"
+						x = "0" y="0"
+						width = "40"
+						height = "90"
+						fill = "white" onclick="decoupleAuxLine(this, 'percent')"
+						/>
+						
+			<rect		id = "coupledAuxHiddenAreaCoupling_1"
+						x = "0" y="180"
+						width = "40"
+						height = "104"
+						fill = "white" onclick="removeAuxLine(this)"
+						/>		
+
+			<rect		id = "coupledAuxHiddenArea_1"
+						x = "0" y="376"
+						width = "40"
+						height = "89"
+						fill="white" onclick="decoupleAuxLine(this, 'ruler')"
+						/>
+
+			<line 		id = "coupledAuxLine_1"
+			            stroke="#AAAAAA" stroke-width="2" stroke-dasharray="5, 5"
+						x1="20" y1="0" 
+						x2="20" y2="465"
+						/>
+						
+			<circle		id = "coupledAuxCircle_1"
+						cx = "20" cy = "232.5" r = "10"
+						fill = "red" stroke="black" stroke-width="2"
+						onclick="removeAuxLine(this)"
+						/>
+						
+			<polygon 	id = "coupledAuxQuadrangle_1"
+						points="
+							10,205							20,190							30,205						" 
+						fill="red" stroke="black" stroke-width="2"
+						onclick="removeAuxLine(this)"
+						/>	
+						
+			<polygon 	id = "coupledAuxQuadrangle_1"
+						points="
+							10,260							30,260							20,275						
+						" 
+						fill="red" stroke="black" stroke-width="2"
+						onclick="removeAuxLine(this)"
+						/>													
+        </svg>
  		<!-- Hilfslinien für das Prozentband -->
 
          <svg  id="percentAuxLineGroup_2" class="percentAuxLine"
-			x="80" y="200"
+			x="75" y="200"
             visibility="hidden" >
 
 			<rect		id = "percentAuxHiddenArea_2"
 						x = "0" y="0"
 						width = "40"
 						height = "90"
-						visibility = "hidden"
+						fill = "white" onclick="removeAuxLine(this)"
 						/>
 						
 			<rect		id = "percentAuxHiddenAreaCoupling_2"
 						x = "0" y="180"
 						width = "40"
-						height = "105"
-						visibility = "hidden"
+						height = "104"
+						fill = "white" onclick="coupleAuxLine(this)"
 						/>						
 
 			<line 		id = "percentAuxLine_2"
@@ -2670,33 +2776,35 @@
 			<circle		id = "percentAuxCircle_2"
 						cx = "20" cy = "232.5" r = "10"
 						fill = "blue" stroke="black" stroke-width="2"
+						onclick="coupleAuxLine(this)"
 						/>
 						
 			<polygon 	id = "percentAuxTriangle_2"
 						points="
 							10,260							30,260							20,275						" 
 						fill="blue" stroke="black" stroke-width="2"
+						onclick="coupleAuxLine(this)"
 						/>
 			
         </svg>  
 
 		<!-- Hilfslinien für das Lineal -->
          <svg  id="rulerAuxLineGroup_2" class="rulerAuxLine"
-			x="80" y="380"
+			x="75" y="380"
             visibility="hidden" >
 
 			<rect		id = "rulerAuxHiddenArea_2"
-						x = "0" y="195"
+						x = "0" y="196"
 						width = "40"
-						height = "90"
-						visibility = "hidden"
+						height = "89"
+						fill="white" onclick="removeAuxLine(this)"
 						/>
 						
 			<rect		id = "rulerAuxHiddenAreaCoupling_2"
 						x = "0" y="0"
 						width = "40"
-						height = "105"
-						visibility = "hidden"
+						height = "104"
+						fill="white" onclick="coupleAuxLine(this)"
 						/>	
 
 			<line 		id = "rulerAuxLine_2"
@@ -2708,34 +2816,88 @@
 			<circle		id = "rulerAuxCircle_2"
 						cx = "20" cy = "52.5" r = "10"
 						fill = "green" stroke="black" stroke-width="2"
+						onclick="coupleAuxLine(this)"
 						/>
 						
 			<polygon 	id = "rulerAuxTriangle_2"
 						points="
 							10,25							30,25							20,10						" 
 						fill="green" stroke="black" stroke-width="2"
+						onclick="coupleAuxLine(this)"
 						/>						
         </svg>
 
- 
+		<!-- Hilfslinien für beide Skalen (gekoppelt) -->
+         <svg  id="coupledAuxLineGroup_2" class="coupledAuxLine"
+			x="75" y="200"
+			visibility="hidden" >
+
+			<rect		id = "coupledAuxHiddenArea_2"
+						x = "0" y="0"
+						width = "40"
+						height = "90"
+						fill = "white" onclick="decoupleAuxLine(this, 'percent')"
+						/>
+						
+			<rect		id = "coupledAuxHiddenAreaCoupling_2"
+						x = "0" y="180"
+						width = "40"
+						height = "104"
+						fill = "white" onclick="removeAuxLine(this)"
+						/>		
+
+			<rect		id = "coupledAuxHiddenArea_2"
+						x = "0" y="376"
+						width = "40"
+						height = "89"
+						fill="white" onclick="decoupleAuxLine(this, 'ruler')"
+						/>
+
+			<line 		id = "coupledAuxLine_2"
+			            stroke="#AAAAAA" stroke-width="2" stroke-dasharray="5, 5"
+						x1="20" y1="0" 
+						x2="20" y2="465"
+						/>
+						
+			<circle		id = "coupledAuxCircle_2"
+						cx = "20" cy = "232.5" r = "10"
+						fill = "red" stroke="black" stroke-width="2"
+						onclick="removeAuxLine(this)"
+						/>
+						
+			<polygon 	id = "coupledAuxQuadrangle_2"
+						points="
+							10,205							20,190							30,205						" 
+						fill="red" stroke="black" stroke-width="2"
+						onclick="removeAuxLine(this)"
+						/>	
+						
+			<polygon 	id = "coupledAuxQuadrangle_2"
+						points="
+							10,260							30,260							20,275						
+						" 
+						fill="red" stroke="black" stroke-width="2"
+						onclick="removeAuxLine(this)"
+						/>													
+        </svg>
  		<!-- Hilfslinien für das Prozentband -->
 
          <svg  id="percentAuxLineGroup_3" class="percentAuxLine"
-			x="80" y="200"
+			x="75" y="200"
             visibility="hidden" >
 
 			<rect		id = "percentAuxHiddenArea_3"
 						x = "0" y="0"
 						width = "40"
 						height = "90"
-						visibility = "hidden"
+						fill = "white" onclick="removeAuxLine(this)"
 						/>
 						
 			<rect		id = "percentAuxHiddenAreaCoupling_3"
 						x = "0" y="180"
 						width = "40"
-						height = "105"
-						visibility = "hidden"
+						height = "104"
+						fill = "white" onclick="coupleAuxLine(this)"
 						/>						
 
 			<line 		id = "percentAuxLine_3"
@@ -2747,33 +2909,35 @@
 			<circle		id = "percentAuxCircle_3"
 						cx = "20" cy = "232.5" r = "10"
 						fill = "blue" stroke="black" stroke-width="2"
+						onclick="coupleAuxLine(this)"
 						/>
 						
 			<polygon 	id = "percentAuxTriangle_3"
 						points="
 							10,260							30,260							20,275						" 
 						fill="blue" stroke="black" stroke-width="2"
+						onclick="coupleAuxLine(this)"
 						/>
 			
         </svg>  
 
 		<!-- Hilfslinien für das Lineal -->
          <svg  id="rulerAuxLineGroup_3" class="rulerAuxLine"
-			x="80" y="380"
+			x="75" y="380"
             visibility="hidden" >
 
 			<rect		id = "rulerAuxHiddenArea_3"
-						x = "0" y="195"
+						x = "0" y="196"
 						width = "40"
-						height = "90"
-						visibility = "hidden"
+						height = "89"
+						fill="white" onclick="removeAuxLine(this)"
 						/>
 						
 			<rect		id = "rulerAuxHiddenAreaCoupling_3"
 						x = "0" y="0"
 						width = "40"
-						height = "105"
-						visibility = "hidden"
+						height = "104"
+						fill="white" onclick="coupleAuxLine(this)"
 						/>	
 
 			<line 		id = "rulerAuxLine_3"
@@ -2785,84 +2949,42 @@
 			<circle		id = "rulerAuxCircle_3"
 						cx = "20" cy = "52.5" r = "10"
 						fill = "green" stroke="black" stroke-width="2"
+						onclick="coupleAuxLine(this)"
 						/>
 						
 			<polygon 	id = "rulerAuxTriangle_3"
 						points="
 							10,25							30,25							20,10						" 
 						fill="green" stroke="black" stroke-width="2"
+						onclick="coupleAuxLine(this)"
 						/>						
         </svg>
 
- 
- 		<!-- Hilfslinien für beide Skalen (gekoppelt) -->
-         <svg  id="coupledAuxLineGroup_1" class="coupledAuxLine"
-			x="80" y="200"
-			visibility="hidden" >
-
-
-
-			<line 		id = "coupledAuxLine_1"
-			            stroke="#AAAAAA" stroke-width="2" stroke-dasharray="5, 5"
-						x1="20" y1="0" 
-						x2="20" y2="465"
-						/>
-						
-			<circle		id = "coupledAuxCircle_1"
-						cx = "20" cy = "232.5" r = "10"
-						fill = "red" stroke="black" stroke-width="2"
-						/>
-						
-			<polygon 	id = "coupledAuxQuadrangle_1"
-						points="
-							10,205							20,190							30,205						" 
-						fill="red" stroke="black" stroke-width="2"
-						/>	
-						
-			<polygon 	id = "coupledAuxQuadrangle_1"
-						points="
-							10,260							30,260							20,275						
-						" 
-						fill="red" stroke="black" stroke-width="2"
-						/>													
-        </svg>
- 		<!-- Hilfslinien für beide Skalen (gekoppelt) -->
-         <svg  id="coupledAuxLineGroup_2" class="coupledAuxLine"
-			x="80" y="200"
-			visibility="hidden" >
-
-
-
-			<line 		id = "coupledAuxLine_2"
-			            stroke="#AAAAAA" stroke-width="2" stroke-dasharray="5, 5"
-						x1="20" y1="0" 
-						x2="20" y2="465"
-						/>
-						
-			<circle		id = "coupledAuxCircle_2"
-						cx = "20" cy = "232.5" r = "10"
-						fill = "red" stroke="black" stroke-width="2"
-						/>
-						
-			<polygon 	id = "coupledAuxQuadrangle_2"
-						points="
-							10,205							20,190							30,205						" 
-						fill="red" stroke="black" stroke-width="2"
-						/>	
-						
-			<polygon 	id = "coupledAuxQuadrangle_2"
-						points="
-							10,260							30,260							20,275						
-						" 
-						fill="red" stroke="black" stroke-width="2"
-						/>													
-        </svg>
- 		<!-- Hilfslinien für beide Skalen (gekoppelt) -->
+		<!-- Hilfslinien für beide Skalen (gekoppelt) -->
          <svg  id="coupledAuxLineGroup_3" class="coupledAuxLine"
-			x="80" y="200"
+			x="75" y="200"
 			visibility="hidden" >
 
+			<rect		id = "coupledAuxHiddenArea_3"
+						x = "0" y="0"
+						width = "40"
+						height = "90"
+						fill = "white" onclick="decoupleAuxLine(this, 'percent')"
+						/>
+						
+			<rect		id = "coupledAuxHiddenAreaCoupling_3"
+						x = "0" y="180"
+						width = "40"
+						height = "104"
+						fill = "white" onclick="removeAuxLine(this)"
+						/>		
 
+			<rect		id = "coupledAuxHiddenArea_3"
+						x = "0" y="376"
+						width = "40"
+						height = "89"
+						fill="white" onclick="decoupleAuxLine(this, 'ruler')"
+						/>
 
 			<line 		id = "coupledAuxLine_3"
 			            stroke="#AAAAAA" stroke-width="2" stroke-dasharray="5, 5"
@@ -2873,12 +2995,14 @@
 			<circle		id = "coupledAuxCircle_3"
 						cx = "20" cy = "232.5" r = "10"
 						fill = "red" stroke="black" stroke-width="2"
+						onclick="removeAuxLine(this)"
 						/>
 						
 			<polygon 	id = "coupledAuxQuadrangle_3"
 						points="
 							10,205							20,190							30,205						" 
 						fill="red" stroke="black" stroke-width="2"
+						onclick="removeAuxLine(this)"
 						/>	
 						
 			<polygon 	id = "coupledAuxQuadrangle_3"
@@ -2886,6 +3010,7 @@
 							10,260							30,260							20,275						
 						" 
 						fill="red" stroke="black" stroke-width="2"
+						onclick="removeAuxLine(this)"
 						/>													
         </svg>
      
@@ -2934,37 +3059,12 @@
     var rulerLineNumber = 400;
     var percentLineNumber = 8;
     var percentRange = 400;
-    var lineX = 85;
-    var coupled = false;
-    var numberOfAuxLines = 3; 
-    var numberOfCoupledAuxLines = 3; 
+    var lineX = 90;
+    var maxNumberOfAuxLines = 3; 
     var pointerHiddenHalfWidth = 20;
-    
+    var numberOfAuxLines = 0;
+    var numberOfCoupledAuxLines = 0;
 
-	/* Arrays, die Status (versteckt oder sichtbar) und Position (x-Position entlang der Skalen) der Hilfslinen speichern.
-	Zugriff auf den Sichtbarkeitsstatus der k-ten Hilfslinie mit blaAuxLinesStatus[k][0] (mögliche Werte: "hidden" oder "visible")
-	Zugriff auf die x-Position der k-ten Hilfslinie mit blaAuxLinesStatus[k][1]
-	
-	// Hilfslinien für das Lineal
-	var rulerAuxLinesStatus = [];
-	for (var i=0; i<numberOfAuxLines; i++) {
-		rulerAuxLinesStatus[i] = ["hidden", "0"];
-	}
-	// Hilfslinien für das Prozentband
-	var percentAuxLinesStatus = [];
-	for (var i=0; i<numberOfAuxLines; i++) {
-		percentAuxLinesStatus[i] = ["hidden", "0"];
-	}
-	// Gekoppelte Hilfslinien
-	var coupledAuxLinesStatus = [];
-	for (var i=0; i<numberOfCoupledAuxLines; i++) {
-		coupledAuxLinesStatus[i] = ["hidden", "0"];
-	}
-	*/
-    var lineList = document.getElementsByTagName("line");   
-    var textList = document.getElementsByTagName("text");
-    
-    
     /*Hier schöne neue Arrays mit Linien und Labels für Lineal und Prozentband getrennt*/
     var rulerLineList = document.getElementsByClassName("rulerLine");
     var rulerTextList = document.getElementsByClassName("rulerText");
@@ -2975,23 +3075,6 @@
     var rulerAuxLineList = document.getElementsByClassName("rulerAuxLine");
     var coupledAuxLineList = document.getElementsByClassName("coupledAuxLine");
     
-    
-    // setzt alle Linien, die über das Prozentband bzw. Lineal hinausgehen auf hidden
-    for(var i=0; i<lineList.length; i++){ 
-        var line = lineList.item(i);
-        var pos = line.getAttribute("x1");
-		if(pos >= (80+parseInt(document.getElementById("Prozentband").getAttribute("width")))){
-            line.setAttribute("visibility", "hidden");
-        }
-    }
-    // setzt alle Texte, die über das Prozentband bzw. Lineal hinausgehen auf hidden
-    for (var i=0; i<textList.length; i++){
-        var text = textList.item(i);
-        var pos = text.getAttribute("x");
-		if(pos >= (80+parseInt(document.getElementById("Prozentband").getAttribute("width")))){
-            text.setAttribute("visibility", "hidden");
-        }
-    }
 		
 	// Unterbindet hoffentlich das Scrollen der Webseite, keine Ahnung, ob es funktioniert...
 	document.ontouchmove = function(e){ e.preventDefault(); }
@@ -3007,10 +3090,8 @@
 		 $("svg").on(TouchMouseEvent.UP, function(e){
 			startdragruler= false;
 		 });	
-		
-		
-		
-		
+				
+				
 		var startdragprozentband= false;
 		 $("#Prozentband-Hidden").on(TouchMouseEvent.DOWN, function(e){
 			currentX=e.pageX;
@@ -3034,54 +3115,79 @@
 	});
 
 	
-	
+	/* Diese Funktion fügt eine Hilfslinie hinzu (macht eine der unsichtbaren Hilfslinien sichtbar und setzt sie auf Mausposition) */
 	function addAuxLine(evt, auxLineList) {
+		if (numberOfAuxLines < maxNumberOfAuxLines) {
+			/* Gehe durch alle Hilfslinien, bis eine versteckte gefunden wird, setze diese auf die Mausposition und mache sie sichtbar */
+			for (var i=0; i<auxLineList.length; i++) {
+				var auxline = auxLineList[i];
+				if (auxline.getAttribute("visibility")=="hidden") {
+					auxline.setAttribute("x", evt.pageX-pointerHiddenHalfWidth);
+					auxline.setAttribute("visibility", "visible");
+					numberOfAuxLines++;
+					if (auxLineList == coupledAuxLineList){
+						numberOfCoupledAuxLines++;
+					}
+					/* Ist eine Hilfslinie erschaffen, suche nicht weiter */
+					break;
+				/* Wurde keine versteckte Hilfslinie gefunden, dann sind alle Hilfslinien sichtbar und somit die maximale Anzahl erreicht currently */
+				} 
+			}
+		} else {
+			console.log("Maximum number of AuxLines reached!") // Das muss noch für den Nutzer sichtbar gemacht werden!
+		}
+	}
+
+	/* Diese Funktion fügt eine Hilfslinie hinzu (macht eine der unsichtbaren Hilfslinien sichtbar und setzt sie auf Mausposition) */
+	function removeAuxLine(auxLineHiddenArea) {
+		auxLineHiddenArea.parentNode.setAttribute("visibility", "hidden");
+		if (auxLineHiddenArea.parentNode.className.baseVal == "coupledAuxLine") {
+				numberOfCoupledAuxLines--;
+		}
+		numberOfAuxLines--;
+	}
+	
+	function coupleAuxLine(auxLineHiddenArea) {
+		auxLineHiddenArea.parentNode.setAttribute("visibility", "hidden");
+		var position = auxLineHiddenArea.parentNode.getAttribute("x");
+		for (var i=0; i<coupledAuxLineList.length; i++) {
+			var auxline = coupledAuxLineList[i];
+			if (auxline.getAttribute("visibility")=="hidden") {
+				auxline.setAttribute("x", position);
+				auxline.setAttribute("visibility", "visible");
+				/* Ist eine Hilfslinie erschaffen, suche nicht weiter */
+				break;
+			/* Wurde keine versteckte Hilfslinie gefunden, dann sind alle Hilfslinien sichtbar und somit die maximale Anzahl erreicht currently */
+			} 
+		}
+		numberOfCoupledAuxLines++;
+	}
+	
+	/* Diese Funktion verwandelt eine gekoppelte Hilfslinie in eine einfache Hilfslinie für die Skala targetScale(=ruler oder =percent) */
+	function decoupleAuxLine(auxLineHiddenArea, targetScale) {
+		auxLineHiddenArea.parentNode.setAttribute("visibility", "hidden");
+		var position = auxLineHiddenArea.parentNode.getAttribute("x");
+		if (targetScale == "ruler") {
+			var auxLineList = rulerAuxLineList;
+		} else if (targetScale == "percent") {
+			var auxLineList = percentAuxLineList;
+		} else {
+			console.log("Die Funktion decoupleAuxLine wurde mit unerwarteten Argumenten aufgerufen!")
+		}
 		for (var i=0; i<auxLineList.length; i++) {
 			var auxline = auxLineList[i];
 			if (auxline.getAttribute("visibility")=="hidden") {
-				auxline.setAttribute("x", evt.pageX-pointerHiddenHalfWidth);
+				auxline.setAttribute("x", position);
 				auxline.setAttribute("visibility", "visible");
-				if (auxLineList == coupledAuxLineList){
-					coupled = true;
-				}
+				/* Ist eine Hilfslinie erschaffen, suche nicht weiter */
 				break;
-			} else if (i==auxLineList.length-1 ) {
-				console.log("Maximum number of AuxLines reached!") // Das muss noch für den Nutzer sichtbar gemacht werden!
-			}
+			/* Wurde keine versteckte Hilfslinie gefunden, dann sind alle Hilfslinien sichtbar und somit die maximale Anzahl erreicht currently */
+			} 
 		}
+		numberOfCoupledAuxLines--;				
 	}
 	
-	
-	
-
-    /* Berechnet die aktuelle Distanz zwischen zwei tatsächlich gezeichneten Linien auf dem Prozentband */
-    function distanceLineProzent (){
-        var intervallP = lineList.item(percentLineNumber).getAttribute("x1")-lineList.item(0).getAttribute("x1");
-        var distanceP = intervallP/percentLineNumber;
-        return distanceP;
-    }
-
-    /* Berechnet die aktuelle Distanz zwischen zwei tatsächlich gezeichneten Linien auf dem Lineal */
-    function distanceLineRuler (){
-        var intervallL = lineList.item(percentLineNumber+rulerLineNumber+1).getAttribute("x1")-lineList.item(percentLineNumber+1).getAttribute("x1");
-        var distanceL = intervallL/rulerLineNumber;
-        return distanceL;
-    }
-    
-    /* Berechnet die aktuelle Distanz zwischen zwei Beschriftungen auf dem Prozentband */
-    function distanceTextProzent (){
-        var intervallP = lineList.item(percentLineNumber).getAttribute("x1")-lineList.item(0).getAttribute("x1");
-        var distanceP = intervallP/percentRange;
-        return distanceP;
-    }
-
-    /* Berechnet die aktuelle Distanz zwischen zwei Beschriftungen auf dem Lineal */
-    function distanceTextRuler (){
-        var intervallL = lineList.item(percentLineNumber+rulerLineNumber+1).getAttribute("x1")-lineList.item(percentLineNumber+1).getAttribute("x1");
-        var distanceL = intervallL/rulerRange;
-        return distanceL;
-    }
-
+	/* Diese Funktion wird aufgerufen, wenn an einer der Skalen mit der Maus gezogen wird. */
     function moveElement(evt, prozentband){
 
         var newIntervall = evt.pageX - lineX;
@@ -3092,27 +3198,26 @@
 		} else if (scalefactor <0.8) {
 			scalefactor = 0.8;
 		}	
-		var newLineDistanceProzent = scalefactor * distanceLineProzent();
-        var newTextDistanceProzent = scalefactor * distanceTextProzent();
-		var newLineDistanceRuler = scalefactor * distanceLineRuler();
-        var newTextDistanceRuler = scalefactor * distanceTextRuler();         
-		
+		var newLineDistanceProzent = scalefactor * ( percentLineList.item(percentLineList.length-1).getAttribute("x1")-percentLineList.item(0).getAttribute("x1") )/percentLineList.length;
+        
+		var newLineDistanceRuler = scalefactor * ( rulerLineList.item(rulerLineList.length-1).getAttribute("x1")-rulerLineList.item(0).getAttribute("x1") )/rulerLineList.length;
+        		
 		
 		if (newIntervall>0) {
-			if (coupled == true && newLineDistanceProzent >= 4 && newLineDistanceProzent <= (parseInt(document.getElementById("Prozentband").getAttribute("width")) - 30) && newLineDistanceRuler >= 4 && newLineDistanceRuler <= (parseInt(document.getElementById("Ruler").getAttribute("width")) - 30) ) {
-					moveLines(newLineDistanceProzent, percentLineList);
+			if (numberOfCoupledAuxLines > 0 && newLineDistanceProzent >= 4 && newLineDistanceProzent <= (parseInt(document.getElementById("Prozentband").getAttribute("width")) - 30) && newLineDistanceRuler >= 4 && newLineDistanceRuler <= (parseInt(document.getElementById("Ruler").getAttribute("width")) - 30) ) {
+					moveLines(scalefactor, percentLineList);
 					moveText(scalefactor, percentTextList);
-					moveLines(newLineDistanceRuler, rulerLineList);
+					moveLines(scalefactor, rulerLineList);
 					moveText(scalefactor, rulerTextList);
 					moveAuxLines(scalefactor, percentAuxLineList);
 					moveAuxLines(scalefactor, rulerAuxLineList);
 					moveAuxLines(scalefactor, coupledAuxLineList);
-			} else if (coupled == false && prozentband == true && newLineDistanceProzent >= 4 && newLineDistanceProzent <= (parseInt(document.getElementById("Prozentband").getAttribute("width")) - 30)) {
-					moveLines(newLineDistanceProzent, percentLineList);
+			} else if (numberOfCoupledAuxLines == 0 && prozentband == true && newLineDistanceProzent >= 4 && newLineDistanceProzent <= (parseInt(document.getElementById("Prozentband").getAttribute("width")) - 30)) {
+					moveLines(scalefactor, percentLineList);
 					moveText(scalefactor, percentTextList);
 					moveAuxLines(scalefactor, percentAuxLineList);
-			} else if (coupled == false && prozentband == false && newLineDistanceRuler >= 4 && newLineDistanceRuler <= (parseInt(document.getElementById("Ruler").getAttribute("width")) - 30)) {
-					moveLines(newLineDistanceRuler, rulerLineList);
+			} else if (numberOfCoupledAuxLines == 0 && prozentband == false && newLineDistanceRuler >= 4 && newLineDistanceRuler <= (parseInt(document.getElementById("Ruler").getAttribute("width")) - 30)) {
+					moveLines(scalefactor, rulerLineList);
 					moveText(scalefactor, rulerTextList);
 					moveAuxLines(scalefactor, rulerAuxLineList);
 			}
@@ -3121,7 +3226,7 @@
         currentX = evt.pageX;
     }
 	
-	// TODO: Mitte statt Rand des Zeigers als Referenzpunkt
+	/* Funktion zum Bewegen der Hilfslinien */
 	function moveAuxLines(scalefactor, auxLineList) {
 		for (var i=0; i<auxLineList.length; i++) {
 			var auxline = auxLineList[i];
@@ -3139,35 +3244,26 @@
 			}
 		}
 	}
-
-	function moveLines(newLineDistance, arrayLines){
-        var j=0;
-
+	
+	/* Funktion zum Bewegen der Skalenstriche */
+	function moveLines(scalefactor, arrayLines){
+		var newLineDistance = ( arrayLines.item(arrayLines.length-1).getAttribute("x1")-arrayLines.item(0).getAttribute("x1") )/arrayLines.length;
         for (var i=0; i<arrayLines.length; i++){
             var line = arrayLines.item(i);
-            var pos = j*newLineDistance+lineX;
-            
-            line.setAttribute("x1", pos);
-            line.setAttribute("x2", pos);
-
-        // Setzt Linien sichtbar/nicht sichtbar, abhängig davon ob sie doch auf dem Prozentband/Lineal liegen oder nicht
-            if(pos >= (80+parseInt(document.getElementById("Prozentband").getAttribute("width")))){
-               line.setAttribute("visibility", "hidden");
-                }
-                else {
-                    line.setAttribute("visibility", "visible");
-                }
-
-          // stehen die Linien zu dicht aneinander werdem alle 'small'-Linien nicht sichtbar
-          if (newLineDistance < 4){
-              if(Math.abs(line.getAttribute("y1")-line.getAttribute("y2")) == Math.abs(-25)){
-                  line.setAttribute("visibility", "hidden");
-              }
-          }   
-        j++; 
+            var oldPosition = line.getAttribute("x1");
+			var newPosition = lineX + (oldPosition-lineX)*scalefactor;
+            line.setAttribute("x1", newPosition);
+            line.setAttribute("x2", newPosition);
+			// stehen die Linien zu dicht aneinander werdem alle 'small'-Linien nicht sichtbar
+			if (newLineDistance < 4){
+			  if(Math.abs(line.getAttribute("y1")-line.getAttribute("y2")) == Math.abs(-25)){
+				  line.setAttribute("visibility", "hidden");
+			  }
+			}   
         }
     }
 
+	/* Funktion zum Bewegen der Skalenlabels */
     function moveText(scalefactor, arrayText){
 		
 		// Berechne Abstand zwischen benachbarten Textlabels
@@ -3178,16 +3274,7 @@
             var oldPosition = text.getAttribute("x");
 			var newPosition = lineX + (oldPosition-lineX)*scalefactor;
             text.setAttribute("x", newPosition);
-        
-            // Setzt Text sichtbar/nicht sichtbar, abhängig davon, ob sie noch auf dem Prozentband/Lineal liegen oder nicht
-            if(newPosition >= (80+parseInt(document.getElementById("Prozentband").getAttribute("width")))-20){
-                text.setAttribute("visibility", "hidden");
-			} else {
-                text.setAttribute("visibility", "visible");
-            }
-
             // stehen die Texte zu dicht aneinander wird jeder 2. nicht sichtbar
-
             if(newTextDistance < 30){
                 if (i%2 != 0){
                     text.setAttribute("visibility", "hidden");
@@ -3206,6 +3293,12 @@
 ]]>
 
 </script>
+<!-- Versteckt alles, was hinter dem rechten Ende der Skalen ist, indem ein weißes Rechteck passender Größe 
+	in den Vordergrund gelegt wird (ggf. Füllfarbe an Hintergrundfarbe anpassen)-->
+    <rect   id="Hide"
+            x="1115"    						y="0"
+            width="85"		height="850"
+            fill="white" />
 </svg>
 </body>
 </html>

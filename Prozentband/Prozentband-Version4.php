@@ -34,16 +34,17 @@
 <body>
 
 <?php
-    $PBx=80; // x-Koordinate für Beginn der Skalen-Umrandung
+	$canvasWidth=1200;
+	$canvasHeight=850;
+    $PBx=75; // x-Koordinate für Beginn der Skalen-Umrandung
     $PBy=290; //y-Koordinate für Beginn der Skalen-Umrandung
-    $width=1030; // gibt Breite des Prozentbandes + Lineals vor
+    $width=1040; // gibt Breite des Prozentbandes + Lineals vor
     $height=90;  // gibt Höhe des Prozentbandes + Lineals vor
     $auxHiddenHeight=90; // gibt Höhe der versteckten Bereiche oberhalb des Prozentbands und unterhalb des Lineals vor
     $distanceScale=195; // gibt an, wie groß der Abstand zwischen dem Prozentband und dem Lineal ist
     
 	$distanceAuxLines=10; // gibt an, wie groß der Abstand zwischen dem Ende der Hilfslinie und der gegenüberliegenden Skala ist
-    $numberOfAuxLines=3; // gibt maximale Anzahl einseitiger Hilfslinien an
-    $numberOfCoupledAuxLines=3; // gibt maximale Anzahl beidseitiger Hilfslinien an
+    $maxNumberOfAuxLines=3; // gibt maximale Anzahl der Hilfslinien an
     
     $pointerRadius=10;
     $pointerHiddenHalfWidth=20;
@@ -61,13 +62,11 @@
     
     $rulerDensityCondition = 1;
     $percentDensityCondition = 50;
-    
-    $coupled=true;
-    
+        
     $PBline_y1=$PBy+$height; // Linien des Prozentbandes schließen mit unterem Rand des Prozentbandes ab 
     $Lline_y1=$PBy+$distanceScale; // Linien des Lineals schließen mit oberen Rand des Lineals ab.
     $lineDistance=5; // zu Beginn kann eine Distanz zwischen den linien vorgegeben werden. Davon abhängig ist wieviele linien zu Beginn auf der Skala erscheinen.
-    $lineX=$PBx+5; // x-Koordinate der 0-Linien
+    $lineX=$PBx+15; // x-Koordinate der 0-Linien
     // small, medium, large geben die Größe einer Linie auf einer Skala vor
     $small=25;  
     $medium=30;
@@ -112,8 +111,9 @@
 						style="stroke:black; stroke-width:2;"
 						visibility="visible" />
 
-				<text   id="<?php echo($IDstart); ?>" class="<?php echo($Class); ?>Text"
-						x="<?php echo($i*$lineDistance+$lineX-4); ?>" y="<?php echo($Ystart+$textGap); ?>"
+				<text   id="<?php echo($IDstart); ?>" class="<?php echo($Class); ?>Text" 
+						text-anchor="middle"
+						x="<?php echo($i*$lineDistance+$lineX); ?>" y="<?php echo($Ystart+$textGap); ?>"
 						style="font-size: 12.8px;"                    visibility="visible">
 						<?php echo($i.$percent); ?> </text>
 
@@ -156,7 +156,7 @@
 
 
     function drawAuxLines(){
-        global	$numberOfAuxLines, $numberOfCoupledAuxLines, $auxLineColor, $PBx, $PBy,
+        global	$maxNumberOfAuxLines, $auxLineColor, $PBx, $PBy,
 				$height, $auxHiddenHeight, $distanceScale, $distanceAuxLines, 
 				$pointerArrowHalfWidth, $pointerArrowHeight, $pointerHiddenHalfWidth, $pointerRadius, 
 				$pointerPercentArrowColor, $pointerRulerArrowColor, $pointerCoupledArrowColor,
@@ -164,7 +164,7 @@
         
 		$visibility = "hidden"; // Debug: Auf "visible" setzen, um alle Hilfslinien anzuzeigen
 		
-        for ($i=1; $i<=$numberOfAuxLines; $i++){
+        for ($i=1; $i<=$maxNumberOfAuxLines; $i++){
 ?>
 		<!-- Hilfslinien für das Prozentband -->
 
@@ -176,14 +176,14 @@
 						x = "0" y="0"
 						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
 						height = "<?php echo($auxHiddenHeight); ?>"
-						visibility = "hidden"
+						fill = "white" onclick="removeAuxLine(this)"
 						/>
 						
 			<rect		id = "percentAuxHiddenAreaCoupling_<?php echo($i); ?>"
 						x = "0" y="<?php echo($auxHiddenHeight+$height); ?>"
 						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
-						height = "<?php echo($distanceScale-$height); ?>"
-						visibility = "hidden"
+						height = "<?php echo($distanceScale-$height-1); ?>"
+						fill = "white" onclick="coupleAuxLine(this)"
 						/>						
 
 			<line 		id = "percentAuxLine_<?php echo($i); ?>"
@@ -195,6 +195,7 @@
 			<circle		id = "percentAuxCircle_<?php echo($i); ?>"
 						cx = "<?php echo($pointerHiddenHalfWidth); ?>" cy = "<?php echo($auxHiddenHeight+$height+ ($distanceScale-$height)/2); ?>" r = "<?php echo($pointerRadius); ?>"
 						fill = "<?php echo($pointerPercentArrowColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
+						onclick="coupleAuxLine(this)"
 						/>
 						
 			<polygon 	id = "percentAuxTriangle_<?php echo($i); ?>"
@@ -204,6 +205,7 @@
 							<?php echo($pointerHiddenHalfWidth); ?>,<?php echo($auxHiddenHeight+$distanceScale-$distanceAuxLines); ?>
 						" 
 						fill="<?php echo($pointerPercentArrowColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
+						onclick="coupleAuxLine(this)"
 						/>
 			
         </svg>  
@@ -214,17 +216,17 @@
             visibility="<?php echo($visibility); ?>" >
 
 			<rect		id = "rulerAuxHiddenArea_<?php echo($i); ?>"
-						x = "0" y="<?php echo($distanceScale); ?>"
+						x = "0" y="<?php echo($distanceScale+1); ?>"
 						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
-						height = "<?php echo($auxHiddenHeight); ?>"
-						visibility = "hidden"
+						height = "<?php echo($auxHiddenHeight-1); ?>"
+						fill="white" onclick="removeAuxLine(this)"
 						/>
 						
 			<rect		id = "rulerAuxHiddenAreaCoupling_<?php echo($i); ?>"
 						x = "0" y="0"
 						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
-						height = "<?php echo($distanceScale-$height); ?>"
-						visibility = "hidden"
+						height = "<?php echo($distanceScale-$height-1); ?>"
+						fill="white" onclick="coupleAuxLine(this)"
 						/>	
 
 			<line 		id = "rulerAuxLine_<?php echo($i); ?>"
@@ -236,6 +238,7 @@
 			<circle		id = "rulerAuxCircle_<?php echo($i); ?>"
 						cx = "<?php echo($pointerHiddenHalfWidth); ?>" cy = "<?php echo(($distanceScale-$height)/2); ?>" r = "<?php echo($pointerRadius); ?>"
 						fill = "<?php echo($pointerRulerArrowColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
+						onclick="coupleAuxLine(this)"
 						/>
 						
 			<polygon 	id = "rulerAuxTriangle_<?php echo($i); ?>"
@@ -245,20 +248,35 @@
 							<?php echo($pointerHiddenHalfWidth); ?>,<?php echo($distanceAuxLines); ?>
 						" 
 						fill="<?php echo($pointerRulerArrowColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
+						onclick="coupleAuxLine(this)"
 						/>						
         </svg>
 
- 
- <?php
-        }
-        for ($i=1; $i<=$numberOfCoupledAuxLines; $i++){
- ?>
 		<!-- Hilfslinien für beide Skalen (gekoppelt) -->
          <svg  id="coupledAuxLineGroup_<?php echo($i); ?>" class="coupledAuxLine"
 			x="<?php echo($PBx); ?>" y="<?php echo($PBy-$auxHiddenHeight); ?>"
 			visibility="<?php echo($visibility); ?>" >
 
+			<rect		id = "coupledAuxHiddenArea_<?php echo($i); ?>"
+						x = "0" y="0"
+						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
+						height = "<?php echo($auxHiddenHeight); ?>"
+						fill = "white" onclick="decoupleAuxLine(this, 'percent')"
+						/>
+						
+			<rect		id = "coupledAuxHiddenAreaCoupling_<?php echo($i); ?>"
+						x = "0" y="<?php echo($auxHiddenHeight+$height); ?>"
+						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
+						height = "<?php echo($distanceScale-$height-1); ?>"
+						fill = "white" onclick="removeAuxLine(this)"
+						/>		
 
+			<rect		id = "coupledAuxHiddenArea_<?php echo($i); ?>"
+						x = "0" y="<?php echo($auxHiddenHeight+$height+$distanceScale+1); ?>"
+						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
+						height = "<?php echo($auxHiddenHeight-1); ?>"
+						fill="white" onclick="decoupleAuxLine(this, 'ruler')"
+						/>
 
 			<line 		id = "coupledAuxLine_<?php echo($i); ?>"
 			            stroke="<?php echo($auxLineColor); ?>" stroke-width="2" stroke-dasharray="5, 5"
@@ -269,6 +287,7 @@
 			<circle		id = "coupledAuxCircle_<?php echo($i); ?>"
 						cx = "<?php echo($pointerHiddenHalfWidth); ?>" cy = "<?php echo($auxHiddenHeight+$height+ ($distanceScale-$height)/2); ?>" r = "<?php echo($pointerRadius); ?>"
 						fill = "<?php echo($pointerCoupledArrowColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
+						onclick="removeAuxLine(this)"
 						/>
 						
 			<polygon 	id = "coupledAuxQuadrangle_<?php echo($i); ?>"
@@ -278,6 +297,7 @@
 							<?php echo($pointerHiddenHalfWidth+$pointerArrowHalfWidth); ?>,<?php echo($auxHiddenHeight+$height+ $distanceAuxLines+$pointerArrowHeight); ?>
 						" 
 						fill="<?php echo($pointerCoupledArrowColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
+						onclick="removeAuxLine(this)"
 						/>	
 						
 			<polygon 	id = "coupledAuxQuadrangle_<?php echo($i); ?>"
@@ -287,6 +307,7 @@
 							<?php echo($pointerHiddenHalfWidth); ?>,<?php echo($auxHiddenHeight+$distanceScale-$distanceAuxLines); ?>						
 						" 
 						fill="<?php echo($pointerCoupledArrowColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
+						onclick="removeAuxLine(this)"
 						/>													
         </svg>
  <?php
@@ -295,7 +316,7 @@
 
  ?>
 
-<svg   width="1200" height="850" style="-moz-user-selection: none">
+<svg   width="<?php echo($canvasWidth); ?>" height="<?php echo($canvasHeight); ?>" style="-moz-user-selection: none">
 
     
 
@@ -306,7 +327,6 @@
     
 <?php 
     // Zeichnet Linien für das Prozentband
-    // LineList Positionen: 0-200 
     // false = nicht das Lineal
     drawLines($PBline_y1, false);
 ?>
@@ -332,7 +352,6 @@
 
 <?php
     // Zeichnet die Linien für das Prozentband
-    // LineList Positionen: 201-401 ???
     drawLines($Lline_y1, true);
 ?>
 
@@ -405,15 +424,11 @@
     var percentLineNumber = <?php echo($percentLineNumber); ?>;
     var percentRange = <?php echo($percentRange); ?>;
     var lineX = <?php echo($lineX); ?>;
-    var coupled = false;
-    var numberOfAuxLines = <?php echo($numberOfAuxLines); ?>; 
-    var numberOfCoupledAuxLines = <?php echo($numberOfCoupledAuxLines); ?>; 
+    var maxNumberOfAuxLines = <?php echo($maxNumberOfAuxLines); ?>; 
     var pointerHiddenHalfWidth = <?php echo($pointerHiddenHalfWidth); ?>;
-    
-    var lineList = document.getElementsByTagName("line");   
-    var textList = document.getElementsByTagName("text");
-    
-    
+    var numberOfAuxLines = 0;
+    var numberOfCoupledAuxLines = 0;
+
     /*Hier schöne neue Arrays mit Linien und Labels für Lineal und Prozentband getrennt*/
     var rulerLineList = document.getElementsByClassName("rulerLine");
     var rulerTextList = document.getElementsByClassName("rulerText");
@@ -424,23 +439,6 @@
     var rulerAuxLineList = document.getElementsByClassName("rulerAuxLine");
     var coupledAuxLineList = document.getElementsByClassName("coupledAuxLine");
     
-    
-    // setzt alle Linien, die über das Prozentband bzw. Lineal hinausgehen auf hidden
-    for(var i=0; i<lineList.length; i++){ 
-        var line = lineList.item(i);
-        var pos = line.getAttribute("x1");
-		if(pos >= (<?php echo($PBx); ?>+parseInt(document.getElementById("Prozentband").getAttribute("width")))){
-            line.setAttribute("visibility", "hidden");
-        }
-    }
-    // setzt alle Texte, die über das Prozentband bzw. Lineal hinausgehen auf hidden
-    for (var i=0; i<textList.length; i++){
-        var text = textList.item(i);
-        var pos = text.getAttribute("x");
-		if(pos >= (<?php echo($PBx); ?>+parseInt(document.getElementById("Prozentband").getAttribute("width")))){
-            text.setAttribute("visibility", "hidden");
-        }
-    }
 		
 	// Unterbindet hoffentlich das Scrollen der Webseite, keine Ahnung, ob es funktioniert...
 	document.ontouchmove = function(e){ e.preventDefault(); }
@@ -456,10 +454,8 @@
 		 $("svg").on(TouchMouseEvent.UP, function(e){
 			startdragruler= false;
 		 });	
-		
-		
-		
-		
+				
+				
 		var startdragprozentband= false;
 		 $("#Prozentband-Hidden").on(TouchMouseEvent.DOWN, function(e){
 			currentX=e.pageX;
@@ -485,42 +481,77 @@
 	
 	/* Diese Funktion fügt eine Hilfslinie hinzu (macht eine der unsichtbaren Hilfslinien sichtbar und setzt sie auf Mausposition) */
 	function addAuxLine(evt, auxLineList) {
-		/* Gehe durch alle Hilfslinien, bis eine versteckte gefunden wird, setze diese auf die Mausposition und mache sie sichtbar */
-		for (var i=0; i<auxLineList.length; i++) {
-			var auxline = auxLineList[i];
+		if (numberOfAuxLines < maxNumberOfAuxLines) {
+			/* Gehe durch alle Hilfslinien, bis eine versteckte gefunden wird, setze diese auf die Mausposition und mache sie sichtbar */
+			for (var i=0; i<auxLineList.length; i++) {
+				var auxline = auxLineList[i];
+				if (auxline.getAttribute("visibility")=="hidden") {
+					auxline.setAttribute("x", evt.pageX-pointerHiddenHalfWidth);
+					auxline.setAttribute("visibility", "visible");
+					numberOfAuxLines++;
+					if (auxLineList == coupledAuxLineList){
+						numberOfCoupledAuxLines++;
+					}
+					/* Ist eine Hilfslinie erschaffen, suche nicht weiter */
+					break;
+				/* Wurde keine versteckte Hilfslinie gefunden, dann sind alle Hilfslinien sichtbar und somit die maximale Anzahl erreicht currently */
+				} 
+			}
+		} else {
+			console.log("Maximum number of AuxLines reached!") // Das muss noch für den Nutzer sichtbar gemacht werden!
+		}
+	}
+
+	/* Diese Funktion fügt eine Hilfslinie hinzu (macht eine der unsichtbaren Hilfslinien sichtbar und setzt sie auf Mausposition) */
+	function removeAuxLine(auxLineHiddenArea) {
+		auxLineHiddenArea.parentNode.setAttribute("visibility", "hidden");
+		if (auxLineHiddenArea.parentNode.className.baseVal == "coupledAuxLine") {
+				numberOfCoupledAuxLines--;
+		}
+		numberOfAuxLines--;
+	}
+	
+	function coupleAuxLine(auxLineHiddenArea) {
+		auxLineHiddenArea.parentNode.setAttribute("visibility", "hidden");
+		var position = auxLineHiddenArea.parentNode.getAttribute("x");
+		for (var i=0; i<coupledAuxLineList.length; i++) {
+			var auxline = coupledAuxLineList[i];
 			if (auxline.getAttribute("visibility")=="hidden") {
-				auxline.setAttribute("x", evt.pageX-pointerHiddenHalfWidth);
+				auxline.setAttribute("x", position);
 				auxline.setAttribute("visibility", "visible");
-				/* Falls eine beidseitige Hilfslinie hinzugefügt wird, sollen die Skalen gekoppelt skalieren */
-				if (auxLineList == coupledAuxLineList){
-					coupled = true;
-				}
 				/* Ist eine Hilfslinie erschaffen, suche nicht weiter */
 				break;
 			/* Wurde keine versteckte Hilfslinie gefunden, dann sind alle Hilfslinien sichtbar und somit die maximale Anzahl erreicht currently */
-			} else if ( i==auxLineList.length-1 ) {
-				console.log("Maximum number of AuxLines reached!") // Das muss noch für den Nutzer sichtbar gemacht werden!
-			}
+			} 
 		}
+		numberOfCoupledAuxLines++;
 	}
 	
+	/* Diese Funktion verwandelt eine gekoppelte Hilfslinie in eine einfache Hilfslinie für die Skala targetScale(=ruler oder =percent) */
+	function decoupleAuxLine(auxLineHiddenArea, targetScale) {
+		auxLineHiddenArea.parentNode.setAttribute("visibility", "hidden");
+		var position = auxLineHiddenArea.parentNode.getAttribute("x");
+		if (targetScale == "ruler") {
+			var auxLineList = rulerAuxLineList;
+		} else if (targetScale == "percent") {
+			var auxLineList = percentAuxLineList;
+		} else {
+			console.log("Die Funktion decoupleAuxLine wurde mit unerwarteten Argumenten aufgerufen!")
+		}
+		for (var i=0; i<auxLineList.length; i++) {
+			var auxline = auxLineList[i];
+			if (auxline.getAttribute("visibility")=="hidden") {
+				auxline.setAttribute("x", position);
+				auxline.setAttribute("visibility", "visible");
+				/* Ist eine Hilfslinie erschaffen, suche nicht weiter */
+				break;
+			/* Wurde keine versteckte Hilfslinie gefunden, dann sind alle Hilfslinien sichtbar und somit die maximale Anzahl erreicht currently */
+			} 
+		}
+		numberOfCoupledAuxLines--;				
+	}
 	
-	
-
-    /* Berechnet die aktuelle Distanz zwischen zwei tatsächlich gezeichneten Linien auf dem Prozentband */
-    function distanceLineProzent (){
-        var intervallP = lineList.item(percentLineNumber).getAttribute("x1")-lineList.item(0).getAttribute("x1");
-        var distanceP = intervallP/percentLineNumber;
-        return distanceP;
-    }
-
-    /* Berechnet die aktuelle Distanz zwischen zwei tatsächlich gezeichneten Linien auf dem Lineal */
-    function distanceLineRuler (){
-        var intervallL = lineList.item(percentLineNumber+rulerLineNumber+1).getAttribute("x1")-lineList.item(percentLineNumber+1).getAttribute("x1");
-        var distanceL = intervallL/rulerLineNumber;
-        return distanceL;
-    }
-
+	/* Diese Funktion wird aufgerufen, wenn an einer der Skalen mit der Maus gezogen wird. */
     function moveElement(evt, prozentband){
 
         var newIntervall = evt.pageX - lineX;
@@ -531,24 +562,26 @@
 		} else if (scalefactor <0.8) {
 			scalefactor = 0.8;
 		}	
-		var newLineDistanceProzent = scalefactor * distanceLineProzent();
-		var newLineDistanceRuler = scalefactor * distanceLineRuler();		
+		var newLineDistanceProzent = scalefactor * ( percentLineList.item(percentLineList.length-1).getAttribute("x1")-percentLineList.item(0).getAttribute("x1") )/percentLineList.length;
+        
+		var newLineDistanceRuler = scalefactor * ( rulerLineList.item(rulerLineList.length-1).getAttribute("x1")-rulerLineList.item(0).getAttribute("x1") )/rulerLineList.length;
+        		
 		
 		if (newIntervall>0) {
-			if (coupled == true && newLineDistanceProzent >= 4 && newLineDistanceProzent <= (parseInt(document.getElementById("Prozentband").getAttribute("width")) - 30) && newLineDistanceRuler >= 4 && newLineDistanceRuler <= (parseInt(document.getElementById("Ruler").getAttribute("width")) - 30) ) {
-					moveLines(newLineDistanceProzent, percentLineList);
+			if (numberOfCoupledAuxLines > 0 && newLineDistanceProzent >= 4 && newLineDistanceProzent <= (parseInt(document.getElementById("Prozentband").getAttribute("width")) - 30) && newLineDistanceRuler >= 4 && newLineDistanceRuler <= (parseInt(document.getElementById("Ruler").getAttribute("width")) - 30) ) {
+					moveLines(scalefactor, percentLineList);
 					moveText(scalefactor, percentTextList);
-					moveLines(newLineDistanceRuler, rulerLineList);
+					moveLines(scalefactor, rulerLineList);
 					moveText(scalefactor, rulerTextList);
 					moveAuxLines(scalefactor, percentAuxLineList);
 					moveAuxLines(scalefactor, rulerAuxLineList);
 					moveAuxLines(scalefactor, coupledAuxLineList);
-			} else if (coupled == false && prozentband == true && newLineDistanceProzent >= 4 && newLineDistanceProzent <= (parseInt(document.getElementById("Prozentband").getAttribute("width")) - 30)) {
-					moveLines(newLineDistanceProzent, percentLineList);
+			} else if (numberOfCoupledAuxLines == 0 && prozentband == true && newLineDistanceProzent >= 4 && newLineDistanceProzent <= (parseInt(document.getElementById("Prozentband").getAttribute("width")) - 30)) {
+					moveLines(scalefactor, percentLineList);
 					moveText(scalefactor, percentTextList);
 					moveAuxLines(scalefactor, percentAuxLineList);
-			} else if (coupled == false && prozentband == false && newLineDistanceRuler >= 4 && newLineDistanceRuler <= (parseInt(document.getElementById("Ruler").getAttribute("width")) - 30)) {
-					moveLines(newLineDistanceRuler, rulerLineList);
+			} else if (numberOfCoupledAuxLines == 0 && prozentband == false && newLineDistanceRuler >= 4 && newLineDistanceRuler <= (parseInt(document.getElementById("Ruler").getAttribute("width")) - 30)) {
+					moveLines(scalefactor, rulerLineList);
 					moveText(scalefactor, rulerTextList);
 					moveAuxLines(scalefactor, rulerAuxLineList);
 			}
@@ -557,7 +590,7 @@
         currentX = evt.pageX;
     }
 	
-	// TODO: Mitte statt Rand des Zeigers als Referenzpunkt
+	/* Funktion zum Bewegen der Hilfslinien */
 	function moveAuxLines(scalefactor, auxLineList) {
 		for (var i=0; i<auxLineList.length; i++) {
 			var auxline = auxLineList[i];
@@ -575,35 +608,26 @@
 			}
 		}
 	}
-
-	function moveLines(newLineDistance, arrayLines){
-        var j=0;
-
+	
+	/* Funktion zum Bewegen der Skalenstriche */
+	function moveLines(scalefactor, arrayLines){
+		var newLineDistance = ( arrayLines.item(arrayLines.length-1).getAttribute("x1")-arrayLines.item(0).getAttribute("x1") )/arrayLines.length;
         for (var i=0; i<arrayLines.length; i++){
             var line = arrayLines.item(i);
-            var pos = j*newLineDistance+lineX;
-            
-            line.setAttribute("x1", pos);
-            line.setAttribute("x2", pos);
-
-        // Setzt Linien sichtbar/nicht sichtbar, abhängig davon ob sie doch auf dem Prozentband/Lineal liegen oder nicht
-            if(pos >= (<?php echo($PBx); ?>+parseInt(document.getElementById("Prozentband").getAttribute("width")))){
-               line.setAttribute("visibility", "hidden");
-                }
-                else {
-                    line.setAttribute("visibility", "visible");
-                }
-
-          // stehen die Linien zu dicht aneinander werdem alle 'small'-Linien nicht sichtbar
-          if (newLineDistance < 4){
-              if(Math.abs(line.getAttribute("y1")-line.getAttribute("y2")) == Math.abs(<?php echo($small); ?>)){
-                  line.setAttribute("visibility", "hidden");
-              }
-          }   
-        j++; 
+            var oldPosition = line.getAttribute("x1");
+			var newPosition = lineX + (oldPosition-lineX)*scalefactor;
+            line.setAttribute("x1", newPosition);
+            line.setAttribute("x2", newPosition);
+			// stehen die Linien zu dicht aneinander werdem alle 'small'-Linien nicht sichtbar
+			if (newLineDistance < 4){
+			  if(Math.abs(line.getAttribute("y1")-line.getAttribute("y2")) == Math.abs(<?php echo($small); ?>)){
+				  line.setAttribute("visibility", "hidden");
+			  }
+			}   
         }
     }
 
+	/* Funktion zum Bewegen der Skalenlabels */
     function moveText(scalefactor, arrayText){
 		
 		// Berechne Abstand zwischen benachbarten Textlabels
@@ -614,16 +638,7 @@
             var oldPosition = text.getAttribute("x");
 			var newPosition = lineX + (oldPosition-lineX)*scalefactor;
             text.setAttribute("x", newPosition);
-        
-            // Setzt Text sichtbar/nicht sichtbar, abhängig davon, ob sie noch auf dem Prozentband/Lineal liegen oder nicht
-            if(newPosition >= (<?php echo($PBx); ?>+parseInt(document.getElementById("Prozentband").getAttribute("width")))-20){
-                text.setAttribute("visibility", "hidden");
-			} else {
-                text.setAttribute("visibility", "visible");
-            }
-
             // stehen die Texte zu dicht aneinander wird jeder 2. nicht sichtbar
-
             if(newTextDistance < 30){
                 if (i%2 != 0){
                     text.setAttribute("visibility", "hidden");
@@ -642,6 +657,12 @@
 ]]>
 
 </script>
+<!-- Versteckt alles, was hinter dem rechten Ende der Skalen ist, indem ein weißes Rechteck passender Größe 
+	in den Vordergrund gelegt wird (ggf. Füllfarbe an Hintergrundfarbe anpassen)-->
+    <rect   id="Hide"
+            x="<?php echo($PBx+$width); ?>"    						y="0"
+            width="<?php echo($canvasWidth-$width-$PBx); ?>"		height="<?php echo($canvasHeight); ?>"
+            fill="white" />
 </svg>
 </body>
 </html>
