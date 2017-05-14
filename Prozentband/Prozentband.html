@@ -3178,9 +3178,9 @@
 			scalefactor = 0.8;
 		}	
 		var newLineDistanceProzent = scalefactor * ( percentLineList.item(percentLineList.length-1).getAttribute("x1")-percentLineList.item(0).getAttribute("x1") )/percentLineList.length;
-        
+		var newTextDistanceProzent = scalefactor * ( percentTextList.item(percentTextList.length-1).getAttribute("x")-percentTextList.item(0).getAttribute("x") )/percentTextList.length;        
 		var newLineDistanceRuler = scalefactor * ( rulerLineList.item(rulerLineList.length-1).getAttribute("x1")-rulerLineList.item(0).getAttribute("x1") )/rulerLineList.length;
-        		
+ 		var newTextDistanceRuler = scalefactor * ( rulerTextList.item(rulerTextList.length-1).getAttribute("x")-rulerTextList.item(0).getAttribute("x") )/rulerTextList.length;
 		
 		if (newIntervall>0) {
 			if (numberOfCoupledAuxLines > 0 && newLineDistanceProzent >= 4 && newLineDistanceProzent <= (parseInt(document.getElementById("Prozentband").getAttribute("width")) - 30) && newLineDistanceRuler >= 4 && newLineDistanceRuler <= (parseInt(document.getElementById("Ruler").getAttribute("width")) - 30) ) {
@@ -3191,11 +3191,11 @@
 					moveAuxLines(scalefactor, percentAuxLineList);
 					moveAuxLines(scalefactor, rulerAuxLineList);
 					moveAuxLines(scalefactor, coupledAuxLineList);
-			} else if (numberOfCoupledAuxLines == 0 && prozentband == true && newLineDistanceProzent >= 4 && newLineDistanceProzent <= (parseInt(document.getElementById("Prozentband").getAttribute("width")) - 30)) {
+			} else if (numberOfCoupledAuxLines == 0 && prozentband == true && newTextDistanceProzent >= 15 && newLineDistanceProzent <= (parseInt(document.getElementById("Prozentband").getAttribute("width")) - 30)) {
 					moveLines(scalefactor, percentLineList);
 					moveText(scalefactor, percentTextList);
 					moveAuxLines(scalefactor, percentAuxLineList);
-			} else if (numberOfCoupledAuxLines == 0 && prozentband == false && newLineDistanceRuler >= 4 && newLineDistanceRuler <= (parseInt(document.getElementById("Ruler").getAttribute("width")) - 30)) {
+			} else if (numberOfCoupledAuxLines == 0 && prozentband == false && newTextDistanceRuler >= 15 && newLineDistanceRuler <= (parseInt(document.getElementById("Ruler").getAttribute("width")) - 30)) {
 					moveLines(scalefactor, rulerLineList);
 					moveText(scalefactor, rulerTextList);
 					moveAuxLines(scalefactor, rulerAuxLineList);
@@ -3234,13 +3234,15 @@
             line.setAttribute("x1", newPosition);
             line.setAttribute("x2", newPosition);
 			// stehen die Linien zu dicht aneinander werdem alle 'small'-Linien nicht sichtbar
-			if (newLineDistance < 4){
-			  if(Math.abs(line.getAttribute("y1")-line.getAttribute("y2")) == Math.abs(-25)){
-				  line.setAttribute("visibility", "hidden");
-			  }
-			}   
-        }
-    }
+			if(Math.abs(line.getAttribute("y1")-line.getAttribute("y2")) == Math.abs(-25)){
+				if (newLineDistance < 4){
+					line.setAttribute("visibility", "hidden");
+				} else {
+					line.setAttribute("visibility", "visible");	
+				}   
+			}
+		}
+	}
 
 	/* Funktion zum Bewegen der Skalenlabels */
     function moveText(scalefactor, arrayText){
@@ -3254,10 +3256,12 @@
 			var newPosition = lineX + (oldPosition-lineX)*scalefactor;
             text.setAttribute("x", newPosition);
             // stehen die Texte zu dicht aneinander wird jeder 2. nicht sichtbar
-            if(newTextDistance < 30){
-                if (i%2 != 0){
+            if (i%2 != 0){
+				if(newTextDistance < 30){
                     text.setAttribute("visibility", "hidden");
-                }
+                } else {
+					text.setAttribute("visibility", "visible");	
+				}
             }
         }
     }
