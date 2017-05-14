@@ -3181,9 +3181,10 @@
 		var newTextDistanceProzent = scalefactor * ( percentTextList.item(percentTextList.length-1).getAttribute("x")-percentTextList.item(0).getAttribute("x") )/percentTextList.length;        
 		var newLineDistanceRuler = scalefactor * ( rulerLineList.item(rulerLineList.length-1).getAttribute("x1")-rulerLineList.item(0).getAttribute("x1") )/rulerLineList.length;
  		var newTextDistanceRuler = scalefactor * ( rulerTextList.item(rulerTextList.length-1).getAttribute("x")-rulerTextList.item(0).getAttribute("x") )/rulerTextList.length;
-		
+		console.log(newLineDistanceProzent);
+		console.log(newLineDistanceRuler);
 		if (newIntervall>0) {
-			if (numberOfCoupledAuxLines > 0 && newLineDistanceProzent >= 4 && newLineDistanceProzent <= (parseInt(document.getElementById("Prozentband").getAttribute("width")) - 30) && newLineDistanceRuler >= 4 && newLineDistanceRuler <= (parseInt(document.getElementById("Ruler").getAttribute("width")) - 30) ) {
+			if (numberOfCoupledAuxLines > 0 && newTextDistanceProzent >= 15 && newLineDistanceProzent <= (parseInt(document.getElementById("Prozentband").getAttribute("width")) - 150) && newTextDistanceRuler >= 15 && newLineDistanceRuler <= (parseInt(document.getElementById("Ruler").getAttribute("width")) - 30) ) {
 					moveLines(scalefactor, percentLineList);
 					moveText(scalefactor, percentTextList);
 					moveLines(scalefactor, rulerLineList);
@@ -3191,7 +3192,7 @@
 					moveAuxLines(scalefactor, percentAuxLineList);
 					moveAuxLines(scalefactor, rulerAuxLineList);
 					moveAuxLines(scalefactor, coupledAuxLineList);
-			} else if (numberOfCoupledAuxLines == 0 && prozentband == true && newTextDistanceProzent >= 15 && newLineDistanceProzent <= (parseInt(document.getElementById("Prozentband").getAttribute("width")) - 30)) {
+			} else if (numberOfCoupledAuxLines == 0 && prozentband == true && newTextDistanceProzent >= 15 && newLineDistanceProzent <= (parseInt(document.getElementById("Prozentband").getAttribute("width")) - 150)) {
 					moveLines(scalefactor, percentLineList);
 					moveText(scalefactor, percentTextList);
 					moveAuxLines(scalefactor, percentAuxLineList);
