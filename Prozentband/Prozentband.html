@@ -172,7 +172,7 @@
             x="75"    		y="200"
             width="1040"      height="90"
             fill="blue"                 		style="pointer-events:all;"
-            visibility="hidden"					onclick="addAuxLine(evt, percentAuxLineList)"/>
+            visibility="hidden"					/>
 
     <rect   id="Ruler"
             x="75"    		y="485"
@@ -2605,14 +2605,14 @@
             x="75"    		y="575"
             width="1040"      height="90"
             fill="blue"                 		style="pointer-events:all;"
-            visibility="hidden"					onclick="addAuxLine(evt, rulerAuxLineList)"/>
+            visibility="hidden"					/>
 
     <!-- In diesem Bereich kann durch das Mausevent 'Doppelklick' ein neuer Reiter erzeugt werden -->
     <rect   id="Between-Prozentband-Ruler"
             x="75"    		y="380"
             width="1040"		height="105"
             fill="red"                  		style="pointer-events:all;"
-            visibility="hidden"					onclick="addAuxLine(evt, coupledAuxLineList)"/>
+            visibility="hidden"					/>
 
 		<!-- Hilfslinien für das Prozentband -->
 
@@ -3059,50 +3059,81 @@
 	document.ontouchmove = function(e){ e.preventDefault(); }
     
 	$(function(){
-					
-		var startdragruler= false;
-		 $("#Ruler-Hidden").on(TouchMouseEvent.DOWN, function(e){
-			currentX=e.pageX;
-			startdragruler= true;
-		 });
+		
+		var startDragPercent = false;
+		var startDragRuler = false;
+		var startDragAuxPercent = false;
+		var startDragAuxRuler = false;
+		var startDragAuxCoupled = false;
+		
 
-		 $("svg").on(TouchMouseEvent.UP, function(e){
-			startdragruler= false;
-		 });	
-				
-				
-		var startdragprozentband= false;
-		 $("#Prozentband-Hidden").on(TouchMouseEvent.DOWN, function(e){
-			currentX=e.pageX;
-			startdragprozentband= true;
-		 });
-
-		 $("svg").on(TouchMouseEvent.UP, function(e){
-			startdragprozentband= false;
-		 });
-		 
-		 
-		  $("svg").on(TouchMouseEvent.MOVE, function(e){
-			if(startdragruler){
-			  moveElement(e, false);
-			 }
-			 if(startdragprozentband){
-			  moveElement(e, true);
+		<!-- Anfang der Bewegung (mouse down) -->
+		$("#Prozentband-Hidden").on(TouchMouseEvent.DOWN, function(e){
+			currentX = e.pageX;
+			startDragPercent = true;
+		});
+		$("#Ruler-Hidden").on(TouchMouseEvent.DOWN, function(e){
+			currentX = e.pageX;
+			startDragRuler = true;
+		});				
+		$("#Above-Prozentband-Hidden").on(TouchMouseEvent.DOWN, function(e){
+			currentX = e.pageX;
+			addAuxLine(currentX, percentAuxLineList);
+			startDragAuxPercent = true;
+		});	
+		$("#Below-Ruler-Hidden").on(TouchMouseEvent.DOWN, function(e){
+			currentX = e.pageX;
+			addAuxLine(currentX, rulerAuxLineList);
+			startDragAuxRuler = true;
+		});	
+		$("#Between-Prozentband-Ruler").on(TouchMouseEvent.DOWN, function(e){
+			currentX = e.pageX;
+			addAuxLine(currentX, coupledAuxLineList);
+			startDragAuxCoupled = true;
+		});	
+		
+		<!-- Wenn Maus bewegt wird (mouse move) -->
+		$("svg").on(TouchMouseEvent.MOVE, function(e){
+			if(startDragPercent){
+				moveElement(e, true);
 			}
-		   });
+			if(startDragRuler){
+				moveElement(e, false);
+			}
+			if(startDragAuxPercent){
+				moveAuxLine(e, percentAuxLineList, window.numAuxLine);
+			}
+			if(startDragAuxRuler){
+				moveAuxLine(e, rulerAuxLineList, window.numAuxLine);
+			}
+			if(startDragAuxCoupled){
+				moveAuxLine(e, coupledAuxLineList, window.numAuxLine);
+			}			
+		});
+		
+		<!-- Ende der Bewegung (mouse up) -->
+		$("svg").on(TouchMouseEvent.UP, function(e){
+			startDragPercent = false;
+			startDragRuler = false;
+			startDragAuxPercent = false;
+			startDragAuxRuler = false;
+			startDragAuxCoupled = false;
+		});
 
 	});
 
 	
 	/* Diese Funktion fügt eine Hilfslinie hinzu (macht eine der unsichtbaren Hilfslinien sichtbar und setzt sie auf Mausposition) */
-	function addAuxLine(evt, auxLineList) {
+	function addAuxLine(currentX, auxLineList, numAuxLine) {
 		if (numberOfAuxLines < maxNumberOfAuxLines) {
 			/* Gehe durch alle Hilfslinien, bis eine versteckte gefunden wird, setze diese auf die Mausposition und mache sie sichtbar */
 			for (var i=0; i<auxLineList.length; i++) {
 				var auxline = auxLineList[i];
 				if (auxline.getAttribute("visibility")=="hidden") {
-					auxline.setAttribute("x", evt.pageX-pointerHiddenHalfWidth);
+					auxline.setAttribute("x", currentX-pointerHiddenHalfWidth);
 					auxline.setAttribute("visibility", "visible");
+					/* Speichere, nummer der erstellten Hilfslinie in globale Variable, um dann beim Zurechtschieben auf die richtige Hilfslinie zugreifen zu können */
+					window.numAuxLine = i;
 					numberOfAuxLines++;
 					if (auxLineList == coupledAuxLineList){
 						numberOfCoupledAuxLines++;
@@ -3116,7 +3147,15 @@
 			console.log("Maximum number of AuxLines reached!") // Das muss noch für den Nutzer sichtbar gemacht werden!
 		}
 	}
-
+	
+	/* Funktion zum Bewegen einer Hilfslinie (wird beim Setzen aufgerufen) */
+	function moveAuxLine(evt, auxLineList, numAuxLine) {
+		var auxline = auxLineList[numAuxLine];
+		var correctedNewPosition = +evt.pageX - +pointerHiddenHalfWidth;
+		// Übrigens: Die zusätzlichen Pluszeichen vor den Variablen konvertieren sie zu Integern, sodass die Adition entsprechend ausgeführt wird
+		auxline.setAttribute("x", correctedNewPosition);
+	}	
+	
 	/* Diese Funktion fügt eine Hilfslinie hinzu (macht eine der unsichtbaren Hilfslinien sichtbar und setzt sie auf Mausposition) */
 	function removeAuxLine(auxLineHiddenArea) {
 		auxLineHiddenArea.parentNode.setAttribute("visibility", "hidden");
@@ -3167,6 +3206,7 @@
 	}
 	
 	/* Diese Funktion wird aufgerufen, wenn an einer der Skalen mit der Maus gezogen wird. */
+	// TODO: Bedingung für maximale Skalierung des Prozentbands spinnt...
     function moveElement(evt, prozentband){
 
         var newIntervall = evt.pageX - lineX;
@@ -3181,8 +3221,8 @@
 		var newTextDistanceProzent = scalefactor * ( percentTextList.item(percentTextList.length-1).getAttribute("x")-percentTextList.item(0).getAttribute("x") )/percentTextList.length;        
 		var newLineDistanceRuler = scalefactor * ( rulerLineList.item(rulerLineList.length-1).getAttribute("x1")-rulerLineList.item(0).getAttribute("x1") )/rulerLineList.length;
  		var newTextDistanceRuler = scalefactor * ( rulerTextList.item(rulerTextList.length-1).getAttribute("x")-rulerTextList.item(0).getAttribute("x") )/rulerTextList.length;
-		console.log(newLineDistanceProzent);
-		console.log(newLineDistanceRuler);
+		//console.log(newLineDistanceProzent);
+		//console.log(newLineDistanceRuler);
 		if (newIntervall>0) {
 			if (numberOfCoupledAuxLines > 0 && newTextDistanceProzent >= 15 && newLineDistanceProzent <= (parseInt(document.getElementById("Prozentband").getAttribute("width")) - 150) && newTextDistanceRuler >= 15 && newLineDistanceRuler <= (parseInt(document.getElementById("Ruler").getAttribute("width")) - 30) ) {
 					moveLines(scalefactor, percentLineList);
@@ -3272,7 +3312,6 @@
     function reset(){
 		window.location.reload(false); 
     } 
-
 
 ]]>
 
