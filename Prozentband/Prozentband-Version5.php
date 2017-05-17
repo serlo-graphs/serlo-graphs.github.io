@@ -9,8 +9,9 @@
 	<meta name="mobile-web-app-capable" content="yes">
 	-->
 	<!-- iOS -->
-	<!--
+	
 	<meta name="apple-mobile-web-app-capable" content="yes">
+	<!--
 	<meta name="apple-mobile-web-app-status-bar-style" content="translucent-black">
 	<meta name="apple-mobile-web-app-title" content="My App">
 	-->
@@ -275,6 +276,12 @@
 			x="<?php echo($PBx); ?>" y="<?php echo($PBy-$auxHiddenHeight-$auxDeleteHeight-$auxPercentMessageHeight); ?>"
 			visibility="<?php echo($visibility); ?>" >
 
+			<text		id="auxMessage"
+						x="<?php echo($pointerHiddenHalfWidth); ?>"                      y="<?php echo($auxPercentMessageHeight/2); ?>"
+						visibility="hidden"
+						style="font-size:15px;" text-anchor="middle" >
+						</text>
+						
 			<circle		id = "coupledAuxUpperDeleteButton_<?php echo($i); ?>"
 						cx = "<?php echo($pointerHiddenHalfWidth); ?>" cy = "<?php echo($auxPercentMessageHeight+$deleteButtonRadius); ?>" r = "<?php echo($deleteButtonRadius); ?>"
 						fill = "<?php echo($deleteButtonColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
@@ -308,7 +315,7 @@
 						" 
 						fill="<?php echo($pointerCoupledArrowColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
 						/>
-			<rect		id = "coupledAuxHiddenArea_<?php echo($i); ?>"
+			<rect		id = "coupledAuxUpperHiddenArea_<?php echo($i); ?>"
 						x = "0" y="<?php echo($auxDeleteHeight+$auxPercentMessageHeight); ?>"
 						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
 						height = "<?php echo($auxHiddenHeight); ?>"
@@ -322,7 +329,7 @@
 						fill = "white" fill-opacity="0.0" onclick="removeAuxLine(this)"
 						/>		
 
-			<rect		id = "coupledAuxHiddenArea_<?php echo($i); ?>"
+			<rect		id = "coupledAuxLowerHiddenArea_<?php echo($i); ?>"
 						x = "0" y="<?php echo($auxDeleteHeight+$auxPercentMessageHeight+$auxHiddenHeight+$height+$distanceScale+1); ?>"
 						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
 						height = "<?php echo($auxHiddenHeight-1); ?>"
@@ -486,6 +493,7 @@
 		var startDragAuxCoupled = false;	
 		var startDragAdjustPercentAuxLine = false;
 		var startDragAdjustRulerAuxLine = false;
+		var startDragAdjustCoupledAuxLine = false;
 
 		<!-- Anfang der Bewegung (mouse down) -->
 		$("#Prozentband-Hidden").on(TouchMouseEvent.DOWN, function(evt){
@@ -500,8 +508,7 @@
 			currentX = evt.pageX;
 			addAuxLine(currentX, percentAuxLineList);
 			startDragAuxPercent = true;
-			if (window.numberOfAuxLines < maxNumberOfAuxLines) {
-				
+			if (window.numberOfAuxLines < maxNumberOfAuxLines) {				
 				percentAuxLineList[window.numAuxLine].getElementById("auxMessage").setAttribute("visibility", "visible");
 			} else {
 				 document.getElementById("Message").innerHTML = messageMaxNumberOfAuxLinesReached;
@@ -523,10 +530,10 @@
 			currentX = evt.pageX;
 			addAuxLine(currentX, coupledAuxLineList);
 			startDragAuxCoupled = true;
-			if (window.numberOfAuxLines < maxNumberOfAuxLines) {
-				// document.getElementById("Message").innerHTML = messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2 + messageAuxLineRulerPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.rulerScaleFactor)) + messageAuxLineRulerPositionPart2;
+			if (window.numberOfAuxLines < maxNumberOfAuxLines) {				
+				coupledAuxLineList[window.numAuxLine].getElementById("auxMessage").setAttribute("visibility", "visible");
 			} else {
-				 document.getElementById("Message").innerHTML = messageMaxNumberOfAuxLinesReached;
+				document.getElementById("Message").innerHTML = messageMaxNumberOfAuxLinesReached;
 			}
 			 document.getElementById("Message").setAttribute("visibility", " visible");
 		});	
@@ -539,10 +546,24 @@
 			$("#rulerAuxHiddenArea_"+i).on(TouchMouseEvent.DOWN, function(evt){
 				startDragAdjustRulerAuxLine = true;
 				window.currentlyMovedAuxLine = this.parentNode;
+			});
+			$("#coupledAuxUpperHiddenArea_"+i).on(TouchMouseEvent.DOWN, function(evt){
+				startDragAdjustCoupledAuxLine = true;
+				window.currentlyMovedAuxLine = this.parentNode;
+				window.currentlyMovedAuxLine.getElementById("auxMessage").setAttribute("visibility", "visible");
+			});	
+			$("#coupledAuxLowerHiddenArea_"+i).on(TouchMouseEvent.DOWN, function(evt){
+				startDragAdjustCoupledAuxLine = true;
+				window.currentlyMovedAuxLine = this.parentNode;
+				window.currentlyMovedAuxLine.getElementById("auxMessage").setAttribute("visibility", "visible");
 			});	
 		}
 		<!-- Wenn Maus bewegt wird (mouse move) -->
 		$("svg").on(TouchMouseEvent.MOVE, function(evt){
+			if (startDragAdjustCoupledAuxLine) {
+				window.currentlyMovedAuxLine.setAttribute("x", evt.pageX-pointerHiddenHalfWidth);
+				window.currentlyMovedAuxLine.getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;
+			}
 			if (startDragAdjustPercentAuxLine) {
 				window.currentlyMovedAuxLine.setAttribute("x", evt.pageX-pointerHiddenHalfWidth);
 				window.currentlyMovedAuxLine.getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;
@@ -575,6 +596,7 @@
 			}
 			if(startDragAuxCoupled){
 				if (window.numberOfAuxLines < maxNumberOfAuxLines) {
+					coupledAuxLineList[window.numAuxLine].getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;
 					// document.getElementById("Message").innerHTML = messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2 + messageAuxLineRulerPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.rulerScaleFactor)) + messageAuxLineRulerPositionPart2;
 					moveAuxLine(evt, coupledAuxLineList, window.numAuxLine);					
 				} else {
@@ -591,11 +613,12 @@
 					window.numberOfCoupledAuxLines++;
 				}
 			}
-			if (startDragAdjustPercentAuxLine || startDragAuxPercent) {
+			if (startDragAuxPercent || startDragAuxCoupled || startDragAdjustPercentAuxLine || startDragAdjustCoupledAuxLine) {
 				window.currentlyMovedAuxLine.getElementById("auxMessage").setAttribute("visibility", "hidden");
 			}
 			startDragAdjustPercentAuxLine = false;
 			startDragAdjustRulerAuxLine = false;
+			startDragAdjustCoupledAuxLine = false;
 			startDragAuxPercent = false;
 			startDragPercent = false;
 			startDragRuler = false;
