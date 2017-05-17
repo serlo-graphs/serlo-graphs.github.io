@@ -40,10 +40,12 @@
 	$canvasWidth=1200;
 	$canvasHeight=850;
     $PBx=75; // x-Koordinate für Beginn der Skalen-Umrandung
-    $PBy=290; //y-Koordinate für Beginn der Skalen-Umrandung
+    $PBy=240; //y-Koordinate für Beginn der Skalen-Umrandung
     $width=1040; // gibt Breite des Prozentbandes + Lineals vor
     $height=90;  // gibt Höhe des Prozentbandes + Lineals vor
     $auxHiddenHeight=90; // gibt Höhe der versteckten Bereiche oberhalb des Prozentbands und unterhalb des Lineals vor
+	$auxDeleteHeight=30; // gibt Höhe des Streifens für Löschbuttons an
+	$auxPercentMessageHeight=25; // gibt Höhe des Streifens an, in dem die Position einer Prozentband-Hilfslinie angezeigt wird
     $distanceScale=195; // gibt an, wie groß der Abstand zwischen dem Prozentband und dem Lineal ist
     
 	$distanceAuxLines=10; // gibt an, wie groß der Abstand zwischen dem Ende der Hilfslinie und der gegenüberliegenden Skala ist
@@ -59,6 +61,9 @@
     $auxLineColor="#AAAAAA";
     $pointerStrokeColor="black";
     $pointerStrokeWidth="2";
+    
+    $deleteButtonRadius=15;
+    $deleteButtonColor="red";
     
     $rulerRange=400; // gibt an wieviele Linien pro skala verwendet werden
     $percentRange=400; // gibt an wieviele Linien pro skala verwendet werden
@@ -160,10 +165,10 @@
 
     function drawAuxLines(){
         global	$maxNumberOfAuxLines, $auxLineColor, $PBx, $PBy,
-				$height, $auxHiddenHeight, $distanceScale, $distanceAuxLines, 
+				$height, $auxHiddenHeight, $auxDeleteHeight, $auxPercentMessageHeight, $distanceScale, $distanceAuxLines, 
 				$pointerArrowHalfWidth, $pointerArrowHeight, $pointerHiddenHalfWidth, $pointerRadius, 
 				$pointerPercentArrowColor, $pointerRulerArrowColor, $pointerCoupledArrowColor,
-				$pointerStrokeColor, $pointerStrokeWidth;
+				$pointerStrokeColor, $pointerStrokeWidth, $deleteButtonRadius, $deleteButtonColor;
         
 		$visibility = "hidden"; // Debug: Auf "visible" setzen, um alle Hilfslinien anzuzeigen
 		
@@ -172,39 +177,49 @@
 		<!-- Hilfslinien für das Prozentband -->
 
          <svg  id="percentAuxLineGroup_<?php echo($i); ?>" class="percentAuxLine"
-			x="<?php echo($PBx); ?>" y="<?php echo($PBy-$auxHiddenHeight); ?>"
+			x="<?php echo($PBx); ?>" y="<?php echo($PBy-$auxHiddenHeight-$auxDeleteHeight-$auxPercentMessageHeight); ?>"
             visibility="<?php echo($visibility); ?>" >
+
+			<text		id="auxMessage"
+						x="<?php echo($pointerHiddenHalfWidth); ?>"                      y="<?php echo($auxPercentMessageHeight/2); ?>"
+						visibility="hidden"
+						style="font-size:15px;" text-anchor="middle" >
+						</text>
 					
+			<circle		id = "percentAuxDeleteButton_<?php echo($i); ?>"
+						cx = "<?php echo($pointerHiddenHalfWidth); ?>" cy = "<?php echo($auxPercentMessageHeight+$deleteButtonRadius); ?>" r = "<?php echo($deleteButtonRadius); ?>"
+						fill = "<?php echo($deleteButtonColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
+						onclick = "removeAuxLine(this)" />			
 
 			<line 		id = "percentAuxLine_<?php echo($i); ?>"
 			            stroke="<?php echo($auxLineColor); ?>" stroke-width="2" stroke-dasharray="5, 5"
-						x1="<?php echo($pointerHiddenHalfWidth); ?>" y1="0" 
-						x2="<?php echo($pointerHiddenHalfWidth); ?>" y2="<?php echo($auxHiddenHeight+$distanceScale-$distanceAuxLines-$pointerArrowHeight); ?>"
+						x1="<?php echo($pointerHiddenHalfWidth); ?>" y1="<?php echo($auxDeleteHeight+$auxPercentMessageHeight); ?>" 
+						x2="<?php echo($pointerHiddenHalfWidth); ?>" y2="<?php echo($auxDeleteHeight+$auxPercentMessageHeight+$auxHiddenHeight+$distanceScale-$distanceAuxLines-$pointerArrowHeight); ?>"
 						/>
 						
 			<circle		id = "percentAuxCircle_<?php echo($i); ?>"
-						cx = "<?php echo($pointerHiddenHalfWidth); ?>" cy = "<?php echo($auxHiddenHeight+$height+ ($distanceScale-$height)/2); ?>" r = "<?php echo($pointerRadius); ?>"
+						cx = "<?php echo($pointerHiddenHalfWidth); ?>" cy = "<?php echo($auxDeleteHeight+$auxPercentMessageHeight+$auxHiddenHeight+$height+ ($distanceScale-$height)/2); ?>" r = "<?php echo($pointerRadius); ?>"
 						fill = "<?php echo($pointerPercentArrowColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
 						/>
 						
 			<polygon 	id = "percentAuxTriangle_<?php echo($i); ?>"
 						points="
-							<?php echo($pointerHiddenHalfWidth-$pointerArrowHalfWidth); ?>,<?php echo($auxHiddenHeight+$distanceScale-$distanceAuxLines-$pointerArrowHeight); ?>
-							<?php echo($pointerHiddenHalfWidth+$pointerArrowHalfWidth); ?>,<?php echo($auxHiddenHeight+$distanceScale-$distanceAuxLines-$pointerArrowHeight); ?>
-							<?php echo($pointerHiddenHalfWidth); ?>,<?php echo($auxHiddenHeight+$distanceScale-$distanceAuxLines); ?>
+							<?php echo($pointerHiddenHalfWidth-$pointerArrowHalfWidth); ?>,<?php echo($auxDeleteHeight+$auxPercentMessageHeight+$auxHiddenHeight+$distanceScale-$distanceAuxLines-$pointerArrowHeight); ?>
+							<?php echo($pointerHiddenHalfWidth+$pointerArrowHalfWidth); ?>,<?php echo($auxDeleteHeight+$auxPercentMessageHeight+$auxHiddenHeight+$distanceScale-$distanceAuxLines-$pointerArrowHeight); ?>
+							<?php echo($pointerHiddenHalfWidth); ?>,<?php echo($auxDeleteHeight+$auxPercentMessageHeight+$auxHiddenHeight+$distanceScale-$distanceAuxLines); ?>
 						" 
 						fill="<?php echo($pointerPercentArrowColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
 						/>
 
 			<rect		id = "percentAuxHiddenArea_<?php echo($i); ?>"
-						x = "0" y="0"
+						x = "0" y="<?php echo($auxDeleteHeight+$auxPercentMessageHeight); ?>"
 						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
 						height = "<?php echo($auxHiddenHeight); ?>"
-						fill = "white" fill-opacity="0.0" onclick="removeAuxLine(this)"
+						fill = "white" fill-opacity="0.0"
 						/>
 						
 			<rect		id = "percentAuxHiddenAreaCoupling_<?php echo($i); ?>"
-						x = "0" y="<?php echo($auxHiddenHeight+$height); ?>"
+						x = "0" y="<?php echo($auxHiddenHeight+$auxDeleteHeight+$auxPercentMessageHeight+$height); ?>"
 						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
 						height = "<?php echo($distanceScale-$height-1); ?>"
 						fill = "white" fill-opacity="0.0" onclick="coupleAuxLine(this)"
@@ -240,7 +255,7 @@
 						x = "0" y="<?php echo($distanceScale+1); ?>"
 						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
 						height = "<?php echo($auxHiddenHeight-1); ?>"
-						fill="white" fill-opacity="0.0" onclick="removeAuxLine(this)"
+						fill="white" fill-opacity="0.0"
 						/>
 						
 			<rect		id = "rulerAuxHiddenAreaCoupling_<?php echo($i); ?>"
@@ -248,62 +263,76 @@
 						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
 						height = "<?php echo($distanceScale-$height-1); ?>"
 						fill="white" fill-opacity="0.0" onclick="coupleAuxLine(this)"
-						/>				
+						/>	
+			<circle		id = "rulerAuxDeleteButton_<?php echo($i); ?>"
+						cx = "<?php echo($pointerHiddenHalfWidth); ?>" cy = "<?php echo($distanceScale+$auxHiddenHeight+$deleteButtonRadius); ?>" r = "<?php echo($deleteButtonRadius); ?>"
+						fill = "<?php echo($deleteButtonColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
+						onclick = "removeAuxLine(this)" />					
         </svg>
 
 		<!-- Hilfslinien für beide Skalen (gekoppelt) -->
          <svg  id="coupledAuxLineGroup_<?php echo($i); ?>" class="coupledAuxLine"
-			x="<?php echo($PBx); ?>" y="<?php echo($PBy-$auxHiddenHeight); ?>"
+			x="<?php echo($PBx); ?>" y="<?php echo($PBy-$auxHiddenHeight-$auxDeleteHeight-$auxPercentMessageHeight); ?>"
 			visibility="<?php echo($visibility); ?>" >
+
+			<circle		id = "coupledAuxUpperDeleteButton_<?php echo($i); ?>"
+						cx = "<?php echo($pointerHiddenHalfWidth); ?>" cy = "<?php echo($auxPercentMessageHeight+$deleteButtonRadius); ?>" r = "<?php echo($deleteButtonRadius); ?>"
+						fill = "<?php echo($deleteButtonColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
+						onclick = "decoupleAuxLine(this, 'ruler')" />			
 
 			<line 		id = "coupledAuxLine_<?php echo($i); ?>"
 			            stroke="<?php echo($auxLineColor); ?>" stroke-width="2" stroke-dasharray="5, 5"
-						x1="<?php echo($pointerHiddenHalfWidth); ?>" y1="0" 
-						x2="<?php echo($pointerHiddenHalfWidth); ?>" y2="<?php echo($height+$distanceScale+$auxHiddenHeight+$auxHiddenHeight); ?>"
+						x1="<?php echo($pointerHiddenHalfWidth); ?>" y1="<?php echo($auxDeleteHeight+$auxPercentMessageHeight); ?>" 
+						x2="<?php echo($pointerHiddenHalfWidth); ?>" y2="<?php echo($auxDeleteHeight+$auxPercentMessageHeight+$height+$distanceScale+$auxHiddenHeight+$auxHiddenHeight); ?>"
 						/>
 						
 			<circle		id = "coupledAuxCircle_<?php echo($i); ?>"
-						cx = "<?php echo($pointerHiddenHalfWidth); ?>" cy = "<?php echo($auxHiddenHeight+$height+ ($distanceScale-$height)/2); ?>" r = "<?php echo($pointerRadius); ?>"
+						cx = "<?php echo($pointerHiddenHalfWidth); ?>" cy = "<?php echo($auxDeleteHeight+$auxPercentMessageHeight+$auxHiddenHeight+$height+ ($distanceScale-$height)/2); ?>" r = "<?php echo($pointerRadius); ?>"
 						fill = "<?php echo($pointerCoupledArrowColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
 						/>
 						
 			<polygon 	id = "coupledAuxQuadrangle_<?php echo($i); ?>"
 						points="
-							<?php echo($pointerHiddenHalfWidth-$pointerArrowHalfWidth); ?>,<?php echo($auxHiddenHeight+$height+	$distanceAuxLines+$pointerArrowHeight); ?>
-							<?php echo($pointerHiddenHalfWidth); ?>,<?php echo($auxHiddenHeight+$distanceAuxLines+$height); ?>
-							<?php echo($pointerHiddenHalfWidth+$pointerArrowHalfWidth); ?>,<?php echo($auxHiddenHeight+$height+ $distanceAuxLines+$pointerArrowHeight); ?>
+							<?php echo($pointerHiddenHalfWidth-$pointerArrowHalfWidth); ?>,<?php echo($auxDeleteHeight+$auxPercentMessageHeight+$auxHiddenHeight+$height+	$distanceAuxLines+$pointerArrowHeight); ?>
+							<?php echo($pointerHiddenHalfWidth); ?>,<?php echo($auxDeleteHeight+$auxPercentMessageHeight+$auxHiddenHeight+$distanceAuxLines+$height); ?>
+							<?php echo($pointerHiddenHalfWidth+$pointerArrowHalfWidth); ?>,<?php echo($auxDeleteHeight+$auxPercentMessageHeight+$auxHiddenHeight+$height+ $distanceAuxLines+$pointerArrowHeight); ?>
 						" 
 						fill="<?php echo($pointerCoupledArrowColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
 						/>	
 						
 			<polygon 	id = "coupledAuxQuadrangle_<?php echo($i); ?>"
 						points="
-							<?php echo($pointerHiddenHalfWidth-$pointerArrowHalfWidth); ?>,<?php echo($auxHiddenHeight+$distanceScale-$distanceAuxLines-$pointerArrowHeight); ?>
-							<?php echo($pointerHiddenHalfWidth+$pointerArrowHalfWidth); ?>,<?php echo($auxHiddenHeight+$distanceScale-$distanceAuxLines-$pointerArrowHeight); ?>
-							<?php echo($pointerHiddenHalfWidth); ?>,<?php echo($auxHiddenHeight+$distanceScale-$distanceAuxLines); ?>						
+							<?php echo($pointerHiddenHalfWidth-$pointerArrowHalfWidth); ?>,<?php echo($auxDeleteHeight+$auxPercentMessageHeight+$auxHiddenHeight+$distanceScale-$distanceAuxLines-$pointerArrowHeight); ?>
+							<?php echo($pointerHiddenHalfWidth+$pointerArrowHalfWidth); ?>,<?php echo($auxDeleteHeight+$auxPercentMessageHeight+$auxHiddenHeight+$distanceScale-$distanceAuxLines-$pointerArrowHeight); ?>
+							<?php echo($pointerHiddenHalfWidth); ?>,<?php echo($auxDeleteHeight+$auxPercentMessageHeight+$auxHiddenHeight+$distanceScale-$distanceAuxLines); ?>						
 						" 
 						fill="<?php echo($pointerCoupledArrowColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
 						/>
 			<rect		id = "coupledAuxHiddenArea_<?php echo($i); ?>"
-						x = "0" y="0"
+						x = "0" y="<?php echo($auxDeleteHeight+$auxPercentMessageHeight); ?>"
 						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
 						height = "<?php echo($auxHiddenHeight); ?>"
-						fill = "white" fill-opacity="0.0" onclick="decoupleAuxLine(this, 'percent')"
+						fill = "white" fill-opacity="0.0"
 						/>
 						
 			<rect		id = "coupledAuxHiddenAreaCoupling_<?php echo($i); ?>"
-						x = "0" y="<?php echo($auxHiddenHeight+$height); ?>"
+						x = "0" y="<?php echo($auxDeleteHeight+$auxPercentMessageHeight+$auxHiddenHeight+$height); ?>"
 						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
 						height = "<?php echo($distanceScale-$height-1); ?>"
 						fill = "white" fill-opacity="0.0" onclick="removeAuxLine(this)"
 						/>		
 
 			<rect		id = "coupledAuxHiddenArea_<?php echo($i); ?>"
-						x = "0" y="<?php echo($auxHiddenHeight+$height+$distanceScale+1); ?>"
+						x = "0" y="<?php echo($auxDeleteHeight+$auxPercentMessageHeight+$auxHiddenHeight+$height+$distanceScale+1); ?>"
 						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
 						height = "<?php echo($auxHiddenHeight-1); ?>"
-						fill="white" fill-opacity="0.0" onclick="decoupleAuxLine(this, 'ruler')"
+						fill="white" fill-opacity="0.0"
 						/>
+						
+			<circle		id = "coupledAuxLowerDeleteButton_<?php echo($i); ?>"
+						cx = "<?php echo($pointerHiddenHalfWidth); ?>" cy = "<?php echo($auxDeleteHeight+$auxPercentMessageHeight+$distanceScale+$height+2*$auxHiddenHeight+$deleteButtonRadius); ?>" r = "<?php echo($deleteButtonRadius); ?>"
+						fill = "<?php echo($deleteButtonColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
+						onclick = "decoupleAuxLine(this, 'percent')" />	
 											
         </svg>
  <?php
@@ -312,7 +341,7 @@
 
  ?>
 
-<svg   width="<?php echo($canvasWidth); ?>" height="<?php echo($canvasHeight); ?>" style="-moz-user-selection: none">
+<svg   width="<?php echo($canvasWidth); ?>" height="<?php echo($canvasHeight); ?>">
 
     
 
@@ -427,12 +456,11 @@
     window.numberOfCoupledAuxLines = 0;
 	window.rulerScaleFactor = 1;
 	window.percentScaleFactor = 1;
+	window.currentlyMovedAuxLine = 0;
 
 	var messageMaxNumberOfAuxLinesReached = "<tspan id='Z1' x= '20' y='20'>Die maximale Anzahl der Hilfslinien wurde erreicht!<br /></tspan>";
-	var messageAuxLinePercentPositionPart1 = "<tspan id='Z2' x= '20' y='45' fill='red'>";
-	var messageAuxLineRulerPositionPart1 = "<tspan id='Z3' x= '20' y='70' fill='black'>";
+	var messageAuxLinePercentPositionPart1 = "<tspan>";
 	var messageAuxLinePercentPositionPart2 = "%</tspan>";
-	var messageAuxLineRulerPositionPart2 = "</tspan>";
 	
 	/* Math.round((evt.pageX-lineX)/(lineDistance*window.rulerScaleFactor)) */
 	
@@ -455,8 +483,9 @@
 		var startDragRuler = false;
 		var startDragAuxPercent = false;
 		var startDragAuxRuler = false;
-		var startDragAuxCoupled = false;
-		
+		var startDragAuxCoupled = false;	
+		var startDragAdjustPercentAuxLine = false;
+		var startDragAdjustRulerAuxLine = false;
 
 		<!-- Anfang der Bewegung (mouse down) -->
 		$("#Prozentband-Hidden").on(TouchMouseEvent.DOWN, function(evt){
@@ -472,37 +501,55 @@
 			addAuxLine(currentX, percentAuxLineList);
 			startDragAuxPercent = true;
 			if (window.numberOfAuxLines < maxNumberOfAuxLines) {
-				document.getElementById("Message").innerHTML = messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;
+				
+				percentAuxLineList[window.numAuxLine].getElementById("auxMessage").setAttribute("visibility", "visible");
 			} else {
-				document.getElementById("Message").innerHTML = messageMaxNumberOfAuxLinesReached;
+				 document.getElementById("Message").innerHTML = messageMaxNumberOfAuxLinesReached;
 			}
-			document.getElementById("Message").setAttribute("visibility", " visible");
+			 document.getElementById("Message").setAttribute("visibility", " visible");
 		});	
 		$("#Below-Ruler-Hidden").on(TouchMouseEvent.DOWN, function(evt){
 			currentX = evt.pageX;
 			addAuxLine(currentX, rulerAuxLineList);
 			startDragAuxRuler = true;
 			if (window.numberOfAuxLines < maxNumberOfAuxLines) {
-				document.getElementById("Message").innerHTML = messageAuxLineRulerPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.rulerScaleFactor)) + messageAuxLineRulerPositionPart2;
+				// document.getElementById("Message").innerHTML = messageAuxLineRulerPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.rulerScaleFactor)) + messageAuxLineRulerPositionPart2;
 			} else {
-				document.getElementById("Message").innerHTML = messageMaxNumberOfAuxLinesReached;
+				 document.getElementById("Message").innerHTML = messageMaxNumberOfAuxLinesReached;
 			}
-			document.getElementById("Message").setAttribute("visibility", " visible");
+			 document.getElementById("Message").setAttribute("visibility", " visible");
 		});	
 		$("#Between-Prozentband-Ruler").on(TouchMouseEvent.DOWN, function(evt){
 			currentX = evt.pageX;
 			addAuxLine(currentX, coupledAuxLineList);
 			startDragAuxCoupled = true;
 			if (window.numberOfAuxLines < maxNumberOfAuxLines) {
-				document.getElementById("Message").innerHTML = messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2 + messageAuxLineRulerPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.rulerScaleFactor)) + messageAuxLineRulerPositionPart2;
+				// document.getElementById("Message").innerHTML = messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2 + messageAuxLineRulerPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.rulerScaleFactor)) + messageAuxLineRulerPositionPart2;
 			} else {
-				document.getElementById("Message").innerHTML = messageMaxNumberOfAuxLinesReached;
+				 document.getElementById("Message").innerHTML = messageMaxNumberOfAuxLinesReached;
 			}
-			document.getElementById("Message").setAttribute("visibility", " visible");
+			 document.getElementById("Message").setAttribute("visibility", " visible");
 		});	
-		
+		for (var i=1; i<=maxNumberOfAuxLines; i++ ) {
+			$("#percentAuxHiddenArea_"+i).on(TouchMouseEvent.DOWN, function(evt){
+				startDragAdjustPercentAuxLine = true;
+				window.currentlyMovedAuxLine = this.parentNode;
+				window.currentlyMovedAuxLine.getElementById("auxMessage").setAttribute("visibility", "visible");
+			});		
+			$("#rulerAuxHiddenArea_"+i).on(TouchMouseEvent.DOWN, function(evt){
+				startDragAdjustRulerAuxLine = true;
+				window.currentlyMovedAuxLine = this.parentNode;
+			});	
+		}
 		<!-- Wenn Maus bewegt wird (mouse move) -->
 		$("svg").on(TouchMouseEvent.MOVE, function(evt){
+			if (startDragAdjustPercentAuxLine) {
+				window.currentlyMovedAuxLine.setAttribute("x", evt.pageX-pointerHiddenHalfWidth);
+				window.currentlyMovedAuxLine.getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;
+			}
+			if  (startDragAdjustRulerAuxLine) {
+				window.currentlyMovedAuxLine.setAttribute("x", evt.pageX-pointerHiddenHalfWidth);
+			}
 			if(startDragPercent){
 				moveElement(evt, true);
 			}
@@ -511,26 +558,27 @@
 			}
 			if(startDragAuxPercent){
 				if (window.numberOfAuxLines < maxNumberOfAuxLines) {
-					document.getElementById("Message").innerHTML = messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;
+					percentAuxLineList[window.numAuxLine].getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;
+					// document.getElementById("Message").innerHTML = messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;
 					moveAuxLine(evt, percentAuxLineList, window.numAuxLine);					
 				} else {
-					document.getElementById("Message").innerHTML = messageMaxNumberOfAuxLinesReached;
+					 document.getElementById("auxMessage").innerHTML = messageMaxNumberOfAuxLinesReached;
 				}
 			}
 			if(startDragAuxRuler){
 				if (window.numberOfAuxLines < maxNumberOfAuxLines) {
-					document.getElementById("Message").innerHTML = messageAuxLineRulerPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.rulerScaleFactor)) + messageAuxLineRulerPositionPart2;
+					// document.getElementById("Message").innerHTML = messageAuxLineRulerPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.rulerScaleFactor)) + messageAuxLineRulerPositionPart2;
 					moveAuxLine(evt, rulerAuxLineList, window.numAuxLine);					
 				} else {
-					document.getElementById("Message").innerHTML = messageMaxNumberOfAuxLinesReached;
+					 document.getElementById("Message").innerHTML = messageMaxNumberOfAuxLinesReached;
 				}
 			}
 			if(startDragAuxCoupled){
 				if (window.numberOfAuxLines < maxNumberOfAuxLines) {
-					document.getElementById("Message").innerHTML = messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2 + messageAuxLineRulerPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.rulerScaleFactor)) + messageAuxLineRulerPositionPart2;
+					// document.getElementById("Message").innerHTML = messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2 + messageAuxLineRulerPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.rulerScaleFactor)) + messageAuxLineRulerPositionPart2;
 					moveAuxLine(evt, coupledAuxLineList, window.numAuxLine);					
 				} else {
-					document.getElementById("Message").innerHTML = messageMaxNumberOfAuxLinesReached;
+					 document.getElementById("Message").innerHTML = messageMaxNumberOfAuxLinesReached;
 				}
 			}			
 		});
@@ -543,12 +591,17 @@
 					window.numberOfCoupledAuxLines++;
 				}
 			}
+			if (startDragAdjustPercentAuxLine || startDragAuxPercent) {
+				window.currentlyMovedAuxLine.getElementById("auxMessage").setAttribute("visibility", "hidden");
+			}
+			startDragAdjustPercentAuxLine = false;
+			startDragAdjustRulerAuxLine = false;
 			startDragAuxPercent = false;
 			startDragPercent = false;
 			startDragRuler = false;
 			startDragAuxRuler = false;
 			startDragAuxCoupled = false;
-			document.getElementById("Message").setAttribute("visibility", " hidden");
+			document.getElementById("Message").setAttribute("visibility", "hidden");
 			window.numAuxLine = -1;
 		});
 
@@ -566,6 +619,7 @@
 					auxline.setAttribute("visibility", "visible");
 					/* Speichere, nummer der erstellten Hilfslinie in globale Variable, um dann beim Zurechtschieben auf die richtige Hilfslinie zugreifen zu können */
 					window.numAuxLine = i;
+					window.currentlyMovedAuxLine = auxline;
 					/* Ist eine Hilfslinie erschaffen, suche nicht weiter */
 					break;
 				/* Wurde keine versteckte Hilfslinie gefunden, dann sind alle Hilfslinien sichtbar und somit die maximale Anzahl erreicht currently */
@@ -587,9 +641,9 @@
 	}
 	
 	/* Diese Funktion fügt eine Hilfslinie hinzu (macht eine der unsichtbaren Hilfslinien sichtbar und setzt sie auf Mausposition) */
-	function removeAuxLine(auxLineHiddenArea) {
-		auxLineHiddenArea.parentNode.setAttribute("visibility", "hidden");
-		if (auxLineHiddenArea.parentNode.className.baseVal == "coupledAuxLine") {
+	function removeAuxLine(auxLineDeleteButton) {
+		auxLineDeleteButton.parentNode.setAttribute("visibility", "hidden");
+		if (auxLineDeleteButton.parentNode.className.baseVal == "coupledAuxLine") {
 				window.numberOfCoupledAuxLines--;
 		}
 		window.numberOfAuxLines--;
