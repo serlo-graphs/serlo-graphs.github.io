@@ -3189,12 +3189,10 @@
 			currentX = evt.pageX;
 			addAuxLine(currentX, coupledAuxLineList);
 			startDragAuxCoupled = true;
-			if (window.numberOfAuxLines < maxNumberOfAuxLines) {
-				// document.getElementById("Message").innerHTML = messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2 + messageAuxLineRulerPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.rulerScaleFactor)) + messageAuxLineRulerPositionPart2;
-			} else {
+			if (window.numberOfAuxLines >= maxNumberOfAuxLines) {
 				 document.getElementById("Message").innerHTML = messageMaxNumberOfAuxLinesReached;
+				 document.getElementById("Message").setAttribute("visibility", " visible");
 			}
-			 document.getElementById("Message").setAttribute("visibility", " visible");
 		});	
 		for (var i=1; i<=maxNumberOfAuxLines; i++ ) {
 			$("#percentAuxHiddenArea_"+i).on(TouchMouseEvent.DOWN, function(evt){
