@@ -2713,6 +2713,12 @@
 			x="75" y="95"
 			visibility="hidden" >
 
+			<text		id="auxMessage"
+						x="20"                      y="12.5"
+						visibility="hidden"
+						style="font-size:15px;" text-anchor="middle" >
+						</text>
+						
 			<circle		id = "coupledAuxUpperDeleteButton_1"
 						cx = "20" cy = "40" r = "15"
 						fill = "red" stroke="black" stroke-width="2"
@@ -2741,7 +2747,7 @@
 						" 
 						fill="yellow" stroke="black" stroke-width="2"
 						/>
-			<rect		id = "coupledAuxHiddenArea_1"
+			<rect		id = "coupledAuxUpperHiddenArea_1"
 						x = "0" y="55"
 						width = "40"
 						height = "90"
@@ -2755,7 +2761,7 @@
 						fill = "white" fill-opacity="0.0" onclick="removeAuxLine(this)"
 						/>		
 
-			<rect		id = "coupledAuxHiddenArea_1"
+			<rect		id = "coupledAuxLowerHiddenArea_1"
 						x = "0" y="431"
 						width = "40"
 						height = "89"
@@ -2863,6 +2869,12 @@
 			x="75" y="95"
 			visibility="hidden" >
 
+			<text		id="auxMessage"
+						x="20"                      y="12.5"
+						visibility="hidden"
+						style="font-size:15px;" text-anchor="middle" >
+						</text>
+						
 			<circle		id = "coupledAuxUpperDeleteButton_2"
 						cx = "20" cy = "40" r = "15"
 						fill = "red" stroke="black" stroke-width="2"
@@ -2891,7 +2903,7 @@
 						" 
 						fill="yellow" stroke="black" stroke-width="2"
 						/>
-			<rect		id = "coupledAuxHiddenArea_2"
+			<rect		id = "coupledAuxUpperHiddenArea_2"
 						x = "0" y="55"
 						width = "40"
 						height = "90"
@@ -2905,7 +2917,7 @@
 						fill = "white" fill-opacity="0.0" onclick="removeAuxLine(this)"
 						/>		
 
-			<rect		id = "coupledAuxHiddenArea_2"
+			<rect		id = "coupledAuxLowerHiddenArea_2"
 						x = "0" y="431"
 						width = "40"
 						height = "89"
@@ -3013,6 +3025,12 @@
 			x="75" y="95"
 			visibility="hidden" >
 
+			<text		id="auxMessage"
+						x="20"                      y="12.5"
+						visibility="hidden"
+						style="font-size:15px;" text-anchor="middle" >
+						</text>
+						
 			<circle		id = "coupledAuxUpperDeleteButton_3"
 						cx = "20" cy = "40" r = "15"
 						fill = "red" stroke="black" stroke-width="2"
@@ -3041,7 +3059,7 @@
 						" 
 						fill="yellow" stroke="black" stroke-width="2"
 						/>
-			<rect		id = "coupledAuxHiddenArea_3"
+			<rect		id = "coupledAuxUpperHiddenArea_3"
 						x = "0" y="55"
 						width = "40"
 						height = "90"
@@ -3055,7 +3073,7 @@
 						fill = "white" fill-opacity="0.0" onclick="removeAuxLine(this)"
 						/>		
 
-			<rect		id = "coupledAuxHiddenArea_3"
+			<rect		id = "coupledAuxLowerHiddenArea_3"
 						x = "0" y="431"
 						width = "40"
 						height = "89"
@@ -3152,6 +3170,7 @@
 		var startDragAuxCoupled = false;	
 		var startDragAdjustPercentAuxLine = false;
 		var startDragAdjustRulerAuxLine = false;
+		var startDragAdjustCoupledAuxLine = false;
 
 		<!-- Anfang der Bewegung (mouse down) -->
 		$("#Prozentband-Hidden").on(TouchMouseEvent.DOWN, function(evt){
@@ -3166,8 +3185,7 @@
 			currentX = evt.pageX;
 			addAuxLine(currentX, percentAuxLineList);
 			startDragAuxPercent = true;
-			if (window.numberOfAuxLines < maxNumberOfAuxLines) {
-				
+			if (window.numberOfAuxLines < maxNumberOfAuxLines) {				
 				percentAuxLineList[window.numAuxLine].getElementById("auxMessage").setAttribute("visibility", "visible");
 			} else {
 				 document.getElementById("Message").innerHTML = messageMaxNumberOfAuxLinesReached;
@@ -3189,10 +3207,12 @@
 			currentX = evt.pageX;
 			addAuxLine(currentX, coupledAuxLineList);
 			startDragAuxCoupled = true;
-			if (window.numberOfAuxLines >= maxNumberOfAuxLines) {
-				 document.getElementById("Message").innerHTML = messageMaxNumberOfAuxLinesReached;
-				 document.getElementById("Message").setAttribute("visibility", " visible");
+			if (window.numberOfAuxLines < maxNumberOfAuxLines) {				
+				coupledAuxLineList[window.numAuxLine].getElementById("auxMessage").setAttribute("visibility", "visible");
+			} else {
+				document.getElementById("Message").innerHTML = messageMaxNumberOfAuxLinesReached;
 			}
+			 document.getElementById("Message").setAttribute("visibility", " visible");
 		});	
 		for (var i=1; i<=maxNumberOfAuxLines; i++ ) {
 			$("#percentAuxHiddenArea_"+i).on(TouchMouseEvent.DOWN, function(evt){
@@ -3203,10 +3223,24 @@
 			$("#rulerAuxHiddenArea_"+i).on(TouchMouseEvent.DOWN, function(evt){
 				startDragAdjustRulerAuxLine = true;
 				window.currentlyMovedAuxLine = this.parentNode;
+			});
+			$("#coupledAuxUpperHiddenArea_"+i).on(TouchMouseEvent.DOWN, function(evt){
+				startDragAdjustCoupledAuxLine = true;
+				window.currentlyMovedAuxLine = this.parentNode;
+				window.currentlyMovedAuxLine.getElementById("auxMessage").setAttribute("visibility", "visible");
+			});	
+			$("#coupledAuxLowerHiddenArea_"+i).on(TouchMouseEvent.DOWN, function(evt){
+				startDragAdjustCoupledAuxLine = true;
+				window.currentlyMovedAuxLine = this.parentNode;
+				window.currentlyMovedAuxLine.getElementById("auxMessage").setAttribute("visibility", "visible");
 			});	
 		}
 		<!-- Wenn Maus bewegt wird (mouse move) -->
 		$("svg").on(TouchMouseEvent.MOVE, function(evt){
+			if (startDragAdjustCoupledAuxLine) {
+				window.currentlyMovedAuxLine.setAttribute("x", evt.pageX-pointerHiddenHalfWidth);
+				window.currentlyMovedAuxLine.getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;
+			}
 			if (startDragAdjustPercentAuxLine) {
 				window.currentlyMovedAuxLine.setAttribute("x", evt.pageX-pointerHiddenHalfWidth);
 				window.currentlyMovedAuxLine.getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;
@@ -3239,6 +3273,7 @@
 			}
 			if(startDragAuxCoupled){
 				if (window.numberOfAuxLines < maxNumberOfAuxLines) {
+					coupledAuxLineList[window.numAuxLine].getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;
 					// document.getElementById("Message").innerHTML = messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2 + messageAuxLineRulerPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.rulerScaleFactor)) + messageAuxLineRulerPositionPart2;
 					moveAuxLine(evt, coupledAuxLineList, window.numAuxLine);					
 				} else {
@@ -3255,11 +3290,12 @@
 					window.numberOfCoupledAuxLines++;
 				}
 			}
-			if (startDragAdjustPercentAuxLine || startDragAuxPercent) {
+			if (startDragAuxPercent || startDragAuxCoupled || startDragAdjustPercentAuxLine || startDragAdjustCoupledAuxLine) {
 				window.currentlyMovedAuxLine.getElementById("auxMessage").setAttribute("visibility", "hidden");
 			}
 			startDragAdjustPercentAuxLine = false;
 			startDragAdjustRulerAuxLine = false;
+			startDragAdjustCoupledAuxLine = false;
 			startDragAuxPercent = false;
 			startDragPercent = false;
 			startDragRuler = false;
