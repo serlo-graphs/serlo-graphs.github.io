@@ -2630,10 +2630,10 @@
 						style="font-size:15px;" text-anchor="middle" >
 						</text>
 					
-			<circle		id = "percentAuxDeleteButton_1"
+			<circle		id = "percentAuxDeleteButton"
 						cx = "20" cy = "40" r = "15"
 						fill = "red" stroke="black" stroke-width="2"
-						onclick = "removeAuxLine(this)" />			
+						/>			
 
 			<line 		id = "percentAuxLine_1"
 			            stroke="#AAAAAA" stroke-width="2" stroke-dasharray="5, 5"
@@ -2702,10 +2702,10 @@
 						height = "104"
 						fill="white" fill-opacity="0.0" onclick="coupleAuxLine(this)"
 						/>	
-			<circle		id = "rulerAuxDeleteButton_1"
+			<circle		id = "rulerAuxDeleteButton"
 						cx = "20" cy = "300" r = "15"
 						fill = "red" stroke="black" stroke-width="2"
-						onclick = "removeAuxLine(this)" />					
+						/>					
         </svg>
 
 		<!-- Hilfslinien für beide Skalen (gekoppelt) -->
@@ -2780,10 +2780,10 @@
 						style="font-size:15px;" text-anchor="middle" >
 						</text>
 					
-			<circle		id = "percentAuxDeleteButton_2"
+			<circle		id = "percentAuxDeleteButton"
 						cx = "20" cy = "40" r = "15"
 						fill = "red" stroke="black" stroke-width="2"
-						onclick = "removeAuxLine(this)" />			
+						/>			
 
 			<line 		id = "percentAuxLine_2"
 			            stroke="#AAAAAA" stroke-width="2" stroke-dasharray="5, 5"
@@ -2852,10 +2852,10 @@
 						height = "104"
 						fill="white" fill-opacity="0.0" onclick="coupleAuxLine(this)"
 						/>	
-			<circle		id = "rulerAuxDeleteButton_2"
+			<circle		id = "rulerAuxDeleteButton"
 						cx = "20" cy = "300" r = "15"
 						fill = "red" stroke="black" stroke-width="2"
-						onclick = "removeAuxLine(this)" />					
+						/>					
         </svg>
 
 		<!-- Hilfslinien für beide Skalen (gekoppelt) -->
@@ -2930,10 +2930,10 @@
 						style="font-size:15px;" text-anchor="middle" >
 						</text>
 					
-			<circle		id = "percentAuxDeleteButton_3"
+			<circle		id = "percentAuxDeleteButton"
 						cx = "20" cy = "40" r = "15"
 						fill = "red" stroke="black" stroke-width="2"
-						onclick = "removeAuxLine(this)" />			
+						/>			
 
 			<line 		id = "percentAuxLine_3"
 			            stroke="#AAAAAA" stroke-width="2" stroke-dasharray="5, 5"
@@ -3002,10 +3002,10 @@
 						height = "104"
 						fill="white" fill-opacity="0.0" onclick="coupleAuxLine(this)"
 						/>	
-			<circle		id = "rulerAuxDeleteButton_3"
+			<circle		id = "rulerAuxDeleteButton"
 						cx = "20" cy = "300" r = "15"
 						fill = "red" stroke="black" stroke-width="2"
-						onclick = "removeAuxLine(this)" />					
+						/>					
         </svg>
 
 		<!-- Hilfslinien für beide Skalen (gekoppelt) -->
@@ -3207,6 +3207,13 @@
 				window.currentlyMovedAuxLine = this.parentNode;
 			});	
 		}
+		$("#percentAuxDeleteButton").on(TouchMouseEvent.DOWN, function(evt){
+			removeAuxLine(this);
+		});	
+		$("#rulerAuxDeleteButton").on(TouchMouseEvent.DOWN, function(evt){
+			removeAuxLine(this);
+		});	
+				
 		<!-- Wenn Maus bewegt wird (mouse move) -->
 		$("svg").on(TouchMouseEvent.MOVE, function(evt){
 			if (startDragAdjustPercentAuxLine) {
