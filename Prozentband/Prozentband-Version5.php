@@ -66,7 +66,7 @@
     $deleteButtonRadius=15;
     $deleteButtonColor="red";
     
-    $rulerRange=400; // gibt an wieviele Linien pro skala verwendet werden
+    $rulerRange=600; // gibt an wieviele Linien pro skala verwendet werden
     $percentRange=400; // gibt an wieviele Linien pro skala verwendet werden
     
     $rulerDensityCondition = 1;
@@ -190,7 +190,7 @@
 			<circle		id = "percentAuxDeleteButton_<?php echo($i); ?>"
 						cx = "<?php echo($pointerHiddenHalfWidth); ?>" cy = "<?php echo($auxPercentMessageHeight+$deleteButtonRadius); ?>" r = "<?php echo($deleteButtonRadius); ?>"
 						fill = "<?php echo($deleteButtonColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
-						onclick = "removeAuxLine(this)" />			
+						/>			
 
 			<line 		id = "percentAuxLine_<?php echo($i); ?>"
 			            stroke="<?php echo($auxLineColor); ?>" stroke-width="2" stroke-dasharray="5, 5"
@@ -223,7 +223,7 @@
 						x = "0" y="<?php echo($auxHiddenHeight+$auxDeleteHeight+$auxPercentMessageHeight+$height); ?>"
 						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
 						height = "<?php echo($distanceScale-$height-1); ?>"
-						fill = "white" fill-opacity="0.0" onclick="coupleAuxLine(this)"
+						fill = "white" fill-opacity="0.0"
 						/>				
         </svg>  
 
@@ -263,12 +263,12 @@
 						x = "0" y="0"
 						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
 						height = "<?php echo($distanceScale-$height-1); ?>"
-						fill="white" fill-opacity="0.0" onclick="coupleAuxLine(this)"
+						fill="white" fill-opacity="0.0"
 						/>	
 			<circle		id = "rulerAuxDeleteButton_<?php echo($i); ?>"
 						cx = "<?php echo($pointerHiddenHalfWidth); ?>" cy = "<?php echo($distanceScale+$auxHiddenHeight+$deleteButtonRadius); ?>" r = "<?php echo($deleteButtonRadius); ?>"
 						fill = "<?php echo($deleteButtonColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
-						onclick = "removeAuxLine(this)" />					
+						/>					
         </svg>
 
 		<!-- Hilfslinien für beide Skalen (gekoppelt) -->
@@ -285,7 +285,7 @@
 			<circle		id = "coupledAuxUpperDeleteButton_<?php echo($i); ?>"
 						cx = "<?php echo($pointerHiddenHalfWidth); ?>" cy = "<?php echo($auxPercentMessageHeight+$deleteButtonRadius); ?>" r = "<?php echo($deleteButtonRadius); ?>"
 						fill = "<?php echo($deleteButtonColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
-						onclick = "decoupleAuxLine(this, 'ruler')" />			
+						/>			
 
 			<line 		id = "coupledAuxLine_<?php echo($i); ?>"
 			            stroke="<?php echo($auxLineColor); ?>" stroke-width="2" stroke-dasharray="5, 5"
@@ -326,7 +326,7 @@
 						x = "0" y="<?php echo($auxDeleteHeight+$auxPercentMessageHeight+$auxHiddenHeight+$height); ?>"
 						width = "<?php echo(2*$pointerHiddenHalfWidth); ?>"
 						height = "<?php echo($distanceScale-$height-1); ?>"
-						fill = "white" fill-opacity="0.0" onclick="removeAuxLine(this)"
+						fill = "white" fill-opacity="0.0"
 						/>		
 
 			<rect		id = "coupledAuxLowerHiddenArea_<?php echo($i); ?>"
@@ -339,7 +339,7 @@
 			<circle		id = "coupledAuxLowerDeleteButton_<?php echo($i); ?>"
 						cx = "<?php echo($pointerHiddenHalfWidth); ?>" cy = "<?php echo($auxDeleteHeight+$auxPercentMessageHeight+$distanceScale+$height+2*$auxHiddenHeight+$deleteButtonRadius); ?>" r = "<?php echo($deleteButtonRadius); ?>"
 						fill = "<?php echo($deleteButtonColor); ?>" stroke="<?php echo($pointerStrokeColor); ?>" stroke-width="<?php echo($pointerStrokeWidth); ?>"
-						onclick = "decoupleAuxLine(this, 'percent')" />	
+						/>	
 											
         </svg>
  <?php
@@ -458,19 +458,17 @@
     var lineDistance = <?php echo($lineDistance); ?>;
     var maxNumberOfAuxLines = <?php echo($maxNumberOfAuxLines); ?>; 
     var pointerHiddenHalfWidth = <?php echo($pointerHiddenHalfWidth); ?>;
-    
+
     window.numberOfAuxLines = 0;
     window.numberOfCoupledAuxLines = 0;
 	window.rulerScaleFactor = 1;
 	window.percentScaleFactor = 1;
-	window.currentlyMovedAuxLine = 0;
+	window.currentAuxLine = 0;
 
 	var messageMaxNumberOfAuxLinesReached = "<tspan id='Z1' x= '20' y='20'>Die maximale Anzahl der Hilfslinien wurde erreicht!<br /></tspan>";
 	var messageAuxLinePercentPositionPart1 = "<tspan>";
 	var messageAuxLinePercentPositionPart2 = "%</tspan>";
-	
-	/* Math.round((evt.pageX-lineX)/(lineDistance*window.rulerScaleFactor)) */
-	
+		
     /*Hier schöne neue Arrays mit Linien und Labels für Lineal und Prozentband getrennt*/
     var rulerLineList = document.getElementsByClassName("rulerLine");
     var rulerTextList = document.getElementsByClassName("rulerText");
@@ -486,15 +484,29 @@
     
 	$(function(){
 		
+		/* Diese Variablen werden beim MouseDown auf "true" gesetzt. Später werden
+		 MouseUp (und ggf. bei MouseMove) entsprechende Aktionen ausgeführt und bei MouseUp
+		 die Variablen wieder auf "false" gesetzt. onclick() wurde vermieden, weil es bei
+		 Safari zu einer Verzögerung führt, die nicht anders wegzubekommen war. */
+		// Ziehen der Skalen mit der Maus
 		var startDragPercent = false;
 		var startDragRuler = false;
+		// Erzeugen und Ziehen der Hilfslinien mit der Maus
 		var startDragAuxPercent = false;
 		var startDragAuxRuler = false;
 		var startDragAuxCoupled = false;	
+		// Nachträgliches Verschieben der Hilfslinien mit der Maus
 		var startDragAdjustPercentAuxLine = false;
 		var startDragAdjustRulerAuxLine = false;
 		var startDragAdjustCoupledAuxLine = false;
-
+		// Entfernen von Hilfslinien
+		var startRemoveAuxLine = false;
+		// Überführen von einseitigen Hilfslinien zu doppelseitigen
+		var startCoupleAuxLine = false;
+		// Überführen von doppelseitigen Hilfslinien zu einseitigen
+		var startDecoupleAuxLineToPercent = false;
+		var startDecoupleAuxLineToRuler = false;
+	
 		<!-- Anfang der Bewegung (mouse down) -->
 		$("#Prozentband-Hidden").on(TouchMouseEvent.DOWN, function(evt){
 			currentX = evt.pageX;
@@ -535,41 +547,69 @@
 			} else {
 				document.getElementById("Message").innerHTML = messageMaxNumberOfAuxLinesReached;
 			}
-			 document.getElementById("Message").setAttribute("visibility", " visible");
+			document.getElementById("Message").setAttribute("visibility", " visible");
 		});	
 		for (var i=1; i<=maxNumberOfAuxLines; i++ ) {
 			$("#percentAuxHiddenArea_"+i).on(TouchMouseEvent.DOWN, function(evt){
 				startDragAdjustPercentAuxLine = true;
-				window.currentlyMovedAuxLine = this.parentNode;
-				window.currentlyMovedAuxLine.getElementById("auxMessage").setAttribute("visibility", "visible");
+				window.currentAuxLine = this.parentNode;
+				window.currentAuxLine.getElementById("auxMessage").setAttribute("visibility", "visible");
 			});		
 			$("#rulerAuxHiddenArea_"+i).on(TouchMouseEvent.DOWN, function(evt){
 				startDragAdjustRulerAuxLine = true;
-				window.currentlyMovedAuxLine = this.parentNode;
+				window.currentAuxLine = this.parentNode;
 			});
 			$("#coupledAuxUpperHiddenArea_"+i).on(TouchMouseEvent.DOWN, function(evt){
 				startDragAdjustCoupledAuxLine = true;
-				window.currentlyMovedAuxLine = this.parentNode;
-				window.currentlyMovedAuxLine.getElementById("auxMessage").setAttribute("visibility", "visible");
+				window.currentAuxLine = this.parentNode;
+				window.currentAuxLine.getElementById("auxMessage").setAttribute("visibility", "visible");
 			});	
 			$("#coupledAuxLowerHiddenArea_"+i).on(TouchMouseEvent.DOWN, function(evt){
 				startDragAdjustCoupledAuxLine = true;
-				window.currentlyMovedAuxLine = this.parentNode;
-				window.currentlyMovedAuxLine.getElementById("auxMessage").setAttribute("visibility", "visible");
+				window.currentAuxLine = this.parentNode;
+				window.currentAuxLine.getElementById("auxMessage").setAttribute("visibility", "visible");
+			});	
+			$("#percentAuxDeleteButton_"+i).on(TouchMouseEvent.DOWN, function(evt){
+				startRemoveAuxLine = true;
+				window.currentAuxLine = this.parentNode;
+			});
+			$("#rulerAuxDeleteButton_"+i).on(TouchMouseEvent.DOWN, function(evt){
+				startRemoveAuxLine = true;
+				window.currentAuxLine = this.parentNode;
+			});	
+			$("#coupledAuxHiddenAreaCoupling_"+i).on(TouchMouseEvent.DOWN, function(evt){
+				startRemoveAuxLine = true;
+				window.currentAuxLine = this.parentNode;
+			});	
+			$("#percentAuxHiddenAreaCoupling_"+i).on(TouchMouseEvent.DOWN, function(evt){
+				startCoupleAuxLine = true;
+				window.currentAuxLine = this.parentNode;
+			});	
+			$("#rulerAuxHiddenAreaCoupling_"+i).on(TouchMouseEvent.DOWN, function(evt){
+				startCoupleAuxLine = true;
+				window.currentAuxLine = this.parentNode;
+			});	
+			$("#coupledAuxLowerDeleteButton_"+i).on(TouchMouseEvent.DOWN, function(evt){
+				startDecoupleAuxLineToPercent = true;
+				window.currentAuxLine = this.parentNode;
+			});	
+			$("#coupledAuxUpperDeleteButton_"+i).on(TouchMouseEvent.DOWN, function(evt){
+				startDecoupleAuxLineToRuler = true;
+				window.currentAuxLine = this.parentNode;
 			});	
 		}
 		<!-- Wenn Maus bewegt wird (mouse move) -->
 		$("svg").on(TouchMouseEvent.MOVE, function(evt){
 			if (startDragAdjustCoupledAuxLine) {
-				window.currentlyMovedAuxLine.setAttribute("x", evt.pageX-pointerHiddenHalfWidth);
-				window.currentlyMovedAuxLine.getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;
+				window.currentAuxLine.setAttribute("x", evt.pageX-pointerHiddenHalfWidth);
+				window.currentAuxLine.getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;
 			}
 			if (startDragAdjustPercentAuxLine) {
-				window.currentlyMovedAuxLine.setAttribute("x", evt.pageX-pointerHiddenHalfWidth);
-				window.currentlyMovedAuxLine.getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;
+				window.currentAuxLine.setAttribute("x", evt.pageX-pointerHiddenHalfWidth);
+				window.currentAuxLine.getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;
 			}
 			if  (startDragAdjustRulerAuxLine) {
-				window.currentlyMovedAuxLine.setAttribute("x", evt.pageX-pointerHiddenHalfWidth);
+				window.currentAuxLine.setAttribute("x", evt.pageX-pointerHiddenHalfWidth);
 			}
 			if(startDragPercent){
 				moveElement(evt, true);
@@ -583,7 +623,7 @@
 					// document.getElementById("Message").innerHTML = messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;
 					moveAuxLine(evt, percentAuxLineList, window.numAuxLine);					
 				} else {
-					 document.getElementById("auxMessage").innerHTML = messageMaxNumberOfAuxLinesReached;
+					document.getElementById("auxMessage").innerHTML = messageMaxNumberOfAuxLinesReached;
 				}
 			}
 			if(startDragAuxRuler){
@@ -614,8 +654,24 @@
 				}
 			}
 			if (startDragAuxPercent || startDragAuxCoupled || startDragAdjustPercentAuxLine || startDragAdjustCoupledAuxLine) {
-				window.currentlyMovedAuxLine.getElementById("auxMessage").setAttribute("visibility", "hidden");
+				window.currentAuxLine.getElementById("auxMessage").setAttribute("visibility", "hidden");
 			}
+			if (startRemoveAuxLine) {
+				removeAuxLine(window.currentAuxLine);
+			}
+			if (startCoupleAuxLine) {
+				coupleAuxLine(window.currentAuxLine);
+			}
+			if (startDecoupleAuxLineToPercent) {
+				decoupleAuxLine(window.currentAuxLine, "percent");
+			}
+			if (startDecoupleAuxLineToRuler) {
+				decoupleAuxLine(window.currentAuxLine, "ruler");
+			}
+			startDecoupleAuxLineToPercent = false;
+			startDecoupleAuxLineToRuler = false;
+			startCoupleAuxLine = false;
+			startRemoveAuxLine = false;
 			startDragAdjustPercentAuxLine = false;
 			startDragAdjustRulerAuxLine = false;
 			startDragAdjustCoupledAuxLine = false;
@@ -642,7 +698,7 @@
 					auxline.setAttribute("visibility", "visible");
 					/* Speichere, nummer der erstellten Hilfslinie in globale Variable, um dann beim Zurechtschieben auf die richtige Hilfslinie zugreifen zu können */
 					window.numAuxLine = i;
-					window.currentlyMovedAuxLine = auxline;
+					window.currentAuxLine = auxline;
 					/* Ist eine Hilfslinie erschaffen, suche nicht weiter */
 					break;
 				/* Wurde keine versteckte Hilfslinie gefunden, dann sind alle Hilfslinien sichtbar und somit die maximale Anzahl erreicht currently */
@@ -664,17 +720,17 @@
 	}
 	
 	/* Diese Funktion fügt eine Hilfslinie hinzu (macht eine der unsichtbaren Hilfslinien sichtbar und setzt sie auf Mausposition) */
-	function removeAuxLine(auxLineDeleteButton) {
-		auxLineDeleteButton.parentNode.setAttribute("visibility", "hidden");
-		if (auxLineDeleteButton.parentNode.className.baseVal == "coupledAuxLine") {
+	function removeAuxLine(auxLine) {
+		auxLine.setAttribute("visibility", "hidden");
+		if (auxLine.className.baseVal == "coupledAuxLine") {
 				window.numberOfCoupledAuxLines--;
 		}
 		window.numberOfAuxLines--;
 	}
 	
-	function coupleAuxLine(auxLineHiddenArea) {
-		auxLineHiddenArea.parentNode.setAttribute("visibility", "hidden");
-		var position = auxLineHiddenArea.parentNode.getAttribute("x");
+	function coupleAuxLine(auxLine) {
+		auxLine.setAttribute("visibility", "hidden");
+		var position = auxLine.getAttribute("x");
 		for (var i=0; i<coupledAuxLineList.length; i++) {
 			var auxline = coupledAuxLineList[i];
 			if (auxline.getAttribute("visibility")=="hidden") {
@@ -689,9 +745,9 @@
 	}
 	
 	/* Diese Funktion verwandelt eine gekoppelte Hilfslinie in eine einfache Hilfslinie für die Skala targetScale(=ruler oder =percent) */
-	function decoupleAuxLine(auxLineHiddenArea, targetScale) {
-		auxLineHiddenArea.parentNode.setAttribute("visibility", "hidden");
-		var position = auxLineHiddenArea.parentNode.getAttribute("x");
+	function decoupleAuxLine(auxLine, targetScale) {
+		auxLine.setAttribute("visibility", "hidden");
+		var position = auxLine.getAttribute("x");
 		if (targetScale == "ruler") {
 			var auxLineList = rulerAuxLineList;
 		} else if (targetScale == "percent") {
