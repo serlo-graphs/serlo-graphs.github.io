@@ -21,7 +21,8 @@
 	<script type="text/javascript" src="jquery.js"></script>
 	<script type="text/javascript" src="touchmouse.js"></script>
 	
-	<!--Unterbindet das Markieren von Text und hoffentlich das Scrollen, keine Ahnung ob Letzteres funktioniert... -->
+	<!--Unterbindet das Markieren von Text, das Färben von Klicks und
+	 hoffentlich das Scrollen, keine Ahnung ob Letzteres funktioniert... -->
 	<style type="text/css">
 		svg * {
 			user-select: none;
@@ -45,7 +46,7 @@
     <rect   id="Prozentband"
             x="75"    		y="240"
             width="1040"		height="90"
-            fill="#FF4040" />
+            fill="MediumSpringGreen" />
     
 				<line   id="0" class="PercentLine"
 						x1="90" y1="330"
@@ -170,13 +171,13 @@
             x="75"    		y="240"
             width="1040"		height="90"
             fill="blue"                 		style="pointer-events:all; cursor: move;"
-            visibility="hidden"/>
+            visibility="hidden"					/>
     
     <rect   id="Above-Prozentband-Hidden"
             x="75"    		y="150"
             width="1040"      height="90"
-            fill="blue"                 		style="pointer-events:all;"
-            visibility="hidden"					/>
+            fill="aliceblue" style="pointer-events:all;"
+            visibility="visible"				/>
 
     <rect   id="Ruler"
             x="75"    		y="435"
@@ -3803,20 +3804,20 @@
             x="75"    		y="435"
             width="1040"		height="90"
             fill="blue"                 		style="pointer-events:all; cursor: move;"
-            visibility="hidden"/>
+            visibility="hidden"					/>
 
     <rect   id="Below-Ruler-Hidden"
             x="75"    		y="525"
             width="1040"      height="90"
-            fill="blue"                 		style="pointer-events:all;"
-            visibility="hidden"					/>
+            fill="aliceblue" style="pointer-events:all;"
+            visibility="visible"				/>
 
     <!-- In diesem Bereich kann durch das Mausevent 'Doppelklick' ein neuer Reiter erzeugt werden -->
     <rect   id="Between-Prozentband-Ruler"
             x="75"    		y="330"
             width="1040"		height="105"
-            fill="red"                  		style="pointer-events:all;"
-            visibility="hidden"					/>
+            fill="aliceblue" style="pointer-events:all;"
+            visibility="visible"				/>
 
 		<!-- Hilfslinien für das Prozentband -->
 
@@ -3880,13 +3881,13 @@
 						
 			<circle		id = "rulerAuxCircle_1"
 						cx = "20" cy = "52.5" r = "10"
-						fill = "green" stroke="black" stroke-width="2"
+						fill = "yellow" stroke="black" stroke-width="2"
 						/>
 						
 			<polygon 	id = "rulerAuxTriangle_1"
 						points="
 							10,25							30,25							20,10						" 
-						fill="green" stroke="black" stroke-width="2"
+						fill="yellow" stroke="black" stroke-width="2"
 						/>		
 							
 			<rect		id = "rulerAuxHiddenArea_1"
@@ -3932,20 +3933,20 @@
 						
 			<circle		id = "coupledAuxCircle_1"
 						cx = "20" cy = "287.5" r = "10"
-						fill = "yellow" stroke="black" stroke-width="2"
+						fill = "red" stroke="black" stroke-width="2"
 						/>
 						
 			<polygon 	id = "coupledAuxQuadrangle_1"
 						points="
 							10,260							20,245							30,260						" 
-						fill="yellow" stroke="black" stroke-width="2"
+						fill="red" stroke="black" stroke-width="2"
 						/>	
 						
 			<polygon 	id = "coupledAuxQuadrangle_1"
 						points="
 							10,315							30,315							20,330						
 						" 
-						fill="yellow" stroke="black" stroke-width="2"
+						fill="red" stroke="black" stroke-width="2"
 						/>
 			<rect		id = "coupledAuxUpperHiddenArea_1"
 						x = "0" y="55"
@@ -4036,13 +4037,13 @@
 						
 			<circle		id = "rulerAuxCircle_2"
 						cx = "20" cy = "52.5" r = "10"
-						fill = "green" stroke="black" stroke-width="2"
+						fill = "yellow" stroke="black" stroke-width="2"
 						/>
 						
 			<polygon 	id = "rulerAuxTriangle_2"
 						points="
 							10,25							30,25							20,10						" 
-						fill="green" stroke="black" stroke-width="2"
+						fill="yellow" stroke="black" stroke-width="2"
 						/>		
 							
 			<rect		id = "rulerAuxHiddenArea_2"
@@ -4088,20 +4089,20 @@
 						
 			<circle		id = "coupledAuxCircle_2"
 						cx = "20" cy = "287.5" r = "10"
-						fill = "yellow" stroke="black" stroke-width="2"
+						fill = "red" stroke="black" stroke-width="2"
 						/>
 						
 			<polygon 	id = "coupledAuxQuadrangle_2"
 						points="
 							10,260							20,245							30,260						" 
-						fill="yellow" stroke="black" stroke-width="2"
+						fill="red" stroke="black" stroke-width="2"
 						/>	
 						
 			<polygon 	id = "coupledAuxQuadrangle_2"
 						points="
 							10,315							30,315							20,330						
 						" 
-						fill="yellow" stroke="black" stroke-width="2"
+						fill="red" stroke="black" stroke-width="2"
 						/>
 			<rect		id = "coupledAuxUpperHiddenArea_2"
 						x = "0" y="55"
@@ -4192,13 +4193,13 @@
 						
 			<circle		id = "rulerAuxCircle_3"
 						cx = "20" cy = "52.5" r = "10"
-						fill = "green" stroke="black" stroke-width="2"
+						fill = "yellow" stroke="black" stroke-width="2"
 						/>
 						
 			<polygon 	id = "rulerAuxTriangle_3"
 						points="
 							10,25							30,25							20,10						" 
-						fill="green" stroke="black" stroke-width="2"
+						fill="yellow" stroke="black" stroke-width="2"
 						/>		
 							
 			<rect		id = "rulerAuxHiddenArea_3"
@@ -4244,20 +4245,20 @@
 						
 			<circle		id = "coupledAuxCircle_3"
 						cx = "20" cy = "287.5" r = "10"
-						fill = "yellow" stroke="black" stroke-width="2"
+						fill = "red" stroke="black" stroke-width="2"
 						/>
 						
 			<polygon 	id = "coupledAuxQuadrangle_3"
 						points="
 							10,260							20,245							30,260						" 
-						fill="yellow" stroke="black" stroke-width="2"
+						fill="red" stroke="black" stroke-width="2"
 						/>	
 						
 			<polygon 	id = "coupledAuxQuadrangle_3"
 						points="
 							10,315							30,315							20,330						
 						" 
-						fill="yellow" stroke="black" stroke-width="2"
+						fill="red" stroke="black" stroke-width="2"
 						/>
 			<rect		id = "coupledAuxUpperHiddenArea_3"
 						x = "0" y="55"
@@ -4397,34 +4398,40 @@
 			currentX = evt.pageX;
 			addAuxLine(currentX, percentAuxLineList);
 			startDragAuxPercent = true;
-			if (window.numberOfAuxLines < maxNumberOfAuxLines) {				
+			console.log("window.numberOfAuxLines:"+window.numberOfAuxLines);
+			if (window.numberOfAuxLines < maxNumberOfAuxLines) {
+				percentAuxLineList[window.numAuxLine].getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;						
 				percentAuxLineList[window.numAuxLine].getElementById("auxMessage").setAttribute("visibility", "visible");
+				document.getElementById("Message").innerHTML = " ";
 			} else {
-				 document.getElementById("Message").innerHTML = messageMaxNumberOfAuxLinesReached;
+				document.getElementById("Message").innerHTML = messageMaxNumberOfAuxLinesReached;
+				document.getElementById("Message").setAttribute("visibility", " visible");
 			}
-			 document.getElementById("Message").setAttribute("visibility", " visible");
 		});	
 		$("#Below-Ruler-Hidden").on(TouchMouseEvent.DOWN, function(evt){
 			currentX = evt.pageX;
 			addAuxLine(currentX, rulerAuxLineList);
 			startDragAuxRuler = true;
+			console.log("window.numberOfAuxLines:"+window.numberOfAuxLines);
 			if (window.numberOfAuxLines < maxNumberOfAuxLines) {
-				// document.getElementById("Message").innerHTML = messageAuxLineRulerPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.rulerScaleFactor)) + messageAuxLineRulerPositionPart2;
+				document.getElementById("Message").innerHTML = " ";
 			} else {
-				 document.getElementById("Message").innerHTML = messageMaxNumberOfAuxLinesReached;
+				document.getElementById("Message").innerHTML = messageMaxNumberOfAuxLinesReached;
+				document.getElementById("Message").setAttribute("visibility", " visible");
 			}
-			 document.getElementById("Message").setAttribute("visibility", " visible");
 		});	
 		$("#Between-Prozentband-Ruler").on(TouchMouseEvent.DOWN, function(evt){
 			currentX = evt.pageX;
 			addAuxLine(currentX, coupledAuxLineList);
 			startDragAuxCoupled = true;
+			console.log("window.numberOfAuxLines:"+window.numberOfAuxLines);
 			if (window.numberOfAuxLines < maxNumberOfAuxLines) {				
 				coupledAuxLineList[window.numAuxLine].getElementById("auxMessage").setAttribute("visibility", "visible");
+				document.getElementById("Message").innerHTML = " ";
 			} else {
 				document.getElementById("Message").innerHTML = messageMaxNumberOfAuxLinesReached;
+				document.getElementById("Message").setAttribute("visibility", " visible");
 			}
-			document.getElementById("Message").setAttribute("visibility", " visible");
 		});	
 		for (var i=1; i<=maxNumberOfAuxLines; i++ ) {
 			$("#percentAuxHiddenArea_"+i).on(TouchMouseEvent.DOWN, function(evt){
@@ -4508,7 +4515,7 @@
 					// document.getElementById("Message").innerHTML = messageAuxLineRulerPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.rulerScaleFactor)) + messageAuxLineRulerPositionPart2;
 					moveAuxLine(evt, rulerAuxLineList, window.numAuxLine);					
 				} else {
-					 document.getElementById("Message").innerHTML = messageMaxNumberOfAuxLinesReached;
+					document.getElementById("Message").innerHTML = messageMaxNumberOfAuxLinesReached;
 				}
 			}
 			if(startDragAuxCoupled){
