@@ -4426,7 +4426,7 @@
 			startDragAuxCoupled = true;
 			console.log("window.numberOfAuxLines:"+window.numberOfAuxLines);
 			if (window.numberOfAuxLines < maxNumberOfAuxLines) {				
-				percentAuxLineList[window.numAuxLine].getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;						
+				coupledAuxLineList[window.numAuxLine].getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;						
 				coupledAuxLineList[window.numAuxLine].getElementById("auxMessage").setAttribute("visibility", "visible");
 				document.getElementById("Message").innerHTML = " ";
 			} else {
