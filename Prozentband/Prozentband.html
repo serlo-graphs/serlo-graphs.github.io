@@ -4398,10 +4398,9 @@
 			currentX = evt.pageX;
 			addAuxLine(currentX, percentAuxLineList);
 			startDragAuxPercent = true;
-			console.log("window.numberOfAuxLines:"+window.numberOfAuxLines);
 			if (window.numberOfAuxLines < maxNumberOfAuxLines) {
-				percentAuxLineList[window.numAuxLine].getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;						
-				percentAuxLineList[window.numAuxLine].getElementById("auxMessage").setAttribute("visibility", "visible");
+				window.currentAuxLine.getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;						
+				window.currentAuxLine.getElementById("auxMessage").setAttribute("visibility", "visible");
 				document.getElementById("Message").innerHTML = " ";
 			} else {
 				document.getElementById("Message").innerHTML = messageMaxNumberOfAuxLinesReached;
@@ -4412,7 +4411,6 @@
 			currentX = evt.pageX;
 			addAuxLine(currentX, rulerAuxLineList);
 			startDragAuxRuler = true;
-			console.log("window.numberOfAuxLines:"+window.numberOfAuxLines);
 			if (window.numberOfAuxLines < maxNumberOfAuxLines) {
 				document.getElementById("Message").innerHTML = " ";
 			} else {
@@ -4424,10 +4422,9 @@
 			currentX = evt.pageX;
 			addAuxLine(currentX, coupledAuxLineList);
 			startDragAuxCoupled = true;
-			console.log("window.numberOfAuxLines:"+window.numberOfAuxLines);
 			if (window.numberOfAuxLines < maxNumberOfAuxLines) {				
-				coupledAuxLineList[window.numAuxLine].getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;						
-				coupledAuxLineList[window.numAuxLine].getElementById("auxMessage").setAttribute("visibility", "visible");
+				window.currentAuxLine.getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;						
+				window.currentAuxLine.getElementById("auxMessage").setAttribute("visibility", "visible");
 				document.getElementById("Message").innerHTML = " ";
 			} else {
 				document.getElementById("Message").innerHTML = messageMaxNumberOfAuxLinesReached;
@@ -4504,9 +4501,9 @@
 			}
 			if(startDragAuxPercent){
 				if (window.numberOfAuxLines < maxNumberOfAuxLines) {
-					percentAuxLineList[window.numAuxLine].getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;
+					window.currentAuxLine.getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;
 					// document.getElementById("Message").innerHTML = messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;
-					moveAuxLine(evt, percentAuxLineList, window.numAuxLine);					
+					moveAuxLine(evt);					
 				} else {
 					document.getElementById("auxMessage").innerHTML = messageMaxNumberOfAuxLinesReached;
 				}
@@ -4514,16 +4511,16 @@
 			if(startDragAuxRuler){
 				if (window.numberOfAuxLines < maxNumberOfAuxLines) {
 					// document.getElementById("Message").innerHTML = messageAuxLineRulerPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.rulerScaleFactor)) + messageAuxLineRulerPositionPart2;
-					moveAuxLine(evt, rulerAuxLineList, window.numAuxLine);					
+					moveAuxLine(evt);					
 				} else {
 					document.getElementById("Message").innerHTML = messageMaxNumberOfAuxLinesReached;
 				}
 			}
 			if(startDragAuxCoupled){
 				if (window.numberOfAuxLines < maxNumberOfAuxLines) {
-					coupledAuxLineList[window.numAuxLine].getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;
+					window.currentAuxLine.getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;
 					// document.getElementById("Message").innerHTML = messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2 + messageAuxLineRulerPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.rulerScaleFactor)) + messageAuxLineRulerPositionPart2;
-					moveAuxLine(evt, coupledAuxLineList, window.numAuxLine);					
+					moveAuxLine(evt);					
 				} else {
 					 document.getElementById("Message").innerHTML = messageMaxNumberOfAuxLinesReached;
 				}
@@ -4566,7 +4563,6 @@
 			startDragAuxRuler = false;
 			startDragAuxCoupled = false;
 			document.getElementById("Message").setAttribute("visibility", "hidden");
-			window.numAuxLine = -1;
 		});
 
 	});
@@ -4582,33 +4578,27 @@
 					auxline.setAttribute("x", currentX-pointerHiddenHalfWidth);
 					auxline.setAttribute("visibility", "visible");
 					/* Speichere, nummer der erstellten Hilfslinie in globale Variable, um dann beim Zurechtschieben auf die richtige Hilfslinie zugreifen zu können */
-					window.numAuxLine = i;
 					window.currentAuxLine = auxline;
 					/* Ist eine Hilfslinie erschaffen, suche nicht weiter */
 					break;
 				/* Wurde keine versteckte Hilfslinie gefunden, dann sind alle Hilfslinien sichtbar und somit die maximale Anzahl erreicht currently */
 				} 
 			}
-		} else {
-			console.log("Maximum number of AuxLines reached!") // Das muss noch für den Nutzer sichtbar gemacht werden!
 		}
 	}
 	
 	/* Funktion zum Bewegen einer Hilfslinie (wird beim Setzen aufgerufen) */
-	function moveAuxLine(evt, auxLineList, numAuxLine) {
-		if (numAuxLine != -1) {
-			var auxline = auxLineList[numAuxLine];
-			var correctedNewPosition = +evt.pageX - +pointerHiddenHalfWidth;
-			// Übrigens: Die zusätzlichen Pluszeichen vor den Variablen konvertieren sie zu Integern, sodass die Adition entsprechend ausgeführt wird
-			auxline.setAttribute("x", correctedNewPosition);
-		}
+	function moveAuxLine(evt) {
+		var correctedNewPosition = +evt.pageX - +pointerHiddenHalfWidth;
+		// Übrigens: Die zusätzlichen Pluszeichen vor den Variablen konvertieren sie zu Integern, sodass die Adition entsprechend ausgeführt wird
+		window.currentAuxLine.setAttribute("x", correctedNewPosition);
 	}
 	
 	/* Diese Funktion fügt eine Hilfslinie hinzu (macht eine der unsichtbaren Hilfslinien sichtbar und setzt sie auf Mausposition) */
 	function removeAuxLine(auxLine) {
 		auxLine.setAttribute("visibility", "hidden");
 		if (auxLine.className.baseVal == "coupledAuxLine") {
-				window.numberOfCoupledAuxLines--;
+			window.numberOfCoupledAuxLines--;
 		}
 		window.numberOfAuxLines--;
 	}
