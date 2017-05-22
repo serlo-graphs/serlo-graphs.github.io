@@ -1,0 +1,4 @@
+CACHE MANIFEST
+Prozentband.html
+touchmouse.js
+jquery.js
