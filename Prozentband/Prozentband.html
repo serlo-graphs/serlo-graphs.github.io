@@ -1,4 +1,5 @@
-<html manifest="manifest.mf"><head>
+<html manifest="manifest.mf">
+	<head>
     <title> Prozentband </title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf8" />
         
@@ -4304,20 +4305,20 @@
 
 
     <g id = "Reset"
-       style="pointer-events:all; cursor: pointer;"
-       onclick="reset()">
+       style="pointer-events:all; cursor: pointer;">
        <rect    id="Reset-Rahmen"
-                x="710"    y="695"
+                x="945"    y="695"
                 width="170" height="55"
                 fill="none"
                 stroke="black"
                 style="stroke-width:2;" />
         <rect   id="Reset-Hintergrund"
-                x="720"     y="705"
+                x="955"     y="705"
                 height="35" width="150"
                 fill="#AAAAAA" />
         <text   id="Reset-Text"
-                x="725"    y="730"
+				text-anchor="middle"
+                x="1030"    y="730"
                 style="font-size: 20px;" >
                 Zurücksetzen </text>
 
@@ -4383,6 +4384,8 @@
 		// Überführen von doppelseitigen Hilfslinien zu einseitigen
 		var startDecoupleAuxLineToPercent = false;
 		var startDecoupleAuxLineToRuler = false;
+		// Druck auf den "Zurücksetzen"-Button
+		var startReset = false;
 	
 		<!-- Anfang der Bewegung (mouse down) -->
 		$("#Prozentband-Hidden").on(TouchMouseEvent.DOWN, function(evt){
@@ -4477,8 +4480,11 @@
 			$("#coupledAuxUpperDeleteButton_"+i).on(TouchMouseEvent.DOWN, function(evt){
 				startDecoupleAuxLineToRuler = true;
 				window.currentAuxLine = this.parentNode;
-			});	
+			});
 		}
+		$("#Reset").on(TouchMouseEvent.DOWN, function(evt){
+			startReset = true;
+		});
 		<!-- Wenn Maus bewegt wird (mouse move) -->
 		$("svg").on(TouchMouseEvent.MOVE, function(evt){
 			if (startDragAdjustCoupledAuxLine) {
@@ -4549,6 +4555,10 @@
 			if (startDecoupleAuxLineToRuler) {
 				decoupleAuxLine(window.currentAuxLine, "ruler");
 			}
+			if (startReset) {
+				reset();
+			}
+			startReset = false;
 			startDecoupleAuxLineToPercent = false;
 			startDecoupleAuxLineToRuler = false;
 			startCoupleAuxLine = false;
