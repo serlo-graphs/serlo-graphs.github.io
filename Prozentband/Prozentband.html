@@ -17,6 +17,12 @@
 	-->
     <meta name="viewport", user-scalable="no">
     
+    <script type="text/javascript">
+		window.applicationCache.addEventListener('updateready', function(){
+				window.applicationCache.swapCache();
+		}, false);
+	</script>
+    
     <!-- Bindet Bibliotheken zum Abfangen von Touch-Events ein -->
 	<script type="text/javascript" src="jquery.js"></script>
 	<script type="text/javascript" src="touchmouse.js"></script>
@@ -4304,7 +4310,7 @@
     -->
 
 
-    <g id = "Reset"
+<!--    <g id = "Reset"
        style="pointer-events:all; cursor: pointer;">
        <rect    id="Reset-Rahmen"
                 x="944"    y="695"
@@ -4316,13 +4322,9 @@
                 x="954"     y="705"
                 height="35" width="150"
                 fill="#AAAAAA" />
-        <text   id="Reset-Text"
-				text-anchor="middle"
-                x="1029"    y="730"
-                style="font-size: 20px;" >
-                Zurücksetzen </text>
+                -->
+                <image x="944" y="700" width="80" height="80" xlink:href="refresh.svg" />
 
-    </g>
 
 
 <script type="text/javascript"><![CDATA[
