@@ -1,0 +1,246 @@
+var title = {TITLE: 'Tschebyschow'};
+var json = {
+	id: "a21_1",
+	name: "Tschebyschow",
+	data: {},
+	children: [
+	{
+		id: "a20_2",
+		name: "Varianz",
+		data: {},
+		children: [
+		{
+			id: "a18_3",
+			name: "Erwartungswert",
+			data: {},
+			children: [
+			{
+				id: "a17_4",
+				name: "Zufallsgrößen",
+				data: {},
+				children: [
+				{
+					id: "a16_5",
+					name: "Wahrscheinlichkeitsraum",
+					data: {},
+					children: [
+					{
+						id: "a5_6",
+						name: "Wahrscheinlichkeitsmaß, Kolmogorov-Axiome",
+						data: {},
+						children: [
+						{
+							id: "a45_7",
+							name: "Maße",
+							data: {},
+							children: [
+							{
+								id: "a3_8",
+								name: "Bildmenge",
+								data: {},
+								children: [
+								{
+									id: "a1_9",
+									name: "Mengen, Elemente, Teilmengen",
+									data: {},
+									children: [
+									 ]
+								},
+								 ]
+							},
+							 ]
+						},
+						{
+							id: "a4_10",
+							name: "Ereignisraum, Ereignisse",
+							data: {},
+							children: [
+							{
+								id: "a2_11",
+								name: "Potenzmenge",
+								data: {},
+								children: [
+								{
+									id: "a1_12",
+									name: "Mengen, Elemente, Teilmengen",
+									data: {},
+									children: [
+									 ]
+								},
+								 ]
+							},
+							 ]
+						},
+						{
+							id: "a6_13",
+							name: "Schnitt, Vereinigung, Komplement",
+							data: {},
+							children: [
+							{
+								id: "a1_14",
+								name: "Mengen, Elemente, Teilmengen",
+								data: {},
+								children: [
+								 ]
+							},
+							 ]
+						},
+						 ]
+					},
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	{
+		id: "a5_15",
+		name: "Wahrscheinlichkeitsmaß, Kolmogorov-Axiome",
+		data: {},
+		children: [
+		{
+			id: "a45_16",
+			name: "Maße",
+			data: {},
+			children: [
+			{
+				id: "a3_17",
+				name: "Bildmenge",
+				data: {},
+				children: [
+				{
+					id: "a1_18",
+					name: "Mengen, Elemente, Teilmengen",
+					data: {},
+					children: [
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		{
+			id: "a4_19",
+			name: "Ereignisraum, Ereignisse",
+			data: {},
+			children: [
+			{
+				id: "a2_20",
+				name: "Potenzmenge",
+				data: {},
+				children: [
+				{
+					id: "a1_21",
+					name: "Mengen, Elemente, Teilmengen",
+					data: {},
+					children: [
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		{
+			id: "a6_22",
+			name: "Schnitt, Vereinigung, Komplement",
+			data: {},
+			children: [
+			{
+				id: "a1_23",
+				name: "Mengen, Elemente, Teilmengen",
+				data: {},
+				children: [
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	{
+		id: "a18_24",
+		name: "Erwartungswert",
+		data: {},
+		children: [
+		{
+			id: "a17_25",
+			name: "Zufallsgrößen",
+			data: {},
+			children: [
+			{
+				id: "a16_26",
+				name: "Wahrscheinlichkeitsraum",
+				data: {},
+				children: [
+				{
+					id: "a5_27",
+					name: "Wahrscheinlichkeitsmaß, Kolmogorov-Axiome",
+					data: {},
+					children: [
+					{
+						id: "a45_28",
+						name: "Maße",
+						data: {},
+						children: [
+						{
+							id: "a3_29",
+							name: "Bildmenge",
+							data: {},
+							children: [
+							{
+								id: "a1_30",
+								name: "Mengen, Elemente, Teilmengen",
+								data: {},
+								children: [
+								 ]
+							},
+							 ]
+						},
+						 ]
+					},
+					{
+						id: "a4_31",
+						name: "Ereignisraum, Ereignisse",
+						data: {},
+						children: [
+						{
+							id: "a2_32",
+							name: "Potenzmenge",
+							data: {},
+							children: [
+							{
+								id: "a1_33",
+								name: "Mengen, Elemente, Teilmengen",
+								data: {},
+								children: [
+								 ]
+							},
+							 ]
+						},
+						 ]
+					},
+					{
+						id: "a6_34",
+						name: "Schnitt, Vereinigung, Komplement",
+						data: {},
+						children: [
+						{
+							id: "a1_35",
+							name: "Mengen, Elemente, Teilmengen",
+							data: {},
+							children: [
+							 ]
+						},
+						 ]
+					},
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	 ]
+}

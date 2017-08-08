@@ -1,0 +1,435 @@
+var title = {TITLE: 'Schwaches Gesetz der großen Zahlen'};
+var json = {
+	id: "a38_1",
+	name: "Schwaches Gesetz der großen Zahlen",
+	data: {},
+	children: [
+	{
+		id: "a39_2",
+		name: "Mittelwert",
+		data: {},
+		children: [
+		{
+			id: "a17_3",
+			name: "Zufallsgrößen",
+			data: {},
+			children: [
+			{
+				id: "a16_4",
+				name: "Wahrscheinlichkeitsraum",
+				data: {},
+				children: [
+				{
+					id: "a5_5",
+					name: "Wahrscheinlichkeitsmaß, Kolmogorov-Axiome",
+					data: {},
+					children: [
+					{
+						id: "a45_6",
+						name: "Maße",
+						data: {},
+						children: [
+						{
+							id: "a3_7",
+							name: "Bildmenge",
+							data: {},
+							children: [
+							{
+								id: "a1_8",
+								name: "Mengen, Elemente, Teilmengen",
+								data: {},
+								children: [
+								 ]
+							},
+							 ]
+						},
+						 ]
+					},
+					{
+						id: "a4_9",
+						name: "Ereignisraum, Ereignisse",
+						data: {},
+						children: [
+						{
+							id: "a2_10",
+							name: "Potenzmenge",
+							data: {},
+							children: [
+							{
+								id: "a1_11",
+								name: "Mengen, Elemente, Teilmengen",
+								data: {},
+								children: [
+								 ]
+							},
+							 ]
+						},
+						 ]
+					},
+					{
+						id: "a6_12",
+						name: "Schnitt, Vereinigung, Komplement",
+						data: {},
+						children: [
+						{
+							id: "a1_13",
+							name: "Mengen, Elemente, Teilmengen",
+							data: {},
+							children: [
+							 ]
+						},
+						 ]
+					},
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	{
+		id: "a37_14",
+		name: "Standardabweichung",
+		data: {},
+		children: [
+		{
+			id: "a20_15",
+			name: "Varianz",
+			data: {},
+			children: [
+			{
+				id: "a18_16",
+				name: "Erwartungswert",
+				data: {},
+				children: [
+				{
+					id: "a17_17",
+					name: "Zufallsgrößen",
+					data: {},
+					children: [
+					{
+						id: "a16_18",
+						name: "Wahrscheinlichkeitsraum",
+						data: {},
+						children: [
+						{
+							id: "a5_19",
+							name: "Wahrscheinlichkeitsmaß, Kolmogorov-Axiome",
+							data: {},
+							children: [
+							{
+								id: "a45_20",
+								name: "Maße",
+								data: {},
+								children: [
+								{
+									id: "a3_21",
+									name: "Bildmenge",
+									data: {},
+									children: [
+									{
+										id: "a1_22",
+										name: "Mengen, Elemente, Teilmengen",
+										data: {},
+										children: [
+										 ]
+									},
+									 ]
+								},
+								 ]
+							},
+							{
+								id: "a4_23",
+								name: "Ereignisraum, Ereignisse",
+								data: {},
+								children: [
+								{
+									id: "a2_24",
+									name: "Potenzmenge",
+									data: {},
+									children: [
+									{
+										id: "a1_25",
+										name: "Mengen, Elemente, Teilmengen",
+										data: {},
+										children: [
+										 ]
+									},
+									 ]
+								},
+								 ]
+							},
+							{
+								id: "a6_26",
+								name: "Schnitt, Vereinigung, Komplement",
+								data: {},
+								children: [
+								{
+									id: "a1_27",
+									name: "Mengen, Elemente, Teilmengen",
+									data: {},
+									children: [
+									 ]
+								},
+								 ]
+							},
+							 ]
+						},
+						 ]
+					},
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	{
+		id: "a21_28",
+		name: "Tschebyschow",
+		data: {},
+		children: [
+		{
+			id: "a20_29",
+			name: "Varianz",
+			data: {},
+			children: [
+			{
+				id: "a18_30",
+				name: "Erwartungswert",
+				data: {},
+				children: [
+				{
+					id: "a17_31",
+					name: "Zufallsgrößen",
+					data: {},
+					children: [
+					{
+						id: "a16_32",
+						name: "Wahrscheinlichkeitsraum",
+						data: {},
+						children: [
+						{
+							id: "a5_33",
+							name: "Wahrscheinlichkeitsmaß, Kolmogorov-Axiome",
+							data: {},
+							children: [
+							{
+								id: "a45_34",
+								name: "Maße",
+								data: {},
+								children: [
+								{
+									id: "a3_35",
+									name: "Bildmenge",
+									data: {},
+									children: [
+									{
+										id: "a1_36",
+										name: "Mengen, Elemente, Teilmengen",
+										data: {},
+										children: [
+										 ]
+									},
+									 ]
+								},
+								 ]
+							},
+							{
+								id: "a4_37",
+								name: "Ereignisraum, Ereignisse",
+								data: {},
+								children: [
+								{
+									id: "a2_38",
+									name: "Potenzmenge",
+									data: {},
+									children: [
+									{
+										id: "a1_39",
+										name: "Mengen, Elemente, Teilmengen",
+										data: {},
+										children: [
+										 ]
+									},
+									 ]
+								},
+								 ]
+							},
+							{
+								id: "a6_40",
+								name: "Schnitt, Vereinigung, Komplement",
+								data: {},
+								children: [
+								{
+									id: "a1_41",
+									name: "Mengen, Elemente, Teilmengen",
+									data: {},
+									children: [
+									 ]
+								},
+								 ]
+							},
+							 ]
+						},
+						 ]
+					},
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		{
+			id: "a5_42",
+			name: "Wahrscheinlichkeitsmaß, Kolmogorov-Axiome",
+			data: {},
+			children: [
+			{
+				id: "a45_43",
+				name: "Maße",
+				data: {},
+				children: [
+				{
+					id: "a3_44",
+					name: "Bildmenge",
+					data: {},
+					children: [
+					{
+						id: "a1_45",
+						name: "Mengen, Elemente, Teilmengen",
+						data: {},
+						children: [
+						 ]
+					},
+					 ]
+				},
+				 ]
+			},
+			{
+				id: "a4_46",
+				name: "Ereignisraum, Ereignisse",
+				data: {},
+				children: [
+				{
+					id: "a2_47",
+					name: "Potenzmenge",
+					data: {},
+					children: [
+					{
+						id: "a1_48",
+						name: "Mengen, Elemente, Teilmengen",
+						data: {},
+						children: [
+						 ]
+					},
+					 ]
+				},
+				 ]
+			},
+			{
+				id: "a6_49",
+				name: "Schnitt, Vereinigung, Komplement",
+				data: {},
+				children: [
+				{
+					id: "a1_50",
+					name: "Mengen, Elemente, Teilmengen",
+					data: {},
+					children: [
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		{
+			id: "a18_51",
+			name: "Erwartungswert",
+			data: {},
+			children: [
+			{
+				id: "a17_52",
+				name: "Zufallsgrößen",
+				data: {},
+				children: [
+				{
+					id: "a16_53",
+					name: "Wahrscheinlichkeitsraum",
+					data: {},
+					children: [
+					{
+						id: "a5_54",
+						name: "Wahrscheinlichkeitsmaß, Kolmogorov-Axiome",
+						data: {},
+						children: [
+						{
+							id: "a45_55",
+							name: "Maße",
+							data: {},
+							children: [
+							{
+								id: "a3_56",
+								name: "Bildmenge",
+								data: {},
+								children: [
+								{
+									id: "a1_57",
+									name: "Mengen, Elemente, Teilmengen",
+									data: {},
+									children: [
+									 ]
+								},
+								 ]
+							},
+							 ]
+						},
+						{
+							id: "a4_58",
+							name: "Ereignisraum, Ereignisse",
+							data: {},
+							children: [
+							{
+								id: "a2_59",
+								name: "Potenzmenge",
+								data: {},
+								children: [
+								{
+									id: "a1_60",
+									name: "Mengen, Elemente, Teilmengen",
+									data: {},
+									children: [
+									 ]
+								},
+								 ]
+							},
+							 ]
+						},
+						{
+							id: "a6_61",
+							name: "Schnitt, Vereinigung, Komplement",
+							data: {},
+							children: [
+							{
+								id: "a1_62",
+								name: "Mengen, Elemente, Teilmengen",
+								data: {},
+								children: [
+								 ]
+							},
+							 ]
+						},
+						 ]
+					},
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	 ]
+}

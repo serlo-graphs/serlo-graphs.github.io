@@ -1,0 +1,148 @@
+var title = {TITLE: 'Messbarkeit'};
+var json = {
+	id: "a55_1",
+	name: "Messbarkeit",
+	data: {},
+	children: [
+	{
+		id: "a56_2",
+		name: "Urbild",
+		data: {},
+		children: [
+		{
+			id: "a3_3",
+			name: "Bildmenge",
+			data: {},
+			children: [
+			{
+				id: "a1_4",
+				name: "Mengen, Elemente, Teilmengen",
+				data: {},
+				children: [
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	{
+		id: "a43_5",
+		name: "Sigma-Algebren",
+		data: {},
+		children: [
+		{
+			id: "a46_6",
+			name: "Lebesgue-Maß",
+			data: {},
+			children: [
+			{
+				id: "a45_7",
+				name: "Maße",
+				data: {},
+				children: [
+				{
+					id: "a3_8",
+					name: "Bildmenge",
+					data: {},
+					children: [
+					{
+						id: "a1_9",
+						name: "Mengen, Elemente, Teilmengen",
+						data: {},
+						children: [
+						 ]
+					},
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		{
+			id: "a4_10",
+			name: "Ereignisraum, Ereignisse",
+			data: {},
+			children: [
+			{
+				id: "a2_11",
+				name: "Potenzmenge",
+				data: {},
+				children: [
+				{
+					id: "a1_12",
+					name: "Mengen, Elemente, Teilmengen",
+					data: {},
+					children: [
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		{
+			id: "a6_13",
+			name: "Schnitt, Vereinigung, Komplement",
+			data: {},
+			children: [
+			{
+				id: "a1_14",
+				name: "Mengen, Elemente, Teilmengen",
+				data: {},
+				children: [
+				 ]
+			},
+			 ]
+		},
+		{
+			id: "a42_15",
+			name: "Vitali-Mengen",
+			data: {},
+			children: [
+			{
+				id: "a44_16",
+				name: "Äquivalenz-Relation",
+				data: {},
+				children: [
+				{
+					id: "a1_17",
+					name: "Mengen, Elemente, Teilmengen",
+					data: {},
+					children: [
+					 ]
+				},
+				 ]
+			},
+			{
+				id: "a41_18",
+				name: "Folgen",
+				data: {},
+				children: [
+				{
+					id: "a1_19",
+					name: "Mengen, Elemente, Teilmengen",
+					data: {},
+					children: [
+					 ]
+				},
+				 ]
+			},
+			{
+				id: "a40_20",
+				name: "Abzählbarkeit",
+				data: {},
+				children: [
+				{
+					id: "a1_21",
+					name: "Mengen, Elemente, Teilmengen",
+					data: {},
+					children: [
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	 ]
+}

@@ -1,0 +1,22 @@
+var title = {TITLE: 'Maße'};
+var json = {
+	id: "a45_1",
+	name: "Maße",
+	data: {},
+	children: [
+	{
+		id: "a3_2",
+		name: "Bildmenge",
+		data: {},
+		children: [
+		{
+			id: "a1_3",
+			name: "Mengen, Elemente, Teilmengen",
+			data: {},
+			children: [
+			 ]
+		},
+		 ]
+	},
+	 ]
+}

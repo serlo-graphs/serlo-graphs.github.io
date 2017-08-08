@@ -1,0 +1,22 @@
+var title = {TITLE: 'Symmetrie'};
+var json = {
+	id: "a29_1",
+	name: "Symmetrie",
+	data: {},
+	children: [
+	{
+		id: "a3_2",
+		name: "Bildmenge",
+		data: {},
+		children: [
+		{
+			id: "a1_3",
+			name: "Mengen, Elemente, Teilmengen",
+			data: {},
+			children: [
+			 ]
+		},
+		 ]
+	},
+	 ]
+}

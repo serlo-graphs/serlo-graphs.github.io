@@ -1,0 +1,71 @@
+var title = {TITLE: 'Summenformel für Vereinigungen von Wahrscheinlichkeiten'};
+var json = {
+	id: "a7_1",
+	name: "Summenformel für Vereinigungen von Wahrscheinlichkeiten",
+	data: {},
+	children: [
+	{
+		id: "a5_2",
+		name: "Wahrscheinlichkeitsmaß, Kolmogorov-Axiome",
+		data: {},
+		children: [
+		{
+			id: "a45_3",
+			name: "Maße",
+			data: {},
+			children: [
+			{
+				id: "a3_4",
+				name: "Bildmenge",
+				data: {},
+				children: [
+				{
+					id: "a1_5",
+					name: "Mengen, Elemente, Teilmengen",
+					data: {},
+					children: [
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		{
+			id: "a4_6",
+			name: "Ereignisraum, Ereignisse",
+			data: {},
+			children: [
+			{
+				id: "a2_7",
+				name: "Potenzmenge",
+				data: {},
+				children: [
+				{
+					id: "a1_8",
+					name: "Mengen, Elemente, Teilmengen",
+					data: {},
+					children: [
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		{
+			id: "a6_9",
+			name: "Schnitt, Vereinigung, Komplement",
+			data: {},
+			children: [
+			{
+				id: "a1_10",
+				name: "Mengen, Elemente, Teilmengen",
+				data: {},
+				children: [
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	 ]
+}

@@ -1,0 +1,15 @@
+var title = {TITLE: 'Äquivalenz-Relation'};
+var json = {
+	id: "a44_1",
+	name: "Äquivalenz-Relation",
+	data: {},
+	children: [
+	{
+		id: "a1_2",
+		name: "Mengen, Elemente, Teilmengen",
+		data: {},
+		children: [
+		 ]
+	},
+	 ]
+}

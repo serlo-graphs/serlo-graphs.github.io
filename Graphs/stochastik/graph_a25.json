@@ -1,0 +1,176 @@
+var title = {TITLE: 'Unkorrelierte ZG'};
+var json = {
+	id: "a25_1",
+	name: "Unkorrelierte ZG",
+	data: {},
+	children: [
+	{
+		id: "a24_2",
+		name: "Kovarianz",
+		data: {},
+		children: [
+		{
+			id: "a17_3",
+			name: "Zufallsgrößen",
+			data: {},
+			children: [
+			{
+				id: "a16_4",
+				name: "Wahrscheinlichkeitsraum",
+				data: {},
+				children: [
+				{
+					id: "a5_5",
+					name: "Wahrscheinlichkeitsmaß, Kolmogorov-Axiome",
+					data: {},
+					children: [
+					{
+						id: "a45_6",
+						name: "Maße",
+						data: {},
+						children: [
+						{
+							id: "a3_7",
+							name: "Bildmenge",
+							data: {},
+							children: [
+							{
+								id: "a1_8",
+								name: "Mengen, Elemente, Teilmengen",
+								data: {},
+								children: [
+								 ]
+							},
+							 ]
+						},
+						 ]
+					},
+					{
+						id: "a4_9",
+						name: "Ereignisraum, Ereignisse",
+						data: {},
+						children: [
+						{
+							id: "a2_10",
+							name: "Potenzmenge",
+							data: {},
+							children: [
+							{
+								id: "a1_11",
+								name: "Mengen, Elemente, Teilmengen",
+								data: {},
+								children: [
+								 ]
+							},
+							 ]
+						},
+						 ]
+					},
+					{
+						id: "a6_12",
+						name: "Schnitt, Vereinigung, Komplement",
+						data: {},
+						children: [
+						{
+							id: "a1_13",
+							name: "Mengen, Elemente, Teilmengen",
+							data: {},
+							children: [
+							 ]
+						},
+						 ]
+					},
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		{
+			id: "a18_14",
+			name: "Erwartungswert",
+			data: {},
+			children: [
+			{
+				id: "a17_15",
+				name: "Zufallsgrößen",
+				data: {},
+				children: [
+				{
+					id: "a16_16",
+					name: "Wahrscheinlichkeitsraum",
+					data: {},
+					children: [
+					{
+						id: "a5_17",
+						name: "Wahrscheinlichkeitsmaß, Kolmogorov-Axiome",
+						data: {},
+						children: [
+						{
+							id: "a45_18",
+							name: "Maße",
+							data: {},
+							children: [
+							{
+								id: "a3_19",
+								name: "Bildmenge",
+								data: {},
+								children: [
+								{
+									id: "a1_20",
+									name: "Mengen, Elemente, Teilmengen",
+									data: {},
+									children: [
+									 ]
+								},
+								 ]
+							},
+							 ]
+						},
+						{
+							id: "a4_21",
+							name: "Ereignisraum, Ereignisse",
+							data: {},
+							children: [
+							{
+								id: "a2_22",
+								name: "Potenzmenge",
+								data: {},
+								children: [
+								{
+									id: "a1_23",
+									name: "Mengen, Elemente, Teilmengen",
+									data: {},
+									children: [
+									 ]
+								},
+								 ]
+							},
+							 ]
+						},
+						{
+							id: "a6_24",
+							name: "Schnitt, Vereinigung, Komplement",
+							data: {},
+							children: [
+							{
+								id: "a1_25",
+								name: "Mengen, Elemente, Teilmengen",
+								data: {},
+								children: [
+								 ]
+							},
+							 ]
+						},
+						 ]
+					},
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	 ]
+}

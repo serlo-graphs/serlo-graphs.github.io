@@ -1,0 +1,92 @@
+var title = {TITLE: 'Baumdiagramme'};
+var json = {
+	id: "a15_1",
+	name: "Baumdiagramme",
+	data: {},
+	children: [
+	{
+		id: "a8_2",
+		name: "Bedingte Wahrscheinlichkeit",
+		data: {},
+		children: [
+		{
+			id: "a5_3",
+			name: "Wahrscheinlichkeitsmaß, Kolmogorov-Axiome",
+			data: {},
+			children: [
+			{
+				id: "a45_4",
+				name: "Maße",
+				data: {},
+				children: [
+				{
+					id: "a3_5",
+					name: "Bildmenge",
+					data: {},
+					children: [
+					{
+						id: "a1_6",
+						name: "Mengen, Elemente, Teilmengen",
+						data: {},
+						children: [
+						 ]
+					},
+					 ]
+				},
+				 ]
+			},
+			{
+				id: "a4_7",
+				name: "Ereignisraum, Ereignisse",
+				data: {},
+				children: [
+				{
+					id: "a2_8",
+					name: "Potenzmenge",
+					data: {},
+					children: [
+					{
+						id: "a1_9",
+						name: "Mengen, Elemente, Teilmengen",
+						data: {},
+						children: [
+						 ]
+					},
+					 ]
+				},
+				 ]
+			},
+			{
+				id: "a6_10",
+				name: "Schnitt, Vereinigung, Komplement",
+				data: {},
+				children: [
+				{
+					id: "a1_11",
+					name: "Mengen, Elemente, Teilmengen",
+					data: {},
+					children: [
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		{
+			id: "a9_12",
+			name: "Distributivgesetz der Mengenlehre",
+			data: {},
+			children: [
+			{
+				id: "a1_13",
+				name: "Mengen, Elemente, Teilmengen",
+				data: {},
+				children: [
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	 ]
+}

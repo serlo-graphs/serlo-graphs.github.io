@@ -1,0 +1,15 @@
+var title = {TITLE: 'Vektorraum'};
+var json = {
+	id: "a36_1",
+	name: "Vektorraum",
+	data: {},
+	children: [
+	{
+		id: "a1_2",
+		name: "Mengen, Elemente, Teilmengen",
+		data: {},
+		children: [
+		 ]
+	},
+	 ]
+}

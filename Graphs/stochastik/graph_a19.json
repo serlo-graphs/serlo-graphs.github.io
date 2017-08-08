@@ -1,0 +1,113 @@
+var title = {TITLE: 'Linearität des EW'};
+var json = {
+	id: "a19_1",
+	name: "Linearität des EW",
+	data: {},
+	children: [
+	{
+		id: "a32_2",
+		name: "Linearität",
+		data: {},
+		children: [
+		{
+			id: "a3_3",
+			name: "Bildmenge",
+			data: {},
+			children: [
+			{
+				id: "a1_4",
+				name: "Mengen, Elemente, Teilmengen",
+				data: {},
+				children: [
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	{
+		id: "a18_5",
+		name: "Erwartungswert",
+		data: {},
+		children: [
+		{
+			id: "a17_6",
+			name: "Zufallsgrößen",
+			data: {},
+			children: [
+			{
+				id: "a16_7",
+				name: "Wahrscheinlichkeitsraum",
+				data: {},
+				children: [
+				{
+					id: "a5_8",
+					name: "Wahrscheinlichkeitsmaß, Kolmogorov-Axiome",
+					data: {},
+					children: [
+					{
+						id: "a45_9",
+						name: "Maße",
+						data: {},
+						children: [
+						{
+							id: "a3_10",
+							name: "Bildmenge",
+							data: {},
+							children: [
+							{
+								id: "a1_11",
+								name: "Mengen, Elemente, Teilmengen",
+								data: {},
+								children: [
+								 ]
+							},
+							 ]
+						},
+						 ]
+					},
+					{
+						id: "a4_12",
+						name: "Ereignisraum, Ereignisse",
+						data: {},
+						children: [
+						{
+							id: "a2_13",
+							name: "Potenzmenge",
+							data: {},
+							children: [
+							{
+								id: "a1_14",
+								name: "Mengen, Elemente, Teilmengen",
+								data: {},
+								children: [
+								 ]
+							},
+							 ]
+						},
+						 ]
+					},
+					{
+						id: "a6_15",
+						name: "Schnitt, Vereinigung, Komplement",
+						data: {},
+						children: [
+						{
+							id: "a1_16",
+							name: "Mengen, Elemente, Teilmengen",
+							data: {},
+							children: [
+							 ]
+						},
+						 ]
+					},
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	 ]
+}

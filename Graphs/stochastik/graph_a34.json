@@ -1,0 +1,36 @@
+var title = {TITLE: 'Skalarprodukt'};
+var json = {
+	id: "a34_1",
+	name: "Skalarprodukt",
+	data: {},
+	children: [
+	{
+		id: "a3_2",
+		name: "Bildmenge",
+		data: {},
+		children: [
+		{
+			id: "a1_3",
+			name: "Mengen, Elemente, Teilmengen",
+			data: {},
+			children: [
+			 ]
+		},
+		 ]
+	},
+	{
+		id: "a36_4",
+		name: "Vektorraum",
+		data: {},
+		children: [
+		{
+			id: "a1_5",
+			name: "Mengen, Elemente, Teilmengen",
+			data: {},
+			children: [
+			 ]
+		},
+		 ]
+	},
+	 ]
+}

@@ -1,0 +1,29 @@
+var title = {TITLE: 'Lebesgue-Maß'};
+var json = {
+	id: "a46_1",
+	name: "Lebesgue-Maß",
+	data: {},
+	children: [
+	{
+		id: "a45_2",
+		name: "Maße",
+		data: {},
+		children: [
+		{
+			id: "a3_3",
+			name: "Bildmenge",
+			data: {},
+			children: [
+			{
+				id: "a1_4",
+				name: "Mengen, Elemente, Teilmengen",
+				data: {},
+				children: [
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	 ]
+}

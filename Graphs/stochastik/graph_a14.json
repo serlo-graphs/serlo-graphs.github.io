@@ -1,0 +1,204 @@
+var title = {TITLE: 'Unabhängigkeit => paarweise Unabhängigkeit'};
+var json = {
+	id: "a14_1",
+	name: "Unabhängigkeit => paarweise Unabhängigkeit",
+	data: {},
+	children: [
+	{
+		id: "a12_2",
+		name: "Paarweise Unabhängigkeit",
+		data: {},
+		children: [
+		{
+			id: "a10_3",
+			name: "Stochastische Unabhängigkeit",
+			data: {},
+			children: [
+			{
+				id: "a8_4",
+				name: "Bedingte Wahrscheinlichkeit",
+				data: {},
+				children: [
+				{
+					id: "a5_5",
+					name: "Wahrscheinlichkeitsmaß, Kolmogorov-Axiome",
+					data: {},
+					children: [
+					{
+						id: "a45_6",
+						name: "Maße",
+						data: {},
+						children: [
+						{
+							id: "a3_7",
+							name: "Bildmenge",
+							data: {},
+							children: [
+							{
+								id: "a1_8",
+								name: "Mengen, Elemente, Teilmengen",
+								data: {},
+								children: [
+								 ]
+							},
+							 ]
+						},
+						 ]
+					},
+					{
+						id: "a4_9",
+						name: "Ereignisraum, Ereignisse",
+						data: {},
+						children: [
+						{
+							id: "a2_10",
+							name: "Potenzmenge",
+							data: {},
+							children: [
+							{
+								id: "a1_11",
+								name: "Mengen, Elemente, Teilmengen",
+								data: {},
+								children: [
+								 ]
+							},
+							 ]
+						},
+						 ]
+					},
+					{
+						id: "a6_12",
+						name: "Schnitt, Vereinigung, Komplement",
+						data: {},
+						children: [
+						{
+							id: "a1_13",
+							name: "Mengen, Elemente, Teilmengen",
+							data: {},
+							children: [
+							 ]
+						},
+						 ]
+					},
+					 ]
+				},
+				{
+					id: "a9_14",
+					name: "Distributivgesetz der Mengenlehre",
+					data: {},
+					children: [
+					{
+						id: "a1_15",
+						name: "Mengen, Elemente, Teilmengen",
+						data: {},
+						children: [
+						 ]
+					},
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	{
+		id: "a13_16",
+		name: "Unabhängigkeit von n Mengen",
+		data: {},
+		children: [
+		{
+			id: "a10_17",
+			name: "Stochastische Unabhängigkeit",
+			data: {},
+			children: [
+			{
+				id: "a8_18",
+				name: "Bedingte Wahrscheinlichkeit",
+				data: {},
+				children: [
+				{
+					id: "a5_19",
+					name: "Wahrscheinlichkeitsmaß, Kolmogorov-Axiome",
+					data: {},
+					children: [
+					{
+						id: "a45_20",
+						name: "Maße",
+						data: {},
+						children: [
+						{
+							id: "a3_21",
+							name: "Bildmenge",
+							data: {},
+							children: [
+							{
+								id: "a1_22",
+								name: "Mengen, Elemente, Teilmengen",
+								data: {},
+								children: [
+								 ]
+							},
+							 ]
+						},
+						 ]
+					},
+					{
+						id: "a4_23",
+						name: "Ereignisraum, Ereignisse",
+						data: {},
+						children: [
+						{
+							id: "a2_24",
+							name: "Potenzmenge",
+							data: {},
+							children: [
+							{
+								id: "a1_25",
+								name: "Mengen, Elemente, Teilmengen",
+								data: {},
+								children: [
+								 ]
+							},
+							 ]
+						},
+						 ]
+					},
+					{
+						id: "a6_26",
+						name: "Schnitt, Vereinigung, Komplement",
+						data: {},
+						children: [
+						{
+							id: "a1_27",
+							name: "Mengen, Elemente, Teilmengen",
+							data: {},
+							children: [
+							 ]
+						},
+						 ]
+					},
+					 ]
+				},
+				{
+					id: "a9_28",
+					name: "Distributivgesetz der Mengenlehre",
+					data: {},
+					children: [
+					{
+						id: "a1_29",
+						name: "Mengen, Elemente, Teilmengen",
+						data: {},
+						children: [
+						 ]
+					},
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	 ]
+}

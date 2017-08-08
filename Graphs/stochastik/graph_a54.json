@@ -1,0 +1,162 @@
+var title = {TITLE: 'Eigenschaften Borelmenge'};
+var json = {
+	id: "a54_1",
+	name: "Eigenschaften Borelmenge",
+	data: {},
+	children: [
+	{
+		id: "a53_2",
+		name: "Borel'sche SA, Borelmenge",
+		data: {},
+		children: [
+		{
+			id: "a52_3",
+			name: "Topologie",
+			data: {},
+			children: [
+			{
+				id: "a1_4",
+				name: "Mengen, Elemente, Teilmengen",
+				data: {},
+				children: [
+				 ]
+			},
+			 ]
+		},
+		{
+			id: "a51_5",
+			name: "Erzeugte SA",
+			data: {},
+			children: [
+			{
+				id: "a50_6",
+				name: "Schnitt zweier SA ist SA",
+				data: {},
+				children: [
+				{
+					id: "a43_7",
+					name: "Sigma-Algebren",
+					data: {},
+					children: [
+					{
+						id: "a46_8",
+						name: "Lebesgue-Maß",
+						data: {},
+						children: [
+						{
+							id: "a45_9",
+							name: "Maße",
+							data: {},
+							children: [
+							{
+								id: "a3_10",
+								name: "Bildmenge",
+								data: {},
+								children: [
+								{
+									id: "a1_11",
+									name: "Mengen, Elemente, Teilmengen",
+									data: {},
+									children: [
+									 ]
+								},
+								 ]
+							},
+							 ]
+						},
+						 ]
+					},
+					{
+						id: "a4_12",
+						name: "Ereignisraum, Ereignisse",
+						data: {},
+						children: [
+						{
+							id: "a2_13",
+							name: "Potenzmenge",
+							data: {},
+							children: [
+							{
+								id: "a1_14",
+								name: "Mengen, Elemente, Teilmengen",
+								data: {},
+								children: [
+								 ]
+							},
+							 ]
+						},
+						 ]
+					},
+					{
+						id: "a6_15",
+						name: "Schnitt, Vereinigung, Komplement",
+						data: {},
+						children: [
+						{
+							id: "a1_16",
+							name: "Mengen, Elemente, Teilmengen",
+							data: {},
+							children: [
+							 ]
+						},
+						 ]
+					},
+					{
+						id: "a42_17",
+						name: "Vitali-Mengen",
+						data: {},
+						children: [
+						{
+							id: "a44_18",
+							name: "Äquivalenz-Relation",
+							data: {},
+							children: [
+							{
+								id: "a1_19",
+								name: "Mengen, Elemente, Teilmengen",
+								data: {},
+								children: [
+								 ]
+							},
+							 ]
+						},
+						{
+							id: "a41_20",
+							name: "Folgen",
+							data: {},
+							children: [
+							{
+								id: "a1_21",
+								name: "Mengen, Elemente, Teilmengen",
+								data: {},
+								children: [
+								 ]
+							},
+							 ]
+						},
+						{
+							id: "a40_22",
+							name: "Abzählbarkeit",
+							data: {},
+							children: [
+							{
+								id: "a1_23",
+								name: "Mengen, Elemente, Teilmengen",
+								data: {},
+								children: [
+								 ]
+							},
+							 ]
+						},
+						 ]
+					},
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	 ]
+}

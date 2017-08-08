@@ -1,0 +1,99 @@
+var title = {TITLE: 'Standardabweichung'};
+var json = {
+	id: "a37_1",
+	name: "Standardabweichung",
+	data: {},
+	children: [
+	{
+		id: "a20_2",
+		name: "Varianz",
+		data: {},
+		children: [
+		{
+			id: "a18_3",
+			name: "Erwartungswert",
+			data: {},
+			children: [
+			{
+				id: "a17_4",
+				name: "Zufallsgrößen",
+				data: {},
+				children: [
+				{
+					id: "a16_5",
+					name: "Wahrscheinlichkeitsraum",
+					data: {},
+					children: [
+					{
+						id: "a5_6",
+						name: "Wahrscheinlichkeitsmaß, Kolmogorov-Axiome",
+						data: {},
+						children: [
+						{
+							id: "a45_7",
+							name: "Maße",
+							data: {},
+							children: [
+							{
+								id: "a3_8",
+								name: "Bildmenge",
+								data: {},
+								children: [
+								{
+									id: "a1_9",
+									name: "Mengen, Elemente, Teilmengen",
+									data: {},
+									children: [
+									 ]
+								},
+								 ]
+							},
+							 ]
+						},
+						{
+							id: "a4_10",
+							name: "Ereignisraum, Ereignisse",
+							data: {},
+							children: [
+							{
+								id: "a2_11",
+								name: "Potenzmenge",
+								data: {},
+								children: [
+								{
+									id: "a1_12",
+									name: "Mengen, Elemente, Teilmengen",
+									data: {},
+									children: [
+									 ]
+								},
+								 ]
+							},
+							 ]
+						},
+						{
+							id: "a6_13",
+							name: "Schnitt, Vereinigung, Komplement",
+							data: {},
+							children: [
+							{
+								id: "a1_14",
+								name: "Mengen, Elemente, Teilmengen",
+								data: {},
+								children: [
+								 ]
+							},
+							 ]
+						},
+						 ]
+					},
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	 ]
+}

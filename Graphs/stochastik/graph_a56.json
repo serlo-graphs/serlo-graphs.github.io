@@ -1,0 +1,22 @@
+var title = {TITLE: 'Urbild'};
+var json = {
+	id: "a56_1",
+	name: "Urbild",
+	data: {},
+	children: [
+	{
+		id: "a3_2",
+		name: "Bildmenge",
+		data: {},
+		children: [
+		{
+			id: "a1_3",
+			name: "Mengen, Elemente, Teilmengen",
+			data: {},
+			children: [
+			 ]
+		},
+		 ]
+	},
+	 ]
+}

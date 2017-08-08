@@ -1,0 +1,8 @@
+var title = {TITLE: 'Mengen, Elemente, Teilmengen'};
+var json = {
+	id: "a1_1",
+	name: "Mengen, Elemente, Teilmengen",
+	data: {},
+	children: [
+	 ]
+}

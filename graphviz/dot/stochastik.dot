@@ -1,0 +1,148 @@
+digraph G {
+node[shape=box]
+//a0[href="www.google.de", label="a"];
+//a0->a1[href="http://www.uk.com", fontcolor=yellow, color=red label="1"];
+a1[label="Mengen, Elemente, Teilmengen"] 
+a2[label="Potenzmenge"]
+a3[label="Abbildungen,\nDefinitionsmenge,\nBildmenge"]
+a4[label="Ereignisraum,\nEreignisse"]
+a5[label="Wahrscheinlichkeitsmaß,\nKolmogorov-Axiome"]
+a6[label="Schnitt, Vereinigung, Komplement"]
+a7[label="Summenformel für Vereinigungen\nvon Wahrscheinlichkeiten" shape="note"]
+a8[label="Bedingte\nWahrscheinlichkeit"]
+a9[label="Distributivgesetz\nder Mengenlehre" shape="note"]
+a10[label="Stochastische\nUnabhängigkeit"]
+a11[label="Satz von\nBayes" shape="note"]
+a12[label="Paarweise\nUnabhängigkeit"]
+a13[label="Unabhängigkeit\nvon n Mengen"]
+a14[label="Unabhängigkeit\n=> paarweise Unabhängigkeit" shape="note"]
+a15[label="Baumdiagramme"]
+a16[label="Wahrscheinlichkeitsraum"]
+a17[label="Zufallsgrößen"]
+a18[label="Erwartungswert"]
+a19[label="Linearität des EW", shape="note"]
+a20[label="Varianz"]
+a22[label="Markow", shape="note"]
+a21[label="Tschebyschow", shape="note"]
+a23[label="Unabhängige\nZufallsgrößen"]
+a24[label="Kovarianz"]
+a25[label="Unkorrelierte ZG"]
+a26[label="Unabhängig\n=>Unkorreliert", shape="note"]
+a27[label="Eigenschaften\nKovarianz", shape="note"]
+a28[label="Bilinearität"]
+a29[label="Symmetrie"]
+a30[label="Positiv\nSemidefinitheit"]
+a31[label="Korrelationskoeffizient"]
+a32[label="Linearität"]
+a33[label="Eigenschaften\nKorrelationskoeffizient", shape="note"]
+a34[label="Skalarprodukt"]
+a35[label="Cauchy-Schwarz", shape="note"]
+a36[label="Vektorraum"]
+a37[label="Standardabweichung"]
+a38[label="Schwaches Gesetz\nder großen Zahlen", shape="note"]
+a39[label="Mittelwert"]
+a40[label="Abzählbarkeit"]
+a41[label="Folgen"]
+a42[label="Vitali-Mengen"]
+a43[label="Sigma-Algebren"]
+a44[label="Äquivalenz-Relation"]
+a45[label="Maße"]
+a46[label="Lebesgue-Maß"]
+a47[label="Wahrscheinlichkeitsmaß für\nüberabzählbare Ereignisräume"]
+a48[label="Mächtigkeit endlicher\nSigma-Algebren", shape="note"]
+a49[label="Eigenschaften\nvon Sigma-Algebren", shape="note"]
+a50[label="Schnitt zweier SA ist SA", shape="note"]
+a51[label="Erzeugte SA"]
+a52[label="Topologie"]
+a53[label="Borel'sche SA,\nBorelmenge"]
+a54[label="Eigenschaften\nBorelmenge", shape="note"]
+a55[label="Messbarkeit"]
+a56[label="Urbild"]
+a57[label="Verkettung messbarer\nFunktionen messbar", shape="note"]
+
+a55->a57
+a56->a55
+a3->a56
+a53->a54
+a43->a55
+a52->a53
+a51->a53
+a1->a52
+a50->a51
+a43->a50
+a43->a49
+a43->a48
+a5->a47
+a43->a47
+a46->a43
+a45->a46
+a45->a5
+a1->a44
+a44->a42
+a4->a43
+a6->a43
+a42->a43
+a41->a42
+a40->a42
+a1->a41
+a1->a40
+a39->a38
+a17->a39
+a37->a38
+a21->a38
+a20->a37
+a19->a33
+a1->a3
+a1->a36
+a3->a34
+a36->a34
+a35->a33
+a34->a35
+a31->a33
+a3->a32
+a24->a31
+a20->a31
+a19->a27
+a32->a19
+a29->a30
+a28->a30
+a28->a27
+a29->a27
+a30->a27
+a3->a28
+a3->a29
+a24->a27
+a25->a26
+a23->a26
+a24->a25
+a17->a24
+a18->a24
+a17->a23
+a10->a23
+a20->a21
+a21->a22
+a5->a21
+a18->a21
+a18->a20
+a18->a19
+a17->a18
+a16->a17
+a5->a16
+a8->a15
+a12->a14
+a13->a14
+a10->a13
+a10->a12
+a8->a11
+a8->a10
+a1->a2
+a2->a4
+a3->a45
+a4->a5
+a1->a6
+a6->a5
+a5->a7
+a5->a8
+a9->a8
+a1->a9
+}

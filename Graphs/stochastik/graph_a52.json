@@ -1,0 +1,15 @@
+var title = {TITLE: 'Topologie'};
+var json = {
+	id: "a52_1",
+	name: "Topologie",
+	data: {},
+	children: [
+	{
+		id: "a1_2",
+		name: "Mengen, Elemente, Teilmengen",
+		data: {},
+		children: [
+		 ]
+	},
+	 ]
+}

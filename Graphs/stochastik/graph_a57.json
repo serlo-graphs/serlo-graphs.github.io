@@ -1,0 +1,155 @@
+var title = {TITLE: 'Verkettung messbarer Funktionen messbar'};
+var json = {
+	id: "a57_1",
+	name: "Verkettung messbarer Funktionen messbar",
+	data: {},
+	children: [
+	{
+		id: "a55_2",
+		name: "Messbarkeit",
+		data: {},
+		children: [
+		{
+			id: "a56_3",
+			name: "Urbild",
+			data: {},
+			children: [
+			{
+				id: "a3_4",
+				name: "Bildmenge",
+				data: {},
+				children: [
+				{
+					id: "a1_5",
+					name: "Mengen, Elemente, Teilmengen",
+					data: {},
+					children: [
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		{
+			id: "a43_6",
+			name: "Sigma-Algebren",
+			data: {},
+			children: [
+			{
+				id: "a46_7",
+				name: "Lebesgue-Maß",
+				data: {},
+				children: [
+				{
+					id: "a45_8",
+					name: "Maße",
+					data: {},
+					children: [
+					{
+						id: "a3_9",
+						name: "Bildmenge",
+						data: {},
+						children: [
+						{
+							id: "a1_10",
+							name: "Mengen, Elemente, Teilmengen",
+							data: {},
+							children: [
+							 ]
+						},
+						 ]
+					},
+					 ]
+				},
+				 ]
+			},
+			{
+				id: "a4_11",
+				name: "Ereignisraum, Ereignisse",
+				data: {},
+				children: [
+				{
+					id: "a2_12",
+					name: "Potenzmenge",
+					data: {},
+					children: [
+					{
+						id: "a1_13",
+						name: "Mengen, Elemente, Teilmengen",
+						data: {},
+						children: [
+						 ]
+					},
+					 ]
+				},
+				 ]
+			},
+			{
+				id: "a6_14",
+				name: "Schnitt, Vereinigung, Komplement",
+				data: {},
+				children: [
+				{
+					id: "a1_15",
+					name: "Mengen, Elemente, Teilmengen",
+					data: {},
+					children: [
+					 ]
+				},
+				 ]
+			},
+			{
+				id: "a42_16",
+				name: "Vitali-Mengen",
+				data: {},
+				children: [
+				{
+					id: "a44_17",
+					name: "Äquivalenz-Relation",
+					data: {},
+					children: [
+					{
+						id: "a1_18",
+						name: "Mengen, Elemente, Teilmengen",
+						data: {},
+						children: [
+						 ]
+					},
+					 ]
+				},
+				{
+					id: "a41_19",
+					name: "Folgen",
+					data: {},
+					children: [
+					{
+						id: "a1_20",
+						name: "Mengen, Elemente, Teilmengen",
+						data: {},
+						children: [
+						 ]
+					},
+					 ]
+				},
+				{
+					id: "a40_21",
+					name: "Abzählbarkeit",
+					data: {},
+					children: [
+					{
+						id: "a1_22",
+						name: "Mengen, Elemente, Teilmengen",
+						data: {},
+						children: [
+						 ]
+					},
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	 ]
+}

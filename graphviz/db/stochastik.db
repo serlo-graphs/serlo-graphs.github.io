@@ -1,0 +1,402 @@
+Dependency lists file generated from stochastik.dot
+
+node{
+	Label: Mengen, Elemente, Teilmengen
+	Type: Definition
+	ID: a1
+	Deps: 
+}
+
+node{
+	Label: Potenzmenge
+	Type: Definition
+	ID: a2
+	Deps: a1
+}
+
+node{
+	Label: Abbildungen, Definitionsmenge,
+Bildmenge
+	Type: Definition
+	ID: a3
+	Deps: a1
+}
+
+node{
+	Label: Ereignisraum, Ereignisse
+	Type: Definition
+	ID: a4
+	Deps: a2
+}
+
+node{
+	Label: Wahrscheinlichkeitsmaß, Kolmogorov-Axiome
+	Type: Definition
+	ID: a5
+	Deps: a45, a4, a6
+}
+
+node{
+	Label: Schnitt, Vereinigung, Komplement
+	Type: Definition
+	ID: a6
+	Deps: a1
+}
+
+node{
+	Label: Summenformel für Vereinigungen von Wahrscheinlichkeiten
+	Type: Theorem
+	ID: a7
+	Deps: a5
+}
+
+node{
+	Label: Bedingte Wahrscheinlichkeit
+	Type: Definition
+	ID: a8
+	Deps: a5, a9
+}
+
+node{
+	Label: Distributivgesetz der Mengenlehre
+	Type: Theorem
+	ID: a9
+	Deps: a1
+}
+
+node{
+	Label: Stochastische Unabhängigkeit
+	Type: Definition
+	ID: a10
+	Deps: a8
+}
+
+node{
+	Label: Satz von Bayes
+	Type: Theorem
+	ID: a11
+	Deps: a8
+}
+
+node{
+	Label: Paarweise Unabhängigkeit
+	Type: Definition
+	ID: a12
+	Deps: a10
+}
+
+node{
+	Label: Unabhängigkeit von n Mengen
+	Type: Definition
+	ID: a13
+	Deps: a10
+}
+
+node{
+	Label: Unabhängigkeit => paarweise Unabhängigkeit
+	Type: Theorem
+	ID: a14
+	Deps: a12, a13
+}
+
+node{
+	Label: Baumdiagramme
+	Type: Definition
+	ID: a15
+	Deps: a8
+}
+
+node{
+	Label: Wahrscheinlichkeitsraum
+	Type: Definition
+	ID: a16
+	Deps: a5
+}
+
+node{
+	Label: Zufallsgrößen
+	Type: Definition
+	ID: a17
+	Deps: a16
+}
+
+node{
+	Label: Erwartungswert
+	Type: Definition
+	ID: a18
+	Deps: a17
+}
+
+node{
+	Label: Linearität des EW
+	Type: Theorem
+	ID: a19
+	Deps: a32, a18
+}
+
+node{
+	Label: Varianz
+	Type: Definition
+	ID: a20
+	Deps: a18
+}
+
+node{
+	Label: Markow
+	Type: Theorem
+	ID: a22
+	Deps: a21
+}
+
+node{
+	Label: Tschebyschow
+	Type: Theorem
+	ID: a21
+	Deps: a20, a5, a18
+}
+
+node{
+	Label: Unabhängige Zufallsgrößen
+	Type: Definition
+	ID: a23
+	Deps: a17, a10
+}
+
+node{
+	Label: Kovarianz
+	Type: Definition
+	ID: a24
+	Deps: a17, a18
+}
+
+node{
+	Label: Unkorrelierte ZG
+	Type: Definition
+	ID: a25
+	Deps: a24
+}
+
+node{
+	Label: Unabhängig =>Unkorreliert
+	Type: Theorem
+	ID: a26
+	Deps: a25, a23
+}
+
+node{
+	Label: Eigenschaften Kovarianz
+	Type: Theorem
+	ID: a27
+	Deps: a19, a28, a29, a30, a24
+}
+
+node{
+	Label: Bilinearität
+	Type: Definition
+	ID: a28
+	Deps: a3
+}
+
+node{
+	Label: Symmetrie
+	Type: Definition
+	ID: a29
+	Deps: a3
+}
+
+node{
+	Label: Positiv Semidefinitheit
+	Type: Definition
+	ID: a30
+	Deps: a29, a28
+}
+
+node{
+	Label: Korrelationskoeffizient
+	Type: Definition
+	ID: a31
+	Deps: a24, a20
+}
+
+node{
+	Label: Linearität
+	Type: Definition
+	ID: a32
+	Deps: a3
+}
+
+node{
+	Label: Eigenschaften Korrelationskoeffizient
+	Type: Theorem
+	ID: a33
+	Deps: a19, a35, a31
+}
+
+node{
+	Label: Skalarprodukt
+	Type: Definition
+	ID: a34
+	Deps: a3, a36
+}
+
+node{
+	Label: Cauchy-Schwarz
+	Type: Theorem
+	ID: a35
+	Deps: a34
+}
+
+node{
+	Label: Vektorraum
+	Type: Definition
+	ID: a36
+	Deps: a1
+}
+
+node{
+	Label: Standardabweichung
+	Type: Definition
+	ID: a37
+	Deps: a20
+}
+
+node{
+	Label: Schwaches Gesetz der großen Zahlen
+	Type: Theorem
+	ID: a38
+	Deps: a39, a37, a21
+}
+
+node{
+	Label: Mittelwert
+	Type: Definition
+	ID: a39
+	Deps: a17
+}
+
+node{
+	Label: Abzählbarkeit
+	Type: Definition
+	ID: a40
+	Deps: a1
+}
+
+node{
+	Label: Folgen
+	Type: Definition
+	ID: a41
+	Deps: a1
+}
+
+node{
+	Label: Vitali-Mengen
+	Type: Definition
+	ID: a42
+	Deps: a44, a41, a40
+}
+
+node{
+	Label: Sigma-Algebren
+	Type: Definition
+	ID: a43
+	Deps: a46, a4, a6, a42
+}
+
+node{
+	Label: Äquivalenz-Relation
+	Type: Definition
+	ID: a44
+	Deps: a1
+}
+
+node{
+	Label: Maße
+	Type: Definition
+	ID: a45
+	Deps: a3
+}
+
+node{
+	Label: Lebesgue-Maß
+	Type: Definition
+	ID: a46
+	Deps: a45
+}
+
+node{
+	Label: Wahrscheinlichkeitsmaß für überabzählbare Ereignisräume
+	Type: Definition
+	ID: a47
+	Deps: a5, a43
+}
+
+node{
+	Label: Mächtigkeit endlicher Sigma-Algebren
+	Type: Theorem
+	ID: a48
+	Deps: a43
+}
+
+node{
+	Label: Eigenschaften von Sigma-Algebren
+	Type: Theorem
+	ID: a49
+	Deps: a43
+}
+
+node{
+	Label: Schnitt zweier SA ist SA
+	Type: Theorem
+	ID: a50
+	Deps: a43
+}
+
+node{
+	Label: Erzeugte SA
+	Type: Definition
+	ID: a51
+	Deps: a50
+}
+
+node{
+	Label: Topologie
+	Type: Definition
+	ID: a52
+	Deps: a1
+}
+
+node{
+	Label: Borel'sche SA, Borelmenge
+	Type: Definition
+	ID: a53
+	Deps: a52, a51
+}
+
+node{
+	Label: Eigenschaften Borelmenge
+	Type: Theorem
+	ID: a54
+	Deps: a53
+}
+
+node{
+	Label: Messbarkeit
+	Type: Definition
+	ID: a55
+	Deps: a56, a43
+}
+
+node{
+	Label: Urbild
+	Type: Definition
+	ID: a56
+	Deps: a3
+}
+
+node{
+	Label: Verkettung messbarer Funktionen messbar
+	Type: Theorem
+	ID: a57
+	Deps: a55
+}
+

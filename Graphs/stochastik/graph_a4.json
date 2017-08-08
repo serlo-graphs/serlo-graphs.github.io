@@ -1,0 +1,22 @@
+var title = {TITLE: 'Ereignisraum, Ereignisse'};
+var json = {
+	id: "a4_1",
+	name: "Ereignisraum, Ereignisse",
+	data: {},
+	children: [
+	{
+		id: "a2_2",
+		name: "Potenzmenge",
+		data: {},
+		children: [
+		{
+			id: "a1_3",
+			name: "Mengen, Elemente, Teilmengen",
+			data: {},
+			children: [
+			 ]
+		},
+		 ]
+	},
+	 ]
+}

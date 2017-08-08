@@ -1,0 +1,43 @@
+var title = {TITLE: 'Cauchy-Schwarz'};
+var json = {
+	id: "a35_1",
+	name: "Cauchy-Schwarz",
+	data: {},
+	children: [
+	{
+		id: "a34_2",
+		name: "Skalarprodukt",
+		data: {},
+		children: [
+		{
+			id: "a3_3",
+			name: "Bildmenge",
+			data: {},
+			children: [
+			{
+				id: "a1_4",
+				name: "Mengen, Elemente, Teilmengen",
+				data: {},
+				children: [
+				 ]
+			},
+			 ]
+		},
+		{
+			id: "a36_5",
+			name: "Vektorraum",
+			data: {},
+			children: [
+			{
+				id: "a1_6",
+				name: "Mengen, Elemente, Teilmengen",
+				data: {},
+				children: [
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	 ]
+}

@@ -1,0 +1,253 @@
+var title = {TITLE: 'Markow'};
+var json = {
+	id: "a22_1",
+	name: "Markow",
+	data: {},
+	children: [
+	{
+		id: "a21_2",
+		name: "Tschebyschow",
+		data: {},
+		children: [
+		{
+			id: "a20_3",
+			name: "Varianz",
+			data: {},
+			children: [
+			{
+				id: "a18_4",
+				name: "Erwartungswert",
+				data: {},
+				children: [
+				{
+					id: "a17_5",
+					name: "Zufallsgrößen",
+					data: {},
+					children: [
+					{
+						id: "a16_6",
+						name: "Wahrscheinlichkeitsraum",
+						data: {},
+						children: [
+						{
+							id: "a5_7",
+							name: "Wahrscheinlichkeitsmaß, Kolmogorov-Axiome",
+							data: {},
+							children: [
+							{
+								id: "a45_8",
+								name: "Maße",
+								data: {},
+								children: [
+								{
+									id: "a3_9",
+									name: "Bildmenge",
+									data: {},
+									children: [
+									{
+										id: "a1_10",
+										name: "Mengen, Elemente, Teilmengen",
+										data: {},
+										children: [
+										 ]
+									},
+									 ]
+								},
+								 ]
+							},
+							{
+								id: "a4_11",
+								name: "Ereignisraum, Ereignisse",
+								data: {},
+								children: [
+								{
+									id: "a2_12",
+									name: "Potenzmenge",
+									data: {},
+									children: [
+									{
+										id: "a1_13",
+										name: "Mengen, Elemente, Teilmengen",
+										data: {},
+										children: [
+										 ]
+									},
+									 ]
+								},
+								 ]
+							},
+							{
+								id: "a6_14",
+								name: "Schnitt, Vereinigung, Komplement",
+								data: {},
+								children: [
+								{
+									id: "a1_15",
+									name: "Mengen, Elemente, Teilmengen",
+									data: {},
+									children: [
+									 ]
+								},
+								 ]
+							},
+							 ]
+						},
+						 ]
+					},
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		{
+			id: "a5_16",
+			name: "Wahrscheinlichkeitsmaß, Kolmogorov-Axiome",
+			data: {},
+			children: [
+			{
+				id: "a45_17",
+				name: "Maße",
+				data: {},
+				children: [
+				{
+					id: "a3_18",
+					name: "Bildmenge",
+					data: {},
+					children: [
+					{
+						id: "a1_19",
+						name: "Mengen, Elemente, Teilmengen",
+						data: {},
+						children: [
+						 ]
+					},
+					 ]
+				},
+				 ]
+			},
+			{
+				id: "a4_20",
+				name: "Ereignisraum, Ereignisse",
+				data: {},
+				children: [
+				{
+					id: "a2_21",
+					name: "Potenzmenge",
+					data: {},
+					children: [
+					{
+						id: "a1_22",
+						name: "Mengen, Elemente, Teilmengen",
+						data: {},
+						children: [
+						 ]
+					},
+					 ]
+				},
+				 ]
+			},
+			{
+				id: "a6_23",
+				name: "Schnitt, Vereinigung, Komplement",
+				data: {},
+				children: [
+				{
+					id: "a1_24",
+					name: "Mengen, Elemente, Teilmengen",
+					data: {},
+					children: [
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		{
+			id: "a18_25",
+			name: "Erwartungswert",
+			data: {},
+			children: [
+			{
+				id: "a17_26",
+				name: "Zufallsgrößen",
+				data: {},
+				children: [
+				{
+					id: "a16_27",
+					name: "Wahrscheinlichkeitsraum",
+					data: {},
+					children: [
+					{
+						id: "a5_28",
+						name: "Wahrscheinlichkeitsmaß, Kolmogorov-Axiome",
+						data: {},
+						children: [
+						{
+							id: "a45_29",
+							name: "Maße",
+							data: {},
+							children: [
+							{
+								id: "a3_30",
+								name: "Bildmenge",
+								data: {},
+								children: [
+								{
+									id: "a1_31",
+									name: "Mengen, Elemente, Teilmengen",
+									data: {},
+									children: [
+									 ]
+								},
+								 ]
+							},
+							 ]
+						},
+						{
+							id: "a4_32",
+							name: "Ereignisraum, Ereignisse",
+							data: {},
+							children: [
+							{
+								id: "a2_33",
+								name: "Potenzmenge",
+								data: {},
+								children: [
+								{
+									id: "a1_34",
+									name: "Mengen, Elemente, Teilmengen",
+									data: {},
+									children: [
+									 ]
+								},
+								 ]
+							},
+							 ]
+						},
+						{
+							id: "a6_35",
+							name: "Schnitt, Vereinigung, Komplement",
+							data: {},
+							children: [
+							{
+								id: "a1_36",
+								name: "Mengen, Elemente, Teilmengen",
+								data: {},
+								children: [
+								 ]
+							},
+							 ]
+						},
+						 ]
+					},
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	 ]
+}

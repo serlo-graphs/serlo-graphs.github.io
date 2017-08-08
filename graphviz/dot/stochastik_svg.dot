@@ -1,0 +1,148 @@
+digraph G {
+node[shape=box]
+//a0[href="www.google.de", label="a"];
+//a0->a1[href="http://www.uk.com", fontcolor=yellow, color=red label="1"];
+a1[href="stochastik/graph_a1.html", label="Mengen, Elemente, Teilmengen"] 
+a2[href="stochastik/graph_a2.html", label="Potenzmenge"]
+a3[href="stochastik/graph_a3.html", label="Abbildungen,\nDefinitionsmenge,\nBildmenge"]
+a4[href="stochastik/graph_a4.html", label="Ereignisraum,\nEreignisse"]
+a5[href="stochastik/graph_a5.html", label="Wahrscheinlichkeitsmaß,\nKolmogorov-Axiome"]
+a6[href="stochastik/graph_a6.html", label="Schnitt, Vereinigung, Komplement"]
+a7[href="stochastik/graph_a7.html", label="Summenformel für Vereinigungen\nvon Wahrscheinlichkeiten" shape="note"]
+a8[href="stochastik/graph_a8.html", label="Bedingte\nWahrscheinlichkeit"]
+a9[href="stochastik/graph_a9.html", label="Distributivgesetz\nder Mengenlehre" shape="note"]
+a10[href="stochastik/graph_a10.html", label="Stochastische\nUnabhängigkeit"]
+a11[href="stochastik/graph_a11.html", label="Satz von\nBayes" shape="note"]
+a12[href="stochastik/graph_a12.html", label="Paarweise\nUnabhängigkeit"]
+a13[href="stochastik/graph_a13.html", label="Unabhängigkeit\nvon n Mengen"]
+a14[href="stochastik/graph_a14.html", label="Unabhängigkeit\n=> paarweise Unabhängigkeit" shape="note"]
+a15[href="stochastik/graph_a15.html", label="Baumdiagramme"]
+a16[href="stochastik/graph_a16.html", label="Wahrscheinlichkeitsraum"]
+a17[href="stochastik/graph_a17.html", label="Zufallsgrößen"]
+a18[href="stochastik/graph_a18.html", label="Erwartungswert"]
+a19[href="stochastik/graph_a19.html", label="Linearität des EW", shape="note"]
+a20[href="stochastik/graph_a20.html", label="Varianz"]
+a22[href="stochastik/graph_a22.html", label="Markow", shape="note"]
+a21[href="stochastik/graph_a21.html", label="Tschebyschow", shape="note"]
+a23[href="stochastik/graph_a23.html", label="Unabhängige\nZufallsgrößen"]
+a24[href="stochastik/graph_a24.html", label="Kovarianz"]
+a25[href="stochastik/graph_a25.html", label="Unkorrelierte ZG"]
+a26[href="stochastik/graph_a26.html", label="Unabhängig\n=>Unkorreliert", shape="note"]
+a27[href="stochastik/graph_a27.html", label="Eigenschaften\nKovarianz", shape="note"]
+a28[href="stochastik/graph_a28.html", label="Bilinearität"]
+a29[href="stochastik/graph_a29.html", label="Symmetrie"]
+a30[href="stochastik/graph_a30.html", label="Positiv\nSemidefinitheit"]
+a31[href="stochastik/graph_a31.html", label="Korrelationskoeffizient"]
+a32[href="stochastik/graph_a32.html", label="Linearität"]
+a33[href="stochastik/graph_a33.html", label="Eigenschaften\nKorrelationskoeffizient", shape="note"]
+a34[href="stochastik/graph_a34.html", label="Skalarprodukt"]
+a35[href="stochastik/graph_a35.html", label="Cauchy-Schwarz", shape="note"]
+a36[href="stochastik/graph_a36.html", label="Vektorraum"]
+a37[href="stochastik/graph_a37.html", label="Standardabweichung"]
+a38[href="stochastik/graph_a38.html", label="Schwaches Gesetz\nder großen Zahlen", shape="note"]
+a39[href="stochastik/graph_a39.html", label="Mittelwert"]
+a40[href="stochastik/graph_a40.html", label="Abzählbarkeit"]
+a41[href="stochastik/graph_a41.html", label="Folgen"]
+a42[href="stochastik/graph_a42.html", label="Vitali-Mengen"]
+a43[href="stochastik/graph_a43.html", label="Sigma-Algebren"]
+a44[href="stochastik/graph_a44.html", label="Äquivalenz-Relation"]
+a45[href="stochastik/graph_a45.html", label="Maße"]
+a46[href="stochastik/graph_a46.html", label="Lebesgue-Maß"]
+a47[href="stochastik/graph_a47.html", label="Wahrscheinlichkeitsmaß für\nüberabzählbare Ereignisräume"]
+a48[href="stochastik/graph_a48.html", label="Mächtigkeit endlicher\nSigma-Algebren", shape="note"]
+a49[href="stochastik/graph_a49.html", label="Eigenschaften\nvon Sigma-Algebren", shape="note"]
+a50[href="stochastik/graph_a50.html", label="Schnitt zweier SA ist SA", shape="note"]
+a51[href="stochastik/graph_a51.html", label="Erzeugte SA"]
+a52[href="stochastik/graph_a52.html", label="Topologie"]
+a53[href="stochastik/graph_a53.html", label="Borel'sche SA,\nBorelmenge"]
+a54[href="stochastik/graph_a54.html", label="Eigenschaften\nBorelmenge", shape="note"]
+a55[href="stochastik/graph_a55.html", label="Messbarkeit"]
+a56[href="stochastik/graph_a56.html", label="Urbild"]
+a57[href="stochastik/graph_a57.html", label="Verkettung messbarer\nFunktionen messbar", shape="note"]
+
+a55->a57
+a56->a55
+a3->a56
+a53->a54
+a43->a55
+a52->a53
+a51->a53
+a1->a52
+a50->a51
+a43->a50
+a43->a49
+a43->a48
+a5->a47
+a43->a47
+a46->a43
+a45->a46
+a45->a5
+a1->a44
+a44->a42
+a4->a43
+a6->a43
+a42->a43
+a41->a42
+a40->a42
+a1->a41
+a1->a40
+a39->a38
+a17->a39
+a37->a38
+a21->a38
+a20->a37
+a19->a33
+a1->a3
+a1->a36
+a3->a34
+a36->a34
+a35->a33
+a34->a35
+a31->a33
+a3->a32
+a24->a31
+a20->a31
+a19->a27
+a32->a19
+a29->a30
+a28->a30
+a28->a27
+a29->a27
+a30->a27
+a3->a28
+a3->a29
+a24->a27
+a25->a26
+a23->a26
+a24->a25
+a17->a24
+a18->a24
+a17->a23
+a10->a23
+a20->a21
+a21->a22
+a5->a21
+a18->a21
+a18->a20
+a18->a19
+a17->a18
+a16->a17
+a5->a16
+a8->a15
+a12->a14
+a13->a14
+a10->a13
+a10->a12
+a8->a11
+a8->a10
+a1->a2
+a2->a4
+a3->a45
+a4->a5
+a1->a6
+a6->a5
+a5->a7
+a5->a8
+a9->a8
+a1->a9
+}

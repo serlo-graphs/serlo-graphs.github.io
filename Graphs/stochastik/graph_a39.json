@@ -1,0 +1,85 @@
+var title = {TITLE: 'Mittelwert'};
+var json = {
+	id: "a39_1",
+	name: "Mittelwert",
+	data: {},
+	children: [
+	{
+		id: "a17_2",
+		name: "Zufallsgrößen",
+		data: {},
+		children: [
+		{
+			id: "a16_3",
+			name: "Wahrscheinlichkeitsraum",
+			data: {},
+			children: [
+			{
+				id: "a5_4",
+				name: "Wahrscheinlichkeitsmaß, Kolmogorov-Axiome",
+				data: {},
+				children: [
+				{
+					id: "a45_5",
+					name: "Maße",
+					data: {},
+					children: [
+					{
+						id: "a3_6",
+						name: "Bildmenge",
+						data: {},
+						children: [
+						{
+							id: "a1_7",
+							name: "Mengen, Elemente, Teilmengen",
+							data: {},
+							children: [
+							 ]
+						},
+						 ]
+					},
+					 ]
+				},
+				{
+					id: "a4_8",
+					name: "Ereignisraum, Ereignisse",
+					data: {},
+					children: [
+					{
+						id: "a2_9",
+						name: "Potenzmenge",
+						data: {},
+						children: [
+						{
+							id: "a1_10",
+							name: "Mengen, Elemente, Teilmengen",
+							data: {},
+							children: [
+							 ]
+						},
+						 ]
+					},
+					 ]
+				},
+				{
+					id: "a6_11",
+					name: "Schnitt, Vereinigung, Komplement",
+					data: {},
+					children: [
+					{
+						id: "a1_12",
+						name: "Mengen, Elemente, Teilmengen",
+						data: {},
+						children: [
+						 ]
+					},
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	 ]
+}

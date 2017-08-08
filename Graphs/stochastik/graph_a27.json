@@ -1,0 +1,379 @@
+var title = {TITLE: 'Eigenschaften Kovarianz'};
+var json = {
+	id: "a27_1",
+	name: "Eigenschaften Kovarianz",
+	data: {},
+	children: [
+	{
+		id: "a19_2",
+		name: "Linearität des EW",
+		data: {},
+		children: [
+		{
+			id: "a32_3",
+			name: "Linearität",
+			data: {},
+			children: [
+			{
+				id: "a3_4",
+				name: "Bildmenge",
+				data: {},
+				children: [
+				{
+					id: "a1_5",
+					name: "Mengen, Elemente, Teilmengen",
+					data: {},
+					children: [
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		{
+			id: "a18_6",
+			name: "Erwartungswert",
+			data: {},
+			children: [
+			{
+				id: "a17_7",
+				name: "Zufallsgrößen",
+				data: {},
+				children: [
+				{
+					id: "a16_8",
+					name: "Wahrscheinlichkeitsraum",
+					data: {},
+					children: [
+					{
+						id: "a5_9",
+						name: "Wahrscheinlichkeitsmaß, Kolmogorov-Axiome",
+						data: {},
+						children: [
+						{
+							id: "a45_10",
+							name: "Maße",
+							data: {},
+							children: [
+							{
+								id: "a3_11",
+								name: "Bildmenge",
+								data: {},
+								children: [
+								{
+									id: "a1_12",
+									name: "Mengen, Elemente, Teilmengen",
+									data: {},
+									children: [
+									 ]
+								},
+								 ]
+							},
+							 ]
+						},
+						{
+							id: "a4_13",
+							name: "Ereignisraum, Ereignisse",
+							data: {},
+							children: [
+							{
+								id: "a2_14",
+								name: "Potenzmenge",
+								data: {},
+								children: [
+								{
+									id: "a1_15",
+									name: "Mengen, Elemente, Teilmengen",
+									data: {},
+									children: [
+									 ]
+								},
+								 ]
+							},
+							 ]
+						},
+						{
+							id: "a6_16",
+							name: "Schnitt, Vereinigung, Komplement",
+							data: {},
+							children: [
+							{
+								id: "a1_17",
+								name: "Mengen, Elemente, Teilmengen",
+								data: {},
+								children: [
+								 ]
+							},
+							 ]
+						},
+						 ]
+					},
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	{
+		id: "a28_18",
+		name: "Bilinearität",
+		data: {},
+		children: [
+		{
+			id: "a3_19",
+			name: "Bildmenge",
+			data: {},
+			children: [
+			{
+				id: "a1_20",
+				name: "Mengen, Elemente, Teilmengen",
+				data: {},
+				children: [
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	{
+		id: "a29_21",
+		name: "Symmetrie",
+		data: {},
+		children: [
+		{
+			id: "a3_22",
+			name: "Bildmenge",
+			data: {},
+			children: [
+			{
+				id: "a1_23",
+				name: "Mengen, Elemente, Teilmengen",
+				data: {},
+				children: [
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	{
+		id: "a30_24",
+		name: "Positiv Semidefinitheit",
+		data: {},
+		children: [
+		{
+			id: "a29_25",
+			name: "Symmetrie",
+			data: {},
+			children: [
+			{
+				id: "a3_26",
+				name: "Bildmenge",
+				data: {},
+				children: [
+				{
+					id: "a1_27",
+					name: "Mengen, Elemente, Teilmengen",
+					data: {},
+					children: [
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		{
+			id: "a28_28",
+			name: "Bilinearität",
+			data: {},
+			children: [
+			{
+				id: "a3_29",
+				name: "Bildmenge",
+				data: {},
+				children: [
+				{
+					id: "a1_30",
+					name: "Mengen, Elemente, Teilmengen",
+					data: {},
+					children: [
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	{
+		id: "a24_31",
+		name: "Kovarianz",
+		data: {},
+		children: [
+		{
+			id: "a17_32",
+			name: "Zufallsgrößen",
+			data: {},
+			children: [
+			{
+				id: "a16_33",
+				name: "Wahrscheinlichkeitsraum",
+				data: {},
+				children: [
+				{
+					id: "a5_34",
+					name: "Wahrscheinlichkeitsmaß, Kolmogorov-Axiome",
+					data: {},
+					children: [
+					{
+						id: "a45_35",
+						name: "Maße",
+						data: {},
+						children: [
+						{
+							id: "a3_36",
+							name: "Bildmenge",
+							data: {},
+							children: [
+							{
+								id: "a1_37",
+								name: "Mengen, Elemente, Teilmengen",
+								data: {},
+								children: [
+								 ]
+							},
+							 ]
+						},
+						 ]
+					},
+					{
+						id: "a4_38",
+						name: "Ereignisraum, Ereignisse",
+						data: {},
+						children: [
+						{
+							id: "a2_39",
+							name: "Potenzmenge",
+							data: {},
+							children: [
+							{
+								id: "a1_40",
+								name: "Mengen, Elemente, Teilmengen",
+								data: {},
+								children: [
+								 ]
+							},
+							 ]
+						},
+						 ]
+					},
+					{
+						id: "a6_41",
+						name: "Schnitt, Vereinigung, Komplement",
+						data: {},
+						children: [
+						{
+							id: "a1_42",
+							name: "Mengen, Elemente, Teilmengen",
+							data: {},
+							children: [
+							 ]
+						},
+						 ]
+					},
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		{
+			id: "a18_43",
+			name: "Erwartungswert",
+			data: {},
+			children: [
+			{
+				id: "a17_44",
+				name: "Zufallsgrößen",
+				data: {},
+				children: [
+				{
+					id: "a16_45",
+					name: "Wahrscheinlichkeitsraum",
+					data: {},
+					children: [
+					{
+						id: "a5_46",
+						name: "Wahrscheinlichkeitsmaß, Kolmogorov-Axiome",
+						data: {},
+						children: [
+						{
+							id: "a45_47",
+							name: "Maße",
+							data: {},
+							children: [
+							{
+								id: "a3_48",
+								name: "Bildmenge",
+								data: {},
+								children: [
+								{
+									id: "a1_49",
+									name: "Mengen, Elemente, Teilmengen",
+									data: {},
+									children: [
+									 ]
+								},
+								 ]
+							},
+							 ]
+						},
+						{
+							id: "a4_50",
+							name: "Ereignisraum, Ereignisse",
+							data: {},
+							children: [
+							{
+								id: "a2_51",
+								name: "Potenzmenge",
+								data: {},
+								children: [
+								{
+									id: "a1_52",
+									name: "Mengen, Elemente, Teilmengen",
+									data: {},
+									children: [
+									 ]
+								},
+								 ]
+							},
+							 ]
+						},
+						{
+							id: "a6_53",
+							name: "Schnitt, Vereinigung, Komplement",
+							data: {},
+							children: [
+							{
+								id: "a1_54",
+								name: "Mengen, Elemente, Teilmengen",
+								data: {},
+								children: [
+								 ]
+							},
+							 ]
+						},
+						 ]
+					},
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	 ]
+}

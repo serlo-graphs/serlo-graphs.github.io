@@ -1,0 +1,134 @@
+var title = {TITLE: 'Erzeugte SA'};
+var json = {
+	id: "a51_1",
+	name: "Erzeugte SA",
+	data: {},
+	children: [
+	{
+		id: "a50_2",
+		name: "Schnitt zweier SA ist SA",
+		data: {},
+		children: [
+		{
+			id: "a43_3",
+			name: "Sigma-Algebren",
+			data: {},
+			children: [
+			{
+				id: "a46_4",
+				name: "Lebesgue-Maß",
+				data: {},
+				children: [
+				{
+					id: "a45_5",
+					name: "Maße",
+					data: {},
+					children: [
+					{
+						id: "a3_6",
+						name: "Bildmenge",
+						data: {},
+						children: [
+						{
+							id: "a1_7",
+							name: "Mengen, Elemente, Teilmengen",
+							data: {},
+							children: [
+							 ]
+						},
+						 ]
+					},
+					 ]
+				},
+				 ]
+			},
+			{
+				id: "a4_8",
+				name: "Ereignisraum, Ereignisse",
+				data: {},
+				children: [
+				{
+					id: "a2_9",
+					name: "Potenzmenge",
+					data: {},
+					children: [
+					{
+						id: "a1_10",
+						name: "Mengen, Elemente, Teilmengen",
+						data: {},
+						children: [
+						 ]
+					},
+					 ]
+				},
+				 ]
+			},
+			{
+				id: "a6_11",
+				name: "Schnitt, Vereinigung, Komplement",
+				data: {},
+				children: [
+				{
+					id: "a1_12",
+					name: "Mengen, Elemente, Teilmengen",
+					data: {},
+					children: [
+					 ]
+				},
+				 ]
+			},
+			{
+				id: "a42_13",
+				name: "Vitali-Mengen",
+				data: {},
+				children: [
+				{
+					id: "a44_14",
+					name: "Äquivalenz-Relation",
+					data: {},
+					children: [
+					{
+						id: "a1_15",
+						name: "Mengen, Elemente, Teilmengen",
+						data: {},
+						children: [
+						 ]
+					},
+					 ]
+				},
+				{
+					id: "a41_16",
+					name: "Folgen",
+					data: {},
+					children: [
+					{
+						id: "a1_17",
+						name: "Mengen, Elemente, Teilmengen",
+						data: {},
+						children: [
+						 ]
+					},
+					 ]
+				},
+				{
+					id: "a40_18",
+					name: "Abzählbarkeit",
+					data: {},
+					children: [
+					{
+						id: "a1_19",
+						name: "Mengen, Elemente, Teilmengen",
+						data: {},
+						children: [
+						 ]
+					},
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	 ]
+}

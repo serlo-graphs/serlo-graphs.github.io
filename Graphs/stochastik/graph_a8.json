@@ -1,0 +1,85 @@
+var title = {TITLE: 'Bedingte Wahrscheinlichkeit'};
+var json = {
+	id: "a8_1",
+	name: "Bedingte Wahrscheinlichkeit",
+	data: {},
+	children: [
+	{
+		id: "a5_2",
+		name: "Wahrscheinlichkeitsmaß, Kolmogorov-Axiome",
+		data: {},
+		children: [
+		{
+			id: "a45_3",
+			name: "Maße",
+			data: {},
+			children: [
+			{
+				id: "a3_4",
+				name: "Bildmenge",
+				data: {},
+				children: [
+				{
+					id: "a1_5",
+					name: "Mengen, Elemente, Teilmengen",
+					data: {},
+					children: [
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		{
+			id: "a4_6",
+			name: "Ereignisraum, Ereignisse",
+			data: {},
+			children: [
+			{
+				id: "a2_7",
+				name: "Potenzmenge",
+				data: {},
+				children: [
+				{
+					id: "a1_8",
+					name: "Mengen, Elemente, Teilmengen",
+					data: {},
+					children: [
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		{
+			id: "a6_9",
+			name: "Schnitt, Vereinigung, Komplement",
+			data: {},
+			children: [
+			{
+				id: "a1_10",
+				name: "Mengen, Elemente, Teilmengen",
+				data: {},
+				children: [
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	{
+		id: "a9_11",
+		name: "Distributivgesetz der Mengenlehre",
+		data: {},
+		children: [
+		{
+			id: "a1_12",
+			name: "Mengen, Elemente, Teilmengen",
+			data: {},
+			children: [
+			 ]
+		},
+		 ]
+	},
+	 ]
+}

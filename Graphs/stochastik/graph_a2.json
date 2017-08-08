@@ -1,0 +1,15 @@
+var title = {TITLE: 'Potenzmenge'};
+var json = {
+	id: "a2_1",
+	name: "Potenzmenge",
+	data: {},
+	children: [
+	{
+		id: "a1_2",
+		name: "Mengen, Elemente, Teilmengen",
+		data: {},
+		children: [
+		 ]
+	},
+	 ]
+}

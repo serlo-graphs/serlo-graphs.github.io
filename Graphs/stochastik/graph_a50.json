@@ -1,0 +1,127 @@
+var title = {TITLE: 'Schnitt zweier SA ist SA'};
+var json = {
+	id: "a50_1",
+	name: "Schnitt zweier SA ist SA",
+	data: {},
+	children: [
+	{
+		id: "a43_2",
+		name: "Sigma-Algebren",
+		data: {},
+		children: [
+		{
+			id: "a46_3",
+			name: "Lebesgue-Maß",
+			data: {},
+			children: [
+			{
+				id: "a45_4",
+				name: "Maße",
+				data: {},
+				children: [
+				{
+					id: "a3_5",
+					name: "Bildmenge",
+					data: {},
+					children: [
+					{
+						id: "a1_6",
+						name: "Mengen, Elemente, Teilmengen",
+						data: {},
+						children: [
+						 ]
+					},
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		{
+			id: "a4_7",
+			name: "Ereignisraum, Ereignisse",
+			data: {},
+			children: [
+			{
+				id: "a2_8",
+				name: "Potenzmenge",
+				data: {},
+				children: [
+				{
+					id: "a1_9",
+					name: "Mengen, Elemente, Teilmengen",
+					data: {},
+					children: [
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		{
+			id: "a6_10",
+			name: "Schnitt, Vereinigung, Komplement",
+			data: {},
+			children: [
+			{
+				id: "a1_11",
+				name: "Mengen, Elemente, Teilmengen",
+				data: {},
+				children: [
+				 ]
+			},
+			 ]
+		},
+		{
+			id: "a42_12",
+			name: "Vitali-Mengen",
+			data: {},
+			children: [
+			{
+				id: "a44_13",
+				name: "Äquivalenz-Relation",
+				data: {},
+				children: [
+				{
+					id: "a1_14",
+					name: "Mengen, Elemente, Teilmengen",
+					data: {},
+					children: [
+					 ]
+				},
+				 ]
+			},
+			{
+				id: "a41_15",
+				name: "Folgen",
+				data: {},
+				children: [
+				{
+					id: "a1_16",
+					name: "Mengen, Elemente, Teilmengen",
+					data: {},
+					children: [
+					 ]
+				},
+				 ]
+			},
+			{
+				id: "a40_17",
+				name: "Abzählbarkeit",
+				data: {},
+				children: [
+				{
+					id: "a1_18",
+					name: "Mengen, Elemente, Teilmengen",
+					data: {},
+					children: [
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	 ]
+}

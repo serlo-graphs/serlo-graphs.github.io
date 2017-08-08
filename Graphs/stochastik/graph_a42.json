@@ -1,0 +1,50 @@
+var title = {TITLE: 'Vitali-Mengen'};
+var json = {
+	id: "a42_1",
+	name: "Vitali-Mengen",
+	data: {},
+	children: [
+	{
+		id: "a44_2",
+		name: "Äquivalenz-Relation",
+		data: {},
+		children: [
+		{
+			id: "a1_3",
+			name: "Mengen, Elemente, Teilmengen",
+			data: {},
+			children: [
+			 ]
+		},
+		 ]
+	},
+	{
+		id: "a41_4",
+		name: "Folgen",
+		data: {},
+		children: [
+		{
+			id: "a1_5",
+			name: "Mengen, Elemente, Teilmengen",
+			data: {},
+			children: [
+			 ]
+		},
+		 ]
+	},
+	{
+		id: "a40_6",
+		name: "Abzählbarkeit",
+		data: {},
+		children: [
+		{
+			id: "a1_7",
+			name: "Mengen, Elemente, Teilmengen",
+			data: {},
+			children: [
+			 ]
+		},
+		 ]
+	},
+	 ]
+}

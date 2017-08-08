@@ -1,0 +1,15 @@
+var title = {TITLE: 'Abzählbarkeit'};
+var json = {
+	id: "a40_1",
+	name: "Abzählbarkeit",
+	data: {},
+	children: [
+	{
+		id: "a1_2",
+		name: "Mengen, Elemente, Teilmengen",
+		data: {},
+		children: [
+		 ]
+	},
+	 ]
+}

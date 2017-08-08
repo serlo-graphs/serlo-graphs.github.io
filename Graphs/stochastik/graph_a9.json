@@ -1,0 +1,15 @@
+var title = {TITLE: 'Distributivgesetz der Mengenlehre'};
+var json = {
+	id: "a9_1",
+	name: "Distributivgesetz der Mengenlehre",
+	data: {},
+	children: [
+	{
+		id: "a1_2",
+		name: "Mengen, Elemente, Teilmengen",
+		data: {},
+		children: [
+		 ]
+	},
+	 ]
+}

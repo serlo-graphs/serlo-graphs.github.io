@@ -1,0 +1,64 @@
+var title = {TITLE: 'Wahrscheinlichkeitsmaß, Kolmogorov-Axiome'};
+var json = {
+	id: "a5_1",
+	name: "Wahrscheinlichkeitsmaß, Kolmogorov-Axiome",
+	data: {},
+	children: [
+	{
+		id: "a45_2",
+		name: "Maße",
+		data: {},
+		children: [
+		{
+			id: "a3_3",
+			name: "Bildmenge",
+			data: {},
+			children: [
+			{
+				id: "a1_4",
+				name: "Mengen, Elemente, Teilmengen",
+				data: {},
+				children: [
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	{
+		id: "a4_5",
+		name: "Ereignisraum, Ereignisse",
+		data: {},
+		children: [
+		{
+			id: "a2_6",
+			name: "Potenzmenge",
+			data: {},
+			children: [
+			{
+				id: "a1_7",
+				name: "Mengen, Elemente, Teilmengen",
+				data: {},
+				children: [
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	{
+		id: "a6_8",
+		name: "Schnitt, Vereinigung, Komplement",
+		data: {},
+		children: [
+		{
+			id: "a1_9",
+			name: "Mengen, Elemente, Teilmengen",
+			data: {},
+			children: [
+			 ]
+		},
+		 ]
+	},
+	 ]
+}
