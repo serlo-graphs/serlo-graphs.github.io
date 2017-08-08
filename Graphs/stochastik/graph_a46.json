@@ -1,4 +1,4 @@
-var title = {TITLE: 'Lebesgue-Maß'};
+var title = {TITLE: "Lebesgue-Maß"};
 var json = {
 	id: "a46_1",
 	name: "Lebesgue-Maß",

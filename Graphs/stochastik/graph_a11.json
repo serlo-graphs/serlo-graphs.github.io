@@ -1,4 +1,4 @@
-var title = {TITLE: 'Satz von Bayes'};
+var title = {TITLE: "Satz von Bayes"};
 var json = {
 	id: "a11_1",
 	name: "Satz von Bayes",

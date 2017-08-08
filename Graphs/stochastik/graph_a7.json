@@ -1,4 +1,4 @@
-var title = {TITLE: 'Summenformel für Vereinigungen von Wahrscheinlichkeiten'};
+var title = {TITLE: "Summenformel für Vereinigungen von Wahrscheinlichkeiten"};
 var json = {
 	id: "a7_1",
 	name: "Summenformel für Vereinigungen von Wahrscheinlichkeiten",

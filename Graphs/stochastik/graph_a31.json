@@ -1,4 +1,4 @@
-var title = {TITLE: 'Korrelationskoeffizient'};
+var title = {TITLE: "Korrelationskoeffizient"};
 var json = {
 	id: "a31_1",
 	name: "Korrelationskoeffizient",

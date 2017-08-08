@@ -1,4 +1,4 @@
-var title = {TITLE: 'Äquivalenz-Relation'};
+var title = {TITLE: "Äquivalenz-Relation"};
 var json = {
 	id: "a44_1",
 	name: "Äquivalenz-Relation",

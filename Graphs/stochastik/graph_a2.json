@@ -1,4 +1,4 @@
-var title = {TITLE: 'Potenzmenge'};
+var title = {TITLE: "Potenzmenge"};
 var json = {
 	id: "a2_1",
 	name: "Potenzmenge",

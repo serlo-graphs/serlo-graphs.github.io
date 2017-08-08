@@ -1,4 +1,4 @@
-var title = {TITLE: 'Zufallsgrößen'};
+var title = {TITLE: "Zufallsgrößen"};
 var json = {
 	id: "a17_1",
 	name: "Zufallsgrößen",

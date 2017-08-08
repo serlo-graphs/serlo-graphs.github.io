@@ -1,4 +1,4 @@
-var title = {TITLE: 'Unabhängige Zufallsgrößen'};
+var title = {TITLE: "Unabhängige Zufallsgrößen"};
 var json = {
 	id: "a23_1",
 	name: "Unabhängige Zufallsgrößen",

@@ -1,4 +1,4 @@
-var title = {TITLE: 'Schnitt, Vereinigung, Komplement'};
+var title = {TITLE: "Schnitt, Vereinigung, Komplement"};
 var json = {
 	id: "a6_1",
 	name: "Schnitt, Vereinigung, Komplement",

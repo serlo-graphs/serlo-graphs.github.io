@@ -1,4 +1,4 @@
-var title = {TITLE: 'Vektorraum'};
+var title = {TITLE: "Vektorraum"};
 var json = {
 	id: "a36_1",
 	name: "Vektorraum",

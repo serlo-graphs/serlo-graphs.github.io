@@ -1,4 +1,4 @@
-var title = {TITLE: 'Abzählbarkeit'};
+var title = {TITLE: "Abzählbarkeit"};
 var json = {
 	id: "a40_1",
 	name: "Abzählbarkeit",

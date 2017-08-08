@@ -1,4 +1,4 @@
-var title = {TITLE: 'Bilinearität'};
+var title = {TITLE: "Bilinearität"};
 var json = {
 	id: "a28_1",
 	name: "Bilinearität",

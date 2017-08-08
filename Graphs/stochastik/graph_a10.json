@@ -1,4 +1,4 @@
-var title = {TITLE: 'Stochastische Unabhängigkeit'};
+var title = {TITLE: "Stochastische Unabhängigkeit"};
 var json = {
 	id: "a10_1",
 	name: "Stochastische Unabhängigkeit",

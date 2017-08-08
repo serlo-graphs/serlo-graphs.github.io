@@ -1,4 +1,4 @@
-var title = {TITLE: 'Wahrscheinlichkeitsmaß, Kolmogorov-Axiome'};
+var title = {TITLE: "Wahrscheinlichkeitsmaß, Kolmogorov-Axiome"};
 var json = {
 	id: "a5_1",
 	name: "Wahrscheinlichkeitsmaß, Kolmogorov-Axiome",

@@ -1,4 +1,4 @@
-var title = {TITLE: 'Sigma-Algebren'};
+var title = {TITLE: "Sigma-Algebren"};
 var json = {
 	id: "a43_1",
 	name: "Sigma-Algebren",

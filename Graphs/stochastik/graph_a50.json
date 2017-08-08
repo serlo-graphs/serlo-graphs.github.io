@@ -1,4 +1,4 @@
-var title = {TITLE: 'Schnitt zweier SA ist SA'};
+var title = {TITLE: "Schnitt zweier SA ist SA"};
 var json = {
 	id: "a50_1",
 	name: "Schnitt zweier SA ist SA",

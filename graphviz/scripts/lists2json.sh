@@ -65,7 +65,7 @@ if [[ -z $(grep "Dependency lists file generated from" $1) ]]
 		# Create empty db file
 		touch $jsonfilename
 		returnFields $2
-		echo -e "var title = {TITLE: '$name'};" >>  $jsonfilename
+		echo -e "var title = {TITLE: \"$name\"};" >>  $jsonfilename
 		echo -e "var json = {" >>  $jsonfilename
 		numberoftabs=0
 		counter=0

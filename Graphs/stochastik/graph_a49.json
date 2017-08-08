@@ -1,4 +1,4 @@
-var title = {TITLE: 'Eigenschaften von Sigma-Algebren'};
+var title = {TITLE: "Eigenschaften von Sigma-Algebren"};
 var json = {
 	id: "a49_1",
 	name: "Eigenschaften von Sigma-Algebren",

@@ -1,4 +1,4 @@
-var title = {TITLE: 'Wahrscheinlichkeitsmaß für überabzählbare Ereignisräume'};
+var title = {TITLE: "Wahrscheinlichkeitsmaß für überabzählbare Ereignisräume"};
 var json = {
 	id: "a47_1",
 	name: "Wahrscheinlichkeitsmaß für überabzählbare Ereignisräume",

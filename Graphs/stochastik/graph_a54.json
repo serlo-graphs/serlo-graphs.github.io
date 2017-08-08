@@ -1,4 +1,4 @@
-var title = {TITLE: 'Eigenschaften Borelmenge'};
+var title = {TITLE: "Eigenschaften Borelmenge"};
 var json = {
 	id: "a54_1",
 	name: "Eigenschaften Borelmenge",

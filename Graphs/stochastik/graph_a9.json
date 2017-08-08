@@ -1,4 +1,4 @@
-var title = {TITLE: 'Distributivgesetz der Mengenlehre'};
+var title = {TITLE: "Distributivgesetz der Mengenlehre"};
 var json = {
 	id: "a9_1",
 	name: "Distributivgesetz der Mengenlehre",

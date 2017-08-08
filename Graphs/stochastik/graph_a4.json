@@ -1,4 +1,4 @@
-var title = {TITLE: 'Ereignisraum, Ereignisse'};
+var title = {TITLE: "Ereignisraum, Ereignisse"};
 var json = {
 	id: "a4_1",
 	name: "Ereignisraum, Ereignisse",

@@ -1,4 +1,4 @@
-var title = {TITLE: 'Positiv Semidefinitheit'};
+var title = {TITLE: "Positiv Semidefinitheit"};
 var json = {
 	id: "a30_1",
 	name: "Positiv Semidefinitheit",

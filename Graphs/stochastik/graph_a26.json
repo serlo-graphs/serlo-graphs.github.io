@@ -1,4 +1,4 @@
-var title = {TITLE: 'Unabhängig =>Unkorreliert'};
+var title = {TITLE: "Unabhängig =>Unkorreliert"};
 var json = {
 	id: "a26_1",
 	name: "Unabhängig =>Unkorreliert",
