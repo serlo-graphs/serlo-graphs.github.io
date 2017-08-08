@@ -43,7 +43,7 @@ for i in `seq 0 $((${#ids[@]} - 1))`
 		cp $templatepath $htmlout
 		sed -i "s|<script language=\"javascript\" type=\"text/javascript\" src=\"\"></script>|<script language=\"javascript\" type=\"text/javascript\" src=\"graph_$id.json\"></script>|" $htmlout
 		$scriptpath "$inputlistpath" $id "$jsonout"
-		echo "<p><a href=\"$htmlout\">$name</a></p>" >> $indexdir
+		echo "<p><a href=\"${dbfilename%.*}/graph_$id.html\">$name</a></p>" >> $indexdir
 done
 
 echo "</body>" >> $indexdir
