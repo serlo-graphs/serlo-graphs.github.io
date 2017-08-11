@@ -4310,7 +4310,8 @@
     -->
 
 
-<!--    <g id = "Reset"
+<!--Alter Reset-Button mit Text-Beschriftung
+     <g id = "Reset"
        style="pointer-events:all; cursor: pointer;">
        <rect    id="Reset-Rahmen"
                 x="944"    y="695"
@@ -4322,8 +4323,22 @@
                 x="954"     y="705"
                 height="35" width="150"
                 fill="#AAAAAA" />
-                -->
-                <image x="944" y="700" width="80" height="80" xlink:href="refresh.svg" />
+        <text   id="Reset-Text"
+				text-anchor="middle"
+                x="1029"    y="730"
+                style="font-size: 20px;" >
+                Zurücksetzen </text>
+
+    </g>
+    -->
+    <!--Neuer Reset-Button nun als SVG-Bild statt Text, da Safari auf dem iPad
+		eine nicht abschaltbare Zoom-Funktion beim vierfachen Tippen auf ein 
+		Textfeld hat-->
+	<image id = "Reset" 
+			x = "944" y="700"
+			width="80" height="80"
+			xlink:href="refresh.svg" 
+			style="pointer-events:all; cursor: move;"/>
 
 
 
@@ -4490,15 +4505,29 @@
 		<!-- Wenn Maus bewegt wird (mouse move) -->
 		$("svg").on(TouchMouseEvent.MOVE, function(evt){
 			if (startDragAdjustCoupledAuxLine) {
-				window.currentAuxLine.setAttribute("x", evt.pageX-pointerHiddenHalfWidth);
-				window.currentAuxLine.getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;
+				if (evt.pageX-pointerHiddenHalfWidth < lineX-pointerHiddenHalfWidth) {
+					window.currentAuxLine.setAttribute("x", lineX-pointerHiddenHalfWidth);
+					window.currentAuxLine.getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + "0" + messageAuxLinePercentPositionPart2;
+				} else {
+					window.currentAuxLine.setAttribute("x", evt.pageX-pointerHiddenHalfWidth);
+					window.currentAuxLine.getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;
+				}
 			}
 			if (startDragAdjustPercentAuxLine) {
-				window.currentAuxLine.setAttribute("x", evt.pageX-pointerHiddenHalfWidth);
-				window.currentAuxLine.getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;
+				if (evt.pageX-pointerHiddenHalfWidth < lineX-pointerHiddenHalfWidth) {
+					window.currentAuxLine.setAttribute("x", lineX-pointerHiddenHalfWidth);
+					window.currentAuxLine.getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + "0" + messageAuxLinePercentPositionPart2;
+				} else {
+					window.currentAuxLine.setAttribute("x", evt.pageX-pointerHiddenHalfWidth);
+					window.currentAuxLine.getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;
+				}
 			}
 			if  (startDragAdjustRulerAuxLine) {
-				window.currentAuxLine.setAttribute("x", evt.pageX-pointerHiddenHalfWidth);
+				if (evt.pageX-pointerHiddenHalfWidth < lineX-pointerHiddenHalfWidth) {
+					window.currentAuxLine.setAttribute("x", lineX-pointerHiddenHalfWidth);
+				} else {
+					window.currentAuxLine.setAttribute("x", evt.pageX-pointerHiddenHalfWidth);
+				}				
 			}
 			if(startDragPercent){
 				moveElement(evt, true);
@@ -4508,7 +4537,12 @@
 			}
 			if(startDragAuxPercent){
 				if (window.numberOfAuxLines < maxNumberOfAuxLines) {
-					window.currentAuxLine.getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;
+					if (evt.pageX-pointerHiddenHalfWidth < lineX-pointerHiddenHalfWidth) {
+						window.currentAuxLine.getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + "0" + messageAuxLinePercentPositionPart2;
+					} else {
+						window.currentAuxLine.getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;
+					}
+					//window.currentAuxLine.getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;
 					// document.getElementById("Message").innerHTML = messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;
 					moveAuxLine(evt);					
 				} else {
@@ -4525,7 +4559,12 @@
 			}
 			if(startDragAuxCoupled){
 				if (window.numberOfAuxLines < maxNumberOfAuxLines) {
-					window.currentAuxLine.getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;
+					if (evt.pageX-pointerHiddenHalfWidth < lineX-pointerHiddenHalfWidth) {
+						window.currentAuxLine.getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + "0" + messageAuxLinePercentPositionPart2;
+					} else {
+						window.currentAuxLine.getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;
+					}
+					//window.currentAuxLine.getElementById("auxMessage").innerHTML=messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2;
 					// document.getElementById("Message").innerHTML = messageAuxLinePercentPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.percentScaleFactor)) + messageAuxLinePercentPositionPart2 + messageAuxLineRulerPositionPart1 + Math.round((evt.pageX-lineX)/(lineDistance*window.rulerScaleFactor)) + messageAuxLineRulerPositionPart2;
 					moveAuxLine(evt);					
 				} else {
@@ -4601,8 +4640,14 @@
 	/* Funktion zum Bewegen einer Hilfslinie (wird beim Setzen aufgerufen) */
 	function moveAuxLine(evt) {
 		var correctedNewPosition = +evt.pageX - +pointerHiddenHalfWidth;
-		// Übrigens: Die zusätzlichen Pluszeichen vor den Variablen konvertieren sie zu Integern, sodass die Adition entsprechend ausgeführt wird
-		window.currentAuxLine.setAttribute("x", correctedNewPosition);
+		// Übrigens: Die zusätzlichen Pluszeichen vor den Variablen konvertieren sie zu Integern, sodass die Addition entsprechend ausgeführt wird
+		if (correctedNewPosition < lineX-pointerHiddenHalfWidth) {
+			window.currentAuxLine.setAttribute("x", lineX-pointerHiddenHalfWidth );
+		} else {
+			window.currentAuxLine.setAttribute("x", correctedNewPosition);
+		}
+		
+		/*window.currentAuxLine.setAttribute("x", correctedNewPosition);*/
 	}
 	
 	/* Diese Funktion fügt eine Hilfslinie hinzu (macht eine der unsichtbaren Hilfslinien sichtbar und setzt sie auf Mausposition) */
