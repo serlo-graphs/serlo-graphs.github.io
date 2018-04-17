@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Call with: ./dot2svg.sh /path/to/graph.dot
+
 # TODO: Proper comment parsing
 
 

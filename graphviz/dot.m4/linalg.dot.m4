@@ -19,15 +19,17 @@ p5[label="Stetigkeit", shape=definition]
 p6[label="Intervall", shape=definition]
 p7[label="Abbildung", shape=definition]
 p8[label="Funktion", shape=definition]
+p9[label="Gruppe", shape=definition]
 
 m1[label="Basics und Notationen", shape=meta]
 m2[label="Schulwissen", shape=meta]
 
 n1_1[label="Die Menge der n-Tupel reeller Zahlen", shape=beispiel]
 n1_2[label="Die Menge der komplexwertigen stetigen Funktionen auf [0,1]", shape=beispiel]
-n1_3[label="Motivation abstrakte Vektorräume", shape=bemerkung]
+n1_3[label="Motivation abstrakte Vektorräume 1", shape=bemerkung]
 n1_4[label="Notation Körper", shape=notation]
 n1_5[label="Definition Vektorraum", shape=definition]
+n1_6[label="Motivation abstrakte Vektorräume 2", shape=bemerkung]
 
 p1->m1 [arrowhead=notwendig]
 p2->m1 [arrowhead=notwendig]
@@ -45,5 +47,6 @@ n1_1->n1_3 [arrowhead=optional]
 n1_2->n1_3 [arrowhead=optional]
 n1_3->n1_5 [arrowhead=optional]
 n1_4->n1_5 [arrowhead=notwendig]
-
+p9->n1_5 [arrowhead=optional]
+n1_5->n1_6 [arrowhead=notwendig]
 }
