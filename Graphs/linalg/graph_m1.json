@@ -1,0 +1,36 @@
+var title = {TITLE: "Basics und Notationen"};
+var json = {
+	id: "m1_1",
+	name: "Basics und Notationen",
+	data: {},
+	children: [
+	{
+		id: "p1_2",
+		name: "Kartesisches Produkt, Tupel",
+		data: {},
+		children: [
+		 ]
+	},
+	{
+		id: "p2_3",
+		name: "Quantoren",
+		data: {},
+		children: [
+		 ]
+	},
+	{
+		id: "p4_4",
+		name: "Komplexe Zahlen",
+		data: {},
+		children: [
+		 ]
+	},
+	{
+		id: "p7_5",
+		name: "Abbildung",
+		data: {},
+		children: [
+		 ]
+	},
+	 ]
+}

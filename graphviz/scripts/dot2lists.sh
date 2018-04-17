@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Call with: ./dot2lists.sh /path/to/graph.dot (assume location ../dot/graph.dot)
+# Call with: ./dot2lists.sh /path/to/graph.dot (assume location ../dot/ if only filename is provided)
 
 # TODO: Proper comment parsing
 

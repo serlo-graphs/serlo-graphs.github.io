@@ -1,0 +1,8 @@
+var title = {TITLE: "Abbildung"};
+var json = {
+	id: "p7_1",
+	name: "Abbildung",
+	data: {},
+	children: [
+	 ]
+}

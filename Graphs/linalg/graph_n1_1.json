@@ -1,0 +1,8 @@
+var title = {TITLE: "Die Menge der n-Tupel reeller Zahlen"};
+var json = {
+	id: "n1_1_1",
+	name: "Die Menge der n-Tupel reeller Zahlen",
+	data: {},
+	children: [
+	 ]
+}

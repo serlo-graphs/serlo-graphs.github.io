@@ -1,0 +1,8 @@
+var title = {TITLE: "Kartesisches Produkt, Tupel"};
+var json = {
+	id: "p1_1",
+	name: "Kartesisches Produkt, Tupel",
+	data: {},
+	children: [
+	 ]
+}

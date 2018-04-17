@@ -1,0 +1,36 @@
+var title = {TITLE: "Definition Vektorraum"};
+var json = {
+	id: "n1_5_1",
+	name: "Definition Vektorraum",
+	data: {},
+	children: [
+	{
+		id: "n1_3_2",
+		name: "Motivation abstrakte Vektorräume",
+		data: {},
+		children: [
+		{
+			id: "n1_1_3",
+			name: "Die Menge der n-Tupel reeller Zahlen",
+			data: {},
+			children: [
+			 ]
+		},
+		{
+			id: "n1_2_4",
+			name: "Die Menge der komplexwertigen stetigen Funktionen auf [0,1]",
+			data: {},
+			children: [
+			 ]
+		},
+		 ]
+	},
+	{
+		id: "n1_4_5",
+		name: "Notation Körper",
+		data: {},
+		children: [
+		 ]
+	},
+	 ]
+}

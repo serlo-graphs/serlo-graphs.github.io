@@ -1,0 +1,43 @@
+var title = {TITLE: "Schulwissen"};
+var json = {
+	id: "m2_1",
+	name: "Schulwissen",
+	data: {},
+	children: [
+	{
+		id: "p3_2",
+		name: "Reelle Zahlen",
+		data: {},
+		children: [
+		 ]
+	},
+	{
+		id: "p5_3",
+		name: "Stetigkeit",
+		data: {},
+		children: [
+		 ]
+	},
+	{
+		id: "p6_4",
+		name: "Intervall",
+		data: {},
+		children: [
+		{
+			id: "p3_5",
+			name: "Reelle Zahlen",
+			data: {},
+			children: [
+			 ]
+		},
+		 ]
+	},
+	{
+		id: "p8_6",
+		name: "Funktion",
+		data: {},
+		children: [
+		 ]
+	},
+	 ]
+}

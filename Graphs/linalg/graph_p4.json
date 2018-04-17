@@ -1,0 +1,8 @@
+var title = {TITLE: "Komplexe Zahlen"};
+var json = {
+	id: "p4_1",
+	name: "Komplexe Zahlen",
+	data: {},
+	children: [
+	 ]
+}

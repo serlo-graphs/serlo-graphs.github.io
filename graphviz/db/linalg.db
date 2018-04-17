@@ -1,0 +1,107 @@
+Dependency lists file generated from linalg.dot
+
+node{
+	Label: Kartesisches Produkt, Tupel
+	Type: Definition
+	ID: p1
+	Deps: 
+}
+
+node{
+	Label: Quantoren
+	Type: Definition
+	ID: p2
+	Deps: 
+}
+
+node{
+	Label: Reelle Zahlen
+	Type: Definition
+	ID: p3
+	Deps: 
+}
+
+node{
+	Label: Komplexe Zahlen
+	Type: Definition
+	ID: p4
+	Deps: 
+}
+
+node{
+	Label: Stetigkeit
+	Type: Definition
+	ID: p5
+	Deps: 
+}
+
+node{
+	Label: Intervall
+	Type: Definition
+	ID: p6
+	Deps: p3
+}
+
+node{
+	Label: Abbildung
+	Type: Definition
+	ID: p7
+	Deps: 
+}
+
+node{
+	Label: Funktion
+	Type: Definition
+	ID: p8
+	Deps: 
+}
+
+node{
+	Label: Basics und Notationen
+	Type: Definition
+	ID: m1
+	Deps: p1, p2, p4, p7
+}
+
+node{
+	Label: Schulwissen
+	Type: Definition
+	ID: m2
+	Deps: p3, p5, p6, p8
+}
+
+node{
+	Label: Die Menge der n-Tupel reeller Zahlen
+	Type: Definition
+	ID: n1_1
+	Deps: 
+}
+
+node{
+	Label: Die Menge der komplexwertigen stetigen Funktionen auf [0,1]
+	Type: Definition
+	ID: n1_2
+	Deps: 
+}
+
+node{
+	Label: Motivation abstrakte Vektorräume
+	Type: Definition
+	ID: n1_3
+	Deps: n1_1, n1_2
+}
+
+node{
+	Label: Notation Körper
+	Type: Definition
+	ID: n1_4
+	Deps: 
+}
+
+node{
+	Label: Definition Vektorraum
+	Type: Definition
+	ID: n1_5
+	Deps: n1_3, n1_4
+}
+

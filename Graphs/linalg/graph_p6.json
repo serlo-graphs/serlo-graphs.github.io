@@ -1,0 +1,15 @@
+var title = {TITLE: "Intervall"};
+var json = {
+	id: "p6_1",
+	name: "Intervall",
+	data: {},
+	children: [
+	{
+		id: "p3_2",
+		name: "Reelle Zahlen",
+		data: {},
+		children: [
+		 ]
+	},
+	 ]
+}

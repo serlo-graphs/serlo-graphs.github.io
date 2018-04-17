@@ -1,0 +1,49 @@
+
+
+
+
+
+
+
+
+
+
+
+
+digraph G {
+p1[label="Kartesisches Produkt, Tupel", shape=note]
+p2[label="Quantoren", shape=note]
+p3[label="Reelle Zahlen", shape=note]
+p4[label="Komplexe Zahlen", shape=note]
+p5[label="Stetigkeit", shape=note]
+p6[label="Intervall", shape=note]
+p7[label="Abbildung", shape=note]
+p8[label="Funktion", shape=note]
+
+m1[label="Basics und Notationen", shape=box3d]
+m2[label="Schulwissen", shape=box3d]
+
+n1_1[label="Die Menge der n-Tupel reeller Zahlen", shape=ellipse]
+n1_2[label="Die Menge der komplexwertigen stetigen Funktionen auf [0,1]", shape=ellipse]
+n1_3[label="Motivation abstrakte Vektorräume", shape=hexagon]
+n1_4[label="Notation Körper", shape=septagon]
+n1_5[label="Definition Vektorraum", shape=note]
+
+p1->m1 [arrowhead=normal]
+p2->m1 [arrowhead=normal]
+p4->m1 [arrowhead=normal]
+p7->m1 [arrowhead=normal]
+
+p3->m2 [arrowhead=normal]
+p5->m2 [arrowhead=normal]
+p6->m2 [arrowhead=normal]
+p8->m2 [arrowhead=normal]
+
+p3->p6 [arrowhead=normal]
+
+n1_1->n1_3 [arrowhead=onormal]
+n1_2->n1_3 [arrowhead=onormal]
+n1_3->n1_5 [arrowhead=onormal]
+n1_4->n1_5 [arrowhead=normal]
+
+}

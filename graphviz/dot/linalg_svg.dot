@@ -1,0 +1,49 @@
+
+
+
+
+
+
+
+
+
+
+
+
+digraph G {
+p1[href="linalg/graph_p1.html", label="Kartesisches Produkt, Tupel", shape=note]
+p2[href="linalg/graph_p2.html", label="Quantoren", shape=note]
+p3[href="linalg/graph_p3.html", label="Reelle Zahlen", shape=note]
+p4[href="linalg/graph_p4.html", label="Komplexe Zahlen", shape=note]
+p5[href="linalg/graph_p5.html", label="Stetigkeit", shape=note]
+p6[href="linalg/graph_p6.html", label="Intervall", shape=note]
+p7[href="linalg/graph_p7.html", label="Abbildung", shape=note]
+p8[href="linalg/graph_p8.html", label="Funktion", shape=note]
+
+m1[href="linalg/graph_m1.html", label="Basics und Notationen", shape=box3d]
+m2[href="linalg/graph_m2.html", label="Schulwissen", shape=box3d]
+
+n1_1[href="linalg/graph_n1_1.html", label="Die Menge der n-Tupel reeller Zahlen", shape=ellipse]
+n1_2[href="linalg/graph_n1_2.html", label="Die Menge der komplexwertigen stetigen Funktionen auf [0,1]", shape=ellipse]
+n1_3[href="linalg/graph_n1_3.html", label="Motivation abstrakte Vektorräume", shape=hexagon]
+n1_4[href="linalg/graph_n1_4.html", label="Notation Körper", shape=septagon]
+n1_5[href="linalg/graph_n1_5.html", label="Definition Vektorraum", shape=note]
+
+p1->m1 [arrowhead=normal]
+p2->m1 [arrowhead=normal]
+p4->m1 [arrowhead=normal]
+p7->m1 [arrowhead=normal]
+
+p3->m2 [arrowhead=normal]
+p5->m2 [arrowhead=normal]
+p6->m2 [arrowhead=normal]
+p8->m2 [arrowhead=normal]
+
+p3->p6 [arrowhead=normal]
+
+n1_1->n1_3 [arrowhead=onormal]
+n1_2->n1_3 [arrowhead=onormal]
+n1_3->n1_5 [arrowhead=onormal]
+n1_4->n1_5 [arrowhead=normal]
+
+}
