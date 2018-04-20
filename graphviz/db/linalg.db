@@ -57,6 +57,13 @@ node{
 }
 
 node{
+	Label: Gruppe
+	Type: Definition
+	ID: p9
+	Deps: 
+}
+
+node{
 	Label: Basics und Notationen
 	Type: Definition
 	ID: m1
@@ -85,7 +92,7 @@ node{
 }
 
 node{
-	Label: Motivation abstrakte Vektorräume
+	Label: Motivation abstrakte Vektorräume 1
 	Type: Definition
 	ID: n1_3
 	Deps: n1_1, n1_2
@@ -102,6 +109,265 @@ node{
 	Label: Definition Vektorraum
 	Type: Definition
 	ID: n1_5
-	Deps: n1_3, n1_4
+	Deps: n1_3, n1_4, p9
+}
+
+node{
+	Label: Motivation abstrakte Vektorräume 2
+	Type: Definition
+	ID: n1_6
+	Deps: n1_5
+}
+
+node{
+	Label: Eindeutigkeit der Null
+	Type: Definition
+	ID: n1_7
+	Deps: n1_5
+}
+
+node{
+	Label: Eindeutigkeit der Inversen
+	Type: Definition
+	ID: n1_8
+	Deps: n1_5
+}
+
+node{
+	Label: Weitere Rechenregeln für Vektoren
+	Type: Definition
+	ID: n1_9
+	Deps: n1_4, n1_5
+}
+
+node{
+	Label: Notwendigkeit der Vektorraum-Axiome
+	Type: Definition
+	ID: n1_10
+	Deps: n1_5, n1_4
+}
+
+node{
+	Label: Vereinfachende Notationen für Vektoren
+	Type: Definition
+	ID: n1_11
+	Deps: n1_4, n1_5
+}
+
+node{
+	Label: Untervektorraum
+	Type: Definition
+	ID: n1_12
+	Deps: n1_4, n1_5
+}
+
+node{
+	Label: Untervektorraum ist selbst Vektorraum
+	Type: Definition
+	ID: n1_13
+	Deps: n1_5, n1_12
+}
+
+node{
+	Label: Beispiele für Untervektorräume
+	Type: Definition
+	ID: n1_14
+	Deps: n1_12
+}
+
+node{
+	Label: R^n und Intuition für abstrakte Vektorräume
+	Type: Definition
+	ID: n1_15
+	Deps: n1_5
+}
+
+node{
+	Label: Linearkombination und lineare Hülle
+	Type: Definition
+	ID: n1_16
+	Deps: n1_4, n1_5
+}
+
+node{
+	Label: Lineare Hülle ist Untervektorraum
+	Type: Definition
+	ID: n1_17
+	Deps: n1_16, n1_12
+}
+
+node{
+	Label: Erzeugendensystem
+	Type: Definition
+	ID: n1_18
+	Deps: n1_12, n1_16
+}
+
+node{
+	Label: Beispiele für lineare Hüllen und ihre Erzeugendensysteme
+	Type: Definition
+	ID: n1_19
+	Deps: n1_16, n1_18
+}
+
+node{
+	Label: Lineare Hülle erzeugt von einer (unendlichen) Teilmenge
+	Type: Definition
+	ID: n1_20
+	Deps: n1_16
+}
+
+node{
+	Label: Beispiel für lineare Hülle einer unendlichen Menge
+	Type: Definition
+	ID: n1_21
+	Deps: n1_4, n1_20
+}
+
+node{
+	Label: Lineare Unabhängigkeit
+	Type: Definition
+	ID: n1_22
+	Deps: n1_4, n1_16
+}
+
+node{
+	Label: Lineare Unabhängigkeit eines einzigen Vektors
+	Type: Definition
+	ID: n1_23
+	Deps: n1_22
+}
+
+node{
+	Label: Lineare Unabhängigkeit Alternativcharakterisierung
+	Type: Definition
+	ID: n1_24
+	Deps: n1_4, n1_16, n1_22
+}
+
+node{
+	Label: Lineare Unabhängigkeit einer (unendlichen) Teilmenge
+	Type: Definition
+	ID: n1_25
+	Deps: n1_22, n1_22
+}
+
+node{
+	Label: Beispiel für linear abhängige Vektoren und Mengen
+	Type: Definition
+	ID: n1_26
+	Deps: n1_24, n1_25, n1_22, n1_4
+}
+
+node{
+	Label: Basis eines Vektorraums
+	Type: Definition
+	ID: n1_27
+	Deps: n1_4, n1_16, n1_22
+}
+
+node{
+	Label: Basis Charakterisierung durch Eindeutigkeit der Basisentwicklung
+	Type: Definition
+	ID: n1_28
+	Deps: n1_4, n1_27
+}
+
+node{
+	Label: Kanonische Basis
+	Type: Definition
+	ID: n1_29
+	Deps: n1_28, n1_4
+}
+
+node{
+	Label: (Unendliche) Teilmenge als Basis
+	Type: Definition
+	ID: n1_30
+	Deps: n1_27, n1_4, n1_25, n1_20
+}
+
+node{
+	Label: Monome als Basis des Vektorraums der Polynome
+	Type: Definition
+	ID: n1_31
+	Deps: n1_30, n1_4
+}
+
+node{
+	Label: Existenz der Basis
+	Type: Definition
+	ID: n1_32
+	Deps: n1_30
+}
+
+node{
+	Label: Eindeutigkeit der Dimension
+	Type: Definition
+	ID: n1_33
+	Deps: n1_27
+}
+
+node{
+	Label: Dimension eines Vektorraums
+	Type: Definition
+	ID: n1_34
+	Deps: n1_27, n1_30
+}
+
+node{
+	Label: Maximale Mächtigkeit von Mengen linear unabhängiger Vektoren
+	Type: Definition
+	ID: n1_35
+	Deps: n1_16, n1_18, n1_22, n1_4
+}
+
+node{
+	Label: Basisergänzungssatz
+	Type: Definition
+	ID: n1_36
+	Deps: n1_22, n1_18, n1_27
+}
+
+node{
+	Label: Basisauswahlsatz
+	Type: Definition
+	ID: n1_37
+	Deps: n1_27, n1_18, n1_36
+}
+
+node{
+	Label: n=dim V linear unabhängige Vektoren bilden Basis von V
+	Type: Definition
+	ID: n1_38
+	Deps: n1_22, n1_27, n1_33, n1_36, n1_34
+}
+
+node{
+	Label: Dimension eines Unterraums
+	Type: Definition
+	ID: n1_39
+	Deps: n1_34, n1_12
+}
+
+node{
+	Label: Schnitt von Unterräumen
+	Type: Definition
+	ID: n1_40
+	Deps: n1_34, n1_12
+}
+
+node{
+	Label: Summe von Unterräumen
+	Type: Definition
+	ID: n1_41
+	Deps: n1_12, n1_16
+}
+
+node{
+	Label: Dimensionsformel für Unterräume
+	Type: Definition
+	ID: n1_42
+	Deps: n1_12, n1_34, n1_36, n1_27
 }
 

@@ -6,7 +6,7 @@ var json = {
 	children: [
 	{
 		id: "n1_3_2",
-		name: "Motivation abstrakte Vektorräume",
+		name: "Motivation abstrakte Vektorräume 1",
 		data: {},
 		children: [
 		{
@@ -28,6 +28,13 @@ var json = {
 	{
 		id: "n1_4_5",
 		name: "Notation Körper",
+		data: {},
+		children: [
+		 ]
+	},
+	{
+		id: "p9_6",
+		name: "Gruppe",
 		data: {},
 		children: [
 		 ]

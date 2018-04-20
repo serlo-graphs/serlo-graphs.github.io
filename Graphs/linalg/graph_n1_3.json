@@ -1,7 +1,7 @@
-var title = {TITLE: "Motivation abstrakte Vektorräume"};
+var title = {TITLE: "Motivation abstrakte Vektorräume 1"};
 var json = {
 	id: "n1_3_1",
-	name: "Motivation abstrakte Vektorräume",
+	name: "Motivation abstrakte Vektorräume 1",
 	data: {},
 	children: [
 	{
