@@ -1,0 +1,78 @@
+var title = {TITLE: "Lineare Unabhängigkeit eines einzigen Vektors"};
+var json = {
+	id: "n1_23_1",
+	name: "Lineare Unabhängigkeit eines einzigen Vektors",
+	data: {},
+	children: [
+	{
+		id: "n1_22_2",
+		name: "Lineare Unabhängigkeit",
+		data: {},
+		children: [
+		{
+			id: "n1_4_3",
+			name: "Notation Körper",
+			data: {},
+			children: [
+			 ]
+		},
+		{
+			id: "n1_16_4",
+			name: "Linearkombination und lineare Hülle",
+			data: {},
+			children: [
+			{
+				id: "n1_4_5",
+				name: "Notation Körper",
+				data: {},
+				children: [
+				 ]
+			},
+			{
+				id: "n1_5_6",
+				name: "Definition Vektorraum",
+				data: {},
+				children: [
+				{
+					id: "n1_3_7",
+					name: "Motivation abstrakte Vektorräume 1",
+					data: {},
+					children: [
+					{
+						id: "n1_1_8",
+						name: "Die Menge der n-Tupel reeller Zahlen",
+						data: {},
+						children: [
+						 ]
+					},
+					{
+						id: "n1_2_9",
+						name: "Die Menge der komplexwertigen stetigen Funktionen auf [0,1]",
+						data: {},
+						children: [
+						 ]
+					},
+					 ]
+				},
+				{
+					id: "n1_4_10",
+					name: "Notation Körper",
+					data: {},
+					children: [
+					 ]
+				},
+				{
+					id: "p9_11",
+					name: "Gruppe",
+					data: {},
+					children: [
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	 ]
+}

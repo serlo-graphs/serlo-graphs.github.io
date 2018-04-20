@@ -1,0 +1,337 @@
+var title = {TITLE: "Basisergänzungssatz"};
+var json = {
+	id: "n1_36_1",
+	name: "Basisergänzungssatz",
+	data: {},
+	children: [
+	{
+		id: "n1_22_2",
+		name: "Lineare Unabhängigkeit",
+		data: {},
+		children: [
+		{
+			id: "n1_4_3",
+			name: "Notation Körper",
+			data: {},
+			children: [
+			 ]
+		},
+		{
+			id: "n1_16_4",
+			name: "Linearkombination und lineare Hülle",
+			data: {},
+			children: [
+			{
+				id: "n1_4_5",
+				name: "Notation Körper",
+				data: {},
+				children: [
+				 ]
+			},
+			{
+				id: "n1_5_6",
+				name: "Definition Vektorraum",
+				data: {},
+				children: [
+				{
+					id: "n1_3_7",
+					name: "Motivation abstrakte Vektorräume 1",
+					data: {},
+					children: [
+					{
+						id: "n1_1_8",
+						name: "Die Menge der n-Tupel reeller Zahlen",
+						data: {},
+						children: [
+						 ]
+					},
+					{
+						id: "n1_2_9",
+						name: "Die Menge der komplexwertigen stetigen Funktionen auf [0,1]",
+						data: {},
+						children: [
+						 ]
+					},
+					 ]
+				},
+				{
+					id: "n1_4_10",
+					name: "Notation Körper",
+					data: {},
+					children: [
+					 ]
+				},
+				{
+					id: "p9_11",
+					name: "Gruppe",
+					data: {},
+					children: [
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	{
+		id: "n1_18_12",
+		name: "Erzeugendensystem",
+		data: {},
+		children: [
+		{
+			id: "n1_12_13",
+			name: "Untervektorraum",
+			data: {},
+			children: [
+			{
+				id: "n1_4_14",
+				name: "Notation Körper",
+				data: {},
+				children: [
+				 ]
+			},
+			{
+				id: "n1_5_15",
+				name: "Definition Vektorraum",
+				data: {},
+				children: [
+				{
+					id: "n1_3_16",
+					name: "Motivation abstrakte Vektorräume 1",
+					data: {},
+					children: [
+					{
+						id: "n1_1_17",
+						name: "Die Menge der n-Tupel reeller Zahlen",
+						data: {},
+						children: [
+						 ]
+					},
+					{
+						id: "n1_2_18",
+						name: "Die Menge der komplexwertigen stetigen Funktionen auf [0,1]",
+						data: {},
+						children: [
+						 ]
+					},
+					 ]
+				},
+				{
+					id: "n1_4_19",
+					name: "Notation Körper",
+					data: {},
+					children: [
+					 ]
+				},
+				{
+					id: "p9_20",
+					name: "Gruppe",
+					data: {},
+					children: [
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		{
+			id: "n1_16_21",
+			name: "Linearkombination und lineare Hülle",
+			data: {},
+			children: [
+			{
+				id: "n1_4_22",
+				name: "Notation Körper",
+				data: {},
+				children: [
+				 ]
+			},
+			{
+				id: "n1_5_23",
+				name: "Definition Vektorraum",
+				data: {},
+				children: [
+				{
+					id: "n1_3_24",
+					name: "Motivation abstrakte Vektorräume 1",
+					data: {},
+					children: [
+					{
+						id: "n1_1_25",
+						name: "Die Menge der n-Tupel reeller Zahlen",
+						data: {},
+						children: [
+						 ]
+					},
+					{
+						id: "n1_2_26",
+						name: "Die Menge der komplexwertigen stetigen Funktionen auf [0,1]",
+						data: {},
+						children: [
+						 ]
+					},
+					 ]
+				},
+				{
+					id: "n1_4_27",
+					name: "Notation Körper",
+					data: {},
+					children: [
+					 ]
+				},
+				{
+					id: "p9_28",
+					name: "Gruppe",
+					data: {},
+					children: [
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	{
+		id: "n1_27_29",
+		name: "Basis eines Vektorraums",
+		data: {},
+		children: [
+		{
+			id: "n1_4_30",
+			name: "Notation Körper",
+			data: {},
+			children: [
+			 ]
+		},
+		{
+			id: "n1_16_31",
+			name: "Linearkombination und lineare Hülle",
+			data: {},
+			children: [
+			{
+				id: "n1_4_32",
+				name: "Notation Körper",
+				data: {},
+				children: [
+				 ]
+			},
+			{
+				id: "n1_5_33",
+				name: "Definition Vektorraum",
+				data: {},
+				children: [
+				{
+					id: "n1_3_34",
+					name: "Motivation abstrakte Vektorräume 1",
+					data: {},
+					children: [
+					{
+						id: "n1_1_35",
+						name: "Die Menge der n-Tupel reeller Zahlen",
+						data: {},
+						children: [
+						 ]
+					},
+					{
+						id: "n1_2_36",
+						name: "Die Menge der komplexwertigen stetigen Funktionen auf [0,1]",
+						data: {},
+						children: [
+						 ]
+					},
+					 ]
+				},
+				{
+					id: "n1_4_37",
+					name: "Notation Körper",
+					data: {},
+					children: [
+					 ]
+				},
+				{
+					id: "p9_38",
+					name: "Gruppe",
+					data: {},
+					children: [
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		{
+			id: "n1_22_39",
+			name: "Lineare Unabhängigkeit",
+			data: {},
+			children: [
+			{
+				id: "n1_4_40",
+				name: "Notation Körper",
+				data: {},
+				children: [
+				 ]
+			},
+			{
+				id: "n1_16_41",
+				name: "Linearkombination und lineare Hülle",
+				data: {},
+				children: [
+				{
+					id: "n1_4_42",
+					name: "Notation Körper",
+					data: {},
+					children: [
+					 ]
+				},
+				{
+					id: "n1_5_43",
+					name: "Definition Vektorraum",
+					data: {},
+					children: [
+					{
+						id: "n1_3_44",
+						name: "Motivation abstrakte Vektorräume 1",
+						data: {},
+						children: [
+						{
+							id: "n1_1_45",
+							name: "Die Menge der n-Tupel reeller Zahlen",
+							data: {},
+							children: [
+							 ]
+						},
+						{
+							id: "n1_2_46",
+							name: "Die Menge der komplexwertigen stetigen Funktionen auf [0,1]",
+							data: {},
+							children: [
+							 ]
+						},
+						 ]
+					},
+					{
+						id: "n1_4_47",
+						name: "Notation Körper",
+						data: {},
+						children: [
+						 ]
+					},
+					{
+						id: "p9_48",
+						name: "Gruppe",
+						data: {},
+						children: [
+						 ]
+					},
+					 ]
+				},
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	 ]
+}

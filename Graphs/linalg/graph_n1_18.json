@@ -1,0 +1,120 @@
+var title = {TITLE: "Erzeugendensystem"};
+var json = {
+	id: "n1_18_1",
+	name: "Erzeugendensystem",
+	data: {},
+	children: [
+	{
+		id: "n1_12_2",
+		name: "Untervektorraum",
+		data: {},
+		children: [
+		{
+			id: "n1_4_3",
+			name: "Notation Körper",
+			data: {},
+			children: [
+			 ]
+		},
+		{
+			id: "n1_5_4",
+			name: "Definition Vektorraum",
+			data: {},
+			children: [
+			{
+				id: "n1_3_5",
+				name: "Motivation abstrakte Vektorräume 1",
+				data: {},
+				children: [
+				{
+					id: "n1_1_6",
+					name: "Die Menge der n-Tupel reeller Zahlen",
+					data: {},
+					children: [
+					 ]
+				},
+				{
+					id: "n1_2_7",
+					name: "Die Menge der komplexwertigen stetigen Funktionen auf [0,1]",
+					data: {},
+					children: [
+					 ]
+				},
+				 ]
+			},
+			{
+				id: "n1_4_8",
+				name: "Notation Körper",
+				data: {},
+				children: [
+				 ]
+			},
+			{
+				id: "p9_9",
+				name: "Gruppe",
+				data: {},
+				children: [
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	{
+		id: "n1_16_10",
+		name: "Linearkombination und lineare Hülle",
+		data: {},
+		children: [
+		{
+			id: "n1_4_11",
+			name: "Notation Körper",
+			data: {},
+			children: [
+			 ]
+		},
+		{
+			id: "n1_5_12",
+			name: "Definition Vektorraum",
+			data: {},
+			children: [
+			{
+				id: "n1_3_13",
+				name: "Motivation abstrakte Vektorräume 1",
+				data: {},
+				children: [
+				{
+					id: "n1_1_14",
+					name: "Die Menge der n-Tupel reeller Zahlen",
+					data: {},
+					children: [
+					 ]
+				},
+				{
+					id: "n1_2_15",
+					name: "Die Menge der komplexwertigen stetigen Funktionen auf [0,1]",
+					data: {},
+					children: [
+					 ]
+				},
+				 ]
+			},
+			{
+				id: "n1_4_16",
+				name: "Notation Körper",
+				data: {},
+				children: [
+				 ]
+			},
+			{
+				id: "p9_17",
+				name: "Gruppe",
+				data: {},
+				children: [
+				 ]
+			},
+			 ]
+		},
+		 ]
+	},
+	 ]
+}
