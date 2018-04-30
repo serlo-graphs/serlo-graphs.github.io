@@ -1881,13 +1881,13 @@ var MouseEventsManager = new Class({
         that.handleEvent('MouseOut', e, win, that.makeEventObject(e, win));
       },
       'touchstart': function(e, win) {
-        that.handleEvent('TouchStart', e, win, that.makeEventObject(e, win));
+        that.handleEvent('MouseDown', e, win, that.makeEventObject(e, win));
       },
       'touchmove': function(e, win) {
-        that.handleEvent('TouchMove', e, win, that.makeEventObject(e, win));
+        that.handleEvent('MouseMove', e, win, that.makeEventObject(e, win));
       },
       'touchend': function(e, win) {
-        that.handleEvent('TouchEnd', e, win, that.makeEventObject(e, win));
+        that.handleEvent('MouseUp', e, win, that.makeEventObject(e, win));
       }
     });
     //attach mousewheel event
