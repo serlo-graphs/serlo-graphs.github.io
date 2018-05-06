@@ -162,6 +162,9 @@ var Log = {
                     node.data.$color = ['#aaa', '#baa', '#caa', '#daa', '#eaa', '#faa'][count];                    
                 }
             }
+		node.onclick = function(){
+				st.onClick(node.id);
+            };
         },
         
         //This method is called right before plotting
