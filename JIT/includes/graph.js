@@ -42,13 +42,7 @@ var Log = {
 		}
 	}
 	
-	var removedNodes;
-	try {
-		removedNodes = JSON.parse(localStorage.getItem('removedNodes'));
-	}
-	catch(e) {
-		removedNodes = {};
-	}
+	var removedNodes = JSON.parse(localStorage.getItem('removedNodes')) || {};
     //init Spacetree
     //Create a new ST instance
     var st = new $jit.ST({
