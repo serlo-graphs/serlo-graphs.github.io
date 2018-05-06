@@ -143,6 +143,7 @@ var Log = {
         onBeforePlotNode: function(node){
 		if (removedNodes[node.id]) {
 			node.data.$color = "yellow";
+			break;
 		}
             //add some color to the nodes in the path between the
             //root node and the selected node.
