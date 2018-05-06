@@ -162,6 +162,7 @@ var Log = {
                     node.data.$color = ['#aaa', '#baa', '#caa', '#daa', '#eaa', '#faa'][count];                    
                 }
             }
+		console.log(node);
 		node.onclick = function(){
 				st.onClick(node.id);
             };
