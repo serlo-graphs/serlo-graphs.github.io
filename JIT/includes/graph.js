@@ -63,6 +63,7 @@ var Log = {
 							Log.write("subtree removed");  
 						} */
 					});
+					removedNodes[node.id] = true;
 					localStorage.setItem('removedNodes', JSON.stringify(removedNodes));
 				}
 			}/*,  
