@@ -107,9 +107,6 @@ var Log = {
         
         onBeforeCompute: function(node){
             Log.write("Lade " + node.name + ".");
-	    if (removedNodes[node.id]) {
-		return false;
-	    }
         },
         
         onAfterCompute: function(){
@@ -144,6 +141,9 @@ var Log = {
         //The data properties prefixed with a dollar
         //sign will override the global node style properties.
         onBeforePlotNode: function(node){
+		if (removedNodes[node.id]) {
+			node.data.$color = "yellow";
+		}
             //add some color to the nodes in the path between the
             //root node and the selected node.
             if (node.selected) {
@@ -181,6 +181,7 @@ var Log = {
     });
     //load json data
     st.loadJSON(json);
+
     //compute node positions and layout
     st.compute();
     //optional: make a translation of the tree
