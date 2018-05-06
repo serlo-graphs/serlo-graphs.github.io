@@ -120,9 +120,9 @@ var Log = {
             label.innerHTML = node.name;
             
             // The following needs to be done here and not in the Event section to prevent errors...
-            label.onclick = function(){
+            /*label.onclick = function(){
 				st.onClick(node.id);
-            };
+            };*/
 
             //set label styles
             var style = label.style;
