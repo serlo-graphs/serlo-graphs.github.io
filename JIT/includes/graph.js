@@ -42,7 +42,6 @@ var Log = {
 		}
 	}
 	
-	var removedNodes = JSON.parse(localStorage.getItem('removedNodes')) || {};
     //init Spacetree
     //Create a new ST instance
     var st = new $jit.ST({
@@ -63,8 +62,6 @@ var Log = {
 							Log.write("subtree removed");  
 						} */
 					});
-					removedNodes[node.id] = true;
-					localStorage.setItem('removedNodes', JSON.stringify(removedNodes));
 				}
 			}/*,  
 			onMouseEnter: function(node, eventInfo, e) {  
@@ -120,9 +117,9 @@ var Log = {
             label.innerHTML = node.name;
             
             // The following needs to be done here and not in the Event section to prevent errors...
-            /*label.onclick = function(){
+            label.onclick = function(){
 				st.onClick(node.id);
-            };*/
+            };
 
             //set label styles
             var style = label.style;
@@ -137,14 +134,10 @@ var Log = {
         
         //This method is called right before plotting
         //a node. It's useful for changing an individual node
-        //style propert   ies before plotting it.
+        //style properties before plotting it.
         //The data properties prefixed with a dollar
         //sign will override the global node style properties.
         onBeforePlotNode: function(node){
-		if (removedNodes[node.id]) {
-			node.data.$color = "yellow";
-			return;
-		}
             //add some color to the nodes in the path between the
             //root node and the selected node.
             if (node.selected) {
@@ -162,10 +155,6 @@ var Log = {
                     node.data.$color = ['#aaa', '#baa', '#caa', '#daa', '#eaa', '#faa'][count];                    
                 }
             }
-		console.log(node);
-		node.onclick = function(){
-				st.onClick(node.id);
-            };
         },
         
         //This method is called right before plotting
@@ -186,7 +175,6 @@ var Log = {
     });
     //load json data
     st.loadJSON(json);
-
     //compute node positions and layout
     st.compute();
     //optional: make a translation of the tree
