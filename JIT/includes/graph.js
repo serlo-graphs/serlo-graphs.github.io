@@ -42,6 +42,13 @@ var Log = {
 		}
 	}
 	
+	var removedNodes;
+	try {
+		removedNodes = JSON.parse(localStorage.getItem('removedNodes'));
+	}
+	catch(e) {
+		removedNodes = {};
+	}
     //init Spacetree
     //Create a new ST instance
     var st = new $jit.ST({
@@ -62,6 +69,7 @@ var Log = {
 							Log.write("subtree removed");  
 						} */
 					});
+					localStorage.setItem('removedNodes', JSON.stringify(removedNodes));
 				}
 			}/*,  
 			onMouseEnter: function(node, eventInfo, e) {  
@@ -104,6 +112,9 @@ var Log = {
         
         onBeforeCompute: function(node){
             Log.write("Lade " + node.name + ".");
+	    if (removedNodes[node.id]) {
+		return false;
+	    }
         },
         
         onAfterCompute: function(){
