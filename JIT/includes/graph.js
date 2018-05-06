@@ -137,13 +137,13 @@ var Log = {
         
         //This method is called right before plotting
         //a node. It's useful for changing an individual node
-        //style properties before plotting it.
+        //style propert   ies before plotting it.
         //The data properties prefixed with a dollar
         //sign will override the global node style properties.
         onBeforePlotNode: function(node){
 		if (removedNodes[node.id]) {
 			node.data.$color = "yellow";
-			break;
+			return;
 		}
             //add some color to the nodes in the path between the
             //root node and the selected node.
