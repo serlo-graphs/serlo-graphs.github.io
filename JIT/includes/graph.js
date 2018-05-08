@@ -123,13 +123,14 @@ var Log = {
 
             //set label styles
             var style = label.style;
-            style.width = 60 + 'px';
-            style.height = 17 + 'px';            
+            style.width = 114 + 'px';
+            style.height = 54 + 'px';            
             style.cursor = 'pointer';
             style.color = '#333';
             style.fontSize = '0.8em';
             style.textAlign= 'center';
             style.paddingTop = '3px';
+            style.paddingLeft = '3px';	    
         },
         
         //This method is called right before plotting
