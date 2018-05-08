@@ -123,7 +123,7 @@ var Log = {
 
             //set label styles
             var style = label.style;
-	    console.log(node.id);
+	    console.log(style);
             style.width = 114 + 'px';
             style.height = 54 + 'px';            
             style.cursor = 'pointer';
